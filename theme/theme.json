@@ -1,13 +1,10 @@
 {
-  "label": "FreshJuice DEV",
-  "version": "3.0.0",
+  "label": "BM Tailwind Theme",
+  "version": "1.0.0",
   "author": {
-    "name": "Alex Zappa",
-    "email": "alex@zappa.dev",
-    "url": "https://alex.zappa.dev"
+    "name": "BlueMatrix",
+    "url": "https://www.bluematrix.com"
   },
-  "documentation_url": "https://github.com/freshjuice-dev/freshjuice-dev-hubspot-theme",
-  "example_url": "https://143910617.hs-sites-eu1.com",
   "preview_path": "./templates/home.html",
   "screenshot_path": "./images/template-previews/blog-index.png",
   "enable_domain_stylesheets": false,

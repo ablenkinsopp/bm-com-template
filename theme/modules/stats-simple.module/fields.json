@@ -1,7 +1,6 @@
 [ {
   "id" : "db2218b7-685f-fdee-c275-0482e2cb3f47",
   "name" : "stats_list",
-  "display_width" : null,
   "label" : "Stats List",
   "required" : false,
   "locked" : false,
@@ -14,29 +13,28 @@
   "children" : [ {
     "id" : "e9417d48-719f-893d-f5e2-dd6e4cfd6880",
     "name" : "stats_title",
-    "display_width" : null,
     "label" : "Stats Title",
     "required" : true,
     "locked" : false,
-    "validation_regex" : "",
     "allow_new_line" : false,
-    "show_emoji_picker" : false,
     "type" : "text",
+    "display_width" : null,
     "default" : "44 million"
   }, {
     "id" : "fe8a34f2-08eb-e26e-3092-029ade0e4149",
     "name" : "subtext",
-    "display_width" : null,
     "label" : "Subtext",
     "required" : false,
     "locked" : false,
     "type" : "richtext",
+    "display_width" : null,
     "default" : "Transactions every 24 hours"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : [ {
     "stats_title" : "44 million",
     "subtext" : "Transactions of Fresh Juice every day"

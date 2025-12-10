@@ -7,12 +7,12 @@
     "BLOG_POST"
   ],
   "inline_help_text": "Module uses https://github.com/nk-o/gist-simple",
-  "icon": "fontawesome-5.14.0:GitHub",
   "host_template_types": [
     "PAGE",
     "BLOG_LISTING",
     "BLOG_POST"
   ],
   "label": "GitHub Gist",
+  "icon": "fontawesome-5.14.0:GitHub",
   "is_available_for_new_content": true
 }

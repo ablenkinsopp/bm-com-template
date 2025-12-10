@@ -1,0 +1,65 @@
+[ {
+  "picker" : "video",
+  "id" : "69a293b4-d42a-63eb-3ee2-b97681ffe906",
+  "name" : "video_file",
+  "label" : "Background Video",
+  "required" : false,
+  "locked" : false,
+  "type" : "file",
+  "display_width" : null,
+  "default" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/home-hero.mp4"
+}, {
+  "id" : "5ad7bb8c-ec2c-4ce8-b8b5-b2db05aaf10b",
+  "name" : "headline_top",
+  "label" : "Headline Top",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Intelligence That"
+}, {
+  "id" : "971a7085-44a4-0115-8f12-af5fa1d7977d",
+  "name" : "headline_bottom",
+  "label" : "Headline Bottom",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Moves Markets"
+}, {
+  "id" : "d38c43cb-7b01-e8f5-fef0-02e241d6a23b",
+  "name" : "subtext",
+  "label" : "Subtext",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Powering the future of finance with AI-ready infrastructure to transform data into advantage."
+}, {
+  "id" : "0f6b68e2-5515-a5af-f0b5-3f9ba5cc5108",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Request Demo"
+}, {
+  "id" : "791c3eab-f7b8-f7fe-9d13-ec2a4a90c5e6",
+  "name" : "button_url",
+  "label" : "Button URL",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+  "type" : "url",
+  "display_width" : null,
+  "default" : {
+    "content_id" : null,
+    "href" : "",
+    "type" : "EXTERNAL"
+  }
+} ]

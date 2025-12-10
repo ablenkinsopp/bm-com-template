@@ -1,9 +1,23 @@
 <div class="not-prose container flex justify-center items-center">
   {% set href = module.cta_link.url.type == "EMAIL_ADDRESS" ? "mailto:" ~ module.cta_link.url.href : module.cta_link.url.href %}
-  <a class="button rounded-md"
+  {% if module.style == "ghost" %}
+        {% set inner_style = "text-off-white hover:bg-white/20" %}
+        {% set outer_style = "" %}
+    {% elif module.style == "filled" %}
+        {% set inner_style = "bg-turquoise text-dark-blue" %}
+        {% set outer_style = "" %}
+    {% else %}
+        {% set inner_style = "text-turquoise bg-dark-blue" %}
+        {% set outer_style = "gradient-border p-px" %}
+    {% endif %}
+  <a class="cursor-pointer whitespace-nowrap"
      href="{{ module.cta_link.url.type == "CALL_TO_ACTION" ? href : href|escape_url }}"
     {% if module.cta_link.open_in_new_tab %} target="_blank" {% endif %}
     {% if module.cta_link.rel %} rel="{{ module.cta_link.rel|escape_attr }}" {% endif %}>
-    {{ module.button_text }}
+    <div class="inline-flex items-center justify-center rounded uppercase overflow-hidden h-10 {{outer_style}}">
+        <div class="rounded flex items-center text-sm px-5 h-full {{inner_style}}">
+            {{ module.button_text }}
+        </div>
+    </div>
   </a>
 </div>

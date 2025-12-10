@@ -2,15 +2,13 @@
 {% from '../../macros/random-int.html' import random_int %}
 
 {%- macro get_navbar_logo(classes) -%}
-  <a href="{{ request.full_url | replace(request.path, '') }}" class="{{ classes or '-m-1.5 p-1.5' }}">
+  <a href="{{ request.full_url | replace(request.path, '') }}" class="{{ classes or '' }}">
     <span class="sr-only">{{ module.logo_image.alt or 'Company name' }}</span>
     {% if module.logo_image.src %}
       {% set loadingAttr = module.logo_image.loading != 'disabled' ? '' : '' %}
       <img src="{{ module.logo_image.src }}"
-           class="h-14 w-auto"
-           alt="{{ module.logo_image.alt or 'Company' }} logo"
-           width="{{ module.logo_image.width }}"
-           height="{{ module.logo_image.height }}"
+           class="h-7"
+           alt="BlueMatrix | Home"
            loading="{{ module.logo_image.loading or 'eager' }}">
     {% endif %}
   </a>
@@ -19,27 +17,25 @@
 {% set main_menu = menu(module.menu_id) %}
 
 
-<header class="bg-white py-3"
+<header class="bg-dark-blue"
         x-data="{
           mobileMenuOpen: false
         }">
 
-  <nav class="container {{ 'relative' if not module.full_width_dropdown_menus }} !py-0 flex items-center justify-between" aria-label="Global">
+  <nav class="flex items-center p-4 py-2 xl:px-10 lg:py-4 lg:gap-4 {{ 'relative' if not module.full_width_dropdown_menus }}" aria-label="Global">
 
     {# Logo #}
-    <div class="flex lg:flex-1">
+    <div class="flex-1">
       {{ get_navbar_logo() }}
     </div>
 
 
     {# Mobile Menu Toggle #}
     <div class="flex lg:hidden">
-      <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
+      <button type="button" class="text-turquoise inline-flex items-center justify-center rounded text-xl p-1.5 hover:bg-white/20 cursor-pointer"
               @click="mobileMenuOpen=!mobileMenuOpen">
         <span class="sr-only">Open main menu</span>
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg>
       </button>
     </div>
 
@@ -57,10 +53,10 @@
                  {%- if not child.url or child.children -%}
                  @click="$event.preventDefault(); open=!open;"
                  {%- endif -%}
-                 class="text-sm font-semibold leading-6 flex items-center justify-center group">
-                <span class="text-terminal group-hover:text-current">{{ child.label }}</span>
+                 class="cursor-pointer uppercase flex items-center gap-1.5 text-sm group">
+                <span class=" text-off-white group-hover:text-turquoise">{{ child.label }}</span>
                 {%- if child.children -%}
-                  <svg class="size-5 flex-none text-terminal group-hover:text-current" :class="open?'rotate-180':''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                  <svg class="size-5 flex-none  text-off-white group-hover:text-turquoise" :class="open?'rotate-180':''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
                 {%- endif -%}
               </a>
               {% if child.children %}
@@ -154,24 +150,33 @@
 
 
     {# CTA #}
-    <div class="hidden lg:flex flex-1 justify-end items-center gap-8">
+    <div class="hidden lg:flex flex-1 justify-end items-center gap-2">
       {% for cta in module.call_to_actions %}
         {% if cta.style == "ghost" %}
-          {% set cta_style = "button button--ghost button--small" %}
-        {% elif cta.style == "primary" %}
-          {% set cta_style = "button button--small" %}
+          {% set cta_style = "text-off-white hover:bg-white/20" %}
+          {% set cta_inner_style = "" %}
+        {% elif cta.style == "filled" %}
+          {% set cta_style = "bg-turquoise text-dark-blue" %}
+          {% set cta_inner_style = "" %}
         {% else %}
-          {% set cta_style = "text-sm font-semibold leading-6 text-current" %}
+          {% set cta_style = "text-turquoise bg-dark-blue" %}
+          {% set cta_inner_style = "gradient-border p-px" %}
         {% endif %}
         {% set href = cta.link.url.href %}
         {% if cta.link.url.type is equalto "EMAIL_ADDRESS" %}
           {% set href = "mailto:" + href %}
         {% endif %}
         <a href="{{ href }}"
-           class="{{ cta_style }} whitespace-nowrap"
+           class="cursor-pointer whitespace-nowrap"
            {% if cta.link.open_in_new_tab %}target="_blank"{% endif %}
           {% if cta.link.rel %}rel="{{ cta.link.rel }}"{% endif %}
-        >{{ cta.title | striptags | safe }}</a>
+        >
+            <div class="inline-flex items-center justify-center rounded uppercase overflow-hidden h-10 {{cta_inner_style}}">
+                <div class="rounded flex items-center text-sm px-5 h-full {{cta_style}}">
+                    {{ cta.title | striptags | safe }}
+                </div>
+            </div>
+        </a>
       {% endfor %}
     </div>
 
@@ -181,7 +186,7 @@
 
   {# Mobile Menu #}
   <div class="lg:hidden" role="dialog" aria-modal="true" x-cloak>
-    <div class="fixed inset-0 z-20 backdrop-blur bg-white/40"
+    <div class="fixed inset-0 z-20 backdrop-blur bg-black/40"
          x-show="mobileMenuOpen" @click="mobileMenuOpen=false"
          x-transition:enter="transition ease-out duration-200"
          x-transition:enter-start="opacity-0"
@@ -191,7 +196,7 @@
          x-transition:leave-end="opacity-0">
       {# Background backdrop, show/hide based on slide-over state. #}
     </div>
-    <div class="fixed inset-y-0 right-0 z-20 flex w-full flex-col justify-between overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+    <div class="fixed inset-y-0 right-0 z-20 flex w-full flex-col justify-between overflow-y-auto bg-dark-blue sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
          x-show="mobileMenuOpen"
          x-transition:enter="transition ease-out duration-200"
          x-transition:enter-start="opacity-0 !translate-x-96"
@@ -199,41 +204,42 @@
          x-transition:leave="transition ease-in duration-150"
          x-transition:leave-start="opacity-100 translate-x-0"
          x-transition:leave-end="opacity-0 !translate-x-96">
-      <div class="px-6 py-2.5">
-        <div class="flex items-center justify-between">
-          {{ get_navbar_logo() }}
-          <button type="button" class="-m-2.5 rounded-md p-2.5"
+        <div class="flex items-center justify-center text-off-white px-4 py-2 border-b-white/20 border-b">
+          <p class="flex-1 pl-8 uppercase text-sm text-center">Menu</p>
+          <button type="button" class="text-turquoise inline-flex items-center justify-center rounded text-xl p-1.5 hover:bg-white/20 cursor-pointer"
                   @click="mobileMenuOpen=!mobileMenuOpen">
             <span class="sr-only">Close menu</span>
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.281 18.2194C19.3507 18.2891 19.406 18.3718 19.4437 18.4629C19.4814 18.5539 19.5008 18.6515 19.5008 18.7501C19.5008 18.8486 19.4814 18.9462 19.4437 19.0372C19.406 19.1283 19.3507 19.211 19.281 19.2807C19.2114 19.3504 19.1286 19.4056 19.0376 19.4433C18.9465 19.4811 18.849 19.5005 18.7504 19.5005C18.6519 19.5005 18.5543 19.4811 18.4632 19.4433C18.3722 19.4056 18.2895 19.3504 18.2198 19.2807L12.0004 13.0604L5.78104 19.2807C5.64031 19.4214 5.44944 19.5005 5.25042 19.5005C5.05139 19.5005 4.86052 19.4214 4.71979 19.2807C4.57906 19.1399 4.5 18.9491 4.5 18.7501C4.5 18.551 4.57906 18.3602 4.71979 18.2194L10.9401 12.0001L4.71979 5.78068C4.57906 5.63995 4.5 5.44907 4.5 5.25005C4.5 5.05103 4.57906 4.86016 4.71979 4.71943C4.86052 4.5787 5.05139 4.49963 5.25042 4.49963C5.44944 4.49963 5.64031 4.5787 5.78104 4.71943L12.0004 10.9397L18.2198 4.71943C18.3605 4.5787 18.5514 4.49963 18.7504 4.49963C18.9494 4.49963 19.1403 4.5787 19.281 4.71943C19.4218 4.86016 19.5008 5.05103 19.5008 5.25005C19.5008 5.44907 19.4218 5.63995 19.281 5.78068L13.0607 12.0001L19.281 18.2194Z" fill="#43E3C2"/>
             </svg>
+
           </button>
         </div>
-        <div class="mt-6 flow-root">
-          <div class="">
+        <div class="flow-root flex-1">
             {% if module.menu_layout == "superb" %} {# classic, modern, superb #}
               <div class="">TODO SuperB Menu</div>
             {% else %}
               {% if main_menu.children %}
-                <div class="space-y-2.5 divide-y divide-gray-100">
+                <div class="flex flex-col">
                   {% for child in main_menu.children %}
                     {% set x_ref_id = slugify(child.label) ~ '_' ~ random_int() ~ loop.index %}
-                    <div class="pt-2.5" x-data="{open:false}" @click.away="open=false" :aria-expanded="open">
-                      <div class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6"
-                           :class="open?'bg-gray-100 rounded-bl-none':'hover:bg-gray-50'">
+                    <div x-data="{open:false}" @click.away="open=false" :aria-expanded="open">
+                      <div class="group relative flex items-center justify-between gap-2 p-4 text-off-white text-sm leading-6 border-b-white/20 border-b"
+                           :class="open?'bg-white/10 rounded-bl-none':'hover:bg-white/20'">
                         <a href="{{ child.url or "#" }}" {% if not child.url or child.children %}@click="$event.preventDefault(); open=!open;"{% endif %}
-                           class="flex justify-between w-full font-semibold !text-current">
+                           class="flex justify-between w-full text-sm !text-off-white uppercase">
                           <span class="absolute inset-0"></span>
                           <span>{{ child.label }}</span>
                           {%- if child.children -%}
-                            <svg class="size-5 flex-none" :class="open?'rotate-180':''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                            <div class="text-xl h-5 w-8 flex items-center justify-center">
+                                <svg width="20" height="20" class="flex-none" :class="open?'rotate-180':''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                            </div>
                           {%- endif -%}
                         </a>
                       </div>
                       {% if child.children %}
                         {% set has_sub_child = child.children and ((child.children|first).children or (child.children|last).children) %}
-                        <div class="border-l-4 border-gray-100 {{ 'pl-2.5' if not has_sub_child }} relative overflow-hidden max-h-0 transition-all duration-300"
+                        <div class="border-l-4 border-white/20 {{ 'pl-2.5' if not has_sub_child }} relative overflow-hidden max-h-0 transition-all duration-300"
                              x-ref="{{ x_ref_id }}" :style="open?`max-height:${$refs['{{x_ref_id}}'].scrollHeight}px`:``">
                           {% for sub_child in child.children %}
                             {% if has_sub_child and module.menu_layout == "modern" %}
@@ -268,8 +274,6 @@
                 </div>
               {% endif %}
             {% endif %}
-          </div>
-        </div>
       </div>
 
       <div class="sticky bottom-0 grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-100 items-center text-center">

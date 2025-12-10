@@ -1,14 +1,12 @@
 [ {
   "id" : "12a81f44-39b8-0582-f78c-4552ee23785b",
   "name" : "styles",
-  "display_width" : null,
   "label" : "Style",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "02448d8e-a221-62b8-69e2-f8c0bb273e7e",
     "name" : "image_alignment",
-    "display_width" : null,
     "label" : "Align Image",
     "required" : false,
     "locked" : false,
@@ -22,13 +20,13 @@
     },
     "alignment_direction" : "HORIZONTAL",
     "type" : "alignment",
+    "display_width" : null,
     "default" : {
       "horizontal_align" : "CENTER"
     }
   }, {
     "id" : "4b8627a2-1a31-66e0-75b4-a2d2f7126052",
     "name" : "align_text",
-    "display_width" : null,
     "label" : "Align Text",
     "required" : false,
     "locked" : false,
@@ -41,6 +39,7 @@
       "access" : null
     },
     "type" : "textalignment",
+    "display_width" : null,
     "default" : {
       "text_align" : "CENTER"
     }
@@ -49,6 +48,7 @@
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : {
     "image_alignment" : {
       "horizontal_align" : "CENTER"
@@ -60,7 +60,6 @@
 }, {
   "id" : "card",
   "name" : "card",
-  "display_width" : null,
   "label" : "Card",
   "required" : false,
   "locked" : false,
@@ -73,7 +72,6 @@
   "children" : [ {
     "id" : "card.image",
     "name" : "image",
-    "display_width" : null,
     "label" : "Image",
     "required" : false,
     "locked" : false,
@@ -81,6 +79,7 @@
     "resizable" : true,
     "show_loading" : true,
     "type" : "image",
+    "display_width" : null,
     "default" : {
       "loading" : "lazy",
       "alt" : "Pineapple Juice",
@@ -93,18 +92,19 @@
   }, {
     "id" : "card.text",
     "name" : "text",
-    "display_width" : null,
     "label" : "Content",
     "required" : false,
     "locked" : false,
     "enabled_features" : [ "emoji", "lists", "font_size", "standard_emphasis", "block", "font_family", "alignment", "advanced_emphasis" ],
     "type" : "richtext",
+    "display_width" : null,
     "default" : "<h3>This is a title</h3><p>Contextual advertising can be profitable. It can either pay for your hosting and maintenance costs for you website or it can pay for a lot more.</p>"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : [ {
     "image" : {
       "loading" : "lazy",

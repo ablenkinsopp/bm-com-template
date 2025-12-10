@@ -1,0 +1,48 @@
+<!--
+  templateType: section
+  label: Hero Video Wrapper
+  description: Full width hero section with background video overlay
+  is_available_for_new_content: true
+  fields:
+      - name: overlay_color
+        label: Overlay Colour
+        type: color
+        default: '#3466B8'
+      - name: overlay_opacity
+        label: Overlay Opacity
+        type: number
+        default: 0.75
+-->
+
+{% dnd_section
+  margin={
+    'top': 0,
+    'bottom': 0
+  },
+  padding={
+    'top': '0',
+    'bottom': '0',
+    'left': '0',
+    'right': '0'
+  },
+%}
+  {% dnd_column class='p-0 m-0'
+    margin={
+      'top': 0,
+      'bottom': 0
+    },
+    padding={
+      'top': '0',
+      'bottom': '0',
+      'left': '0',
+      'right': '0'
+    },
+  %}
+    {% dnd_row %}
+      {% dnd_module path='../modules/hero-content.module' %}
+                <!-- Editor will drop Hero Content module here -->
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+

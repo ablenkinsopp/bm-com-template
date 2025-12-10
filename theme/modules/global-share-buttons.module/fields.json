@@ -1,7 +1,6 @@
 [ {
   "id" : "7cff457d-a78b-2214-98a8-d5fa0c3037ff",
   "name" : "share_button",
-  "display_width" : null,
   "label" : "Share button",
   "required" : false,
   "locked" : true,
@@ -17,5 +16,6 @@
   "reordering_enabled" : true,
   "preset" : null,
   "type" : "choice",
+  "display_width" : null,
   "default" : [ "tw", "in", "fb", "re", "print" ]
 } ]

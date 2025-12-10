@@ -16,12 +16,12 @@
   "categories": [
     "BODY_CONTENT"
   ],
-  "icon": "fontawesome-5.14.0:YouTube",
   "host_template_types": [
     "PAGE",
     "BLOG_POST",
     "BLOG_LISTING"
   ],
   "label": "Lite YouTube",
+  "icon": "fontawesome-5.14.0:YouTube",
   "is_available_for_new_content": true
 }

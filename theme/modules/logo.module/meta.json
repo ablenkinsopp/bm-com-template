@@ -18,10 +18,10 @@
   "categories": [
     "media"
   ],
-  "icon": "../../images/module-icons/fresh-juice.svg",
   "host_template_types": [
     "ANY"
   ],
   "label": "Logo (Enhanced)",
+  "icon": "../../images/module-icons/fresh-juice.svg",
   "is_available_for_new_content": true
 }

@@ -7,12 +7,12 @@
     "BLOG_POST"
   ],
   "smart_type": "NOT_SMART",
-  "icon": "../../images/module-icons/fresh-juice.svg",
   "host_template_types": [
     "PAGE",
     "BLOG_POST",
     "BLOG_LISTING"
   ],
   "label": "Global Footer",
+  "icon": "../../images/module-icons/fresh-juice.svg",
   "is_available_for_new_content": true
 }

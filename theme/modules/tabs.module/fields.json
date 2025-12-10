@@ -1,7 +1,6 @@
 [ {
   "id" : "456d55eb-2088-a852-756d-e38f0d9b0573",
   "name" : "tabs",
-  "display_width" : null,
   "label" : "Tabs",
   "required" : false,
   "locked" : false,
@@ -14,29 +13,28 @@
   "children" : [ {
     "id" : "ca65efc5-1f48-5be0-abe4-a687342367dd",
     "name" : "tab_name",
-    "display_width" : null,
     "label" : "Tab name",
     "required" : true,
     "locked" : false,
-    "validation_regex" : "",
     "allow_new_line" : false,
-    "show_emoji_picker" : false,
     "type" : "text",
+    "display_width" : null,
     "default" : "Tab Name"
   }, {
     "id" : "cf506ee9-7adf-c947-2b99-e5c9e443fa18",
     "name" : "tab_content",
-    "display_width" : null,
     "label" : "Tab Content",
     "required" : false,
     "locked" : false,
     "type" : "richtext",
+    "display_width" : null,
     "default" : "<h2>What is Lorem Ipsum?</h2><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : [ {
     "tab_name" : "Tab 1",
     "tab_content" : "<h2>What is Lorem Ipsum?</h2><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>"

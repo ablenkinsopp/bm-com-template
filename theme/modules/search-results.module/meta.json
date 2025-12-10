@@ -29,12 +29,12 @@
   "categories": [
     "functionality"
   ],
-  "icon": "../../../mV0_d-web-default-modules_hubspot/img/icon/edited-search-1.svg",
   "host_template_types": [
     "PAGE",
     "BLOG_POST",
     "BLOG_LISTING"
   ],
   "label": "Search Results",
+  "icon": "../../../mV0_d-web-default-modules_hubspot/img/icon/edited-search-1.svg",
   "is_available_for_new_content": true
 }

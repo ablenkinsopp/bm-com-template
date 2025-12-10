@@ -1,7 +1,6 @@
 [ {
   "id" : "8fe8e03f-3f1d-92c0-1f9b-7320a9b3531c",
   "name" : "layout",
-  "display_width" : null,
   "label" : "Layout",
   "required" : true,
   "locked" : false,
@@ -11,5 +10,6 @@
   "reordering_enabled" : true,
   "preset" : null,
   "type" : "choice",
+  "display_width" : null,
   "default" : "row"
 } ]

@@ -1,0 +1,30 @@
+<section class='h-[75vh] max-h-[800px] relative w-full'>
+
+    <!-- Overlay -->
+    <div class='absolute top-0 h-full w-full bg-[#3466B8] mix-blend-multiply -z-2'>
+    </div>
+
+    <!-- Video -->
+    {% if module.video_file %}
+    <video class='absolute inset-0 w-full h-full object-cover -z-1 mix-blend-exclusion opacity-45'
+           autoplay loop muted playsinline>
+        <source src='{{ module.video_file }}' type='video/mp4'>
+    </video>
+    {% endif %}
+
+    <!-- Hero content -->
+    <div class='relative z-10 flex flex-col items-center justify-center h-full gap-6 text-center p-10 home-hero'>
+        <h1 class='flex flex-col !text-7xl !text-white !font-black'>
+            <span>{{ module.headline_top }}</span>
+            <span class='text-water'>{{ module.headline_bottom }}</span>
+        </h1>
+        <p class='text-2xl text-white max-w-[630px] font-light'>
+            {{ module.subtext }}
+        </p>
+        <a href='{{ module.button_url }}'
+           class='inline-flex items-center justify-center rounded uppercase overflow-hidden h-12 text-lg px-6 font-bold bg-turquoise !text-dark-blue'>
+            {{ module.button_text }}
+        </a>
+    </div>
+
+</section>

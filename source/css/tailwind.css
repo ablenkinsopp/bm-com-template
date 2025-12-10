@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
 @import "tailwindcss" source(none);
 
 @source "../../theme/**/*.html";
@@ -5,12 +6,32 @@
 @source "../js/farmerswife.js";
 @source "./**/*.css";
 
-
 @theme {
-  --color-cursor: #FFFFFF;
-  --color-cursor-500: #FFFFFF;
+  --color-cursor: #ffffff;
+  --color-cursor-500: #ffffff;
   --color-terminal: #000000;
   --color-terminal-500: #000000;
+
+  --font-sans: "Roboto", sans-serif;
+
+  --color-text-color: #b1b6c0;
+  --color-off-white: #fcfcfc;
+  --color-body-bg-color: #031d3c;
+  --color-muted-text: #afafaf;
+
+  --color-darkest-blue: #02162f;
+  --color-dark-blue: #031d3c;
+  --color-dark-blue-alt: #031431;
+  --color-light-blue: #30abff;
+  --color-bright-blue: #00aaff;
+  --color-turquoise: #43e3c2;
+  --color-water: #ccfaf2;
+  --color-saffron: #fac433;
+
+  --color-product-image-border: #334155;
+  --color-procuct-image-bg: #1e293b;
+
+  --shadow-product-image: 0 0 50px 10px #000;
 
   --font-cursive: "Caveat", cursive;
 
@@ -22,12 +43,130 @@
   --aspect-video: 16 / 9;
   --aspect-widescreen: 16 / 9;
   --aspect-ultrawide: 18 / 5;
-  --aspect-golden: 1.6180 / 1;
+  --aspect-golden: 1.618 / 1;
   --aspect-macbook: 16 / 10;
 
   --spacing-screenSinNav: calc(100vh - 5rem);
 }
 
+@layer base {
+    body {
+        font-family: var(--font-sans);
+        background-color: var(--color-body-bg-color);
+        color: var(--color-text-color);
+        margin: 0;
+        padding: 0;
+    }
+
+    .gradient-border {
+        background: linear-gradient(
+            90deg,
+            #43e3c2 0%,
+            #30abff 50%,
+            #43e3c2 100%
+        );
+        padding: 1px;
+    }
+
+    .v-gradient-border {
+        background: linear-gradient(180deg, #43e3c2 0%, #30abff 100%);
+    }
+
+    .home-hero {
+        background: linear-gradient(
+            135deg,
+            #031d3c 40.92%,
+            rgba(32, 66, 106, 0) 78.61%
+        );
+    }
+
+    .hero {
+        position: relative;
+        background-color: #031535;
+        background-image: linear-gradient(
+            90deg,
+            #041431 19.72%,
+            rgba(0, 0, 0, 0) 74.68%
+        );
+        background-size: auto;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        /* no blend mode needed for the gradient-only layer */
+    }
+
+    /* Image moved here, opacity applied here */
+    .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+
+        background-image: url('/hero-bg.png');
+        background-size: 102.909% 177.957%;
+        background-position: 0 -80.824px;
+        background-repeat: no-repeat;
+
+        opacity: 0.25; /* ← ADJUST THIS */
+        mix-blend-mode: lighten; /* ← OPTIONAL: only if you still want your original blend mode */
+        z-index: 0;
+    }
+
+    /* Ensure hero content stays above the pseudo-image */
+    .hero > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .gradient-border-right,
+    .gradient-border-left,
+    .gradient-border-top,
+    .gradient-border-bottom {
+        position: relative;
+    }
+
+    /* RIGHT */
+    .gradient-border-right::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: linear-gradient(180deg, #43e3c2 0%, #30abff 100%);
+    }
+
+    /* LEFT */
+    .gradient-border-left::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: linear-gradient(180deg, #43e3c2 0%, #30abff 100%);
+    }
+
+    /* TOP */
+    .gradient-border-top::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 1px;
+        background: linear-gradient(90deg, #43e3c2 0%, #30abff 100%);
+    }
+
+    /* BOTTOM */
+    .gradient-border-bottom::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background: linear-gradient(90deg, #43e3c2 0%, #30abff 100%);
+    }
+}
 
 /* Base */
 @import "./base/reset.css";

@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf './_temp' './_dist' && mkdir './_temp' './_dist'",
-    "fetch:hubspot": "hs fetch --overwrite /FreshJuice ./theme && ./scripts/post-fetch.sh",
-    "upload:hubspot": "hs upload ./theme /FreshJuiceDEV",
-    "watch:hubspot": "hs watch ./theme /FreshJuiceDEV",
+    "fetch:hubspot": "hs cms fetch /bm-tailwind-theme ./theme --overwrite && ./scripts/post-fetch.sh",
+    "upload:hubspot": "hs cms upload ./theme /bm-tailwind-theme",
+    "watch:hubspot": "hs cms watch ./theme /bm-tailwind-theme",
     "watch:tailwind": "npx @tailwindcss/cli -i ./source/css/tailwind.css -o ./theme/css/tailwind.css --watch",
     "build:tailwind": "npx @tailwindcss/cli -i ./source/css/tailwind.css -o ./theme/css/tailwind.css",
     "watch:js": "npx esbuild ./source/js/main.js --outfile=./theme/js/main.js --bundle --watch",

@@ -9,10 +9,10 @@
   "categories": [
     "body_content"
   ],
-  "icon": "fontawesome-5.14.0:Tools:SOLID",
   "host_template_types": [
     "PAGE"
   ],
   "label": "Card",
+  "icon": "fontawesome-5.14.0:Tools:SOLID",
   "is_available_for_new_content": true
 }

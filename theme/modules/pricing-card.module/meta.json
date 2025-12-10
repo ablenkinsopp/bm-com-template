@@ -6,10 +6,10 @@
     "BLOG_LISTING",
     "BLOG_POST"
   ],
-  "icon": "../../images/module-icons/table.svg",
   "host_template_types": [
     "PAGE"
   ],
   "label": "Pricing card",
+  "icon": "../../images/module-icons/table.svg",
   "is_available_for_new_content": true
 }
