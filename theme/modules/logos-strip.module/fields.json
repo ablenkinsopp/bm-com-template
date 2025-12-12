@@ -1,0 +1,59 @@
+[ {
+  "id" : "6a1d1aa6-7ab7-fb01-13d4-bd97c52b161e",
+  "name" : "logos",
+  "label" : "Logos",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 6,
+    "max" : 6,
+    "sorting_label_field" : null,
+    "default" : 6
+  },
+  "children" : [ {
+    "id" : "f74cb918-952f-2447-b653-9ee341680387",
+    "name" : "company_name",
+    "label" : "Company Name",
+    "inline_help_text" : "This will the alt tag displayed for screen readers etc",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Jeffries"
+  }, {
+    "picker" : "image",
+    "id" : "02ae5698-a96c-f935-0b8c-33a2abe5570c",
+    "name" : "company_logo",
+    "label" : "Company Logo",
+    "required" : true,
+    "locked" : false,
+    "type" : "file",
+    "display_width" : null,
+    "default" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/client%20logos/logo%20bar/raffeisen.png"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "company_name" : "Jeffries",
+    "company_logo" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/client%20logos/logo%20bar/raffeisen.png"
+  }, {
+    "company_name" : "Jeffries",
+    "company_logo" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/client%20logos/logo%20bar/raffeisen.png"
+  }, {
+    "company_name" : "Jeffries",
+    "company_logo" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/client%20logos/logo%20bar/raffeisen.png"
+  }, {
+    "company_name" : "Jeffries",
+    "company_logo" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/client%20logos/logo%20bar/raffeisen.png"
+  }, {
+    "company_name" : "Jeffries",
+    "company_logo" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/client%20logos/logo%20bar/raffeisen.png"
+  }, {
+    "company_name" : "Jeffries",
+    "company_logo" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/client%20logos/logo%20bar/raffeisen.png"
+  } ]
+} ]

@@ -1,0 +1,12 @@
+<div class='gradient-border rounded overflow-hidden w-full'>
+    <div class='bg-dark-blue-alt rounded pt-7 pb-10 text-center flex items-center justify-between flex-col gap-6'>
+        <h6 class="!text-water !font-bold uppercase">Trusted by industry leaders</h6>
+        <ul class='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 justify-center gap-4 gap-y-8 xl:gap-10 w-full'>
+          {% for item in module.logos %}
+            <li class='h-6 sm:h-7 md:h6 lg:h-7 flex justify-center'>
+              <img src="{{ item.company_logo }}" class="h-6 sm:h-7 md:h-6 lg:h-7 opacity-70" alt="{{ item.company_name }}" />
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

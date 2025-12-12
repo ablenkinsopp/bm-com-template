@@ -2,7 +2,9 @@
   templateType: global_partial
   label: Footer
 -->
-<footer class="footer bg-gradient-135 from-amber-100 via-red-100 to-orange-200">
+{% module "navigation-bar" path="../../modules/global-footer", label="Global Footer", no_wrapper=True %}
+
+<!-- <footer class="footer bg-gradient-135 from-amber-100 via-red-100 to-orange-200">
   {% dnd_area "footer"
     label="Footer",
     class="footer__container max-w-full [&_.dnd-section]:py-10 [&_.dnd-section]:md:py-20"
@@ -19,4 +21,4 @@
     {% end_dnd_section %}
 
   {% end_dnd_area %}
-</footer>
+</footer> -->

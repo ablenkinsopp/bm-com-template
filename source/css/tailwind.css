@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap");
 @import "tailwindcss" source(none);
 
 @source "../../theme/**/*.html";
@@ -50,57 +50,41 @@
 }
 
 @layer base {
-    body {
-        font-family: var(--font-sans);
-        background-color: var(--color-body-bg-color);
-        color: var(--color-text-color);
-        margin: 0;
-        padding: 0;
-    }
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-body-bg-color);
+    color: var(--color-text-color);
+    margin: 0;
+    padding: 0;
+  }
 
-    .gradient-border {
-        background: linear-gradient(
-            90deg,
-            #43e3c2 0%,
-            #30abff 50%,
-            #43e3c2 100%
-        );
-        padding: 1px;
-    }
+  .home-hero {
+    background: linear-gradient(
+      135deg,
+      #031d3c 40.92%,
+      rgba(32, 66, 106, 0) 78.61%
+    );
+  }
+}
 
-    .v-gradient-border {
-        background: linear-gradient(180deg, #43e3c2 0%, #30abff 100%);
-    }
+@utility hero {
+    position: relative;
+    background-color: #031535;
+    background-image: linear-gradient(
+      90deg,
+      #041431 19.72%,
+      rgba(0, 0, 0, 0) 74.68%
+    );
+    background-size: auto;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    /* no blend mode needed for the gradient-only layer */
 
-    .home-hero {
-        background: linear-gradient(
-            135deg,
-            #031d3c 40.92%,
-            rgba(32, 66, 106, 0) 78.61%
-        );
-    }
-
-    .hero {
-        position: relative;
-        background-color: #031535;
-        background-image: linear-gradient(
-            90deg,
-            #041431 19.72%,
-            rgba(0, 0, 0, 0) 74.68%
-        );
-        background-size: auto;
-        background-position: 0 0;
-        background-repeat: no-repeat;
-        /* no blend mode needed for the gradient-only layer */
-    }
-
-    /* Image moved here, opacity applied here */
-    .hero::before {
-        content: '';
+    &&:before  {
+        content: "";
         position: absolute;
         inset: 0;
 
-        background-image: url('/hero-bg.png');
         background-size: 102.909% 177.957%;
         background-position: 0 -80.824px;
         background-repeat: no-repeat;
@@ -109,22 +93,25 @@
         mix-blend-mode: lighten; /* ← OPTIONAL: only if you still want your original blend mode */
         z-index: 0;
     }
+}
+/* ----------------------------- */
+/* BASE GRADIENT BORDER UTILITY */
+/* ----------------------------- */
+@utility gradient-border {
+    background: linear-gradient(90deg, #43e3c2 0%, #30abff 50%, #43e3c2 100%);
+    padding: 1px;
+}
 
-    /* Ensure hero content stays above the pseudo-image */
-    .hero > * {
-        position: relative;
-        z-index: 1;
-    }
+/* ----------------------------- */
+/* POSITION WRAPPERS             */
+/* ----------------------------- */
 
-    .gradient-border-right,
-    .gradient-border-left,
-    .gradient-border-top,
-    .gradient-border-bottom {
-        position: relative;
-    }
-
-    /* RIGHT */
-    .gradient-border-right::after {
+/* ----------------------------- */
+/* RIGHT BORDER                   */
+/* ----------------------------- */
+@utility gradient-border-right {
+    position: relative;
+    &::after {
         content: '';
         position: absolute;
         right: 0;
@@ -133,9 +120,14 @@
         width: 1px;
         background: linear-gradient(180deg, #43e3c2 0%, #30abff 100%);
     }
+}
 
-    /* LEFT */
-    .gradient-border-left::before {
+/* ----------------------------- */
+/* LEFT BORDER                   */
+/* ----------------------------- */
+@utility gradient-border-left {
+    position: relative;
+    &::before {
         content: '';
         position: absolute;
         left: 0;
@@ -144,9 +136,14 @@
         width: 1px;
         background: linear-gradient(180deg, #43e3c2 0%, #30abff 100%);
     }
+}
 
-    /* TOP */
-    .gradient-border-top::before {
+/* ----------------------------- */
+/* TOP BORDER                    */
+/* ----------------------------- */
+@utility gradient-border-top {
+    position: relative;
+    &::before {
         content: '';
         position: absolute;
         left: 0;
@@ -155,9 +152,14 @@
         height: 1px;
         background: linear-gradient(90deg, #43e3c2 0%, #30abff 100%);
     }
+}
 
-    /* BOTTOM */
-    .gradient-border-bottom::after {
+/* ----------------------------- */
+/* BOTTOM BORDER                 */
+/* ----------------------------- */
+@utility gradient-border-bottom {
+    position: relative;
+    &::after {
         content: '';
         position: absolute;
         left: 0;
@@ -167,6 +169,7 @@
         background: linear-gradient(90deg, #43e3c2 0%, #30abff 100%);
     }
 }
+
 
 /* Base */
 @import "./base/reset.css";

@@ -1,0 +1,68 @@
+[ {
+  "id" : "b28419d2-ef1e-10b5-e6d3-c173f2f73f50",
+  "name" : "cards",
+  "label" : "Cards",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "120f8ed2-8649-b1ee-e0bb-9694bcbf2157",
+    "name" : "type",
+    "label" : "Type",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "Company News", "Company News" ], [ "Product Update", "Product Update" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "Company News"
+  }, {
+    "id" : "18ce9b6d-a0e5-e8f2-85b1-f9320c117888",
+    "name" : "summary",
+    "label" : "Summary",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "BlueMatrix Acquires RANOS to Accelerate Innovation and Expand its Asia-Pacific Footprint"
+  }, {
+    "id" : "1240e4c2-be70-ea09-8105-72c26b655900",
+    "name" : "url_field",
+    "label" : "URL",
+    "required" : true,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : 202094744663,
+      "href" : null,
+      "type" : "CONTENT"
+    }
+  }, {
+    "id" : "2ab8ba1a-6220-43ff-beeb-bc94b446b2d8",
+    "name" : "link_text",
+    "label" : "Link Text",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Read Full Post"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+} ]

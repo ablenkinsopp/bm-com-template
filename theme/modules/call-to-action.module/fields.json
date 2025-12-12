@@ -1,0 +1,55 @@
+[ {
+  "picker" : "image",
+  "id" : "c4cc2129-ecf0-6acb-ddf6-8641615e2720",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : true,
+  "locked" : false,
+  "type" : "file",
+  "display_width" : null,
+  "default" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/hero-bg-1.png"
+}, {
+  "id" : "d31a4758-ae3c-1068-609e-81ab9f6bc6ca",
+  "name" : "title",
+  "label" : "Title",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Get Started Today"
+}, {
+  "id" : "5b98b4aa-2a7d-2bcf-5678-f044350122f2",
+  "name" : "text_field",
+  "label" : "Text",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu        enim posuere mollis."
+}, {
+  "id" : "99f6ed1d-bb59-1e4f-f01e-5ffa8419503c",
+  "name" : "button_url",
+  "label" : "Button URL",
+  "required" : true,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+  "type" : "url",
+  "display_width" : null,
+  "default" : {
+    "content_id" : 202094744663,
+    "href" : null,
+    "type" : "CONTENT"
+  }
+}, {
+  "id" : "60ee9f14-d20d-efc6-62fb-76ed296f756e",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Request Demo"
+} ]

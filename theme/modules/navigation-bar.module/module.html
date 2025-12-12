@@ -22,7 +22,7 @@
           mobileMenuOpen: false
         }">
 
-  <nav class="flex items-center p-4 py-2 xl:px-10 lg:py-4 lg:gap-4 {{ 'relative' if not module.full_width_dropdown_menus }}" aria-label="Global">
+  <nav class="flex items-center p-4 py-2 lg:py-4 xl:px-10 lg:gap-4 {{ 'relative' if not module.full_width_dropdown_menus }}" aria-label="Global">
 
     {# Logo #}
     <div class="flex-1">
@@ -54,7 +54,7 @@
                  @click="$event.preventDefault(); open=!open;"
                  {%- endif -%}
                  class="cursor-pointer uppercase flex items-center gap-1.5 text-sm group">
-                <span class=" text-off-white group-hover:text-turquoise">{{ child.label }}</span>
+                <span class="font-bold text-off-white group-hover:text-turquoise">{{ child.label }}</span>
                 {%- if child.children -%}
                   <svg class="size-5 flex-none  text-off-white group-hover:text-turquoise" :class="open?'rotate-180':''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
                 {%- endif -%}
@@ -153,14 +153,14 @@
     <div class="hidden lg:flex flex-1 justify-end items-center gap-2">
       {% for cta in module.call_to_actions %}
         {% if cta.style == "ghost" %}
-          {% set cta_style = "text-off-white hover:bg-white/20" %}
-          {% set cta_inner_style = "" %}
+          {% set cta_inner_style = "text-off-white hover:bg-white/20" %}
+          {% set cta_outer_style = "" %}
         {% elif cta.style == "filled" %}
-          {% set cta_style = "bg-turquoise text-dark-blue" %}
-          {% set cta_inner_style = "" %}
+          {% set cta_inner_style = "bg-turquoise text-dark-blue" %}
+          {% set cta_outer_style = "" %}
         {% else %}
-          {% set cta_style = "text-turquoise bg-dark-blue" %}
-          {% set cta_inner_style = "gradient-border p-px" %}
+          {% set cta_inner_style = "text-turquoise bg-dark-blue" %}
+          {% set cta_outer_style = "gradient-border p-px" %}
         {% endif %}
         {% set href = cta.link.url.href %}
         {% if cta.link.url.type is equalto "EMAIL_ADDRESS" %}
@@ -171,8 +171,8 @@
            {% if cta.link.open_in_new_tab %}target="_blank"{% endif %}
           {% if cta.link.rel %}rel="{{ cta.link.rel }}"{% endif %}
         >
-            <div class="inline-flex items-center justify-center rounded uppercase overflow-hidden h-10 {{cta_inner_style}}">
-                <div class="rounded flex items-center text-sm px-5 h-full {{cta_style}}">
+            <div class="inline-flex items-center justify-center rounded uppercase overflow-hidden h-10 {{cta_outer_style}}">
+                <div class="rounded flex items-center text-sm px-5 h-full {{cta_inner_style}}">
                     {{ cta.title | striptags | safe }}
                 </div>
             </div>
@@ -279,18 +279,18 @@
       <div class="sticky bottom-0 grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-100 items-center text-center">
         {% for cta in module.call_to_actions %}
           {% if cta.style == "ghost" %}
-            {% set cta_style = "button button--ghost" %}
+            {% set cta_inner_style = "button button--ghost" %}
           {% elif cta.style == "primary" %}
-            {% set cta_style = "button" %}
+            {% set cta_inner_style = "button" %}
           {% else %}
-            {% set cta_style = "text-sm font-semibold leading-6 text-current" %}
+            {% set cta_inner_style = "text-sm font-semibold leading-6 text-current" %}
           {% endif %}
           {% set href = cta.link.url.href %}
           {% if cta.link.url.type is equalto "EMAIL_ADDRESS" %}
             {% set href = "mailto:" + href %}
           {% endif %}
           <a href="{{ href }}"
-             class="{{ cta_style }} button--square whitespace-nowrap"
+             class="{{ cta_inner_style }} button--square whitespace-nowrap"
              {% if cta.link.open_in_new_tab %}target="_blank"{% endif %}
             {% if cta.link.rel %}rel="{{ cta.link.rel }}"{% endif %}
           >{{ cta.title | striptags | safe }}</a>

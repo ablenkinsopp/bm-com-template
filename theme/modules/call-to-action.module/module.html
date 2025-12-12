@@ -1,0 +1,27 @@
+<style>
+	.hero::before {
+		background-image: url('{{ module.background_image }}');
+	}
+</style>
+
+<div class="hero w-full p-4 px-10">
+  <div class="relative z-1 mx-auto max-w-[1600px]">
+    <div class="py-24 flex flex-col gap-6 justify-center items-center">
+      <h2 class="!text-white !font-light !text-3xl sm:!text-4xl text-center">{{ module.title }}</h2>
+      <p class="text-lg text-white text-center lg:text-xl">
+        {{ module.text_field }}
+      </p>
+      <a href="{{ module.button_url }}" type="button" class="cursor-pointer undefined">
+        <div
+          class="inline-flex items-center justify-center rounded uppercase overflow-hidden h-10"
+        >
+          <div
+            class="text-sm px-5 h-full bg-turquoise text-dark-blue rounded flex items-center gap-2"
+          >
+            <span>{{ module.button_text }}</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

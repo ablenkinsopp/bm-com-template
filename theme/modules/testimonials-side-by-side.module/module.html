@@ -6,42 +6,33 @@
   {% set grid_col_class = 'lg:grid-cols-3' %}
 {% endif %}
 
-<div class="not-prose grid grid-cols-1 max-w-lg lg:max-w-full place-items-center lg:place-items-baseline mx-auto {{ grid_col_class or 'max-w-2xl' }}">
-  {% for item in module.quotes_group %}
-    <div class="w-full border-gray-300 flex flex-col place-content-center justify-center gap-4 p-12 {{ 'border-t lg:border-t-0 lg:border-l' if loop.index0 }}">
-      {% if item.company_logo.src %}
-        {% set sizeAttrs = 'width="{{ item.company_logo.width|escape_attr }}" height="{{ item.company_logo.height|escape_attr }}"' %}
-        {% if item.company_logo.size_type == 'auto' %}
-          {% set sizeAttrs = 'width="{{ item.company_logo.width|escape_attr }}" height="{{ item.company_logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-        {% elif item.company_logo.size_type == 'auto_custom_max' %}
-          {% set sizeAttrs = 'width="{{ item.company_logo.max_width|escape_attr }}" height="{{ item.company_logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-        {% endif %}
-        {% set loadingAttr = item.company_logo.loading != 'disabled' ? 'loading="{{ item.company_logo.loading|escape_attr }}"' : '' %}
-        <img src="{{ item.company_logo.src|escape_url }}" alt="{{ item.company_logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
-      {% endif %}
-
-      <blockquote class="text-lg">
-        <p class="m-0">{{ item.blockquote }}</p>
-      </blockquote>
-
-      {% if item.author_photo or item.author_name %}
-        <div class="flex items-center gap-4">
-          {% if item.author_photo %}
-
-            {% if item.author_photo.src %}
-              <img class="object-cover size-12 rounded-full"
-                   width="48" height="48"
-                   src="{{ resize_image_url(item.author_photo.src, 48, 48, 48) }}"
-                   alt="{{ item.author_photo.alt|escape_attr }}" loading="lazy">
-            {% endif %}
-          {% endif %}
-
-          <div class="gap-2 text-base break-words">
-            <p class="font-bold">{{ item.author_name or "" }}</p>
-            <p>{{ item.author_job_title or "" }}</p>
-          </div>
+<div class="not-prose grid grid-cols-1 max-w-lg lg:max-w-full place-items-center lg:place-items-baseline mx-auto gap-10 {{ grid_col_class or 'max-w-2xl' }}">
+    {% for item in module.quotes_group %}
+        <div class="w-full flex flex-col place-content-center lg:gap-2">
+            <div class="w-full flex gap-2">
+                <span class='font-bold text-5xl sm:text-8xl bg-[linear-gradient(0deg,#30ABFF_0%,#43E3C2_100%)] bg-clip-text text-transparent'>“</span>
+                <blockquote>
+                    <p class="text-white text-lg md:text-xl text-center lg:text-left pt-2 sm:pt-4">{{ item.blockquote }}</p>
+                </blockquote>
+                <span class='h-5 sm:h-8 self-end font-bold text-5xl sm:text-8xl bg-[linear-gradient(0deg,#30ABFF_0%,#43E3C2_100%)] bg-clip-text text-transparent lg:hidden'>”</span>
+            </div>
+            <div class="flex items-center lg:items-start lg:pl-12 flex-col gap-4 pt-4">
+                {% if item.company_logo.src %}
+                    {% set sizeAttrs = 'width="{{ item.company_logo.width|escape_attr }}" height="{{ item.company_logo.height|escape_attr }}"' %}
+                    {% if item.company_logo.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ item.company_logo.width|escape_attr }}" height="{{ item.company_logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                    {% elif item.company_logo.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ item.company_logo.max_width|escape_attr }}" height="{{ item.company_logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                    {% endif %}
+                    {% set loadingAttr = item.company_logo.loading != 'disabled' ? 'loading="{{ item.company_logo.loading|escape_attr }}"' : '' %}
+                    <img class="h-7" src="{{ item.company_logo.src|escape_url }}" alt="{{ item.company_logo.alt|escape_attr }}" {{ loadingAttr }}>
+                {% endif %}
+                <div class='text-water text-base flex flex-col gap text-center  lg:text-left'>
+                    <p>{{ item.author_name }}</p>
+                    <p>{{ item.author_job_title }}</p>
+                    <p class="font-bold">{{ item.company_name }}</p>
+                </div>
+            </div>
         </div>
-      {% endif %}
-    </div>
-  {% endfor %}
+    {% endfor %}
 </div>

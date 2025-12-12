@@ -11,82 +11,14 @@
   "display_width" : null,
   "default" : {
     "size_type" : "auto_custom_max",
-    "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/fresh-juice-logo.png",
-    "alt" : "fresh-juice-logo",
+    "src" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/bm-logo-light.svg",
+    "alt" : "bm-logo-light",
     "loading" : "lazy",
-    "width" : 512,
-    "height" : 512,
-    "max_width" : 150,
-    "max_height" : 150
+    "width" : 300,
+    "height" : 54,
+    "max_width" : 300,
+    "max_height" : 54
   }
-}, {
-  "id" : "fb8e92c5-778c-3fba-9247-57a7b5ba38fd",
-  "name" : "about_company",
-  "label" : "About Company",
-  "required" : false,
-  "locked" : true,
-  "type" : "richtext",
-  "display_width" : null,
-  "default" : "Making the world a better place through constructing elegant hierarchies."
-}, {
-  "id" : "1d319af1-97fc-22d9-2c08-c93d94d4a647",
-  "name" : "social_links",
-  "label" : "Social Links",
-  "required" : false,
-  "locked" : true,
-  "occurrence" : {
-    "min" : null,
-    "max" : null,
-    "sorting_label_field" : "31706745-619d-a878-409b-15c5286f278a",
-    "default" : 4
-  },
-  "children" : [ {
-    "id" : "649a4a3d-9a2d-1989-6a9b-9963451352d6",
-    "name" : "link",
-    "label" : "Social Link",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "https://twitter.com/"
-  }, {
-    "id" : "31706745-619d-a878-409b-15c5286f278a",
-    "name" : "title",
-    "label" : "Title",
-    "required" : true,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "social_links.link",
-      "controlling_value_regex" : null,
-      "property" : null,
-      "operator" : "NOT_EMPTY",
-      "access" : null
-    },
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Follow us on Twitter"
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : [ {
-    "link" : "https://facebook.com/",
-    "title" : "Follow us on Facebook"
-  }, {
-    "link" : "https://linkedin.com/",
-    "title" : "Follow us on LinedIn"
-  }, {
-    "link" : "https://twitter.com/",
-    "title" : "Follow us on Twitter"
-  }, {
-    "link" : "https://threads.net/",
-    "title" : "Follow us on Threads"
-  } ]
 }, {
   "id" : "cd19d4bf-e90d-f08a-7153-c2975b71d730",
   "name" : "footer_menu",
@@ -96,7 +28,7 @@
   "locked" : true,
   "type" : "menu",
   "display_width" : null,
-  "default" : 89839873245
+  "default" : 202287332761
 }, {
   "id" : "f86c63ec-cd18-adf7-bd87-b3fe8347d44e",
   "name" : "copyrights",
@@ -105,15 +37,5 @@
   "locked" : true,
   "type" : "richtext",
   "display_width" : null,
-  "default" : "©&nbsp;{{ year }} Your Company, Inc. All&nbsp;rights&nbsp;reserved."
-}, {
-  "id" : "fd71c31f-0e8e-b6a7-6275-965d8bf4061b",
-  "name" : "footer_legal_menu",
-  "label" : "Footer Legal Menu (optional)",
-  "inline_help_text" : "The footer legal menu consists of links or options typically placed at the bottom of a webpage, providing access to legal information such as terms and conditions, privacy policies, and copyright notices.",
-  "required" : false,
-  "locked" : true,
-  "type" : "menu",
-  "display_width" : null,
-  "default" : 89839894221
+  "default" : "Copyright © {{ year }} BlueMatrix. All rights reserved."
 } ]

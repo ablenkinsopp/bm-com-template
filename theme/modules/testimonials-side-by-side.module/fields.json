@@ -39,11 +39,11 @@
     "allow_new_line" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "CEO of Bananaless"
+    "default" : "Officer"
   }, {
-    "id" : "94df8fab-dd6a-40ac-a1cc-dee7c2b6a848",
-    "name" : "author_photo",
-    "label" : "Author Photo",
+    "id" : "edf48a77-00c4-38af-4c9c-d69949814f60",
+    "name" : "company_logo",
+    "label" : "Company Logo",
     "required" : true,
     "locked" : false,
     "responsive" : true,
@@ -52,27 +52,6 @@
     "type" : "image",
     "display_width" : null,
     "default" : {
-      "size_type" : "auto",
-      "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/_8c3ff510-0637-43e4-b1c0-54a6e26f8c45.jpeg",
-      "alt" : "Super Banana",
-      "loading" : "lazy",
-      "width" : 1024,
-      "height" : 1024,
-      "max_width" : 1024,
-      "max_height" : 1024
-    }
-  }, {
-    "id" : "edf48a77-00c4-38af-4c9c-d69949814f60",
-    "name" : "company_logo",
-    "label" : "Company Logo",
-    "required" : false,
-    "locked" : false,
-    "responsive" : true,
-    "resizable" : true,
-    "show_loading" : false,
-    "type" : "image",
-    "display_width" : null,
-    "default" : {
       "size_type" : "auto_custom_max",
       "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/logoipsum-297.svg",
       "alt" : "logoipsum-297",
@@ -82,6 +61,16 @@
       "max_width" : 100,
       "max_height" : 20
     }
+  }, {
+    "id" : "a3d3782c-cd1f-c3e3-f8d8-c3f428533538",
+    "name" : "company_name",
+    "label" : "Company Name",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Company Name"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -89,52 +78,43 @@
   "type" : "group",
   "display_width" : null,
   "default" : [ {
+    "blockquote" : "BlueMatrix has proven, year-in and year-out, its strategic value. It is far more than a publishing system and we regard them as an extension of our own organization.",
+    "author_name" : "Louis Giglio",
+    "author_job_title" : "Officer",
     "company_logo" : {
       "size_type" : "auto_custom_max",
-      "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/logoipsum-297.svg",
+      "src" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/client%20logos/testimonials/b-riley.png",
       "alt" : "logoipsum-297",
       "loading" : "lazy",
-      "width" : 202,
-      "height" : 40,
-      "max_width" : 100,
-      "max_height" : 20
+      "height" : 30,
+      "max_width" : 30
     },
-    "blockquote" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled book.",
-    "author_name" : "Explosive Banana",
-    "author_job_title" : "CEO of Bananaless",
-    "author_photo" : {
-      "size_type" : "auto",
-      "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/_8c3ff510-0637-43e4-b1c0-54a6e26f8c45.jpeg",
-      "alt" : "Super Banana",
-      "loading" : "lazy",
-      "width" : 1024,
-      "height" : 1024,
-      "max_width" : 1024,
-      "max_height" : 1024
-    }
+    "company_name" : "B. Riley Securities"
   }, {
+    "blockquote" : "BlueMatrix has proven, year-in and year-out, its strategic value. It is far more than a publishing system and we regard them as an extension of our own organization.",
+    "author_name" : "Louis Giglio",
+    "author_job_title" : "Officer",
     "company_logo" : {
       "size_type" : "auto_custom_max",
-      "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/logoipsum-297.svg",
+      "src" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/client%20logos/testimonials/b-riley.png",
       "alt" : "logoipsum-297",
       "loading" : "lazy",
-      "width" : 202,
-      "height" : 40,
-      "max_width" : 100,
-      "max_height" : 20
+      "height" : 30,
+      "max_width" : 30
     },
-    "blockquote" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled book.",
-    "author_name" : "Explosive Banana",
-    "author_job_title" : "CEO of Bananaless",
-    "author_photo" : {
-      "size_type" : "auto",
-      "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/_8c3ff510-0637-43e4-b1c0-54a6e26f8c45.jpeg",
-      "alt" : "Super Banana",
+    "company_name" : "B. Riley Securities"
+  }, {
+    "blockquote" : "BlueMatrix has proven, year-in and year-out, its strategic value. It is far more than a publishing system and we regard them as an extension of our own organization.",
+    "author_name" : "Louis Giglio",
+    "author_job_title" : "Officer",
+    "company_logo" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/client%20logos/testimonials/b-riley.png",
+      "alt" : "logoipsum-297",
       "loading" : "lazy",
-      "width" : 1024,
-      "height" : 1024,
-      "max_width" : 1024,
-      "max_height" : 1024
-    }
+      "height" : 30,
+      "max_width" : 30
+    },
+    "company_name" : "B. Riley Securities"
   } ]
 } ]

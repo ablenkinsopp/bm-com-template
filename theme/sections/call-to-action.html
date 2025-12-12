@@ -9,21 +9,21 @@
   background_image={
     "backgroundPosition": "MIDDLE_CENTER",
     "backgroundSize": "cover",
-    "imageUrl": context.background_image or get_asset_url("../images/large-placeholder-image.png")
   },
+  full_width="true"
   max_width={{ context.max_width or 700 }},
   padding={
     "default": {
-      "top": 140,
-      "right": 20,
-      "bottom": 160,
-      "left": 20
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
     },
     "mobile": {
-      "top": 80,
-      "right": 20,
-      "bottom": 80,
-      "left": 20
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
     }
   },
   vertical_alignment="MIDDLE"
@@ -34,7 +34,7 @@
         "default": {
           "top": 0,
           "right": 0,
-          "bottom": 40,
+          "bottom": 0,
           "left": 0
         },
         "mobile": {
@@ -46,22 +46,7 @@
       }
     %}
       {% dnd_module
-        path="@hubspot/rich_text",
-        html={{ context.content or '<div style="text-align: center"><h2>Subscribe for Weekly Theme News</h2><p>Subscribe to our weekly emails, so you will be up to date with our theme updates.</p></div>' }}
-      %}
-      {% end_dnd_module %}
-    {% end_dnd_row %}
-    {% dnd_row %}
-      {% dnd_module
-        path="../modules/button",
-        button_text={{ context.button_text or "Subscribe" }},
-        styles={
-          "alignment": {
-            "alignment": {
-              "horizontal_align": "CENTER"
-            }
-          }
-        }
+        path="../modules/call-to-action",
       %}
       {% end_dnd_module %}
     {% end_dnd_row %}

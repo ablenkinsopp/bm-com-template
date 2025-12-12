@@ -1,0 +1,29 @@
+{% if module.cards | length == 2 %}
+  {% set grid_col_class = 'md:grid-cols-2' %}
+{% endif %}
+
+{% if module.cards | length == 3 %}
+  {% set grid_col_class = 'md:grid-cols-3' %}
+{% endif %}
+
+{% if module.cards | length == 4 %}
+  {% set grid_col_class = 'md:grid-cols-2 lg:grid-cols-4' %}
+{% endif %}
+
+<div class="grid grid-cols-1 gap-6 lg:gap-10 w-full {{ grid_col_class }}">
+  {% for item in module.cards %}
+  <a
+    href="{{ item.url_field }}"
+    class="group flex flex-col text-left gradient-border-bottom gap-4 p-6 bg-dark-blue hover:bg-white/10"
+  >
+    <p class="text-water text-sm uppercase">{{ item.type }}</p>
+    <p class="text-lg text-off-white">{{ item.summary }}</p>
+    <p
+      href="{{ item.url_field }}"
+      class="text-light-blue text-lg underline group-hover:text-turquoise"
+    >
+      {{ item.link_text }}
+    </p>
+  </a>
+  {% endfor %}
+</div>

@@ -184,25 +184,25 @@ body {
 /* Paragraphs */
 
 p {
-  {{ body_font.style }};
+  /* {{ body_font.style }}; */
 }
 
 /* Anchors */
 
 a {
   /*{{ anchor_font.style }};*/
-  color: {{ anchor_font.color }};
+  /* color: {{ anchor_font.color }}; */
 }
 
 a:hover,
 a:focus {
   /*{{ anchor_font.style }};*/
-  color: {{ color_variant(anchor_font.color, -40) }};
+  /*color: {{ color_variant(anchor_font.color, -40) }};*/
 }
 
 a:active {
   /*{{ anchor_font.style }};*/
-  color: {{ color_variant(anchor_font.color, 40) }};
+  /*color: {{ color_variant(anchor_font.color, 40) }};*/
 }
 
 /* Headings */
@@ -249,10 +249,10 @@ h5,
 
 h6,
 .h6 {
-  {{ h6_font.style }};
+  /* {{ h6_font.style }};
   color: {{ h6_font.color }};
   font-size: {{ h6_font.size ~ h6_font.size_unit }};
-  text-transform: {{ h6_text_transform }};
+  text-transform: {{ h6_text_transform }}; */
 }
 
 /* Blockquote */
@@ -597,7 +597,7 @@ tfoot td {
 .footer span,
 .footer li,
 .footer img {
-  color: {{ footer_font_color }};
+  /*color: {{ footer_font_color }};*/
 }
 
 {###########################################################################}

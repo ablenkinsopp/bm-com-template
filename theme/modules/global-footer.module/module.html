@@ -2,8 +2,8 @@
   {# Collection from FontAwesome #}
   {% if link is string_containing "facebook.com/" %}
     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" width="24" viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg>
-  {% elif link is string_containing "twitter.com/" or link is string_containing "://x.com/" %}
-    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" width="24" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+  {% elif link is string_containing "://x.com/" %}
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path></svg>
   {% elif link is string_containing "instagram.com/" %}
     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" width="24" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
   {% elif link is string_containing "threads.net/" %}
@@ -13,7 +13,7 @@
   {% elif link is string_containing "youtube.com/" %}
     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" width="24" viewBox="0 0 576 512"><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/></svg>
   {% elif link is string_containing "linkedin.com/" %}
-    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" width="24" viewBox="0 0 448 512"><path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24ZM96,176a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0ZM88,96a12,12,0,1,1,12-12A12,12,0,0,1,88,96Zm96,80a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140Z"></path></svg>
   {% elif link is string_containing "pinterest.com/" %}
     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" width="24" viewBox="0 0 496 512"><path d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3 .8-3.4 5-20.3 6.9-28.1 .6-2.5 .3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"/></svg>
   {% elif link is string_containing "discord.com/" %}
@@ -27,71 +27,90 @@
   {% endif %}
 {% endmacro %}
 
-<footer aria-labelledby="footer-heading">
-  <h2 id="footer-heading" class="sr-only">Footer</h2>
-  <div class="mx-auto"> {# px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32 #}
-    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-      <div class="space-y-8">
-        {% if module.logo.src %}
-          {% set sizeAttrs = 'width="{{ module.logo.width / 2 }}" height="{{ module.logo.height / 2 }}"' %}
-          {% if module.logo.size_type == 'auto' %}
-            {% set sizeAttrs = 'width="{{ module.logo.width / 2 }}" height="{{ module.logo.height / 2 }}"' %}
-          {% elif module.logo.size_type == 'auto_custom_max' %}
-            {% set sizeAttrs = 'width="{{ module.logo.max_width / 2 }}" height="{{ module.logo.max_height / 2 }}"' %}
-          {% endif %}
-           {% set loadingAttr = module.logo.loading != 'disabled' ? 'loading="{{ module.logo.loading }}"' : '' %}
-          <img class="h-14 w-auto" src="{{ module.logo.src }}" alt="{{ module.logo.alt or 'Company' }} logo" {{ loadingAttr }} {{ sizeAttrs }}>
-        {% endif %}
-        <div class="text-base leading-6 text-stone-600 max-w-80 [&>*]:p-0 [&>*]:m-0">{{ module.about_company }}</div>
-        {% if module.social_links %}
-        <div class="flex space-x-6">
-          {% for item in module.social_links %}
-            <a href="{{ item.link }}" class="text-stone-600 hover:text-stone-900 [&:hover>svg]:scale-110 no-underline [&>svg]:h-6 [&>svg]:w-6" rel="nofollow" target="_blank">
-              <span class="sr-only">{{ item.title }}</span>
-              {{ get_social_icon(item.link) }}
-            </a>
-          {% endfor %}
-        </div>
-        {% endif %}
-      </div>
-      <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+<footer class="bg-dark-blue mx-auto p-4 lg:p-10 w-full">
+    <div class="mx-auto max-w-[1600px] w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
         {% if module.footer_menu %}
-        {% set footer_menu = menu(module.footer_menu) %}
-        {% for child in footer_menu.children %}
-          {% if loop.index % 2 == 1 %}<div class="md:grid md:grid-cols-2 md:gap-8">{% endif %}
-            <div class="{{ "mt-10 md:mt-0" if loop.index % 2 == 0 }}">
-              <h3 class="text-lg font-semibold leading-6 text-stone-900">{{ child.label }}</h3>
-              <ul role="list" class="mt-6 space-y-4">
-                {% for children in child.children %}
-                <li>
-                  <a href="{{ children.url }}" class="text-base leading-6 text-stone-600! hover:text-stone-900! no-underline hover:underline">{{ children.label }}</a>
-                </li>
-                {% endfor %}
-              </ul>
+            {% set footer_menu = menu(module.footer_menu) %}
+            {% for section in footer_menu.children %}
+                <div class="py-4 md:p-8 flex flex-1 flex-col gap-2 md:gap-8">
+                    <p class="text-water text-sm uppercase">{{ section.label }}</p>
+                    <div class="flex flex-col gap-2">
+                      {% for item in section.children %}
+                        <a class="flex items-center gap-2 hover:text-water text-turquoise cursor-pointer min-h-6" href="{{ item.url }}">
+            {% if item.url is string_containing "linkedin.com" or item.url is string_containing "://x.com/" %}
+                <span class='text-white text-lg'>{{ get_social_icon(item.url) }}</span>
+            {% endif %}
+            {{ item.label }}
+        </a>
+                      {% endfor %}
+                  </div>
+                  
+                </div>
+            {% endfor %}
+        {% endif %}
+        <div class="py-4 md:p-8 flex flex-1 flex-col gap-2 md:gap-8">
+            <p class="text-water text-sm uppercase">Locations</p>
+            <div class="flex flex-col text-text-color">
+                <p class="font-bold text-white">
+                    Durham, NC (Global HQ)
+                </p>
+                <p>320 Blackwell Street</p>
+                <p>Suite 300</p>
+                <p>Durham, NC 27701</p>
+                <p>United States</p>
             </div>
-          {% if loop.index % 2 == 0 %}</div>{% endif %}
-        {% endfor %}
-        {% else %}
-          <span><!-- 🥑 --></span>
-        {% endif %}
-      </div>
+            <ul class="flex flex-col gap-4">
+                <a href="/" class="flex items-center gap-2 hover:!text-water !text-turquoise cursor-pointer min-h-6">View All Locations</a>
+            </ul>
+        </div>
+        <div class="-mx-4 md:mx-0 p-4 py-4 md:p-8 flex flex-1 flex-col gap-2 md:gap-8 bg-[#01102A] md:rounded">
+            <p class="!text-water text-sm uppercase">Contact</p>
+            <ul class="flex flex-col gap-4">
+                <a href="/" class="flex items-center gap-2 hover:!text-water !text-turquoise cursor-pointer min-h-6">Email Sales</a>
+            </ul>
+            <div class="flex flex-col gap-4 items-start">
+                <p class="text-muted-text">
+                    Learn more about how we can help your business.
+                </p>
+                <a href="/" class="cursor-pointer whitespace-nowrap">
+                    <div class="inline-flex items-center justify-center rounded uppercase overflow-hidden h-10 gradient-border p-px">
+                        <div class="rounded flex items-center text-sm px-5 h-full text-turquoise bg-dark-blue">
+                            Request Demo
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="flex flex-col gap-4 text-text-color">
+                <p class="text-white font-bold">Client Support</p>
+                <p>
+                    For support matters, clients can access our
+                    <a
+                        href="/"
+                        class="hover:!text-water !text-turquoise cursor-pointer "
+                    >
+                        Resource Center
+                </a> or <a
+                        href="/"
+                        class="hover:!text-water !text-turquoise cursor-pointer "
+                    >
+                        Contact Us
+                </a> 
+                </p>
+            </div>
+        </div>
     </div>
-    <div class="border-t border-stone-900/10 pt-8 mt-10 md:mt-20 lg:mt-24">
-      <div class="flex flex-col md:items-center md:flex-row-reverse md:justify-between gap-4 w-full">
-        {% if module.footer_legal_menu %}
-        <ul role="list" class="flex flex-wrap gap-4">
-          {% set legal_menu = menu(module.footer_legal_menu) %}
-          {% for child in legal_menu.children %}
-            <li>
-              <a href="{{ child.url }}" class="text-sm leading-5 text-stone-600! hover:text-stone-900! no-underline hover:underline">{{ child.label }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-        {% else %}
-        <span><!-- 🍍 --></span>
-        {% endif %}
-        <div class="text-sm leading-5 text-stone-600 [&>*]:p-0 [&>*]:m-0">{{ module.copyrights }}</div>
-      </div>
+
+    <div class="flex flex-col items-center justify-center pt-8 lg:pt-20 gap-8 lg:gap-20 w-full">
+        {% if module.logo.src %}
+              {% set sizeAttrs = 'width="{{ module.logo.width / 2 }}" height="{{ module.logo.height / 2 }}"' %}
+              {% if module.logo.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ module.logo.width / 2 }}" height="{{ module.logo.height / 2 }}"' %}
+              {% elif module.logo.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ module.logo.max_width / 2 }}" height="{{ module.logo.max_height / 2 }}"' %}
+              {% endif %}
+               {% set loadingAttr = module.logo.loading != 'disabled' ? 'loading="{{ module.logo.loading }}"' : '' %}
+              <img class="h-8 w-auto" src="{{ module.logo.src }}" alt="{{ module.logo.alt or 'Company' }} logo" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+        <p class="text-text-color text-center">{{ module.copyrights }}</p>
     </div>
-  </div>
 </footer>

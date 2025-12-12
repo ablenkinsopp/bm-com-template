@@ -12,8 +12,8 @@
   },
   "children" : [ {
     "id" : "6ce0d153-b1ee-ca44-0ee2-682c3a1f3d3c",
-    "name" : "title",
-    "label" : "Title",
+    "name" : "number",
+    "label" : "Number",
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
@@ -21,14 +21,23 @@
     "display_width" : null,
     "default" : "44 million"
   }, {
-    "id" : "38b54076-c739-67d5-fb1c-e31b31927557",
+    "id" : "59f2d969-4974-c92d-b56c-18d69ae416e4",
     "name" : "subtext",
     "label" : "Subtext",
     "required" : false,
     "locked" : false,
-    "type" : "richtext",
-    "display_width" : null,
-    "default" : "Transactions every 24 hours"
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "7280ee0a-e85b-367c-59e0-5574f5953742",
+    "name" : "unit",
+    "label" : "Unit",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -36,16 +45,19 @@
   "type" : "group",
   "display_width" : null,
   "default" : [ {
-    "title" : "44 million",
-    "subtext" : "Transactions of Fresh Juice every day"
+    "number" : "1.2",
+    "unit" : "b+",
+    "subtext" : "emails sent annualy"
   }, {
-    "title" : "134 trillion",
-    "subtext" : "Customers all over the world"
+    "number" : "1400",
+    "subtext" : "research providers"
   }, {
-    "title" : "+1000 transactions",
-    "subtext" : "We at Fresh Juice value freshness of your juice and smoothies"
+    "number" : "1.5",
+    "unit" : "m+",
+    "subtext" : "documents published annualy"
   }, {
-    "title" : "100+ countries",
-    "subtext" : "Available worldwide"
+    "number" : "40",
+    "unit" : "%",
+    "subtext" : "of N. American research distributed"
   } ]
 } ]
