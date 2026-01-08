@@ -60,4 +60,14 @@
     "unit" : "%",
     "subtext" : "of N. American research distributed"
   } ]
+}, {
+  "id" : "dc1a0d20-92a3-129a-b89e-7958f51304de",
+  "name" : "animate",
+  "label" : "Animate Numbers",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
 } ]

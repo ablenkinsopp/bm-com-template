@@ -1,7 +1,45 @@
+.bm-button-wrapper {
+  @apply container flex justify-center items-center;
+}
+
+.bm-button {
+  @apply cursor-pointer whitespace-nowrap no-underline;
+}
+
+.bm-button__outer {
+  @apply inline-flex items-center justify-center rounded uppercase overflow-hidden h-10;
+}
+
+.bm-button__outer--outline {
+  @apply gradient-border p-px;
+}
+
+.bm-button__inner {
+  @apply rounded flex items-center text-sm px-5 h-full;
+}
+.bm-button__outer--outline .bm-button__inner {
+  @apply text-turquoise bg-dark-blue;
+}
+
+.bm-button__outer--ghost .bm-button__inner {
+  @apply text-off-white hover:bg-white/20;
+}
+
+.bm-button__outer--filled .bm-button__inner {
+  @apply bg-turquoise text-dark-blue;
+}
+
+.bm-button__outer--inverse {
+  @apply gradient-border p-px;
+}
+
+.bm-button__outer--inverse .bm-button__inner {
+  @apply text-turquoise bg-dark-blue;
+}
+
 .button,
 .hs-button,
 .hs-blog-post-listing__post-button {
-
   @apply transition-all duration-300 ease-in-out;
   @apply inline-block;
   @apply px-6 py-3;
@@ -38,5 +76,4 @@
   &--square {
     @apply rounded-none;
   }
-
 }

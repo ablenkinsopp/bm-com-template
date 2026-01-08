@@ -1,15 +1,63 @@
 [ {
-  "picker" : "video",
-  "id" : "69a293b4-d42a-63eb-3ee2-b97681ffe906",
-  "name" : "video_file",
-  "label" : "Background Video",
+  "id" : "247c20d6-033f-ff2c-91a1-14dded4ae845",
+  "name" : "videoplayer_field",
+  "label" : "Video",
   "required" : false,
+  "locked" : false,
+  "resizable" : true,
+  "show_preview" : true,
+  "show_advanced_options" : false,
+  "type" : "videoplayer",
+  "display_width" : null,
+  "default" : {
+    "player_id" : 202623538706,
+    "height" : 464,
+    "width" : 832,
+    "player_type" : "hsvideo2"
+  }
+}, {
+  "id" : "02c55a45-8760-bd80-6170-148e9a2852ba",
+  "name" : "video_position",
+  "label" : "Video Position",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "videoplayer_field",
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : null,
+    "access" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "right", "Right" ], [ "left", "Left" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "right"
+}, {
+  "picker" : "image",
+  "id" : "7f27e6b7-a134-d6e8-c196-309e5ed243bf",
+  "name" : "app_logo",
+  "label" : "Product Logo",
+  "required" : true,
   "locked" : false,
   "type" : "file",
   "display_width" : null,
-  "default" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/home-hero.mp4"
+  "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg"
 }, {
-  "id" : "5ad7bb8c-ec2c-4ce8-b8b5-b2db05aaf10b",
+  "name" : "app_name",
+  "label" : "Product Name",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Creator"
+}, {
+  "id" : "aaacd89f-3b1c-6ede-04eb-7c6d012fa757",
   "name" : "headline_top",
   "label" : "Headline Top",
   "required" : true,
@@ -17,9 +65,9 @@
   "allow_new_line" : false,
   "type" : "text",
   "display_width" : null,
-  "default" : "Intelligence That"
+  "default" : "The Leading Solution for"
 }, {
-  "id" : "971a7085-44a4-0115-8f12-af5fa1d7977d",
+  "id" : "db7de352-2cfa-cfe2-8389-aebdece6dbcd",
   "name" : "headline_bottom",
   "label" : "Headline Bottom",
   "required" : false,
@@ -27,39 +75,31 @@
   "allow_new_line" : false,
   "type" : "text",
   "display_width" : null,
-  "default" : "Moves Markets"
+  "default" : "Investment Research"
 }, {
-  "id" : "d38c43cb-7b01-e8f5-fef0-02e241d6a23b",
-  "name" : "subtext",
-  "label" : "Subtext",
-  "required" : false,
+  "id" : "ab8d23a4-5bfd-a537-f4b6-f4be5f40c459",
+  "name" : "basic_text",
+  "label" : "Basic Text",
+  "required" : true,
   "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
   "allow_new_line" : false,
   "type" : "text",
   "display_width" : null,
-  "default" : "Powering the future of finance with AI-ready infrastructure to transform data into advantage."
+  "default" : "Used across the global research marketplace to securely manage the complete lifecycle of critical investment content."
 }, {
-  "id" : "0f6b68e2-5515-a5af-f0b5-3f9ba5cc5108",
-  "name" : "button_text",
-  "label" : "Button Text",
+  "picker" : "image",
+  "id" : "676abe1d-4694-c7b3-9296-e25089eb13f1",
+  "name" : "background_image",
+  "label" : "Background Image",
   "required" : false,
   "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
+  "type" : "file",
   "display_width" : null,
-  "default" : "Request Demo"
-}, {
-  "id" : "791c3eab-f7b8-f7fe-9d13-ec2a4a90c5e6",
-  "name" : "button_url",
-  "label" : "Button URL",
-  "required" : false,
-  "locked" : false,
-  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
-  "type" : "url",
-  "display_width" : null,
-  "default" : {
-    "content_id" : null,
-    "href" : "",
-    "type" : "EXTERNAL"
-  }
+  "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/generic%20hero.png"
 } ]

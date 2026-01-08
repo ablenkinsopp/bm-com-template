@@ -152,27 +152,17 @@
     {# CTA #}
     <div class="hidden lg:flex flex-1 justify-end items-center gap-2">
       {% for cta in module.call_to_actions %}
-        {% if cta.style == "ghost" %}
-          {% set cta_inner_style = "text-off-white hover:bg-white/20" %}
-          {% set cta_outer_style = "" %}
-        {% elif cta.style == "filled" %}
-          {% set cta_inner_style = "bg-turquoise text-dark-blue" %}
-          {% set cta_outer_style = "" %}
-        {% else %}
-          {% set cta_inner_style = "text-turquoise bg-dark-blue" %}
-          {% set cta_outer_style = "gradient-border p-px" %}
-        {% endif %}
         {% set href = cta.link.url.href %}
         {% if cta.link.url.type is equalto "EMAIL_ADDRESS" %}
           {% set href = "mailto:" + href %}
         {% endif %}
         <a href="{{ href }}"
-           class="cursor-pointer whitespace-nowrap"
+           class="bm-button"
            {% if cta.link.open_in_new_tab %}target="_blank"{% endif %}
           {% if cta.link.rel %}rel="{{ cta.link.rel }}"{% endif %}
         >
-            <div class="inline-flex items-center justify-center rounded uppercase overflow-hidden h-10 {{cta_outer_style}}">
-                <div class="rounded flex items-center text-sm px-5 h-full {{cta_inner_style}}">
+            <div class="bm-button__outer bm-button__outer--{{cta.style}}">
+                <div class="bm-button__inner">
                     {{ cta.title | striptags | safe }}
                 </div>
             </div>

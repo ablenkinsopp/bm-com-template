@@ -1,0 +1,48 @@
+[ {
+  "id" : "2451c6d8-9e2e-8adf-47c4-1c77239f47db",
+  "name" : "info_cards",
+  "label" : "Info Cards",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "84793f2a-3116-9d77-b637-1197384507d8",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "69b697fa-1e58-d1aa-c68e-cc37d4653a43",
+    "name" : "text_field",
+    "label" : "Text",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Collaborative Workflow"
+  }, {
+    "picker" : "image",
+    "id" : "76565840-e034-77dc-65f3-9f16418af931",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "type" : "file",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+} ]

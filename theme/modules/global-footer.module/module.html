@@ -34,14 +34,14 @@
             {% for section in footer_menu.children %}
                 <div class="py-4 md:p-8 flex flex-1 flex-col gap-2 md:gap-8">
                     <p class="text-water text-sm uppercase">{{ section.label }}</p>
-                    <div class="flex flex-col gap-2">
+                    <div class="flex flex-col items-start gap-2">
                       {% for item in section.children %}
-                        <a class="flex items-center gap-2 hover:text-water text-turquoise cursor-pointer min-h-6" href="{{ item.url }}">
-            {% if item.url is string_containing "linkedin.com" or item.url is string_containing "://x.com/" %}
-                <span class='text-white text-lg'>{{ get_social_icon(item.url) }}</span>
-            {% endif %}
-            {{ item.label }}
-        </a>
+                        <a class="flex items-center gap-2 hover:text-water text-turquoise cursor-pointer min-h-6" target="_blank" href="{{ item.url }}">
+                            {% if item.url is string_containing "linkedin.com" or item.url is string_containing "://x.com/" %}
+                                <span class='text-white text-lg'>{{ get_social_icon(item.url) }}</span>
+                            {% endif %}
+                            {{ item.label }}
+                        </a>
                       {% endfor %}
                   </div>
                   

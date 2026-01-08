@@ -11,12 +11,12 @@
       <p class="text-lg text-white text-center lg:text-xl">
         {{ module.text_field }}
       </p>
-      <a href="{{ module.button_url }}" type="button" class="cursor-pointer undefined">
+      <a href="{{ module.button_url }}" type="button" class="bm-button">
         <div
-          class="inline-flex items-center justify-center rounded uppercase overflow-hidden h-10"
+          class="bm-button__outer bm-button__outer--filled"
         >
           <div
-            class="text-sm px-5 h-full bg-turquoise text-dark-blue rounded flex items-center gap-2"
+            class="bm-button__inner"
           >
             <span>{{ module.button_text }}</span>
           </div>

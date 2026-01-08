@@ -1,0 +1,148 @@
+[ {
+  "id" : "994fdfa3-0a97-86ff-f109-ec51809c3e2e",
+  "name" : "image_position",
+  "label" : "Image Position",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "right"
+}, {
+  "id" : "fd8e17ea-7495-742a-e995-a595f6241d4d",
+  "name" : "bordered",
+  "label" : "Bordered",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "picker" : "image",
+  "id" : "084cba1b-7111-1da8-cfe5-51ab5d0dd022",
+  "name" : "image",
+  "label" : "Image",
+  "required" : true,
+  "locked" : false,
+  "type" : "file",
+  "display_width" : null,
+  "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png"
+}, {
+  "picker" : "image",
+  "id" : "2e3445f4-6b6c-2239-c615-bc6590d407ed",
+  "name" : "app_logo",
+  "label" : "App Logo",
+  "required" : false,
+  "locked" : false,
+  "type" : "file",
+  "display_width" : null,
+  "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg"
+}, {
+  "id" : "c6d0adca-7c18-5485-a8d1-3a07990c9a5b",
+  "name" : "title",
+  "label" : "Title",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Title Goes Here"
+}, {
+  "id" : "fea0f205-fee3-4c0c-57dd-079bbe1e6390",
+  "name" : "basic_text",
+  "label" : "Basic Text",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Here is a basic paragraph of text"
+}, {
+  "id" : "acaceade-9a02-9a13-fa7a-a20f9c3c28ce",
+  "name" : "tick_list_item",
+  "label" : "Tick List Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+}, {
+  "id" : "e975db12-338a-163d-a71b-decad819e83f",
+  "name" : "button",
+  "label" : "Buttons",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "7fb5e4c1-41cb-aee8-7271-cd9976137485",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Button Text"
+  }, {
+    "id" : "cb5728f8-92a1-20e3-6641-d63fa830a9c6",
+    "name" : "url",
+    "label" : "URL",
+    "required" : true,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : 204373406319,
+        "href" : null,
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "a5ed63d2-7d79-1adf-24f5-c01f948cfee8",
+    "name" : "style",
+    "label" : "Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "filled", "Filled" ], [ "outline", "Outline" ], [ "ghost", "Ghost" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "filled"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+} ]

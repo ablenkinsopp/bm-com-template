@@ -217,10 +217,10 @@ h1,
 
 h2,
 .h2 {
-  {{ h2_font.style }};
+  /* {{ h2_font.style }};
   color: {{ h2_font.color }};
   font-size: {{ h2_font.size ~ h2_font.size_unit }};
-  text-transform: {{ h2_text_transform }};
+  text-transform: {{ h2_text_transform }}; */
 }
 
 h3,
@@ -233,10 +233,10 @@ h3,
 
 h4,
 .h4 {
-  {{ h4_font.style }};
+  /* {{ h4_font.style }};
   color: {{ h4_font.color }};
   font-size: {{ h4_font.size ~ h4_font.size_unit }};
-  text-transform: {{ h4_text_transform }};
+  text-transform: {{ h4_text_transform }}; */
 }
 
 h5,

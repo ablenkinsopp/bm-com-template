@@ -14,7 +14,7 @@
 
   --font-sans: "Roboto", sans-serif;
 
-  --color-text-color: #b1b6c0;
+  --color-text-color: rgba(252, 252, 252, 0.80);
   --color-off-white: #fcfcfc;
   --color-body-bg-color: #031d3c;
   --color-muted-text: #afafaf;
@@ -29,7 +29,7 @@
   --color-saffron: #fac433;
 
   --color-product-image-border: #334155;
-  --color-procuct-image-bg: #1e293b;
+  --color-product-image-bg: #1e293b;
 
   --shadow-product-image: 0 0 50px 10px #000;
 
@@ -102,6 +102,12 @@
     padding: 1px;
 }
 
+@utility gradient-shadow {
+    opacity: 0.5;
+    background: var(--cool-border, linear-gradient(90deg, #43E3C2 0%, #30ABFF 50%, #43E3C2 100%));
+    filter: blur(37.5px);
+}
+
 /* ----------------------------- */
 /* POSITION WRAPPERS             */
 /* ----------------------------- */
@@ -167,6 +173,20 @@
         bottom: 0;
         height: 1px;
         background: linear-gradient(90deg, #43e3c2 0%, #30abff 100%);
+    }
+}
+
+.home-logos {
+    @media (width < 40rem) {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    @media (width >= 40rem /* 1024px */) {
+        position: relative;
+        padding-bottom: 0 !important;
+        z-index: 10;
+        --tw-translate-y: calc(calc(1/2 * 100%) /* 50% */ * -1) /* -50% */;
+        translate: var(--tw-translate-x) var(--tw-translate-y);
     }
 }
 

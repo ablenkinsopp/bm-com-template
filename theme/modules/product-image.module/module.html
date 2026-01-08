@@ -1,0 +1,18 @@
+<div class=" relative rounded-lg">
+    <div class="absolute top-0 bottom-0 right-0 left-0 rounded-lg gradient-shadow"></div>
+    <div class="flex flex-col relative z-10 p-4 gap-4 rounded-lg {{ 
+        module.color == "dark" 
+        ? "bg-product-image-bg border-product-image-border" 
+        : "bg-white border-neutral-50"
+    }}">
+        <div class="flex justify-between items-center">
+            <div class="flex gap-3">
+                <div class="h-2.5 w-2.5 rounded-md bg-[#EF4444]"></div>
+                <div class="h-2.5 w-2.5 rounded-md bg-[#F59E0B]"></div>
+                <div class="h-2.5 w-2.5 rounded-md bg-[#10B981]"></div>
+            </div>
+            <p class="text-muted-text">{{ module.image_label }}</p>
+        </div>
+        <img src="{{ module.image }}" alt="{{ module.image_description }}" />
+    </div>
+</div>

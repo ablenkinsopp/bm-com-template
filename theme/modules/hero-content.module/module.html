@@ -1,30 +1,47 @@
-<section class='h-[75vh] max-h-[800px] relative w-full'>
+<style>
+	.hero::before {
+		background-image: url('{{ module.background_image }}');
+	}
+</style>
 
-    <!-- Overlay -->
-    <div class='absolute top-0 h-full w-full bg-[#3466B8] mix-blend-multiply -z-2'>
+{% set layout_classes = module.video_position == "right" ? "flex-col lg:flex-row" : "flex-col-reverse lg:flex-row-reverse" %}
+{% set text_container_classes = module.videoplayer_field.player_id ? "lg:text-left lg:items-start" : "" %}
+{% set basic_text_classes = module.videoplayer_field.player_id ? "" : "max-w-[600px]" %}
+
+<div class="hero w-full">
+    <div class="w-full p-4 py-10 lg:p-10 text-text-color flex justify-center bg-[linear-gradient(135deg,_#031D3C_40.92%,_rgba(32,66,106,0)_78.61%)]">
+        <div class="flex w-full max-w-[1516px] gap-6 lg:gap-10 items-center {{ layout_classes }}">
+            <div class="flex flex-col gap-6 flex-1 text-center items-center {{ text_container_classes }}">
+                {% if module.app_logo %}
+                    <img class="h-12" alt="{{ module.app_name }}" src="{{ module.app_logo }}" />
+                {% endif %}
+                <h1 class='flex flex-col !text-4xl sm:!text-5xl xl:!text-6xl !text-white !font-black'>
+                    <span class="lg:whitespace-nowrap">{{ module.headline_top }}</span>
+                    {% if module.headline_bottom %}
+                        <span class="text-water lg:whitespace-nowrap">{{ module.headline_bottom }}</span>
+                    {% endif %}
+                </h1>
+                {% for para in module.basic_text %}
+                    <p class="lg:text-lg {{ basic_text_classes }}">{{ para }}</p>
+                {% endfor %}
+            </div>
+            {% if module.videoplayer_field.player_id %}
+                {% set max_width = module.videoplayer_field.size_type == 'auto_custom_max' ? module.videoplayer_field.max_width : module.videoplayer_field.width %}
+                {% set max_height = module.videoplayer_field.size_type == 'auto_custom_max' ? module.videoplayer_field.max_height : module.videoplayer_field.height %}
+                <div class="flex-1 max-w-2xl w-full">
+                    {% video_player "embed_player"
+                        player_id={{ module.videoplayer_field.player_id }}
+                        type={{ module.videoplayer_field.player_type || 'scriptV4' }}
+                        full_width={{ module.videoplayer_field.size_type == 'auto_full_width' }},
+                        conversion_asset={{ module.videoplayer_field.conversion_asset|tojson|safe }}
+                        autoplay={{ module.videoplayer_field.autoplay }}
+                        hidden_controls={{ module.videoplayer_field.hide_controls }}
+                        loop={{ module.videoplayer_field.loop_video }}
+                        muted={{ module.videoplayer_field.mute_by_default }}
+                    %}
+                </div>
+            {% endif %}
+        </div>
     </div>
-
-    <!-- Video -->
-    {% if module.video_file %}
-    <video class='absolute inset-0 w-full h-full object-cover -z-1 mix-blend-exclusion opacity-45'
-           autoplay loop muted playsinline>
-        <source src='{{ module.video_file }}' type='video/mp4'>
-    </video>
-    {% endif %}
-
-    <!-- Hero content -->
-    <div class='relative z-10 flex flex-col items-center justify-center h-full gap-6 text-center p-4 sm:p-10 home-hero'>
-        <h1 class='flex flex-col !text-5xl sm:!text-6xl md:!text-7xl !text-white !font-black'>
-            <span>{{ module.headline_top }}</span>
-            <span class='text-water'>{{ module.headline_bottom }}</span>
-        </h1>
-        <p class='text-xl sm:text-2xl text-white max-w-[630px] font-light'>
-            {{ module.subtext }}
-        </p>
-        <a href='{{ module.button_url }}'
-           class='inline-flex items-center justify-center rounded uppercase overflow-hidden h-12 text-lg px-6 font-bold bg-turquoise !text-dark-blue'>
-            {{ module.button_text }}
-        </a>
-    </div>
-
-</section>
+    
+</div>

@@ -8,12 +8,31 @@
   {% set grid_col_class = 'lg:grid-cols-4' %}
 {% endif %}
 
+
 <div class="not-prose w-full max-w-[1140px] grid grid-cols-1 text-balance gap-4 lg:gap-0 mx-auto {{ 'sm:grid-cols-2' if cols >= 2 }} {{ grid_col_class }}">
   {% for item in module.stats_list %}
-    <div class="grid place-items-center text-center gap-2 p-2 {{ 'lg:gradient-border-right' if (cols >= 2 and not loop.last) }}">
-      <p class="!font-bold text-turquoise !text-6xl">{{ item.number }}<span class="font-normal !text-3xl">{{ item.unit }}</span></p>
+    {% set value = item.number %}
+    {% set value_str = value|string %}
+    {% set parts = value_str|split('.') %}
+    {% set decimals = 0 %}
 
-      <p class="!font-bold text-lg text-center max-w-[170px] !text-off-white/70">{{ item.subtext }}</p>
+    {% if parts|length > 1 %}
+      {% set decimals = parts[1]|length %}
+    {% endif %}
+
+    {% set initial_text = module.animate ? decimals > 0 ? ('0.' ~ '0' * decimals) : '0' : item.number %}
+    {% set animate_class = module.animate ? 'stat-number' : '' %}
+
+    <div class="grid place-items-center text-center gap-2 p-2 {{ 'lg:gradient-border-right' if (cols >= 2 and not loop.last) }}">
+        <p class="!font-bold text-turquoise !text-6xl">
+        <span 
+            class="{{ animate_class }}" 
+            data-target="{{ value }}" 
+            data-decimals="{{ decimals }}"
+            data-animate="{{ module.animate_numbers }}"
+        >{{ initial_text }}</span><span class="font-normal !text-3xl">{{ item.unit }}</span>
+        </p>
+        <p class="!font-bold text-lg text-center max-w-[170px] !text-off-white/70">{{ item.subtext }}</p>
     </div>
   {% endfor %}
 </div>

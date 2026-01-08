@@ -4708,6 +4708,30 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       // Prefetch all pages by default
     });
   });
+  function getNearestColoredBackground(el) {
+    let node = el.parentElement;
+    while (node) {
+      const styles = window.getComputedStyle(node);
+      const bg = styles.backgroundColor;
+      if (bg && bg !== "transparent" && bg !== "rgba(0, 0, 0, 0)") {
+        return bg;
+      }
+      node = node.parentElement;
+    }
+    return null;
+  }
+  function applyNearestBackground(selector = ".match-nearest-bg") {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((el) => {
+      const bg = getNearestColoredBackground(el);
+      if (bg) {
+        el.style.backgroundColor = bg;
+      }
+    });
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    applyNearestBackground();
+  });
 })();
 /*! Bundled license information:
 

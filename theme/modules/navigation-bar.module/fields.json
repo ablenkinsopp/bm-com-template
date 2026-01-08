@@ -10,13 +10,13 @@
   "type" : "image",
   "display_width" : null,
   "default" : {
-    "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/raw_assets/public/FreshJuice/images/fresh-juice-logo.png",
-    "alt" : "Fresh Juice",
+    "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/bm-logo-white.svg",
+    "alt" : "BlueMatrix Logo",
     "size_type" : "auto",
-    "width" : 512,
-    "height" : 512,
-    "max_width" : 512,
-    "max_height" : 512,
+    "width" : 300,
+    "height" : 54,
+    "max_width" : 300,
+    "max_height" : 54,
     "loading" : "lazy"
   }
 }, {
@@ -943,13 +943,13 @@
     "required" : true,
     "locked" : false,
     "display" : "select",
-    "choices" : [ [ "link", "Plain link" ], [ "ghost", "Ghost Button" ], [ "primary", "Primary Button" ] ],
+    "choices" : [ [ "outline", "Plain link" ], [ "ghost", "Ghost Button" ], [ "filled", "Primary Button" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "link"
+    "default" : "filled"
   }, {
     "id" : "bb670a24-25b9-9d8f-ba99-81a8f6287034",
     "name" : "title",
@@ -986,8 +986,8 @@
   "type" : "group",
   "display_width" : null,
   "default" : [ {
-    "style" : "link",
-    "title" : "Log in",
+    "style" : "outline",
+    "title" : "Request Demo",
     "link" : {
       "url" : {
         "content_id" : null,
@@ -998,8 +998,8 @@
       "no_follow" : false
     }
   }, {
-    "style" : "primary",
-    "title" : "Get Started",
+    "style" : "ghost",
+    "title" : "Client Login",
     "link" : {
       "url" : {
         "content_id" : null,

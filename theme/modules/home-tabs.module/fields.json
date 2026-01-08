@@ -1,0 +1,486 @@
+[ {
+  "id" : "a2b13ffc-7723-2956-f221-50bb677ed000",
+  "name" : "tabs",
+  "label" : "Tabs",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 2,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 2
+  },
+  "children" : [ {
+    "id" : "20751695-8643-10b1-8ddc-97c919e1ab22",
+    "name" : "tab_title",
+    "label" : "Tab Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "aea8e172-a386-6573-029d-90411f04f9c8",
+    "name" : "top_panel",
+    "label" : "Top Panel",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "e56fc897-1bc9-1070-c13c-c2711cb12c55",
+      "name" : "image_position",
+      "label" : "Image Position",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "right"
+    }, {
+      "picker" : "image",
+      "id" : "f8262736-caea-6da9-5497-8c913f95f131",
+      "name" : "image",
+      "label" : "Image",
+      "required" : true,
+      "locked" : false,
+      "type" : "file",
+      "display_width" : null,
+      "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png"
+    }, {
+      "picker" : "image",
+      "id" : "ac4b7927-6ec2-149b-d2a2-2f5102f35441",
+      "name" : "app_logo",
+      "label" : "App Logo",
+      "required" : false,
+      "locked" : false,
+      "type" : "file",
+      "display_width" : null,
+      "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg"
+    }, {
+      "name" : "app_name",
+      "label" : "Product Name",
+      "required" : true,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Creator"
+    }, {
+      "id" : "69a88ddb-a4c5-904b-6758-3d693437f9d0",
+      "name" : "title",
+      "label" : "Title",
+      "required" : true,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Authoring, Compliance, Distribution"
+    }, {
+      "id" : "b62bf55f-c704-3fa8-2718-6b1ddff158f5",
+      "name" : "basic_text",
+      "label" : "Basic Text",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : null,
+        "default" : null
+      },
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa."
+    }, {
+      "id" : "ccc420e9-b486-6ef0-1e40-1f4dd981973e",
+      "name" : "tick_list_item",
+      "label" : "Tick List Items",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : null,
+        "default" : null
+      },
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "id" : "bba6e11c-7143-d07a-6746-712e98acc9af",
+      "name" : "button",
+      "label" : "Buttons",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : null,
+        "default" : null
+      },
+      "children" : [ {
+        "id" : "976e5277-3043-6c9c-25b3-17d25253b208",
+        "name" : "button_text",
+        "label" : "Button Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "e9e4ebdf-d7a5-6009-21be-62c492f63022",
+        "name" : "url",
+        "label" : "URL",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "display_width" : null,
+        "default" : {
+          "url" : {
+            "content_id" : 204233406304,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "id" : "c4fb44d6-5f7c-efc4-36c9-dd83f720d094",
+        "name" : "style",
+        "label" : "Style",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "filled", "Filled" ], [ "outline", "Outline" ], [ "ghost", "Ghost" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "filled"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : [ ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "image_position" : "right",
+      "image" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png",
+      "app_logo" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg",
+      "title" : "Authoring, Compliance, Distribution",
+      "basic_text" : "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa.",
+      "button" : [ ]
+    }
+  }, {
+    "id" : "6ec7604b-a780-8b6f-f48e-c4f1b5b366ab",
+    "name" : "info_cards",
+    "label" : "Info Cards",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "c2bf67f7-1260-420f-0e1c-49273b600bfa",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "id" : "cd19dedd-6afe-3b74-e6d0-647052803307",
+      "name" : "text_field",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "picker" : "image",
+      "id" : "cf272032-5e93-86b6-07e4-075907b8fc09",
+      "name" : "image",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "type" : "file",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ ]
+  }, {
+    "id" : "28467dc2-694b-44dc-ecf9-74518f5017bf",
+    "name" : "bottom_panel",
+    "label" : "Bottom Panel",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "c28bd6a1-a293-cfbd-1819-61480e654f2a",
+      "name" : "image_position",
+      "label" : "Image Position",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "right"
+    }, {
+      "picker" : "image",
+      "id" : "2171ae4c-17ee-a951-f14d-0d936d9b4dfc",
+      "name" : "image",
+      "label" : "Image",
+      "required" : true,
+      "locked" : false,
+      "type" : "file",
+      "display_width" : null,
+      "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png"
+    }, {
+      "picker" : "image",
+      "id" : "2466b172-25a1-f319-1e94-d2acc3616521",
+      "name" : "app_logo",
+      "label" : "App Logo",
+      "required" : false,
+      "locked" : false,
+      "type" : "file",
+      "display_width" : null,
+      "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg"
+    }, {
+      "name" : "app_name",
+      "label" : "Product Name",
+      "required" : true,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Creator"
+    }, {
+      "id" : "8a302134-cb1f-56a7-656a-da407c4f28b3",
+      "name" : "title",
+      "label" : "Title",
+      "required" : true,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Authoring, Compliance, Distribution"
+    }, {
+      "id" : "6c30d02e-9060-e916-9e27-ad8c51a3b096",
+      "name" : "basic_text",
+      "label" : "Basic Text",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : null,
+        "default" : null
+      },
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa."
+    }, {
+      "id" : "fa2f7e31-e055-c071-189b-11b8c0a2e8f9",
+      "name" : "tick_list_item",
+      "label" : "Tick List Items",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : null,
+        "default" : null
+      },
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "id" : "ab703a7e-2954-b9d8-e4ec-c8cd108d82a9",
+      "name" : "button",
+      "label" : "Buttons",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : null,
+        "default" : null
+      },
+      "children" : [ {
+        "id" : "ad1c8c7f-0b73-5aab-815b-be7acea8b8e5",
+        "name" : "button_text",
+        "label" : "Button Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "490a9295-db01-356d-1a77-122650ff5095",
+        "name" : "url",
+        "label" : "URL",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "display_width" : null,
+        "default" : {
+          "url" : {
+            "content_id" : 204233406304,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "id" : "219440a3-d76d-5906-b293-9e4d1b7cd371",
+        "name" : "style",
+        "label" : "Style",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "filled", "Filled" ], [ "outline", "Outline" ], [ "ghost", "Ghost" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "filled"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : [ ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "image_position" : "right",
+      "image" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png",
+      "app_logo" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg",
+      "title" : "Authoring, Compliance, Distribution",
+      "basic_text" : "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa.",
+      "button" : [ ]
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "tab_title" : "Buyside",
+    "top_panel" : {
+      "image_position" : "right",
+      "image" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png",
+      "app_logo" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg",
+      "title" : "Authoring, Compliance, Distribution",
+      "basic_text" : [ "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa.", "Integer nisi libero, lobortis consequat leo condimentum, cursus congue justo. Quisque placerat convallis pulvinar. Integer tincidunt quam quis dui ultricies commodo a at enim." ],
+      "button" : [ {
+        "button_text" : "Learn More",
+        "url" : {
+          "url" : {
+            "href" : "/"
+          }
+        },
+        "style" : "outline"
+      }, {
+        "button_text" : "Request Demo",
+        "url" : {
+          "url" : {
+            "href" : "/"
+          }
+        },
+        "style" : "filled"
+      } ]
+    },
+    "bottom_panel" : {
+      "image_position" : "left",
+      "image" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png",
+      "app_logo" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/rms.svg",
+      "title" : "Research",
+      "basic_text" : "Integer nisi libero, lobortis consequat leo condimentum, cursus congue justo. Quisque placerat convallis pulvinar. Integer tincidunt quam quis dui ultricies commodo a at enim.",
+      "tick_list_item" : [ "Amazing selling point number 1.", "A second point should go here.", "Woo hoooooo, bla bla bla." ],
+      "button" : [ {
+        "button_text" : "Learn More",
+        "url" : {
+          "url" : {
+            "href" : "/"
+          }
+        },
+        "style" : "filled"
+      } ]
+    },
+    "info_cards" : [ {
+      "text_field" : "Collaborative Workflow",
+      "image" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Info%20Images/collaborators.png"
+    }, {
+      "text_field" : "Publish to PDF, HTML5, Email and more...",
+      "image" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Info%20Images/publish-formats.png"
+    }, {
+      "text_field" : "AskBlue AI companion enabled.",
+      "image" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Info%20Images/askblue.png"
+    } ]
+  }, {
+    "tab_title" : "Sellside",
+    "top_panel" : {
+      "image_position" : "right",
+      "image" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png",
+      "app_logo" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg",
+      "title" : "Authoring, Compliance, Distribution",
+      "basic_text" : "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa.",
+      "button" : [ ]
+    },
+    "bottom_panel" : {
+      "image_position" : "right",
+      "image" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png",
+      "app_logo" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg",
+      "title" : "Authoring, Compliance, Distribution",
+      "basic_text" : "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa.",
+      "button" : [ ]
+    },
+    "info_cards" : [ {
+      "text_field" : "Publish to PDF, HTML5, Email and more...",
+      "image" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Info%20Images/publish-formats.png"
+    }, {
+      "text_field" : "AskBlue AI companion enabled.",
+      "image" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Info%20Images/askblue.png"
+    }, {
+      "text_field" : "Collaborative Workflow",
+      "image" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Info%20Images/collaborators.png"
+    } ]
+  } ]
+} ]

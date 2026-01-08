@@ -1,0 +1,19 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{% macro(tabs(tabs, activeTab)) %}
+    <ul class="flex rounded-2xl overflow-hidden border border-[#3C4A63] bg-black/40 p-1 gap-4">
+        {% for tab in tabs %}
+            <li>
+                <button 
+                    :class="activeTab === {{ loop.index }} 
+                        ? 'text-dark-blue bg-turquoise' 
+                        : 'text-[#CACDD0] hover:bg-white/20'" 
+                    @click="activeTab = {{ loop.index }}"
+                    class="rounded-xl uppercase text-lg py-2 px-4 leading-5 cursor-pointer"
+                >{{ tab.tab_title }}</button>
+            </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}

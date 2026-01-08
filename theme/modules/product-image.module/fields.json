@@ -1,0 +1,45 @@
+[ {
+  "picker" : "image",
+  "id" : "441682c1-e6af-36e1-1f61-08e51679d16b",
+  "name" : "image",
+  "label" : "Image",
+  "required" : true,
+  "locked" : false,
+  "type" : "file",
+  "display_width" : null,
+  "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png"
+}, {
+  "id" : "a6bf8161-da19-3bf3-f381-16b0ac157dd4",
+  "name" : "image_label",
+  "label" : "Image Label",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "editor_v5"
+}, {
+  "id" : "a32d04c6-610f-0e76-415b-cf9375ca8c59",
+  "name" : "image_description",
+  "label" : "Image Description (alt tag)",
+  "inline_help_text" : "This will be shown on screenreaders etc as an image description",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Editor screenshot from BlueMatrix Creator"
+}, {
+  "id" : "d2ab164d-558d-992e-4863-eb65e0e87d50",
+  "name" : "color",
+  "label" : "Color",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "dark", "Dark" ], [ "light", "Light" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null
+} ]
