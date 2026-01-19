@@ -18,6 +18,7 @@
   --color-off-white: #fcfcfc;
   --color-body-bg-color: #031d3c;
   --color-muted-text: #afafaf;
+  --color-text-blue: #122B48;
 
   --color-darkest-blue: #02162f;
   --color-dark-blue: #031d3c;
@@ -47,6 +48,15 @@
   --aspect-macbook: 16 / 10;
 
   --spacing-screenSinNav: calc(100vh - 5rem);
+
+  /* Button hover effect */
+  --backdrop-blur-14: 14px;
+  --color-glass-bg: rgba(255, 255, 255, 0.03);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-glass-border-hover: rgba(255, 255, 255, 0.35);
+  --transition-speed: 0.4s;
+  --outline-streak-color:  rgba(67, 227, 194, 0.5);
+  --filled-streak-color:  rgba(255, 255, 255, 0.9);
 }
 
 @layer base {
@@ -102,11 +112,54 @@
     padding: 1px;
 }
 
+@utility gradient-border-button-hover {
+    background: linear-gradient(90deg,rgba(67, 227, 194, 1) 0%, rgba(67, 227, 194, 1) 50%, rgba(67, 227, 194, 1) 100%);
+}
+
 @utility gradient-shadow {
     opacity: 0.5;
     background: var(--cool-border, linear-gradient(90deg, #43E3C2 0%, #30ABFF 50%, #43E3C2 100%));
     filter: blur(37.5px);
 }
+
+/* ----------------------------- */
+/* BUTTON EFFECTS.               */
+/* ----------------------------- */ 
+@utility button-streak {
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0; /* top:0; right:0; bottom:0; left:0; */
+        pointer-events: none;
+
+        transform: skewX(-30deg) translateX(-115%);
+        transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+}
+
+@utility outline-button-streak {
+    &::before {
+        background: linear-gradient(
+            90deg,
+            transparent 0%,
+            var(--outline-streak-color) 50%,
+            transparent 100%
+        );
+    }
+}
+
+@utility filled-button-streak {
+    &::before {
+        background: linear-gradient(
+            90deg,
+            transparent 0%,
+            var(--filled-streak-color) 50%,
+            transparent 100%
+        );
+    }
+}
+
+
 
 /* ----------------------------- */
 /* POSITION WRAPPERS             */

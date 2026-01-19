@@ -16,9 +16,9 @@
                     <img class="h-12" alt="{{ module.app_name }}" src="{{ module.app_logo }}" />
                 {% endif %}
                 <h1 class='flex flex-col !text-4xl sm:!text-5xl xl:!text-6xl !text-white !font-black'>
-                    <span class="lg:whitespace-nowrap">{{ module.headline_top }}</span>
+                    <span class="text-water lg:whitespace-nowrap">{{ module.headline_top }}</span>
                     {% if module.headline_bottom %}
-                        <span class="text-water lg:whitespace-nowrap">{{ module.headline_bottom }}</span>
+                        <span class="lg:whitespace-nowrap">{{ module.headline_bottom }}</span>
                     {% endif %}
                 </h1>
                 {% for para in module.basic_text %}

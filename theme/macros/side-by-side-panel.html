@@ -2,9 +2,9 @@
   templateType: "none"
   isAvailableForNewContent: false
 -->
-{% import './button.html' as b %}
-{% import './product-image.html' as pi %}
-{% import './tick-list.html' as tl %}
+{% from './button.html' import button %}
+{% from './product-image.html' import product_image %}
+{% from './tick-list.html' import tick_list %}
 
 {% macro side_by_side_panel(panel) %}
     {% set outer_classes = panel.bordered ? "gradient-border rounded p-px" : "" %}
@@ -14,7 +14,7 @@
     
     <div class="{{ outer_classes }}">
         <div class="flex {{ flex_classes }} {{ inner_classes }} gap-16">
-            <div class="flex flex-col justify-center items-start gap-6 text-text-color text">
+            <div class="flex flex-col md:flex-1 justify-center items-start gap-6 text-text-color text">
                 {% if panel.app_logo %}
                     <img class="h-11" alt="{{ panel.app_name }}" src="{{ panel.app_logo }}" />
                 {% endif %}
@@ -22,20 +22,31 @@
                 {% for para in panel.basic_text %}
                     <p class="text-lg">{{ para }}</p>
                 {% endfor %}
+
+                {% if panel.two_column_text|length > 0 %}
+                    <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-6">
+                        {% for column in panel.two_column_text %}
+                            <div class="flex-col gap-4 text-lg">
+                                <p class="font-bold">{{ column.heading }}</p>
+                                <p>{{ column.text_field }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
     
-                {% if panel.tick_list_item|length > 0 %}
-                    {{ tl.tick_list(panel.tick_list_item) }}
+                {% if panel.ticks|length > 0 %}
+                    {{ tick_list(panel.ticks) }}
                 {% endif %}
     
                 {% if panel.button|length > 0 %}
                     <div class="flex gap-6">
-                        {% for button in panel.button %}
-                            {{ b.button(button.button_text, button.url, button.style) }}
+                        {% for btn in panel.button %}
+                            {{ button(btn.button_text, btn.url, btn.style) }}
                         {% endfor %}
                     </div>
                 {% endif %}
             </div>
-            {{ pi.product_image(panel.image, "editor_v5", "Editor screenshot")}}
+            {{ product_image(panel.image, "editor_v5", "Editor screenshot")}}
         </div>
     </div>
 {% endmacro %}

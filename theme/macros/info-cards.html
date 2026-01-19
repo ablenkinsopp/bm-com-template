@@ -2,7 +2,9 @@
   templateType: "none"
   isAvailableForNewContent: false
 -->
-{% macro(info_cards(cards)) %}
+{% from './info-card.html' import info_card %}
+
+{% macro info_cards(cards) %}
     {% if cards | length == 2 %}
         {% set grid_col_class = 'grid-cols-2' %}
     {% endif %}
@@ -10,39 +12,12 @@
         {% set grid_col_class = 'grid-cols-3' %}
     {% endif %}
     {% if cards | length == 4 %}
-        {% set grid_col_class = 'grid-cols-2 md:grid-cols-4' %}
+        {% set grid_col_class = 'grid-cols-2 lg:grid-cols-4' %}
     {% endif %}
 
     <ul class="grid gap-2 sm:gap-4 lg:gap-10 {{ grid_col_class }}">
         {% for item in cards %}
-            <li
-                class="gradient-border rounded overflow-hidden text-center"
-            >
-                <div
-                class="rounded flex h-full flex-col px-2 gap-2 md:gap-4 py-2 sm:py-4 md:py-10 items-center justify-center text-center text-off-white text-sm sm:text-base md:text-lg bg-dark-blue"
-                >
-                    {% if item.image %}
-                        <img
-                            class="h-6 sm:h-8"
-                            alt="{{ item.title || item.text_field }}"
-                            src="{{ item.image }}"
-                        />
-                    {% endif %}
-                    {% if item.title %}
-                        <p class="text-white font-bold text-xl">{{ item.title }}</p>
-                    {% endif %} 
-
-                    {% set text = item.text_field %}
-                    {% set highlighted = "AskBlue" %}
-                    {% if text is string_containing highlighted %}
-                        {% set highlighted_html = '<span class="font-bold"><span class="text-bright-blue">Ask</span>Blue</span>' %}
-                        {% set output = text|replace(highlighted, highlighted_html, 1) %}
-                        <p >{{ output|safe }}</p>
-                    {% else %}
-                        <p>{{ item.text_field }}</p>
-                    {% endif %}
-                </div>
-            </li>
+            {{ info_card(item.image, item.title, item.text_field, item.ticks) }}
         {% endfor %}
     </ul>
 {% endmacro %}

@@ -2,7 +2,7 @@
   templateType: "none"
   isAvailableForNewContent: false
 -->
-{% macro button(button_text, cta_link, style="filled", open_new_tab=false, rel="") %}
+{% macro button(button_text, cta_link, style="filled", size="default", open_new_tab=false, rel="", sr_only) %}
   {% set href = cta_link == '/'
     ? cta_link
     : (
@@ -12,16 +12,19 @@
       )
   %}
   
-  <div class="bm-button-wrapper">
-    <a class="bm-button"
-       href="{{ cta_link.url.type == "CALL_TO_ACTION" ? href : href|escape_url }}"
-       {% if open_new_tab %}target="_blank"{% endif %}
-       {% if rel %}rel="{{ rel|escape_attr }}"{% endif %}>
-      <div class="bm-button__outer bm-button__outer--{{ style }}">
-        <div class="bm-button__inner">
-          {{ button_text }}
+    <a class="bm-button {{ size }}"
+        href="{{ cta_link.url.type == "CALL_TO_ACTION" ? href : href|escape_url }}"
+        {% if open_new_tab %}target="_blank"{% endif %}
+        {% if rel %}rel="{{ rel|escape_attr }}"{% endif %}
+    >
+        {% if sr_only %}
+            <span class="sr-only">{{ sr_only }}</span>
+        {% endif %}
+        
+        <div class="bm-button__outer bm-button__outer--{{ style }}">
+            <div class="bm-button__inner">
+            {{ button_text | striptags | safe }}
+            </div>
         </div>
-      </div>
     </a>
-  </div>
 {% endmacro %}

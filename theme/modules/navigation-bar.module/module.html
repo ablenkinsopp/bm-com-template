@@ -1,5 +1,6 @@
 {% from '../../macros/slugify.html' import slugify %}
 {% from '../../macros/random-int.html' import random_int %}
+{% from '../../macros/button.html' import button %}
 
 {%- macro get_navbar_logo(classes) -%}
   <a href="{{ request.full_url | replace(request.path, '') }}" class="{{ classes or '' }}">
@@ -156,17 +157,7 @@
         {% if cta.link.url.type is equalto "EMAIL_ADDRESS" %}
           {% set href = "mailto:" + href %}
         {% endif %}
-        <a href="{{ href }}"
-           class="bm-button"
-           {% if cta.link.open_in_new_tab %}target="_blank"{% endif %}
-          {% if cta.link.rel %}rel="{{ cta.link.rel }}"{% endif %}
-        >
-            <div class="bm-button__outer bm-button__outer--{{cta.style}}">
-                <div class="bm-button__inner">
-                    {{ cta.title | striptags | safe }}
-                </div>
-            </div>
-        </a>
+        {{ button(cta.title, cta.link, cta.style) }}
       {% endfor %}
     </div>
 

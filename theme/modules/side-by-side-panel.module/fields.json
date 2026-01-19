@@ -69,21 +69,86 @@
   "display_width" : null,
   "default" : "Here is a basic paragraph of text"
 }, {
-  "id" : "acaceade-9a02-9a13-fa7a-a20f9c3c28ce",
-  "name" : "tick_list_item",
-  "label" : "Tick List Items",
+  "id" : "76c7dcf2-31c6-a0aa-3539-e8e8533a50b2",
+  "name" : "two_column_text",
+  "label" : "Two Column Text",
   "required" : false,
   "locked" : false,
   "occurrence" : {
-    "min" : null,
-    "max" : null,
+    "min" : 2,
+    "max" : 2,
     "sorting_label_field" : null,
-    "default" : null
+    "default" : 2
   },
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null
+  "children" : [ {
+    "id" : "962e5504-cdf8-5b07-b398-03a6cd1468cc",
+    "name" : "text_field",
+    "label" : "Text",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Demonstrate process with transparency, auditability, and built-in entitlements."
+  }, {
+    "id" : "6498ed09-841a-21f6-f337-2e240823266a",
+    "name" : "heading",
+    "label" : "Heading",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Simplify Compliance"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "text_field" : "Demonstrate process with transparency, auditability, and built-in entitlements.",
+    "heading" : "Simplify Compliance"
+  }, {
+    "text_field" : "Demonstrate process with transparency, auditability, and built-in entitlements.",
+    "heading" : "Simplify Compliance"
+  } ]
 }, {
+    "id" : "497a7081-6d6f-5031-c3c3-93572d724857",
+    "name" : "ticks",
+    "label" : "Tick List",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "name" : "normal_text",
+      "label" : "Normal Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "name" : "bold_text",
+      "label" : "Bold Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ { "normal_text" : "Amazing Feature 1" }, { "normal_text" : "Amazing Feature 2" }, { "normal_text" : "Amazing Feature 3" } ]
+  }, {
   "id" : "e975db12-338a-163d-a71b-decad819e83f",
   "name" : "button",
   "label" : "Buttons",

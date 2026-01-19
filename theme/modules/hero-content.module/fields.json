@@ -42,15 +42,16 @@
   "id" : "7f27e6b7-a134-d6e8-c196-309e5ed243bf",
   "name" : "app_logo",
   "label" : "Product Logo",
-  "required" : true,
+  "required" : false,
   "locked" : false,
   "type" : "file",
   "display_width" : null,
   "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg"
 }, {
+  "id" : "app_name",
   "name" : "app_name",
   "label" : "Product Name",
-  "required" : true,
+  "required" : false,
   "locked" : false,
   "allow_new_line" : false,
   "type" : "text",

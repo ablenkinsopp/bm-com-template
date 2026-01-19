@@ -2,16 +2,32 @@
   templateType: "none"
   isAvailableForNewContent: false
 -->
-{% macro(tabs(tabs, activeTab)) %}
-    <ul class="flex rounded-2xl overflow-hidden border border-[#3C4A63] bg-black/40 p-1 gap-4">
+{% macro(tabs(tabs)) %}
+    <ul 
+        class="flex relative rounded-2xl overflow-hidden border border-[#3C4A63] bg-black/40 p-1 gap-4 z-[1]"
+    >
+        <div 
+            id="tab-glider"
+            x-ref="tabGlider"
+            class="absolute h-[calc(100%-8px)] bg-turquoise rounded-xl -z-[1] transition [transition-duration: 0.4s] [transition-timing-function:cubic-bezier(0.4,0,0.2,1)]"
+        >
+        </div>
         {% for tab in tabs %}
             <li>
                 <button 
                     :class="activeTab === {{ loop.index }} 
-                        ? 'text-dark-blue bg-turquoise' 
-                        : 'text-[#CACDD0] hover:bg-white/20'" 
-                    @click="activeTab = {{ loop.index }}"
-                    class="rounded-xl uppercase text-lg py-2 px-4 leading-5 cursor-pointer"
+                        ? 'text-dark-blue' 
+                        : 'text-[#CACDD0] hover:text-turquoise'" 
+                    @click="
+                        activeTab = {{ loop.index }};
+                        $nextTick(() => {
+                            const glider = $refs.tabGlider;
+                            const btn = $event.target;
+                            glider.style.width = `${btn.offsetWidth}px`;
+                            glider.style.transform = `translateX(${btn.offsetLeft - 4}px)`;
+                        })
+                    "
+                    class="rounded-xl uppercase text-lg py-2 px-4 leading-5 cursor-pointer transition [transition-duration: 0.4s] [transition-timing-function:cubic-bezier(0.4,0,0.2,1)]"
                 >{{ tab.tab_title }}</button>
             </li>
         {% endfor %}

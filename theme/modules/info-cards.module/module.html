@@ -1,3 +1,10 @@
+{% from '../../macros/section-title.html' import section_title %}
 {% import '../../macros/info-cards.html' as ic %}
 
-{{ ic.info_cards(module.info_cards) }}
+<div class="flex flex-col gap-10 w-full">
+    {% if module.show_section_title %}
+        {{ section_title(module.section_title.title, module.section_title.alignment, module.section_title.image_field, module.section_title.subtext) }}
+    {% endif %}
+
+    {{ ic.info_cards(module.info_cards) }}
+</div>

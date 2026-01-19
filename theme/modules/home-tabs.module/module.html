@@ -1,18 +1,32 @@
-{% import '../../macros/section-title.html' as st %}
-{% import '../../macros/tabs.html' as t %}
+{% from '../../macros/section-title.html' import section_title %}
+{% from '../../macros/tabs.html' import tabs %}
 {% import '../../macros/info-cards.html' as ic %}
 {% import '../../macros/side-by-side-panel.html' as sbsp %}
+{% from '../../macros/horizontal-rule.html' import horizontal_rule %}
 
-<div x-data="{ activeTab: 1 }" class="flex justify-center items-center flex-col gap-10">
-    {{ st.section_title("One Platform. Multiple Solutions", "text-water text-center") }}
+<div 
+    x-data="{ activeTab: 1 }" 
+    x-init="
+        $nextTick(() => {
+            const firstBtn = $el.querySelector('button');
+            const glider = $el.querySelector('#tab-glider');
+            if (firstBtn && glider) {
+                glider.style.width = `${firstBtn.offsetWidth}px`;
+                glider.style.transform = `translateX(${firstBtn.offsetLeft - 4}px)`;
+            }
+        })
+    " 
+    class="flex justify-center items-center flex-col gap-10"
+>
+    {{ section_title("One Platform. Multiple Solutions", "center") }}
 
-    {{ t.tabs(module.tabs, activeTab) }}
+    {{ tabs(module.tabs) }}
 
     {% for tab in module.tabs %}
         <div class="flex w-full flex-col gap-10" x-show="activeTab === {{ loop.index }}">
             {{ sbsp.side_by_side_panel(tab.top_panel) }}
             {{ ic.info_cards(tab.info_cards)}}
-            <hr class="border-0 h-px bg-[linear-gradient(90deg,#43e3c2_0%,#30abff_50%,#43e3c2_100%)]" />
+            {{ horizontal_rule() }}
             {{ sbsp.side_by_side_panel(tab.bottom_panel) }}
         </div>
     {% endfor %}

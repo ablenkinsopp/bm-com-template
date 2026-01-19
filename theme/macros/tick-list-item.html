@@ -1,0 +1,17 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{% macro tick_list_item(tick, color="default") %}
+    {% set text_color = color == "default" ? "text-white" : "#122B48" %}
+    {% set tick_colors = color == "default" ? "text-darkest-blue bg-linear-to-r from-light-blue to-turquoise" : "bg-[#122B48] text-water" %}
+    <li class="{{ text_color }} flex items-center gap-2 md:text-lg">
+        <div class="{{ tick_colors }} w-5 h-5 md:w-7 md:h-7 rounded-2xl flex items-center justify-center md:text-xl">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
+        </div>
+        <p>
+          {% if tick.bold_text %}<span class="font-bold">{{ tick.normal_text ? tick.bold_text + " " :  tick.bold_text }}</span>{% endif %}
+          {% if tick.normal_text %}{{ tick.normal_text }}{% endif %}
+        </p>
+    </li>
+{% endmacro %}

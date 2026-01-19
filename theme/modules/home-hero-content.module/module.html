@@ -1,3 +1,5 @@
+{% from '../../macros/button.html' import button %}
+
 <section class='h-[75vh] max-h-[800px] relative w-full'>
 
     <!-- Overlay -->
@@ -15,18 +17,18 @@
     <!-- Hero content -->
     <div class='relative z-10 flex flex-col items-center justify-center h-full gap-6 text-center p-4 sm:p-10 home-hero'>
         <h1 class='flex flex-col !text-5xl sm:!text-6xl md:!text-7xl !text-white !font-black'>
-            <span>{{ module.headline_top }}</span>
+            <span class='text-water'>{{ module.headline_top }}</span>
             {% if module.headline_bottom %}
-                <span class='text-water'>{{ module.headline_bottom }}</span>
+                <span>{{ module.headline_bottom }}</span>
             {% endif %}
         </h1>
-        <p class='text-xl sm:text-2xl text-white max-w-[630px] font-light'>
-            {{ module.subtext }}
-        </p>
-        <a href='{{ module.button_url }}'
-           class='inline-flex items-center justify-center rounded uppercase overflow-hidden h-12 text-lg px-6 font-bold bg-turquoise !text-dark-blue'>
-            {{ module.button_text }}
-        </a>
+        {% for subtext in module.subtext %}
+            <p class='text-xl sm:text-2xl text-white max-w-[630px] font-light'>
+                {{ subtext }}
+            </p>
+        {% endfor %}
+
+        {{ button(module.button_text, module.button_url, "filled", "large") }}
     </div>
 
 </section>

@@ -2,8 +2,22 @@
   templateType: "none"
   isAvailableForNewContent: false
 -->
-{% macro section_title(title, style="") %}
+{% macro section_title(title, alignment, image_field, subtext) %}
+{% set container_classes = alignment == "center" ? "items-center" : (
+    aligment == "left" ? "items-start" : "items-end"
+) %}
+{% set text_classes = alignment == "center" ? "text-center" : (
+    aligment == "left" ? "text-start" : "text-end"
+) %}
 
-<h2 class="{{ style }} font-light text-4xl">{{ title }}</h2>
+<div class="w-full flex flex-col {{ container_classes }} gap-6">
+    {% if image_field.src %}
+        <img class="h-16" src="{{ image_field.src|escape_url }}" alt="{{ image_field.alt|escape_attr }}">
+    {% endif %}
+    <h2 class="text-water font-light text-4xl {{ text_classes }}">{{ title }}</h2>
+    {% if subtext %}
+        <p class="text-text-color font-bold text-xl max-w-[960px] {{ text_classes }}">{{ subtext }}</p>
+    {% endif %}
+</div>
 
 {% endmacro %}

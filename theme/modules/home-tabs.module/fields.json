@@ -60,6 +60,7 @@
       "display_width" : null,
       "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg"
     }, {
+      "id" : "tabs.top_panel.app_name",
       "name" : "app_name",
       "label" : "Product Name",
       "required" : true,
@@ -95,21 +96,40 @@
       "display_width" : null,
       "default" : "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa."
     }, {
-      "id" : "ccc420e9-b486-6ef0-1e40-1f4dd981973e",
-      "name" : "tick_list_item",
-      "label" : "Tick List Items",
+    "name" : "ticks",
+    "label" : "Tick List",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "name" : "normal_text",
+      "label" : "Normal Text",
       "required" : false,
       "locked" : false,
-      "occurrence" : {
-        "min" : null,
-        "max" : null,
-        "sorting_label_field" : null,
-        "default" : null
-      },
       "allow_new_line" : false,
       "type" : "text",
       "display_width" : null
     }, {
+      "name" : "bold_text",
+      "label" : "Bold Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ ]
+  }, {
       "id" : "bba6e11c-7143-d07a-6746-712e98acc9af",
       "name" : "button",
       "label" : "Buttons",
@@ -271,6 +291,7 @@
       "display_width" : null,
       "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg"
     }, {
+      "id" : "tabs.bottom_panel.app_name",
       "name" : "app_name",
       "label" : "Product Name",
       "required" : true,
@@ -306,21 +327,40 @@
       "display_width" : null,
       "default" : "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa."
     }, {
-      "id" : "fa2f7e31-e055-c071-189b-11b8c0a2e8f9",
-      "name" : "tick_list_item",
-      "label" : "Tick List Items",
+    "name" : "ticks",
+    "label" : "Tick List",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "name" : "normal_text",
+      "label" : "Normal Text",
       "required" : false,
       "locked" : false,
-      "occurrence" : {
-        "min" : null,
-        "max" : null,
-        "sorting_label_field" : null,
-        "default" : null
-      },
       "allow_new_line" : false,
       "type" : "text",
       "display_width" : null
     }, {
+      "name" : "bold_text",
+      "label" : "Bold Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ ]
+  }, {
       "id" : "ab703a7e-2954-b9d8-e4ec-c8cd108d82a9",
       "name" : "button",
       "label" : "Buttons",
@@ -433,7 +473,7 @@
       "app_logo" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/rms.svg",
       "title" : "Research",
       "basic_text" : "Integer nisi libero, lobortis consequat leo condimentum, cursus congue justo. Quisque placerat convallis pulvinar. Integer tincidunt quam quis dui ultricies commodo a at enim.",
-      "tick_list_item" : [ "Amazing selling point number 1.", "A second point should go here.", "Woo hoooooo, bla bla bla." ],
+      "ticks" : [ { "normal_text": "Amazing selling point number 1" }, { "normal_text": "A second point should go here" }, { "normal_text": "And a third here" } ],
       "button" : [ {
         "button_text" : "Learn More",
         "url" : {

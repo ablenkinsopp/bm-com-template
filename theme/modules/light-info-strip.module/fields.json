@@ -1,0 +1,66 @@
+[ {
+  "id" : "fae24940-6f98-1833-b3c6-c0b773dfb1fc",
+  "name" : "title_normal",
+  "label" : "Title Normal",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Designed as a"
+}, {
+  "id" : "880d612a-992f-15dc-c0df-def26184d318",
+  "name" : "title_bold",
+  "label" : "Title Bold",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "MiFID II Best Practice Platform"
+}, {
+  "id" : "8097201c-ea62-9c46-e060-ea3aa9711d01",
+  "name" : "subtext",
+  "label" : "Subtext",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Ensure your firm stays ahead of the regulatory curve without slowing down your analysts."
+}, {
+    "id" : "497a7081-6d6f-5031-c3c3-93572d724857",
+    "name" : "ticks",
+    "label" : "Tick List",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "name" : "normal_text",
+      "label" : "Normal Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "name" : "bold_text",
+      "label" : "Bold Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ { "normal_text" : "RXML Standards" }, { "normal_text" : "GDPR Data Protection" }, { "normal_text" : "SEC Rule 17a-4" }, { "normal_text" : "Web Accessibility" }]
+  } ]

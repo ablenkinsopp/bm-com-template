@@ -1,79 +1,140 @@
 .bm-button-wrapper {
-  @apply container flex justify-center items-center;
+    @apply container flex justify-center items-center;
 }
 
 .bm-button {
-  @apply cursor-pointer whitespace-nowrap no-underline;
+    @apply cursor-pointer whitespace-nowrap no-underline;
+
+    &.large {
+        .bm-button__outer {
+            @apply h-12;
+
+            .bm-button__inner {
+                @apply font-bold text-lg px-6;
+            }
+        }
+    }
+
+    .bm-button__outer {
+        @apply inline-flex items-center justify-center rounded uppercase overflow-hidden h-10;
+
+        &.bm-button__outer--outline {
+            @apply gradient-border p-px transition-colors duration-500 ease-in-out;
+
+            .bm-button__inner {
+                @apply text-water bg-dark-blue button-streak outline-button-streak;
+            }
+        }
+
+        &.bm-button__outer--filled .bm-button__inner {
+            @apply bg-turquoise text-dark-blue button-streak filled-button-streak;
+        }
+
+        &.bm-button__outer--ghost .bm-button__inner {
+            @apply text-off-white button-streak filled-button-streak;
+        }
+
+        .bm-button__inner {
+            @apply rounded flex items-center text-sm px-5 h-full overflow-hidden transition-colors duration-300 ease-in-out outline-none backdrop-blur-14;
+        }
+    }
+    
+
+    &:hover {
+        .bm-button__outer {
+            &.bm-button__outer--outline {
+                @apply gradient-border-button-hover;
+
+                .bm-button__inner {
+                    @apply border-glass-border-hover text-turquoise;
+
+                    &::before {
+                        transform: skewX(-30deg) translateX(115%);
+                    }
+                }
+            }
+
+            &.bm-button__outer--filled {
+                .bm-button__inner {
+                    @apply bg-white;
+
+                    &::before {
+                        transform: skewX(-30deg) translateX(115%);
+                    }
+                }
+            }
+
+            &.bm-button__outer--ghost {
+                .bm-button__inner {
+                    @apply text-turquoise;
+
+                    &::before {
+                        transform: skewX(-30deg) translateX(115%);
+                    }
+                }
+            }
+        }
+    }
+
+    &:active {
+        .bm-button__outer {
+            &.bm-button__outer--outline {
+                .bm-button__inner {
+                    @apply bg-dark-blue opacity-80 duration-100
+                }
+            }
+
+            &.bm-button__outer--filled {
+                .bm-button__inner {
+                    @apply bg-white opacity-80 duration-100
+                }
+            }
+
+            &.bm-button__outer--ghost {
+
+            }
+        }
+    }
 }
 
-.bm-button__outer {
-  @apply inline-flex items-center justify-center rounded uppercase overflow-hidden h-10;
-}
-
-.bm-button__outer--outline {
-  @apply gradient-border p-px;
-}
-
-.bm-button__inner {
-  @apply rounded flex items-center text-sm px-5 h-full;
-}
-.bm-button__outer--outline .bm-button__inner {
-  @apply text-turquoise bg-dark-blue;
-}
-
-.bm-button__outer--ghost .bm-button__inner {
-  @apply text-off-white hover:bg-white/20;
-}
-
-.bm-button__outer--filled .bm-button__inner {
-  @apply bg-turquoise text-dark-blue;
-}
-
-.bm-button__outer--inverse {
-  @apply gradient-border p-px;
-}
-
-.bm-button__outer--inverse .bm-button__inner {
-  @apply text-turquoise bg-dark-blue;
-}
 
 .button,
 .hs-button,
 .hs-blog-post-listing__post-button {
-  @apply transition-all duration-300 ease-in-out;
-  @apply inline-block;
-  @apply px-6 py-3;
-  @apply font-bold;
-  @apply text-center;
-  @apply cursor-pointer;
-  @apply leading-none;
-  @apply whitespace-nowrap;
-  @apply align-middle;
-  @apply select-none;
-  @apply rounded-md;
-  @apply text-base;
-  @apply tracking-wider;
-  @apply uppercase;
+    @apply transition-all duration-300 ease-in-out;
+    @apply inline-block;
+    @apply px-6 py-3;
+    @apply font-bold;
+    @apply text-center;
+    @apply cursor-pointer;
+    @apply leading-none;
+    @apply whitespace-nowrap;
+    @apply align-middle;
+    @apply select-none;
+    @apply rounded-md;
+    @apply text-base;
+    @apply tracking-wider;
+    @apply uppercase;
 
-  @apply bg-blue-600 text-white hover:bg-blue-500 hover:text-white;
-  @apply border-2 border-blue-600 hover:border-blue-500;
-
-  &.secondary {
-    @apply bg-white text-blue-600 hover:bg-blue-600 hover:text-white;
+    @apply bg-blue-600 text-white hover:bg-blue-500 hover:text-white;
     @apply border-2 border-blue-600 hover:border-blue-500;
-  }
 
-  &--ghost {
-    @apply bg-transparent text-blue-600 hover:bg-blue-600 hover:text-white;
-    @apply border-2 border-blue-600 hover:border-blue-500;
-  }
+    &.secondary {
+        @apply bg-white text-blue-600 hover:bg-blue-600 hover:text-white;
+        @apply border-2 border-blue-600 hover:border-blue-500;
+    }
 
-  &--small {
-    @apply px-4 py-1.5;
-    @apply text-sm;
-  }
+    &--ghost {
+        @apply bg-transparent text-blue-600 hover:bg-blue-600 hover:text-white;
+        @apply border-2 border-blue-600 hover:border-blue-500;
+    }
 
-  &--square {
-    @apply rounded-none;
-  }
+    &--small {
+        @apply px-4 py-1.5;
+        @apply text-sm;
+    }
+
+    &--square {
+        @apply rounded-none;
+    }
 }

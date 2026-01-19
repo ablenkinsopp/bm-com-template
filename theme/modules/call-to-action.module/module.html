@@ -1,3 +1,5 @@
+{% from '../../macros/button.html' import button %}
+
 <style>
 	.hero::before {
 		background-image: url('{{ module.background_image }}');
@@ -11,17 +13,7 @@
       <p class="text-lg text-white text-center lg:text-xl">
         {{ module.text_field }}
       </p>
-      <a href="{{ module.button_url }}" type="button" class="bm-button">
-        <div
-          class="bm-button__outer bm-button__outer--filled"
-        >
-          <div
-            class="bm-button__inner"
-          >
-            <span>{{ module.button_text }}</span>
-          </div>
-        </div>
-      </a>
+      {{ button(module.button_text, module.button_url) }}
     </div>
   </div>
 </div>

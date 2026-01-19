@@ -1,0 +1,17 @@
+{% from '../../macros/section-title.html' import section_title %}
+{% import '../../macros/info-card.html' as ic %}
+
+<div class="flex flex-col gap-10 w-full">
+    {% if module.show_section_title %}
+        {{ section_title(module.section_title.title, module.section_title.alignment, module.section_title.image_field, module.section_title.subtext) }}
+    {% endif %}
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        {% for card in module.info_cards %}
+            {% set card_class = loop.index == 4 ? "lg:row-span-2 lg:order-3" : (loop.index == 3 ? "lg:col-span-2 lg:order-4" : "") %}
+            <div class="{{ card_class }}">
+                {{ ic.info_card(card.image, card.title, card.text_field, card.ticks, "w-full h-full") }}
+            </div>
+        {% endfor %}
+    </div>
+</div>

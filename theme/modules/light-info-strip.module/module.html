@@ -1,0 +1,17 @@
+{% from '../../macros/tick-list-item.html' import tick_list_item %}
+
+<div class="w-full flex flex-col md:flex-row gap-6 md:justify-between text-text-blue items-center">
+    <div class="flex flex-col flex-1 gap-6">
+        <h4 class="text-3xl md:text-4xl">
+            {% if module.title_normal %}{{ module.title_normal}} {% endif %}
+            <span class="font-bold">{{ module.title_bold }}</span>
+        </h4>
+        <p class="font-bold text-lg md:text-xl">{{ module.subtext }}</p>
+    </div>
+
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4 md:gap-4 lg:gap-8">
+        {% for tick in module.ticks %}
+            {{ tick_list_item(tick, "dark") }}
+        {% endfor %}
+    </ul>
+</div>

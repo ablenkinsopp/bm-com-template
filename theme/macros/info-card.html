@@ -1,0 +1,41 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->  
+{% from './tick-list.html' import tick_list %}
+
+{% macro info_card(image, title, text_field, ticks, classes="") %}
+
+    {% set highlighted = "AskBlue" %}
+    {% set highlighted_html = '<span class="font-bold text-white"><span class="text-bright-blue">Ask</span>Blue</span>' %}
+    {% set title_final = title is string_containing highlighted ? title|replace(highlighted, highlighted_html, 1) : title %}
+    {% set text_final = text_field is string_containing highlighted ? text_field|replace(highlighted, highlighted_html, 1) : text_field %}
+
+    <li
+        class="gradient-border rounded overflow-hidden text-center {{ classes }}"
+    >
+        <div
+        class="rounded flex h-full flex-col px-2 gap-2 md:gap-4 py-2 sm:py-4 md:py-10 items-center justify-center text-center text-off-white text-sm sm:text-base md:text-lg bg-dark-blue"
+        >
+            {% if image %}
+                <img
+                    class="h-6 sm:h-8"
+                    alt="{{ title || text_field }}"
+                    src="{{ image }}"
+                />
+            {% endif %}
+            {% if title_final %}
+                <p class="text-white font-bold text-xl">{{ title_final|safe }}</p>
+            {% endif %} 
+
+            {% if text_final %}
+                <p >{{ text_final|safe }}</p>
+            {% endif %}
+
+            {% if ticks|length > 0 %}
+                {{ tick_list(ticks) }}
+            {% endif %}
+        </div>
+    </li>
+
+{% endmacro %}

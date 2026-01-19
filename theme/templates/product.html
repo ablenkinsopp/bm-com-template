@@ -20,6 +20,229 @@
 
     {% include_dnd_partial path="../sections/hero-banner.html" %}
 
+    {# Side By Side Section #}
+
+    {% dnd_section 
+        background_color={{ context.background_color or "#000F28" }},
+        fullWidth: "true" 
+    %}
+        {% dnd_column %}
+            {% dnd_row %}
+                {% dnd_module 
+                    path='../modules/side-by-side-panel.module', 
+                    image_position="left",
+                    app_logo="",
+                    title="Authoring, Compliance & Distribution",
+                    basic_text=[
+                        "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa.",
+                        "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa."
+                    ],
+                    two_column_text=[],
+                    button=[
+                        {
+                            button_text: "Request Demo",
+                            style: "outline"
+                        }
+                    ]
+                %}{% end_dnd_module %}
+            {% end_dnd_row %}
+        {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {# Horizontal Rule #}
+
+    {% include_dnd_partial path="../sections/horizontal-divider.html" %}
+
+    {# Complex Info Cards #}
+
+    {% dnd_section 
+        background_color={{ context.background_color or "#000F28" }},
+        fullWidth: "true" 
+    %}
+        {% dnd_column %}
+            {% dnd_row %}
+                {% dnd_module 
+                    path='../modules/complex-info-cards.module',
+                    section_title={
+                        image_field: ""
+                    }
+                %}
+                {% end_dnd_module %}
+            {% end_dnd_row %}
+        {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {# Standard Info Cards #}
+
+    {% dnd_section 
+        background_color={{ context.background_color or "#031d3c" }},
+        fullWidth: "true" 
+    %}
+        {% dnd_column %}
+            {% dnd_row %}
+                {% dnd_module 
+                    path='../modules/info-cards.module',
+                    show_section_title="true",
+                    section_title={
+                        title: "Edge Innovations",
+                        subtext: "Eliminate the need for complex integrations. Everything you need to manage the lifecycle of your research is built right in.",
+                        image_field: ""
+                    }
+                    info_cards=[
+                        {
+                            "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/share.svg",
+                            "title": "Manage Relationships",
+                            "text_field": "Phasellus ultricies nisi magna, nec ullamcorper dolor tempus et. Nullam ut tempus diam, sit amet dapibus urna."
+                        }, {
+                            "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/lock-simple.svg",
+                            "title": "Control Distribution",
+                            "text_field": "Phasellus ultricies nisi magna, nec ullamcorper dolor tempus et. Nullam ut tempus diam, sit amet dapibus urna."
+                        }, {
+                            "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/rocket.svg",
+                            "title": "Amplify Sales",
+                            "text_field": "Phasellus ultricies nisi magna, nec ullamcorper dolor tempus et. Nullam ut tempus diam, sit amet dapibus urna."
+                        }, {
+                            "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/chart.svg",
+                            "title": "Track Interactions",
+                            "text_field": "Phasellus ultricies nisi magna, nec ullamcorper dolor tempus et. Nullam ut tempus diam, sit amet dapibus urna."
+                        }
+                    ]
+                %}
+                {% end_dnd_module %}
+            {% end_dnd_row %}
+        {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {# Light Info Strip #}
+
+    {% include_dnd_partial path="../sections/light-info-strip.html" %}
+
+    {# Side By Side Section #}
+
+    {% dnd_section 
+        background_color={{ context.background_color or "#000F28" }},
+        fullWidth: "true" 
+    %}
+        {% dnd_column %}
+            {% dnd_row %}
+                {% dnd_module 
+                    path='../modules/side-by-side-panel.module', 
+                    image_position="left",
+                    app_logo="",
+                    title="Consume Content Your Way",
+                    basic_text=[
+                        "Eliminate the email problem. Consume aggregated research from a central, configurable workspace."
+                    ],
+                    two_column_text=[
+                        {
+                            heading: "Simplify Compliance",
+                            text_field: "Demonstrate process with transparency, auditability, and built-in entitlements."
+                        },
+                        {
+                            heading: "Personalize Content",
+                            text_field: "Tailor the experience for individual users with configurable research feeds."
+                        }
+                    ],
+                    button=[
+                        {
+                            button_text: "Request Demo",
+                            style: "outline"
+                        }
+                    ]
+                %}{% end_dnd_module %}
+            {% end_dnd_row %}
+        {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {# Horizontal Rule #}
+
+    {% include_dnd_partial path="../sections/horizontal-divider.html" %}
+
+    {# Side By Side Section #}
+
+    {% dnd_section 
+        background_color={{ context.background_color or "#000F28" }},
+        fullWidth: "true" 
+    %}
+        {% dnd_column %}
+            {% dnd_row %}
+                {% dnd_module 
+                    path='../modules/side-by-side-panel.module', 
+                    image_position="right",
+                    app_logo="",
+                    title="Extract Your True Value",
+                    basic_text=[
+                        "Get the full picture. Granular analytics deliver a real-time view of market trends and readership to drive insights."
+                    ],
+                    two_column_text=[],
+                    ticks=[
+                        {
+                            bold_text: "Validate Research Spend:",
+                            normal_text: "Uncover content value"
+                        },
+                        {
+                            bold_text: "Close Feedback Loop:",
+                            normal_text: "Understand readership across sectors"
+                        },
+                        {
+                            bold_text: "Uncover Sales Ops:",
+                            normal_text: "Get insight into high-value consumers."
+                        }
+                    ],
+                    button=[
+                        {
+                            button_text: "Request Demo",
+                            style: "outline"
+                        }
+                    ]
+                %}{% end_dnd_module %}
+            {% end_dnd_row %}
+        {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {# Standard Info Cards #}
+
+    {% dnd_section 
+        background_color={{ context.background_color or "#031d3c" }},
+        fullWidth: "true" 
+    %}
+        {% dnd_column %}
+            {% dnd_row %}
+                {% dnd_module 
+                    path='../modules/info-cards.module',
+                    show_section_title="true",
+                    section_title={
+                        title: "Service that feels more like partnership",
+                        subtext: "",
+                        image_field: {
+                            src: "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/handshake.svg"
+                        }
+                    }
+                    info_cards=[
+                        {
+                            "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/headset.svg",
+                            "title": "24/7 Support",
+                            "text_field": "Teams across Europe, Asia-Pacific, and North America ensure around-the-clock online or phone support."
+                        }, {
+                            "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/user-circle-check.svg",
+                            "title": "Account Management",
+                            "text_field": "Dedicated managers who understand individual client systems and use cases."
+                        }, {
+                            "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/student.svg",
+                            "title": "Ongoing Education",
+                            "text_field": "Live welcome trainings, product calls, and webinars to keep knowledge up to date"
+                        }, {
+                            "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/users-three.svg",
+                            "title": "Working Groups",
+                            "text_field": "Collaborate with us via regular client calls and in-person events."
+                        }
+                    ]
+                %}
+                {% end_dnd_module %}
+            {% end_dnd_row %}
+        {% end_dnd_column %}
+    {% end_dnd_section %}
+
     {# Call to action #}
 
     {% include_dnd_partial path="../sections/call-to-action.html" %}

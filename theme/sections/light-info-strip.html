@@ -1,0 +1,20 @@
+<!--
+  templateType: section
+  label: Light Info Strip
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/light-info-strip.png
+  description: "A splash of light color to use as a break, with some informative content"
+-->
+{% dnd_section 
+    background_color={{ "#CCFAF2" }},
+    fullWidth: "true" 
+%}
+    {% dnd_column %}
+        {% dnd_row %}
+            {% dnd_module 
+                path='../modules/light-info-strip.module'
+            %}
+            {% end_dnd_module %}
+        {% end_dnd_row %}
+    {% end_dnd_column %}
+{% end_dnd_section %}

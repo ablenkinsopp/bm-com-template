@@ -23,12 +23,13 @@
   }, {
     "id" : "59f2d969-4974-c92d-b56c-18d69ae416e4",
     "name" : "subtext",
-    "label" : "Subtext",
-    "required" : false,
+    "label" : "Label",
+    "required" : true,
     "locked" : false,
     "allow_new_line" : false,
     "type" : "text",
-    "display_width" : null
+    "display_width" : null,
+    "default" : "Things"
   }, {
     "id" : "7280ee0a-e85b-367c-59e0-5574f5953742",
     "name" : "unit",
@@ -46,19 +47,19 @@
   "display_width" : null,
   "default" : [ {
     "number" : "1.2",
-    "unit" : "b+",
-    "subtext" : "emails sent annualy"
+    "subtext" : "Things",
+    "unit" : "b+"
   }, {
     "number" : "1400",
-    "subtext" : "research providers"
+    "subtext" : "Things"
   }, {
     "number" : "1.5",
-    "unit" : "m+",
-    "subtext" : "documents published annualy"
+    "subtext" : "Things",
+    "unit" : "m+"
   }, {
     "number" : "40",
-    "unit" : "%",
-    "subtext" : "of N. American research distributed"
+    "subtext" : "Things",
+    "unit" : "%"
   } ]
 }, {
   "id" : "dc1a0d20-92a3-129a-b89e-7958f51304de",
