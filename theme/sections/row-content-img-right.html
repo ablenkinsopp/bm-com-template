@@ -7,11 +7,24 @@
 -->
 {% dnd_section
     background_color={{ context.background_color or "none" }},
-    vertical_alignment="MIDDLE"
+    vertical_alignment="MIDDLE",
+    margin={{ context.margin }},
+    padding={{ context.padding }}
 %}
     {% dnd_module
         path="../modules/side-by-side-panel",
         image_position="right"
+        bordered={{ context.bordered or false }},
+        app_logo={{ context.app_logo or ""}},
+        title={{ context.title or "Title Here"}},
+        basic_text={{ context.basic_text or [
+            "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa.",
+            "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa."
+        ] }},
+        product_image={{ context.product_image or null }},
+        two_column_text={{ context.two_column_text or [] }},
+        ticks={{ context.ticks or [] }},
+        button={{ context.button or [] }}
     %}
     {% end_dnd_module %}
 {% end_dnd_section %}

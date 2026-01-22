@@ -29,38 +29,48 @@
   "display_width" : null,
   "default" : "Ensure your firm stays ahead of the regulatory curve without slowing down your analysts."
 }, {
-    "id" : "497a7081-6d6f-5031-c3c3-93572d724857",
-    "name" : "ticks",
-    "label" : "Tick List",
+  "id" : "497a7081-6d6f-5031-c3c3-93572d724857",
+  "name" : "ticks",
+  "label" : "Tick List",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "ticks.normal_text",
+    "name" : "normal_text",
+    "label" : "Normal Text",
     "required" : false,
     "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : null,
-      "sorting_label_field" : null,
-      "default" : null
-    },
-    "children" : [ {
-      "name" : "normal_text",
-      "label" : "Normal Text",
-      "required" : false,
-      "locked" : false,
-      "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null
-    }, {
-      "name" : "bold_text",
-      "label" : "Bold Text",
-      "required" : false,
-      "locked" : false,
-      "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null,
-    "default" : [ { "normal_text" : "RXML Standards" }, { "normal_text" : "GDPR Data Protection" }, { "normal_text" : "SEC Rule 17a-4" }, { "normal_text" : "Web Accessibility" }]
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "ticks.bold_text",
+    "name" : "bold_text",
+    "label" : "Bold Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "normal_text" : "RXML Standards"
+  }, {
+    "normal_text" : "GDPR Data Protection"
+  }, {
+    "normal_text" : "SEC Rule 17a-4"
+  }, {
+    "normal_text" : "Web Accessibility"
   } ]
+} ]

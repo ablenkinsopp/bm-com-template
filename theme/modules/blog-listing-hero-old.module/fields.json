@@ -7,7 +7,7 @@
   "allow_new_line" : false,
   "type" : "text",
   "display_width" : null,
-  "default" : "{{blog.public_title}}"
+  "default" : "{{blog.name}}"
 }, {
   "id" : "4d9bbebc-dd42-d9a2-645a-575444da2be0",
   "name" : "blog_description",

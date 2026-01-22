@@ -6,13 +6,13 @@
 
 {% macro info_cards(cards) %}
     {% if cards | length == 2 %}
-        {% set grid_col_class = 'grid-cols-2' %}
+        {% set grid_col_class = 'md:grid-cols-2' %}
     {% endif %}
     {% if cards | length == 3 %}
-        {% set grid_col_class = 'grid-cols-3' %}
+        {% set grid_col_class = 'md:grid-cols-3' %}
     {% endif %}
     {% if cards | length == 4 %}
-        {% set grid_col_class = 'grid-cols-2 lg:grid-cols-4' %}
+        {% set grid_col_class = 'md:grid-cols-2 lg:grid-cols-4' %}
     {% endif %}
 
     <ul class="grid gap-2 sm:gap-4 lg:gap-10 {{ grid_col_class }}">

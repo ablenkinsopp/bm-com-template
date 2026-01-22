@@ -96,40 +96,43 @@
       "display_width" : null,
       "default" : "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa."
     }, {
-    "name" : "ticks",
-    "label" : "Tick List",
-    "required" : false,
-    "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : null,
-      "sorting_label_field" : null,
-      "default" : null
-    },
-    "children" : [ {
-      "name" : "normal_text",
-      "label" : "Normal Text",
+      "id" : "tabs.top_panel.ticks",
+      "name" : "ticks",
+      "label" : "Tick List",
       "required" : false,
       "locked" : false,
-      "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : null,
+        "default" : null
+      },
+      "children" : [ {
+        "id" : "tabs.top_panel.ticks.normal_text",
+        "name" : "normal_text",
+        "label" : "Normal Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "tabs.top_panel.ticks.bold_text",
+        "name" : "bold_text",
+        "label" : "Bold Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : [ ]
     }, {
-      "name" : "bold_text",
-      "label" : "Bold Text",
-      "required" : false,
-      "locked" : false,
-      "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null,
-    "default" : [ ]
-  }, {
       "id" : "bba6e11c-7143-d07a-6746-712e98acc9af",
       "name" : "button",
       "label" : "Buttons",
@@ -327,40 +330,43 @@
       "display_width" : null,
       "default" : "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa."
     }, {
-    "name" : "ticks",
-    "label" : "Tick List",
-    "required" : false,
-    "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : null,
-      "sorting_label_field" : null,
-      "default" : null
-    },
-    "children" : [ {
-      "name" : "normal_text",
-      "label" : "Normal Text",
+      "id" : "tabs.bottom_panel.ticks",
+      "name" : "ticks",
+      "label" : "Tick List",
       "required" : false,
       "locked" : false,
-      "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : null,
+        "default" : null
+      },
+      "children" : [ {
+        "id" : "tabs.bottom_panel.ticks.normal_text",
+        "name" : "normal_text",
+        "label" : "Normal Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "tabs.bottom_panel.ticks.bold_text",
+        "name" : "bold_text",
+        "label" : "Bold Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : [ ]
     }, {
-      "name" : "bold_text",
-      "label" : "Bold Text",
-      "required" : false,
-      "locked" : false,
-      "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null,
-    "default" : [ ]
-  }, {
       "id" : "ab703a7e-2954-b9d8-e4ec-c8cd108d82a9",
       "name" : "button",
       "label" : "Buttons",
@@ -473,7 +479,13 @@
       "app_logo" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/rms.svg",
       "title" : "Research",
       "basic_text" : "Integer nisi libero, lobortis consequat leo condimentum, cursus congue justo. Quisque placerat convallis pulvinar. Integer tincidunt quam quis dui ultricies commodo a at enim.",
-      "ticks" : [ { "normal_text": "Amazing selling point number 1" }, { "normal_text": "A second point should go here" }, { "normal_text": "And a third here" } ],
+      "ticks" : [ {
+        "normal_text" : "Amazing selling point number 1"
+      }, {
+        "normal_text" : "A second point should go here"
+      }, {
+        "normal_text" : "And a third here"
+      } ],
       "button" : [ {
         "button_text" : "Learn More",
         "url" : {

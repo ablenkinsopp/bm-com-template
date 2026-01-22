@@ -11,25 +11,38 @@
     {% set title_final = title is string_containing highlighted ? title|replace(highlighted, highlighted_html, 1) : title %}
     {% set text_final = text_field is string_containing highlighted ? text_field|replace(highlighted, highlighted_html, 1) : text_field %}
 
-    <li
-        class="gradient-border rounded overflow-hidden text-center {{ classes }}"
-    >
-        <div
-        class="rounded flex h-full flex-col px-2 gap-2 md:gap-4 py-2 sm:py-4 md:py-10 items-center justify-center text-center text-off-white text-sm sm:text-base md:text-lg bg-dark-blue"
-        >
+    <li class="gradient-border rounded overflow-hidden text-center {{ classes }}">
+        <div class="rounded flex h-full flex-col px-2 gap-2 md:gap-4 py-2 sm:py-4 md:py-10 items-center text-center text-off-white text-sm sm:text-base md:text-lg bg-dark-blue">
             {% if image %}
-                <img
-                    class="h-6 sm:h-8"
-                    alt="{{ title || text_field }}"
-                    src="{{ image }}"
-                />
+                {# Only treat it as an icon mask if the path contains 'Icons' #}
+                {% if 'Icons' in image %}
+                    <div class="text-turquoise">
+                        <img
+                            class="info-card-icon-mask h-6 sm:h-8"
+                            alt="{{ title || text_field }}"
+                            src="{{ image }}"
+                            style="
+                                -webkit-mask-image: url('{{ image|escape_url }}');
+                                mask-image: url('{{ image|escape_url }}');
+                            "
+                        />
+                    </div>
+                {% else %}
+                    {# Non-icon image: render as-is #}
+                    <img
+                        class="h-6 sm:h-8"
+                        alt="{{ title || text_field }}"
+                        src="{{ image }}"
+                    />
+                {% endif %}
             {% endif %}
+
             {% if title_final %}
                 <p class="text-white font-bold text-xl">{{ title_final|safe }}</p>
-            {% endif %} 
+            {% endif %}
 
             {% if text_final %}
-                <p >{{ text_final|safe }}</p>
+                <p>{{ text_final|safe }}</p>
             {% endif %}
 
             {% if ticks|length > 0 %}

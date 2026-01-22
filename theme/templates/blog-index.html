@@ -9,17 +9,17 @@
 
 {% block body %}
 
-  {% module "blog-listing-hero" path="../modules/blog-listing-hero", label="Blog Listing Hero", no_wrapper=True %}
+    {% module "blog-listing-hero" path="../modules/blog-listing-hero", label="Blog Listing Hero", no_wrapper=True %}
 
-  <section>
-    <div class="container">
-      {% module "blog-listing" path="../modules/blog-listing", title="Blog Listing", no_wrapper=True %}
-      {% if contents.total_page_count > 1 and not simple_list_page %}
-        <div id="pagination" class="mt-10 md:mt-20">
-          {% module "blog-pagination" path="../modules/blog-pagination", title="Blog Pagination", no_wrapper=True %}
+    <section class="bg-alt-bg">
+        <div class="container">
+            {% module "blog-listing" path="../modules/blog-listing", title="Blog Listing", no_wrapper=True %}
+            {% if contents.total_page_count > 1 and not simple_list_page %}
+                <div id="pagination" class="mt-10 md:mt-20">
+                    {% module "blog-pagination" path="../modules/blog-pagination", title="Blog Pagination", no_wrapper=True %}
+                </div>
+            {% endif %}
         </div>
-      {% endif %}
-    </div>
-  </section>
+    </section>
 
 {% endblock body %}

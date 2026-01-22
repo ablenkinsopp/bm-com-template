@@ -16,7 +16,7 @@
   "display" : "toggle",
   "type" : "boolean",
   "display_width" : null,
-  "default" : true
+  "default" : false
 }, {
   "id" : "3c5ad683-ef78-927f-f708-73050e6c0869",
   "name" : "show_search_bar",
@@ -26,7 +26,7 @@
   "display" : "toggle",
   "type" : "boolean",
   "display_width" : null,
-  "default" : true
+  "default" : false
 }, {
   "id" : "9b087463-351e-4e01-2829-e13e92cfbc09",
   "name" : "search_label_text",

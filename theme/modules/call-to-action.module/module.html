@@ -7,13 +7,15 @@
 </style>
 
 <div class="hero w-full p-4 px-10">
-  <div class="relative z-1 mx-auto max-w-[1600px]">
-    <div class="py-24 flex flex-col gap-6 justify-center items-center">
-      <h2 class="!text-white !font-light !text-3xl sm:!text-4xl text-center">{{ module.title }}</h2>
-      <p class="text-lg text-white text-center lg:text-xl">
-        {{ module.text_field }}
-      </p>
-      {{ button(module.button_text, module.button_url) }}
+    <div class="relative z-1 mx-auto max-w-[1600px]">
+        <div class="py-24 flex flex-col gap-6 justify-center items-center">
+            <h2 class="!text-white !font-light !text-3xl sm:!text-4xl text-center">{{ module.title }}</h2>
+            {% if module.text_field %}
+                <p class="text-lg text-white text-center lg:text-xl">
+                    {{ module.text_field }}
+                </p>
+            {% endif %}
+            {{ button(module.button_text, module.button_url) }}
+        </div>
     </div>
-  </div>
 </div>

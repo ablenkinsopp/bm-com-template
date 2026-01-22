@@ -151,6 +151,7 @@
       "default" : null
     },
     "children" : [ {
+      "id" : "info_cards.tick_list_item",
       "name" : "normal_text",
       "label" : "Normal Text",
       "required" : false,
@@ -159,6 +160,7 @@
       "type" : "text",
       "display_width" : null
     }, {
+      "id" : "f76ce90e-51e0-d84b-c891-540bf54a715e",
       "name" : "bold_text",
       "label" : "Bold Text",
       "required" : false,

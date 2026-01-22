@@ -8,27 +8,13 @@
   "show_preview" : true,
   "show_advanced_options" : false,
   "type" : "videoplayer",
-  "display_width" : null,
-  "default" : {
-    "player_id" : 202623538706,
-    "height" : 464,
-    "width" : 832,
-    "player_type" : "hsvideo2"
-  }
+  "display_width" : null
 }, {
   "id" : "02c55a45-8760-bd80-6170-148e9a2852ba",
   "name" : "video_position",
-  "label" : "Video Position",
+  "label" : "Video/Image Position",
   "required" : false,
   "locked" : false,
-  "visibility" : {
-    "controlling_field" : null,
-    "controlling_field_path" : "videoplayer_field",
-    "controlling_value_regex" : null,
-    "property" : null,
-    "operator" : null,
-    "access" : null
-  },
   "display" : "select",
   "choices" : [ [ "right", "Right" ], [ "left", "Left" ] ],
   "multiple" : false,
@@ -37,6 +23,35 @@
   "type" : "choice",
   "display_width" : null,
   "default" : "right"
+}, {
+  "id" : "64da1989-e0d3-5a1a-e628-0592837bfadd",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : true,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "videoplayer_field",
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "EMPTY",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Placeholders/hero-generic-placeholder.png",
+    "alt" : "hero-generic-placeholder",
+    "loading" : "lazy",
+    "width" : 872,
+    "height" : 576,
+    "max_width" : 872,
+    "max_height" : 576
+  }
 }, {
   "picker" : "image",
   "id" : "7f27e6b7-a134-d6e8-c196-309e5ed243bf",
@@ -66,7 +81,7 @@
   "allow_new_line" : false,
   "type" : "text",
   "display_width" : null,
-  "default" : "The Leading Solution for"
+  "default" : "A Modern System of Record"
 }, {
   "id" : "db7de352-2cfa-cfe2-8389-aebdece6dbcd",
   "name" : "headline_bottom",
@@ -76,7 +91,7 @@
   "allow_new_line" : false,
   "type" : "text",
   "display_width" : null,
-  "default" : "Investment Research"
+  "default" : "for Investment Research"
 }, {
   "id" : "ab8d23a4-5bfd-a537-f4b6-f4be5f40c459",
   "name" : "basic_text",
@@ -92,7 +107,7 @@
   "allow_new_line" : false,
   "type" : "text",
   "display_width" : null,
-  "default" : "Used across the global research marketplace to securely manage the complete lifecycle of critical investment content."
+  "default" : "Creator is the industry's leading system of record for sell-side research replacing Word, email, and fragmented tools with structured authoring, standardized templates, and workflows designed for consistency, compliance, and scale."
 }, {
   "picker" : "image",
   "id" : "676abe1d-4694-c7b3-9296-e25089eb13f1",
@@ -103,4 +118,28 @@
   "type" : "file",
   "display_width" : null,
   "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/generic%20hero.png"
+}, {
+  "id" : "0f6b68e2-5515-a5af-f0b5-3f9ba5cc5108",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Request Demo"
+}, {
+  "id" : "791c3eab-f7b8-f7fe-9d13-ec2a4a90c5e6",
+  "name" : "button_url",
+  "label" : "Button URL",
+  "required" : true,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+  "type" : "url",
+  "display_width" : null,
+  "default" : {
+    "content_id" : null,
+    "href" : "",
+    "type" : "EXTERNAL"
+  }
 } ]

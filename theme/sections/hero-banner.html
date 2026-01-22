@@ -38,6 +38,17 @@
         {% dnd_row %}
             {% dnd_module
                 path="../modules/hero-content",
+                video_player_field: {{ context.video_player_field or null }},
+                image_field: {{ context.image_field or {
+                    "size_type" : "auto",
+                    "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Placeholders/hero-generic-placeholder.png",
+                    "alt" : "hero-generic-placeholder",
+                    "loading" : "lazy",
+                    "width" : 872,
+                    "height" : 576,
+                    "max_width" : 872,
+                    "max_height" : 576
+                } }}
             %}
             {% end_dnd_module %}
         {% end_dnd_row %}

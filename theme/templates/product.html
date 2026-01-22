@@ -18,234 +18,206 @@
 
     {# Hero #}
 
-    {% include_dnd_partial path="../sections/hero-banner.html" %}
+    {% include_dnd_partial 
+        path="../sections/hero-banner.html" 
+        context={
+            "video_player_field": null,
+            "image_field": {
+                "size_type" : "auto",
+                "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Placeholders/hero-generic-placeholder.png",
+                "alt" : "hero-generic-placeholder",
+                "loading" : "lazy",
+                "width" : 872,
+                "height" : 576,
+                "max_width" : 872,
+                "max_height" : 576
+            }
+        }
+    %}
 
-    {# Side By Side Section #}
+    {# Standard Info Cards #}
 
     {% dnd_section 
         background_color={{ context.background_color or "#000F28" }},
         fullWidth: "true" 
     %}
-        {% dnd_column %}
-            {% dnd_row %}
-                {% dnd_module 
-                    path='../modules/side-by-side-panel.module', 
-                    image_position="left",
-                    app_logo="",
-                    title="Authoring, Compliance & Distribution",
-                    basic_text=[
-                        "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa.",
-                        "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa."
-                    ],
-                    two_column_text=[],
-                    button=[
-                        {
-                            button_text: "Request Demo",
-                            style: "outline"
-                        }
-                    ]
-                %}{% end_dnd_module %}
-            {% end_dnd_row %}
-        {% end_dnd_column %}
+        {% dnd_module 
+            path='../modules/info-cards.module',
+            show_section_title="false",
+            info_cards=[
+                {
+                    "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/stack-fill.svg",
+                    "title": "Authoring Excellence Built for Scale",
+                    "text_field": "A structured authoring framework that enables research teams to create once and scale everywhere, producing accurate, consistent research while reducing manual errors and streamlining the authoring process as markets change."
+                }, {
+                    "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/shield-check-fill.svg",
+                    "title": "Built for Regulated Compliance",
+                    "text_field": "From analysts to compliance, Creator supports every role in the research lifecycle with structured workflows and full traceability, so teams move faster with confidence, not friction."
+                }, {
+                    "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/magnifying-glass-plus-fill.svg",
+                    "title": "Single Source of Truth for Research",
+                    "text_field": "Creator brings all investment research into one source of truth, capturing every version, approval, and disclosure in a governed platform teams can rely on."
+                }, {
+                    "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/paper-plane-tilt-fill.svg",
+                    "title": "Seamless Distribution and Measurable Client Impact",
+                    "text_field": "Creator distributes research so it reaches the right audience in the right format, while providing visibility into consumption so firms understand what content is actually used."
+                }
+            ]
+        %}
+        {% end_dnd_module %}
     {% end_dnd_section %}
+
+    {# Call to action 1 #}
+
+    {% include_dnd_partial 
+        path="../sections/call-to-action.html",
+        context={
+            "title": "Rethink what your research team can publish with BlueMatrix",
+            "text_field": "",
+            "button_text": "Talk with an expert"
+        }
+    %}
+
+    {# Side By Side Section 1 #}
+
+    {% include_dnd_partial 
+        path="../sections/row-content-img-left.html",
+        context={
+            "background_color": "#031D3C",
+            "title": "Create Once. Scale Everywhere",
+            "basic_text": [
+                "Research teams shouldn't have to rebuild the same insight for every update, region, or audience. Creator replaces manual copy-and-paste with a structured authoring model that allows teams to create content once and reuse it everywhere.",
+                "Approved language, tables, graphs, and data stay connected as markets change, so updates happen automatically without introducing errors or inconsistency. As volume grows, teams gain leverage instead of complexity, publishing faster while maintaining accuracy, consistency, and control."
+            ],
+            "product_image": null,
+            "button": []
+        }
+    %}
+
+    {# Side By Side Section 2 #}
+
+    {% include_dnd_partial 
+        path="../sections/row-content-img-right.html",
+        context={
+            "background_color": "#000F28",
+            "title": "One Workflow for the Entire Research Lifecycle",
+            "basic_text": [
+                "Creator brings drafting, collaboration, review, compliance, and publishing into a single, connected workflow. Instead of managing handoffs through email and disconnected tools, every step of research production happens in one place.",
+                "Workflows are structured and automated, reducing manual coordination and eliminating bottlenecks as research moves from draft to publish. The result is faster time to market, fewer errors, and a smoother experience for everyone involved, from analysts to compliance."
+            ],
+            "button": []
+        }
+    %}
 
     {# Horizontal Rule #}
 
     {% include_dnd_partial path="../sections/horizontal-divider.html" %}
 
-    {# Complex Info Cards #}
+    {# Side By Side Section 3 #}
 
-    {% dnd_section 
-        background_color={{ context.background_color or "#000F28" }},
-        fullWidth: "true" 
+    {% include_dnd_partial 
+        path="../sections/row-content-img-left.html",
+        context={
+            "background_color": "#031D3C",
+            "title": "Distribute Insight With Precision",
+            "basic_text": [
+                "Research only delivers value when it reaches the right audience in the right form. Creator ensures insight is distributed consistently across teams, clients, and channels, without manual coordination or rework.",
+                "Because distribution is connected directly to research production, firms can tailor delivery by audience while maintaining accuracy and consistency. Built-in visibility shows how insight is consumed, helping teams understand what content is actually used and where it drives impact."
+            ],
+            "button": []
+        }
     %}
-        {% dnd_column %}
-            {% dnd_row %}
-                {% dnd_module 
-                    path='../modules/complex-info-cards.module',
-                    section_title={
-                        image_field: ""
-                    }
-                %}
-                {% end_dnd_module %}
-            {% end_dnd_row %}
-        {% end_dnd_column %}
+
+    {# Side By Side Section 4 #}
+
+    {% include_dnd_partial 
+        path="../sections/row-content-img-right.html",
+        context={
+            "background_color": "#000F28",
+            "bordered": true,
+            "title": "See What Actually Matters",
+            "basic_text": [
+                "Research teams produce enormous volumes of insight, but without visibility into what's actually used, it's hard for leaders to know what's working. Creator provides clear insight into research consumption, showing which views are read, reused, and referenced across the firm.",
+                "These engagement signals create a feedback loop between research production and impact. Leaders can refine content strategy, focus resources on what resonates most, and make more informed decisions about where to invest time and effort."
+            ],
+            "button": []
+        }
+    %}
+
+    {# Testimonials #}
+    
+    {% dnd_section
+        background_color={{ context.background_color or "#031D3C" }},
+        fullWidth: "true"
+    %}
+        {% dnd_module 
+            path='../modules/testimonials-side-by-side.module' 
+            quotes_group=[
+                {
+                    "blockquote" : "BlueMatrix's one-stop shop makes publishing and distributing research easy. Creator 4.0 is by far the most intuitive publishing platform they've developed thus far. The new platform has made the transition to HTML5 for our analysts much easier than anticipated.",
+                    "author_name" : "Unknown",
+                    "author_job_title" : "Unknown",
+                    "company_logo" : {
+                        "size_type" : "auto_custom_max",
+                        "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Client%20Logos/jefferies.png",
+                        "alt" : "Jefferies",
+                        "loading" : "lazy",
+                        "height" : 30,
+                        "max_width" : 30
+                    },
+                    "company_name" : "Jefferies"
+                }, {
+                    "blockquote" : "Over the past 15 years, BlueMatrix has been a true partner with Oppenheimer to help us create and distribute our research product. Their dedication, timeliness, and professionalism is outstanding and we would not be able to produce the research that we do without their service.",
+                    "author_name" : "Erica L. Moffett",
+                    "author_job_title" : "Associate Director of Research, Head of Research Marketing Services",
+                    "company_logo" : {
+                        "size_type" : "auto_custom_max",
+                        "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Client%20Logos/oppenheimer.png",
+                        "alt" : "Oppenheimer & Co",
+                        "loading" : "lazy",
+                        "height" : 30,
+                        "max_width" : 30
+                    },
+                    "company_name" : "Oppenheimer & Co"
+                }, {
+                    "blockquote" : "BlueMatrix has proven, year-in and year-out, its strategic value. It is far more than a publishing system and we regard them as an extension of our own organization.",
+                    "author_name" : "Louis Giglio",
+                    "author_job_title" : "Officer",
+                    "company_logo" : {
+                        "size_type" : "auto_custom_max",
+                        "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Client%20Logos/b-riley.png",
+                        "alt" : "B. Riley Securities",
+                        "loading" : "lazy",
+                        "height" : 30,
+                        "max_width" : 30
+                    },
+                    "company_name" : "B. Riley Securities"
+                }
+            ]
+        %}
+        {% end_dnd_module %}
     {% end_dnd_section %}
 
-    {# Standard Info Cards #}
+    {# Call to action 2 #}
 
-    {% dnd_section 
-        background_color={{ context.background_color or "#031d3c" }},
-        fullWidth: "true" 
+    {% include_dnd_partial 
+        path="../sections/call-to-action.html",
+        context={
+            "title": "Join leading research teams modernizing how insight is created",
+            "text_field": "",
+            "button_text": "Request a demo"
+        }
     %}
-        {% dnd_column %}
-            {% dnd_row %}
-                {% dnd_module 
-                    path='../modules/info-cards.module',
-                    show_section_title="true",
-                    section_title={
-                        title: "Edge Innovations",
-                        subtext: "Eliminate the need for complex integrations. Everything you need to manage the lifecycle of your research is built right in.",
-                        image_field: ""
-                    }
-                    info_cards=[
-                        {
-                            "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/share.svg",
-                            "title": "Manage Relationships",
-                            "text_field": "Phasellus ultricies nisi magna, nec ullamcorper dolor tempus et. Nullam ut tempus diam, sit amet dapibus urna."
-                        }, {
-                            "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/lock-simple.svg",
-                            "title": "Control Distribution",
-                            "text_field": "Phasellus ultricies nisi magna, nec ullamcorper dolor tempus et. Nullam ut tempus diam, sit amet dapibus urna."
-                        }, {
-                            "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/rocket.svg",
-                            "title": "Amplify Sales",
-                            "text_field": "Phasellus ultricies nisi magna, nec ullamcorper dolor tempus et. Nullam ut tempus diam, sit amet dapibus urna."
-                        }, {
-                            "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/chart.svg",
-                            "title": "Track Interactions",
-                            "text_field": "Phasellus ultricies nisi magna, nec ullamcorper dolor tempus et. Nullam ut tempus diam, sit amet dapibus urna."
-                        }
-                    ]
-                %}
-                {% end_dnd_module %}
-            {% end_dnd_row %}
-        {% end_dnd_column %}
-    {% end_dnd_section %}
 
     {# Light Info Strip #}
 
-    {% include_dnd_partial path="../sections/light-info-strip.html" %}
-
-    {# Side By Side Section #}
-
-    {% dnd_section 
-        background_color={{ context.background_color or "#000F28" }},
-        fullWidth: "true" 
+    {% include_dnd_partial 
+        path="../sections/light-info-strip.html", 
+        context={
+            "title_bold": "Designed as a MiFID II Best Practice Platform",
+            "ticks": [ { "normal_text" : "RXML Standards" }, { "normal_text" : "GDPR Data Protection" }, { "normal_text" : "SEC Rule 17a-4" }, { "normal_text" : "Web Accessibility" }]
+        }
     %}
-        {% dnd_column %}
-            {% dnd_row %}
-                {% dnd_module 
-                    path='../modules/side-by-side-panel.module', 
-                    image_position="left",
-                    app_logo="",
-                    title="Consume Content Your Way",
-                    basic_text=[
-                        "Eliminate the email problem. Consume aggregated research from a central, configurable workspace."
-                    ],
-                    two_column_text=[
-                        {
-                            heading: "Simplify Compliance",
-                            text_field: "Demonstrate process with transparency, auditability, and built-in entitlements."
-                        },
-                        {
-                            heading: "Personalize Content",
-                            text_field: "Tailor the experience for individual users with configurable research feeds."
-                        }
-                    ],
-                    button=[
-                        {
-                            button_text: "Request Demo",
-                            style: "outline"
-                        }
-                    ]
-                %}{% end_dnd_module %}
-            {% end_dnd_row %}
-        {% end_dnd_column %}
-    {% end_dnd_section %}
-
-    {# Horizontal Rule #}
-
-    {% include_dnd_partial path="../sections/horizontal-divider.html" %}
-
-    {# Side By Side Section #}
-
-    {% dnd_section 
-        background_color={{ context.background_color or "#000F28" }},
-        fullWidth: "true" 
-    %}
-        {% dnd_column %}
-            {% dnd_row %}
-                {% dnd_module 
-                    path='../modules/side-by-side-panel.module', 
-                    image_position="right",
-                    app_logo="",
-                    title="Extract Your True Value",
-                    basic_text=[
-                        "Get the full picture. Granular analytics deliver a real-time view of market trends and readership to drive insights."
-                    ],
-                    two_column_text=[],
-                    ticks=[
-                        {
-                            bold_text: "Validate Research Spend:",
-                            normal_text: "Uncover content value"
-                        },
-                        {
-                            bold_text: "Close Feedback Loop:",
-                            normal_text: "Understand readership across sectors"
-                        },
-                        {
-                            bold_text: "Uncover Sales Ops:",
-                            normal_text: "Get insight into high-value consumers."
-                        }
-                    ],
-                    button=[
-                        {
-                            button_text: "Request Demo",
-                            style: "outline"
-                        }
-                    ]
-                %}{% end_dnd_module %}
-            {% end_dnd_row %}
-        {% end_dnd_column %}
-    {% end_dnd_section %}
-
-    {# Standard Info Cards #}
-
-    {% dnd_section 
-        background_color={{ context.background_color or "#031d3c" }},
-        fullWidth: "true" 
-    %}
-        {% dnd_column %}
-            {% dnd_row %}
-                {% dnd_module 
-                    path='../modules/info-cards.module',
-                    show_section_title="true",
-                    section_title={
-                        title: "Service that feels more like partnership",
-                        subtext: "",
-                        image_field: {
-                            src: "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/handshake.svg"
-                        }
-                    }
-                    info_cards=[
-                        {
-                            "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/headset.svg",
-                            "title": "24/7 Support",
-                            "text_field": "Teams across Europe, Asia-Pacific, and North America ensure around-the-clock online or phone support."
-                        }, {
-                            "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/user-circle-check.svg",
-                            "title": "Account Management",
-                            "text_field": "Dedicated managers who understand individual client systems and use cases."
-                        }, {
-                            "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/student.svg",
-                            "title": "Ongoing Education",
-                            "text_field": "Live welcome trainings, product calls, and webinars to keep knowledge up to date"
-                        }, {
-                            "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/users-three.svg",
-                            "title": "Working Groups",
-                            "text_field": "Collaborate with us via regular client calls and in-person events."
-                        }
-                    ]
-                %}
-                {% end_dnd_module %}
-            {% end_dnd_row %}
-        {% end_dnd_column %}
-    {% end_dnd_section %}
-
-    {# Call to action #}
-
-    {% include_dnd_partial path="../sections/call-to-action.html" %}
 
     {# News Cards #}
     
@@ -253,11 +225,7 @@
         background_color={{ context.background_color or "#000F28" }},
         fullWidth: "true" 
     %}
-        {% dnd_column %}
-            {% dnd_row %}
-                {% dnd_module path='../modules/news-card.module' %}{% end_dnd_module %}
-            {% end_dnd_row %}
-        {% end_dnd_column %}
+        {% dnd_module path='../modules/news-card.module' %}{% end_dnd_module %}
     {% end_dnd_section %}
 
 

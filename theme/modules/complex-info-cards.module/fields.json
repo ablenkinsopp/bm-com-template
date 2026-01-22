@@ -139,6 +139,7 @@
     "type" : "file",
     "display_width" : null
   }, {
+    "id" : "497a7081-6d6f-5031-c3c3-93572d724857",
     "name" : "ticks",
     "label" : "Tick List",
     "required" : false,
@@ -150,6 +151,7 @@
       "default" : null
     },
     "children" : [ {
+      "id" : "info_cards.ticks.normal_text",
       "name" : "normal_text",
       "label" : "Normal Text",
       "required" : false,
@@ -158,6 +160,7 @@
       "type" : "text",
       "display_width" : null
     }, {
+      "id" : "info_cards.ticks.bold_text",
       "name" : "bold_text",
       "label" : "Bold Text",
       "required" : false,
@@ -172,7 +175,7 @@
     "type" : "group",
     "display_width" : null,
     "default" : [ ]
-  }  ],
+  } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
@@ -194,6 +197,12 @@
     "image" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/gavel.svg",
     "title" : "Minimize Regulatory Risk",
     "text_field" : "Turn compliance into a background task with automated checkpoints, governance, and disclaimers.",
-    "ticks" : [ { "normal_text": "Automated Disclosures" }, { "normal_text": "Audit Trails" }, { "normal_text": "Global Rule Sets" } ]
+    "ticks" : [ {
+      "normal_text" : "Automated Disclosures"
+    }, {
+      "normal_text" : "Audit Trails"
+    }, {
+      "normal_text" : "Global Rule Sets"
+    } ]
   } ]
 } ]

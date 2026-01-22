@@ -16,6 +16,7 @@
 
   --color-text-color: rgba(252, 252, 252, 0.80);
   --color-off-white: #fcfcfc;
+  --color-alt-bg: #f6f6f6;
   --color-body-bg-color: #031d3c;
   --color-muted-text: #afafaf;
   --color-text-blue: #122B48;
@@ -97,6 +98,35 @@
 
         background-size: 102.909% 177.957%;
         background-position: 0 -80.824px;
+        background-repeat: no-repeat;
+
+        opacity: 0.25; /* ← ADJUST THIS */
+        mix-blend-mode: lighten; /* ← OPTIONAL: only if you still want your original blend mode */
+        z-index: 0;
+    }
+}
+
+@utility blog-hero {
+    position: relative;
+    background-color: #031535;
+    background-image: linear-gradient(
+      90deg,
+      #041431 19.72%,
+      rgba(0, 0, 0, 0) 74.68%
+    );
+    background-size: auto;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    /* no blend mode needed for the gradient-only layer */
+
+    &&:before  {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background-image: url("https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/generic%20hero.png");
+        background-size: cover;
+        background-position: 0 -200px;
         background-repeat: no-repeat;
 
         opacity: 0.25; /* ← ADJUST THIS */
@@ -227,6 +257,22 @@
         height: 1px;
         background: linear-gradient(90deg, #43e3c2 0%, #30abff 100%);
     }
+}
+
+/* ----------------------------- */
+/* RANDOM STUFF                  */
+/* ----------------------------- */
+
+.info-card-icon-mask {
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+
+    background: currentColor;
+    object-position: 9999in;
 }
 
 .home-logos {

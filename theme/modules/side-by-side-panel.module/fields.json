@@ -23,15 +23,47 @@
   "display_width" : null,
   "default" : false
 }, {
-  "picker" : "image",
   "id" : "084cba1b-7111-1da8-cfe5-51ab5d0dd022",
-  "name" : "image",
-  "label" : "Image",
-  "required" : true,
+  "name" : "product_image",
+  "label" : "Product Image",
+  "required" : false,
   "locked" : false,
-  "type" : "file",
+  "responsive" : false,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
   "display_width" : null,
-  "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png"
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png",
+    "alt" : "side-by-side-generic-placeholder",
+    "loading" : "lazy",
+    "width" : 771,
+    "height" : 772,
+    "max_width" : 771,
+    "max_height" : 772
+  }
+}, {
+  "id" : "fe16bbb8-4ce0-7815-7c18-f7590956d5c1",
+  "name" : "context_image",
+  "label" : "Context Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Placeholders/side-by-side-generic-placeholder.png",
+    "alt" : "side-by-side-generic-placeholder",
+    "loading" : "lazy",
+    "width" : 771,
+    "height" : 772,
+    "max_width" : 771,
+    "max_height" : 772
+  }
 }, {
   "picker" : "image",
   "id" : "2e3445f4-6b6c-2239-c615-bc6590d407ed",
@@ -114,41 +146,43 @@
     "heading" : "Simplify Compliance"
   } ]
 }, {
-    "id" : "497a7081-6d6f-5031-c3c3-93572d724857",
-    "name" : "ticks",
-    "label" : "Tick List",
+  "id" : "497a7081-6d6f-5031-c3c3-93572d724857",
+  "name" : "ticks",
+  "label" : "Tick List",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "ticks.normal_text",
+    "name" : "normal_text",
+    "label" : "Normal Text",
     "required" : false,
     "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : null,
-      "sorting_label_field" : null,
-      "default" : null
-    },
-    "children" : [ {
-      "name" : "normal_text",
-      "label" : "Normal Text",
-      "required" : false,
-      "locked" : false,
-      "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null
-    }, {
-      "name" : "bold_text",
-      "label" : "Bold Text",
-      "required" : false,
-      "locked" : false,
-      "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null,
-    "default" : [ { "normal_text" : "Amazing Feature 1" }, { "normal_text" : "Amazing Feature 2" }, { "normal_text" : "Amazing Feature 3" } ]
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
   }, {
+    "id" : "ticks.bold_text",
+    "name" : "bold_text",
+    "label" : "Bold Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
   "id" : "e975db12-338a-163d-a71b-decad819e83f",
   "name" : "button",
   "label" : "Buttons",

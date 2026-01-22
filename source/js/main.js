@@ -57,18 +57,18 @@ domReady(() => {
 // {% endraw %}
 
 function getNearestColoredBackground(el) {
-    let node = el.parentElement;
+    let node = el.closest('.row-fluid-wrapper');
 
-    while (node) {
+    if (node) {
         const styles = window.getComputedStyle(node);
-        const bg = styles.backgroundColor;
+        const bg = styles.backgroundImage; // e.g. 'none', 'url("...")', 'linear-gradient(...)'
 
-        // Skip transparent/none
-        if (bg && bg !== 'transparent' && bg !== 'rgba(0, 0, 0, 0)') {
+        // Ignore if it has any image URL; accept gradients/other non-url values
+        if (bg && bg !== 'none' && !bg.includes('url(')) {
+            // bg is a color/gradient/etc. – use it
+            console.log('usable backgroundImage:', bg);
             return bg;
         }
-
-        node = node.parentElement;
     }
 
     return null;
@@ -80,7 +80,7 @@ function applyNearestBackground(selector = '.match-nearest-bg') {
     elements.forEach((el) => {
         const bg = getNearestColoredBackground(el);
         if (bg) {
-            el.style.backgroundColor = bg;
+            el.style.backgroundImage = bg;
         }
     });
 }

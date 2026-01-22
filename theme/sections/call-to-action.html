@@ -38,6 +38,9 @@
         {% dnd_row %}
             {% dnd_module
                 path="../modules/call-to-action",
+                title={{ context.title or "Rethink what your research team can publish with BlueMatrix" }},
+                text_field={{ context.text_field or "" }},
+                button_text={{ context.button_text or "Talk with an expert" }}
             %}
             {% end_dnd_module %}
         {% end_dnd_row %}

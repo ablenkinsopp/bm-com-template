@@ -17,7 +17,7 @@
   "allow_new_line" : false,
   "type" : "text",
   "display_width" : null,
-  "default" : "Get Started Today"
+  "default" : "Rethink what your research team can publish with BlueMatrix"
 }, {
   "id" : "5b98b4aa-2a7d-2bcf-5678-f044350122f2",
   "name" : "text_field",
@@ -27,7 +27,7 @@
   "allow_new_line" : false,
   "type" : "text",
   "display_width" : null,
-  "default" : "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu        enim posuere mollis."
+  "default" : ""
 }, {
   "id" : "60ee9f14-d20d-efc6-62fb-76ed296f756e",
   "name" : "button_text",
@@ -37,7 +37,7 @@
   "allow_new_line" : false,
   "type" : "text",
   "display_width" : null,
-  "default" : "Request Demo"
+  "default" : "Talk with an expert"
 }, {
   "id" : "99f6ed1d-bb59-1e4f-f01e-5ffa8419503c",
   "name" : "button_url",

@@ -4709,14 +4709,14 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     });
   });
   function getNearestColoredBackground(el) {
-    let node = el.parentElement;
-    while (node) {
+    let node = el.closest(".row-fluid-wrapper");
+    if (node) {
       const styles = window.getComputedStyle(node);
-      const bg = styles.backgroundColor;
-      if (bg && bg !== "transparent" && bg !== "rgba(0, 0, 0, 0)") {
+      const bg = styles.backgroundImage;
+      if (bg && bg !== "none" && !bg.includes("url(")) {
+        console.log("usable backgroundImage:", bg);
         return bg;
       }
-      node = node.parentElement;
     }
     return null;
   }
@@ -4725,7 +4725,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     elements.forEach((el) => {
       const bg = getNearestColoredBackground(el);
       if (bg) {
-        el.style.backgroundColor = bg;
+        el.style.backgroundImage = bg;
       }
     });
   }

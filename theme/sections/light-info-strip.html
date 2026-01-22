@@ -12,7 +12,11 @@
     {% dnd_column %}
         {% dnd_row %}
             {% dnd_module 
-                path='../modules/light-info-strip.module'
+                path='../modules/light-info-strip.module',
+                title_normal={{ context.title_normal or "" }}
+                title_bold={{ context.title_bold or "" }}
+                subtext={{ context.subtext or "" }}
+                ticks={{ context.ticks or [ { "normal_text" : "Tick List Item 1" }, { "normal_text" : "Tick List Item 2" }, { "normal_text" : "Tick List Item 3" }, { "normal_text" : "Tick List Item 4" }] }}
             %}
             {% end_dnd_module %}
         {% end_dnd_row %}
