@@ -19,7 +19,7 @@
     {# Hero #}
 
     {% include_dnd_partial 
-        path="../sections/hero-banner.html" 
+        path="../sections/hero-banner.html", 
         context={
             "video_player_field": null,
             "image_field": {
@@ -31,7 +31,12 @@
                 "height" : 576,
                 "max_width" : 872,
                 "max_height" : 576
-            }
+            },
+            "headline_top": "A Modern System of Record",
+            "headline_bottom": "for Investment Research",
+            "basic_text": [
+                "Creator is the industry’s leading system of record for sell-side research replacing Word, email, and fragmented tools with structured authoring, standardized templates, and workflows designed for consistency, compliance, and scale."
+            ]
         }
     %}
 
@@ -225,7 +230,7 @@
         background_color={{ context.background_color or "#000F28" }},
         fullWidth: "true" 
     %}
-        {% dnd_module path='../modules/news-card.module' %}{% end_dnd_module %}
+    {% dnd_module path='../modules/news-card.module' %}{% end_dnd_module %}
     {% end_dnd_section %}
 
 

@@ -5,6 +5,8 @@
   screenshotPath: ../images/section-previews/hero-banner.png
   description: "Full size background image section separated in two columns. Optional Video which can be placed to the left or right of text"
 -->
+  
+<!-- DEBUG: headline_top = {{ context.headline_top }} -->
 {% dnd_section
     background_image={
         "backgroundPosition": "MIDDLE_CENTER",
@@ -36,19 +38,16 @@
         },
     %}
         {% dnd_row %}
+        
             {% dnd_module
                 path="../modules/hero-content",
-                video_player_field: {{ context.video_player_field or null }},
-                image_field: {{ context.image_field or {
-                    "size_type" : "auto",
-                    "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Placeholders/hero-generic-placeholder.png",
-                    "alt" : "hero-generic-placeholder",
-                    "loading" : "lazy",
-                    "width" : 872,
-                    "height" : 576,
-                    "max_width" : 872,
-                    "max_height" : 576
-                } }}
+                video_player_field={{ context.video_player_field or null }},
+                app_logo={{ context.app_logo }},
+                image_field={{ context.image_field is truthy ? context.image_field : null }},
+                headline_top={{ context.headline_top or "Top Headline" }},
+                headline_bottom={{ context.headline_bottom or "" }},
+                basic_text={{ context.basic_text or ["Text goes here"] }},
+                show_button={{ not (context.show_button is false) }}
             %}
             {% end_dnd_module %}
         {% end_dnd_row %}

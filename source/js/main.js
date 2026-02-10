@@ -42,13 +42,6 @@ if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('
 
 // Start Alpine when the page is ready.
 domReady(() => {
-  // Theme info
-  console.log('\n\n\n%c🍹', 'color: #CA0000; background: #FFFF00; font-size: 200px; font-weight: bold; padding: 10px 36px; white-space: nowrap;');
-
-  console.log('%cFresh Juice', 'color: #CA0000; background: #FFFF00; font-size: 32px; font-weight: bold; padding: 10px 30px; white-space: nowrap;');
-  console.log('%cIt`s a stunningly crafted starter theme for HubSpot CMS, meticulously assembled using the powerful combination of TailwindCSS and AlpineJS.', 'font-size:18px');
-  console.log('%cFork me on GitHub:\nhttps://github.com/freshjuice-dev/freshjuice-dev-hubspot-theme\n\n\n', 'font-size:18px');
-
   Alpine.start();
   flyingPages({
     // Prefetch all pages by default
@@ -66,7 +59,6 @@ function getNearestColoredBackground(el) {
         // Ignore if it has any image URL; accept gradients/other non-url values
         if (bg && bg !== 'none' && !bg.includes('url(')) {
             // bg is a color/gradient/etc. – use it
-            console.log('usable backgroundImage:', bg);
             return bg;
         }
     }

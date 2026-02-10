@@ -1,0 +1,21 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{% macro blog_tag(text, link) %}
+    {% if text == "Technology" %}
+        {% set color_classes = "bg-tag-green-bg text-tag-green-text" %}
+    {% elif text == "Company News" %}
+        {% set color_classes = "bg-tag-blue-bg text-tag-blue-text" %}
+    {% elif text == "Industry News" %}
+        {% set color_classes = "bg-tag-purple-bg text-tag-purple-text" %}
+    {% else %}
+        {% set color_classes = "bg-water text-turquoise" %}
+    {% endif %}
+
+    {% if link %}
+        <a href="{{ link }}" class="rounded-4xl px-3 py-1 text-sm {{ color_classes }} hover:underline">{{ text }}</a>
+    {% else %}
+        <span class="rounded-4xl px-3 py-1 text-sm {{ color_classes }}">{{ text }}</span>
+    {% endif %}
+{% endmacro %}

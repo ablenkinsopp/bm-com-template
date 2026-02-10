@@ -1,0 +1,110 @@
+[ {
+  "id" : "fdf2d3f5-95f0-2952-9d54-48fb1e3934d9",
+  "name" : "team_members",
+  "label" : "Team Members",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "8a45919c-3f81-a736-fecd-1df9e5da123e",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : true,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Team/patricia-horotan.png",
+      "alt" : "Patricia Horotan",
+      "loading" : "lazy",
+      "width" : 291,
+      "height" : 291,
+      "max_width" : 291,
+      "max_height" : 291
+    }
+  }, {
+    "id" : "042648ec-6a37-6fd4-dfeb-c2dcc87c70ae",
+    "name" : "member_name",
+    "label" : "Name",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Patricia Horotan"
+  }, {
+    "id" : "5750bc95-eaaf-9fba-ee95-56f0ad6e77f2",
+    "name" : "position",
+    "label" : "Position",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "CEO & President"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "5d432cb9-fe7d-15f3-e12c-2ed98044601f",
+  "name" : "join_title",
+  "label" : "Join Title",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Interested in joining the team?"
+}, {
+  "id" : "36bd032c-4a6d-fef2-70de-89d573d22343",
+  "name" : "join_text",
+  "label" : "Join Text",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Explore career opportunities at BlueMatrix"
+}, {
+  "id" : "42a56da9-2680-0610-2c69-1dd007863167",
+  "name" : "join_button_text",
+  "label" : "Join Button Text",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Current Openings"
+}, {
+  "id" : "e7125c37-4cfc-6b53-2293-2a9613de1472",
+  "name" : "join_link",
+  "label" : "Join Link",
+  "required" : true,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : 205661277851,
+      "href" : null,
+      "type" : "CONTENT"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+} ]

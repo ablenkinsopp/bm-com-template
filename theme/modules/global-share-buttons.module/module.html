@@ -1,7 +1,7 @@
 {% set buttonName = {
   "fb": "Facebook",
   "vk": "VK",
-  "tw": "Twitter",
+  "tw": "X",
   "tg": "Telegram",
   "pk": "Pocket",
   "re": "Reddit",
@@ -21,26 +21,25 @@
 } %}
 
 
-<div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8"
+<div class="flex justify-end items-center gap-6 mt-6 py-6 border-b border-t border-b-[#E5E7EB] border-t-[#E5E7EB]"
      x-intersect.once="loadScript(`//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js`)">
 
-  <div class="text-lg md:text-xl font-semibold whitespace-nowrap">Share Post</div>
+    <div class="text-sm font-bold text-blog-text uppercase whitespace-nowrap">Share</div>
 
-  <div class="share-btn flex flex-wrap gap-4"
-       data-title="{{ content.name|safe|striptags }}"
-       data-desc="{{ content.meta_description|safe|striptags }}"
-       data-url="{{ content.absolute_url }}">
-
-    {% for item in module.share_button %}
-      <a data-id="{{ item }}"
-         href="#" @click="$event.preventDefault()"
-         class="transition-all cursor-pointer hover:scale-125 [&>svg]:size-8">
-        {% set icon_path = '../../images/icons/social/' + item + '.svg.html' %}
-        {% include icon_path %}
-        <span class="sr-only">{{ buttonName[item] }}</span>
-      </a>
-    {% endfor %}
-
-
-  </div>
+    <div class="share-btn flex flex-wrap gap-4"
+        data-title="{{ content.name|safe|striptags }}"
+        data-desc="{{ content.meta_description|safe|striptags }}"
+        data-url="{{ content.absolute_url }}"
+    >
+        {% for item in module.share_button %}
+            <a data-id="{{ item }}"
+                href="#" @click="$event.preventDefault()"
+                class="transition-all cursor-pointer border items-center justify-center border-turquoise bg-white rounded-4xl h-9 px-4 [&>svg]:size-5 text-blog-text hover:bg-water flex gap-2"
+            >
+                {% set icon_path = '../../images/icons/social/' + item + '.svg.html' %}
+                {% include icon_path %}
+                <span>{{ buttonName[item] }}</span>
+            </a>
+        {% endfor %}
+    </div>
 </div>

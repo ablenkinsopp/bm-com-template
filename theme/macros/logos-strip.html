@@ -1,0 +1,22 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{% macro logos_strip(logos, title, compact=false) %}
+
+{% set grid_classes = compact == true ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-2 xl:grid-cols-3' : 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-6' %}
+
+<div class='gradient-border sm:rounded overflow-hidden w-full'>
+    <div class='bg-dark-blue-alt  sm:rounded pt-7 pb-10 text-center flex items-center justify-between flex-col gap-6'>
+        <h6 class="!text-water !font-bold uppercase">{{ title }}</h6>
+        <ul class='grid {{ grid_classes }} lg:px-8 justify-center gap-4 gap-y-8 xl:gap-12'>
+            {% for item in logos %}
+                <li class='h-6 sm:h-7 md:h6 lg:h-7 flex self-center justify-center'>
+                    <img src="{{ item.company_logo }}" class="h-6 sm:h-7 md:h-6 lg:h-7 opacity-70" alt="{{ item.company_name }}" />
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endmacro %}

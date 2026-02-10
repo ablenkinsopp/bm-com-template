@@ -1,36 +1,35 @@
-<div class="article__author bg-transparent flex flex-col sm:flex-row gap-4 md:gap-8">
+<div class="article__author bg-transparent flex flex-col item-center justify-center sm:flex-row gap-2">
 
-  <div class="shrink-0 size-16 md:size-24 overflow-hidden object-cover object-center rounded-full">
-    {% if content.blog_post_author.avatar %}
-    <img loading="lazy"
-         class="size-16 md:size-24 m-0! leading-none"
-         src="{{ content.blog_post_author.avatar }}"
-         alt="{{ content.blog_post_author.display_name | striptags }}"
-         width="96" height="96"/>
-    {% else %}
-      <div class="size-16 md:size-24 m-0! leading-none bg-amber-100 flex justify-center items-center select-none font-cursive"
-           x-data="{
-             name: `{{ content.blog_post_author.display_name | striptags }}`,
-             nameAbbr: `NA`
-           }"
-           x-init="nameAbbr = name.split(' ').map(word => word[0]).join('')">
-        <span class="text-xl md:text-3xl font-thin" x-text="nameAbbr"></span>
-      </div>
-    {% endif %}
-  </div>
+    <div class="shrink-0 size-8 overflow-hidden object-cover object-center rounded-full">
+        {% if content.blog_post_author.avatar %}
+            <img loading="lazy"
+                class="size-8 m-0! leading-none"
+                src="{{ content.blog_post_author.avatar }}"
+                alt="{{ content.blog_post_author.display_name | striptags }}"
+                width="96" height="96"/>
+        {% else %}
+            <div class="size-8 m-0! text-sm leading-none bg-turquoise flex justify-center items-center select-none"
+                x-data="{
+                    name: `{{ content.blog_post_author.display_name | striptags }}`,
+                    nameAbbr: `NA`
+                }"
+                x-init="nameAbbr = name.split(' ').map(word => word[0]).join('')">
+                <span class="text-sm text-white font-bold" x-text="nameAbbr"></span>
+            </div>
+        {% endif %}
+    </div>
 
-  <div class="author__info">
-    <div class="author__name mb-2 sm:mb-4">
-      {# <span>About </span> #}
-      <a class="text-xl sm:text-2xl font-bold no-underline"
-         href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}"
-         rel="author">
-        {{ content.blog_post_author.display_name | striptags }}
-      </a>
+    <div class="author__info flex items-center">
+        <div class="author__name">
+            <a class="text-sm font-bold no-underline"
+                href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}"
+                rel="author">
+                {{ content.blog_post_author.display_name | striptags }}
+            </a>
+        </div>
+        <!-- <div class="author__bio">
+            {{ content.blog_post_author.bio | striptags }}
+        </div> -->
     </div>
-    <div class="author__bio">
-      {{ content.blog_post_author.bio | striptags }}
-    </div>
-  </div>
 
 </div>

@@ -4,114 +4,114 @@
   label: Blog Post - Modern
   screenshotPath: ../images/template-previews/blog-post.png
 -->
+{% from '../macros/minutes-to-read.html' import minutes_to_read %}
+{% from '../macros/blog-tag.html' import blog_tag %}
 
 {% extends "./layouts/base.html" %}
 
 {% block body %}
-<article class="">
+<div class="bg-white">
 
-  <header class="article__header bg-gradient-60 from-orange-100 via-red-100 to-amber-100 min-h-56 md:min-h-96 flex justify-center items-center">
-    <div class="container w-full text-center prose sm:prose-lg md:prose-xl text-balance">
-      <h1 x-balance-text>{{ content.name | striptags }}</h1>
-      <div class="article__header__meta md:text-lg">
-        Posted
-        {% if content.blog_post_author %}
-        by
-        <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}"
-           class="text-current"
-           rel="author">{{ content.blog_post_author.display_name }}</a>
+    <article class="px-4 md:px-5 py-8 md:py-16 !pb-0 max-w-5xl mx-auto flex flex-col gap-10">
+        <header class="flex flex-col items-center justify-center text-blog-text">
+            <div class="flex flex-col gap-1.5 text-center prose items-center justify-center align-center text-balance">
+                <div class="flex justify-center items-center gap-2">
+                    {{ blog_tag(content.topic_list[0].name, blog_tag_url(group.id, content.topic_list[0].slug)) }}
+                    <span class="text-blog-subdued-text text-sm">{{ minutes_to_read(content, '', ' min read') }}</span>
+                </div>
+
+                <h1 class="text-xl md:text-2xl font-bold max-w-2xl" x-balance-text>{{ content.name | striptags }}</h1>
+                
+                <div class="flex gap-2 items-center justify-center">
+                    {% if content.blog_post_author %}
+                        <p class="text-blog-subdued-text text-sm">Posted by:</p>
+                        {% module "global-post-author"
+                            path="../modules/global-post-author",
+                            label="Post Author",
+                            no_wrapper=True
+                        %}
+                    {% endif %}
+                    <time datetime="{{ content.publish_date }}" class="text-blog-subdued-text text-sm">{{ content.publish_date|format_date('MMMM d, yyyy') }}</time>
+                </div>
+            </div>
+        </header>
+
+        {% if content.featured_image %}
+            {% set featured_image = resize_image_url( content.featured_image, 600, 315, 600 ) %}
         {% endif %}
-        on
-        <time datetime="{{ content.publish_date }}" class="">{{ content.publish_date_localized }}</time>
+        <img src="{{ featured_image or 'https://50649146.hs-sites.com/hs-fs/hubfs/generic%20hero.png' }}"
+            alt="{{ featured_post.name | striptags | safe }}"
+            class="m-0 w-full md:h-full object-cover aspect-video rounded-lg shadow-xl"
+        />
+    
+        <div class="container article__body !pt-0 !px-0">
+            <div class="mx-auto prose sm:prose-lg md:prose-xl [&_img]:rounded-md [&>span]:block">
+        
+                <nav class="min-h-9 leading-none" x-html='`
+                    <a class="inline-flex items-center gap-2 group no-underline" href="{{ group.absolute_url }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="size-5 group-hover:-translate-x-2 transition-transform" width="48" height="48"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"></path></svg>
+                        <span>Back to Blog</span>
+                        </a>
+                    `'>
+                </nav>
+        
+                {{ content.post_body }}
+        
+                {% if content.tag_list %}
+                    <ul class="article__tags list-none flex flex-wrap gap-2 p-0!">
+                        {% for tag in content.tag_list %}
+                            {{ blog_tag(tag.name, blog_tag_url(group.id, tag.slug)) }}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+    
+            </div>
       </div>
-    </div>
-  </header>
-
-  <div class="container article__body">
-    <div class="mx-auto prose sm:prose-lg md:prose-xl [&_img]:rounded-md [&>span]:block">
-
-      <nav class="min-h-9 leading-none" x-html='`
-        <a class="inline-flex items-center gap-2 group no-underline" href="{{ group.absolute_url }}">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="size-5 group-hover:-translate-x-2 transition-transform" width="48" height="48"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"></path></svg>
-          <span>Back to Blog</span>
-        </a>
-      `'>
-      </nav>
-
-      {{ content.post_body }}
-
-      {% if content.tag_list %}
-        <ul class="article__tags list-none flex flex-wrap gap-2 p-0!">
-          {% for tag in content.tag_list %}
-            <li class="m-0! p-0! italic">
-              <a class="no-underline hover:underline"
-                 href="{{ blog_tag_url(group.id, tag.slug) }}"
-                 rel="tag">#{{ tag.name }}</a>{% if not loop.last %},{% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-
-    </div>
-  </div>
-
-  <footer class="container article__footer !pt-0">
-    <div class="mx-auto prose sm:prose-lg md:prose-xl">
-
-      {% if content.blog_post_author %}
-      <hr>
-
-      {% module "global-post-author"
-        path="../modules/global-post-author",
-        label="Post Author",
-        no_wrapper=True
-      %}
-      {% endif %}
-
-      <hr>
-
-      {% module "global-share-buttons"
-        path="../modules/global-share-buttons",
-        label="Share Buttons",
-        no_wrapper=True
-      %}
-
-      {# Ppagination #}
-      {% if content.previous_post_name or content.next_post_name %}
-
-        <hr>
-
-        <div class="flex flex-wrap gap-y-6 gap-x-10 justify-between items-center mt-8">
-          {% if content.previous_post_name %}
-          <div class="mr-auto ml-0">
-            <a href="/{{ content.previous_post_slug }}"
-               class="flex items-center gap-2 no-underline group leading-tight">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="size-5 group-hover:-translate-x-2 transition-transform" width="48" height="48"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"></path></svg>
-              <span>{{ content.previous_post_name }}</span>
-            </a>
-          </div>
-          {% endif %}
-          {% if content.next_post_name %}
-          <div class="text-right ml-auto mr-0">
-            <a href="/{{ content.next_post_slug }}"
-               class="flex items-center gap-2 no-underline group leading-tight">
-              <span>{{ content.next_post_name }}</span>
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="size-5 group-hover:translate-x-2 transition-transform" width="48" height="48"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
-            </a>
-          </div>
-          {% endif %}
-        </div>
-
-      {% endif %}
-
-    </div>
-  </footer>
-
-</article>
+    
+      <footer class="container article__footer !p-0 !pb-8">
+            <div class="mx-auto prose sm:prose-lg md:prose-xl">
+    
+                {% module "global-share-buttons"
+                    path="../modules/global-share-buttons",
+                    label="Share Buttons",
+                    no_wrapper=True
+                %}
+        
+                {# Pagination #}
+                {% if content.previous_post_name or content.next_post_name %}
+        
+                    <div class="flex flex-wrap gap-y-6 gap-x-10 justify-between items-center mt-8">
+                        {% if content.previous_post_name %}
+                            <div class="mr-auto ml-0">
+                                <a href="/{{ content.previous_post_slug }}"
+                                    class="flex items-center gap-2 no-underline group leading-tight">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="size-5 group-hover:-translate-x-2 transition-transform" width="48" height="48"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"></path></svg>
+                                    <span>{{ content.previous_post_name }}</span>
+                                </a>
+                            </div>
+                        {% endif %}
+                        {% if content.next_post_name %}
+                            <div class="text-right ml-auto mr-0">
+                                <a href="/{{ content.next_post_slug }}"
+                                    class="flex items-center gap-2 no-underline group leading-tight">
+                                    <span>{{ content.next_post_name }}</span>
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="size-5 group-hover:translate-x-2 transition-transform" width="48" height="48"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+    
+                {% endif %}
+    
+            </div>
+      </footer>
+    
+    </article>
+</div>
 
 
 {% if group.allow_comments %}
-<section class="blog-comments bg-gradient-10 from-amber-100 via-rose-50 to-orange-100">
+<!-- <section class="blog-comments bg-gradient-10 from-amber-100 via-rose-50 to-orange-100">
   <div class="container">
     <div class="mx-auto prose sm:prose-lg md:prose-xl [&_form]:bg-transparent">
       <h3>Comments</h3>
@@ -124,28 +124,34 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 {% endif %}
 
 
-<section class="bg-rose-50">
-  <div class="container">
-    <div class="mx-auto prose sm:prose-lg md:prose-xl text-center mb-8 md:mb-12">
-      <h2>Related Posts</h2>
+<section class="bg-alt-bg">
+    <div class="container !py-8 flex flex-col gap-4 md:gap-8">
+        <div class="mx-auto prose text-2xl font-bold sm:prose-lg md:prose-xl text-center">
+            <h2>Related Posts</h2>
+        </div>
+        {% module "related-posts"
+            path="../modules/related-posts",
+            label="Related Posts",
+            layout="row",
+            no_wrapper=True
+        %}
     </div>
-    {% module "related-posts"
-      path="../modules/related-posts",
-      label="Related Posts",
-      layout="row",
-      no_wrapper=True
-    %}
-  </div>
 </section>
 
+{# Call to action #}
+<section>
+    {% module "call-to-action" path="../modules/call-to-action" %}
+</section>
+
+
 {% module "scroll-to-top"
-  path="../modules/global-scroll-to-top",
-  label="global-scroll-to-top",
-  no_wrapper=True
+    path="../modules/global-scroll-to-top",
+    label="global-scroll-to-top",
+    no_wrapper=True
 %}
 
 {% endblock body %}

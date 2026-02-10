@@ -1,0 +1,25 @@
+.article__body {
+    padding-bottom: 0 !important;
+
+    #hs_cos_wrapper_post_body {
+        p:first-child {
+            a {
+                color: var(--color-light-blue) !important;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    p {
+        margin-bottom: 1rem;
+        
+        a {
+            color: var(--color-light-blue) !important;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

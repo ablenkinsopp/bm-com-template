@@ -34,7 +34,7 @@
     "id" : "9f262078-6877-b0a6-04a1-8cbdee0798a1",
     "name" : "author_job_title",
     "label" : "Author Job Title",
-    "required" : true,
+    "required" : false,
     "locked" : false,
     "allow_new_line" : false,
     "type" : "text",
@@ -78,19 +78,6 @@
   "type" : "group",
   "display_width" : null,
   "default" : [ {
-    "blockquote" : "BlueMatrix has proven, year-in and year-out, its strategic value. It is far more than a publishing system and we regard them as an extension of our own organization.",
-    "author_name" : "Louis Giglio",
-    "author_job_title" : "Officer",
-    "company_logo" : {
-      "size_type" : "auto_custom_max",
-      "src" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/client%20logos/testimonials/b-riley.png",
-      "alt" : "logoipsum-297",
-      "loading" : "lazy",
-      "height" : 30,
-      "max_width" : 30
-    },
-    "company_name" : "B. Riley Securities"
-  }, {
     "blockquote" : "BlueMatrix has proven, year-in and year-out, its strategic value. It is far more than a publishing system and we regard them as an extension of our own organization.",
     "author_name" : "Louis Giglio",
     "author_job_title" : "Officer",

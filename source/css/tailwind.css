@@ -30,6 +30,16 @@
   --color-water: #ccfaf2;
   --color-saffron: #fac433;
 
+  --color-blog-text: #4a4a4a;
+  --color-blog-subdued-text: #868686;
+
+  --color-tag-green-bg: #E0FAF5;
+  --color-tag-green-text: #005D54;
+  --color-tag-blue-bg: #DBFBFF;
+  --color-tag-blue-text: #20426A;
+  --color-tag-purple-bg: #FDE1EA;
+  --color-tag-purple-text: #9C185B;
+
   --color-product-image-border: #334155;
   --color-product-image-bg: #1e293b;
 
@@ -289,13 +299,14 @@
     }
 }
 
-
 /* Base */
 @import "./base/reset.css";
 @import "./base/animations.css";
 @import "./base/typography.css";
 @import "./base/forms.css";
 @import "./base/buttons.css";
+@import "./base/text-pages.css";
+@import "./base/blog-post.css";
 
 /* 3rd party styles */
 /*@import "lite-youtube-embed";*/

@@ -1,0 +1,176 @@
+[ {
+  "id" : "a9f2bbeb-afc6-6cdc-da45-bb793c3423db",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/global-presence.svg",
+    "alt" : "A world map showing the locations of BlueMatrix offices",
+    "loading" : "lazy",
+    "width" : 877,
+    "height" : 433,
+    "max_width" : 877,
+    "max_height" : 433
+  }
+}, {
+  "id" : "bea79bff-3bb4-db5a-2a21-34d1e74e2dd0",
+  "name" : "regions",
+  "label" : "Regions",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "12d60a64-a4f1-eec3-ea48-e44da59756ba",
+    "name" : "region",
+    "label" : "Region",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Americas"
+  }, {
+    "id" : "82c7bcd5-bc34-afb4-b3e9-c157ffb8ec53",
+    "name" : "offices",
+    "label" : "Offices",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "5c7c87ff-148a-5976-bcde-9bdd798b5051",
+      "name" : "country",
+      "label" : "Country/State",
+      "required" : true,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Durham (HQ)"
+    }, {
+      "id" : "7a537fb4-b84b-27c5-b94e-cac8755482e7",
+      "name" : "address_1",
+      "label" : "Address 1",
+      "required" : true,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "320 Blackwell Street, Suite 300"
+    }, {
+      "id" : "135f8366-0b82-ee55-520a-4d0879d445cf",
+      "name" : "address_2",
+      "label" : "Address 2",
+      "required" : true,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Durham, NC27701"
+    }, {
+      "id" : "44faaf3e-9c1b-37cc-f4b5-58898cc2b1cc",
+      "name" : "address_3",
+      "label" : "Address 3",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "region" : "Americas",
+    "offices" : [ {
+      "country" : "Durham (HQ)",
+      "address_1" : "320 Blackwell Street",
+      "address_2" : "Durham, NC 27701"
+    }, {
+      "country" : "New York",
+      "address_1" : "45 East 20th Street, 10th Floor",
+      "address_2" : "New York, NY 10003"
+    }, {
+      "country" : "Toronto",
+      "address_1" : "40 University Avenue, Suite 720,",
+      "address_2" : "Toronto, ON M5J 1T1"
+    } ]
+  }, {
+    "region" : "UK & Europe",
+    "offices" : [ {
+      "country" : "England",
+      "address_1" : "34-37 Liverpool Street",
+      "address_2" : "London, EC2M 7PP"
+    }, {
+      "country" : "Scotland",
+      "address_1" : "1, Bo'ness Business Centre",
+      "address_2" : "12-16, Corbiehall",
+      "address_3" : "Bo'ness, EH51 OAP"
+    }, {
+      "country" : "Romania",
+      "address_1" : "Bulevardul Revoluției 1989, nr. 20",
+      "address_2" : "Timișoara, Timiș, Romania"
+    }, {
+      "country" : "France",
+      "address_1" : "58, rue de la Victoire",
+      "address_2" : "75009 Paris, France"
+    }, {
+      "country" : "Latvia",
+      "address_1" : "Office No: 548 & 549",
+      "address_2" : "Dzirnavu iela 67",
+      "address_3" : "Rīga, LV-1011, Latvija"
+    } ]
+  }, {
+    "region" : "Asia-Pacific",
+    "offices" : [ {
+      "country" : "New Zealand",
+      "address_1" : "Ground Floor and Level 1, 62 College Hill",
+      "address_2" : "Freemans Bay, Auckland",
+      "address_3" : "New Zealand"
+    }, {
+      "country" : "India",
+      "address_1" : "Level 1, Orwell 2, Salarpuria Sattva Knowledge City",
+      "address_2" : "Inorbit Mall Road, Raidurg Village, Hi-Tech City",
+      "address_3" : "Hyderabad - 500081, India"
+    }, {
+      "country" : "Japan",
+      "address_1" : "Level 20, Marunouchi Trust Tower - Main 1-8-3",
+      "address_2" : "Marunouchi Chiyoda-ku",
+      "address_3" : "Tokyo 100-0005"
+    }, {
+      "country" : "Hong Kong",
+      "address_1" : "Unit 2508, One Chinachem Central",
+      "address_2" : "22 Des Voeux Road Central",
+      "address_3" : "Central, Hong Kong"
+    }, {
+      "country" : "Philippines",
+      "address_1" : "26th Floor Menarco Tower, 32nd Street",
+      "address_2" : "Bonifacio Global City, Taguig City 1630, Philippines"
+    } ]
+  } ]
+} ]

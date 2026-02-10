@@ -1,0 +1,24 @@
+<!-- module html  -->
+{% from '../../macros/button.html' import button %}
+
+<div class="flex flex-wrap sm:flex-row gap-4 md:gap-8 pt-10 md:pt-20 justify-center">
+    {% for member in module.team_members %}
+        <div class="gradient-border rounded overflow-hidden p-px sm:basis-[calc(33.333%-0.667rem)] md:basis-[calc(25%-1.5rem)] lg:basis-[calc(20%-1.6rem)] max-w-52 sm:max-w-none">
+            <div class="bg-dark-blue rounded overflow-hidden flex flex-col h-full w-full">
+                {% if member.image_field.src %}
+                    <img src="{{ member.image_field.src|escape_url }}" alt="{{ member.image_field.alt|escape_attr }}">
+                {% endif %}
+                <div class="flex flex-col items-center justify-center text-center p-4 leading-none gap-2">
+                    <p class="text-off-white text-xl font-bold">{{ member.member_name }}</p>
+                    <p class="text-[#B1B6C0] uppercase">{{ member.position }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    
+    <div class="bg-[#01102A] basis-full p-4 md:p-8 sm:basis-[calc(66.666%-0.334rem)] md:basis-3/4 lg:basis-[calc(60%-0.8rem)] flex flex-col gap-4 rounded items-center justify-center">
+        <p class="text-off-white font-bold text-xl">{{ module.join_title }}</p>
+        <p class="text-[#B1B6C0]">{{ module.join_text }}</p>
+        {{ button(module.join_button_text, module.join_link, "outline") }}
+    </div>
+</div>

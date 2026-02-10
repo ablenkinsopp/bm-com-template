@@ -8,37 +8,320 @@
 
 {% block body %}
 {% dnd_area "dnd_area"
-  label="Main section",
-  class="body-container body-container--about"
+    label="Main section",
+    class="body-container body-container--about"
 %}
 
-  {# Two column image left #}
+    {# Hero #}
+    
+    {% include_dnd_partial 
+        path="../sections/hero-banner.html",
+        context={
+            "video_player_field": null,
+            "image_field": {
+                "size_type": "auto",
+                "src": "",
+                "alt": "",
+                "loading": "lazy",
+                "width": null,
+                "height": null,
+                "max_width": null,
+                "max_height": null
+            },
+            "app_logo": {},
+            "headline_top": "Who We Are",
+            "headline_bottom": "",
+            "basic_text": ["A brand is only as strong as the people behind it."],
+            "show_button": false
+        }
+    %}
 
-  {% dnd_section
-    vertical_alignment="TOP"
-  %}
-    {% dnd_module
-      path="@hubspot/linked_image",
-      img={
-        "alt": "Worker pouring Watermelon Juice for the other coworkers.",
-        "loading": "disabled",
-        "max_height": 450,
-        "max_width": 800,
-        "size_type": "auto_custom_max",
-        "src": context.image or "https://resources.freshjuice.dev/images/800/pour-watermelon-juice.jpg"
-      },
-      offset=0,
-      width=6
+    {# Top Section #}
+
+    {% dnd_section
+        background_color={{ context.background_color or "#031535" }},
+        fullWidth: "true"
     %}
-    {% end_dnd_module %}
-    {% dnd_module
-      path="@hubspot/rich_text",
-      html="<h1>About FreshJuice</h1><p>We are a free and open-source hubspot multi-purpose theme. Our objective is for us to make the best hubspot theme possible for our consumers while fascinating them with all our juiciness.</p>"
-      offset=6,
-      width=6
+        {% dnd_column %}
+            {% dnd_row %}
+                {% dnd_module 
+                    path='../modules/about-us-top-section.module'
+                    title="A Vision Brought to Life",
+                    basic_text=[
+                        "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa.",
+                        "Integer nisi libero, lobortis consequat leo condimentum, cursus congue justo. Quisque placerat convallis pulvinar. Integer tincidunt quam quis dui ultricies commodo a at enim."
+                    ],
+                    timeline=[
+                        {
+                            "year": "1999",
+                            "event": "<span>Founded in New York City by Skye Hauptman and Patricia Horotan</span>"
+                        },
+                        {
+                            "year": "2010s",
+                            "event": "<span>Global expansion begins with the opening of offices in London and Romania</span>"
+                        },
+                        {
+                            "year": "2024",
+                            "event": '<span>BlueMatrix secures investment from <a href="https://www.thomabravo.com/" rel="noopener" target="_blank">Thoma Bravo</a>, one of the world’s leading </span><span>software investors</span>'
+                        },
+                        {
+                            "year": "Today",
+                            "event": "<span>BlueMatrix is the world’s leading and most trusted research publishing platform</span>"
+                        }
+                    ]
+                %}
+
+                {% end_dnd_module %}
+            {% end_dnd_row %}
+            
+            {% dnd_row %}
+                {% dnd_module 
+                    path='../modules/stats-simple-grid.module' 
+                    stats_list=[
+                        { 
+                            number: 25,
+                            unit: "+",
+                            subtext: "Years of Innovation"
+                        },
+                        {
+                            number: 1000,
+                            unit: "+",
+                            subtext: "Research Firms"
+                        },
+                        {
+                            number: 50,
+                            unit: "+",
+                            subtext: "Countries"
+                        }
+                    ]
+                %}
+                {% end_dnd_module %}
+            {% end_dnd_row %}
+        {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {# Meet The Team #}
+
+    {% dnd_section
+        background_color={{ context.background_color or "#031D3C" }},
+        fullWidth: "true"
     %}
-    {% end_dnd_module %}
-  {% end_dnd_section %}
+        {% dnd_column %}
+            {% dnd_row %}
+                {% dnd_module 
+                    path='../modules/section-title.module', 
+                    title="Meet The Team",
+                    image_field=null,
+                    subtext=""
+                %}
+
+                {% end_dnd_module %}
+            {% end_dnd_row %}
+
+            {% dnd_row %}
+                {% dnd_module 
+                    path='../modules/meet-the-team.module',
+                    team_members=[
+                        {
+                            "image_field": {
+                                "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Team/patricia-horotan.png",
+                                "alt" : "Patricia Horotan"
+                            },
+                            "member_name": "Patricia Horotan",
+                            "position": "CEO & President"
+                        },
+                        {
+                            "image_field": {
+                                "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Team/donald-prodehl.png",
+                                "alt" : "Donald Prodehl"
+                            },
+                            "member_name": "Donald Prodehl",
+                            "position": "Cheif Technology Officer"
+                        },
+                        {
+                            "image_field": {
+                                "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Team/ben-mcfadden.png",
+                                "alt" : "Ben McFadden"
+                            },
+                            "member_name": "Ben McFadden",
+                            "position": "Chief Financial Officer"
+                        },
+                        {
+                            "image_field": {
+                                "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Team/brittany-miller.png",
+                                "alt" : "Brittany Miller"
+                            },
+                            "member_name": "Brittany Miller",
+                            "position": "VP Human Resources"
+                        },
+                        {
+                            "image_field": {
+                                "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Team/tom-soler.png",
+                                "alt" : "Tom Soler"
+                            },
+                            "member_name": "Tom Soler",
+                            "position": "VP Client Experience"
+                        },
+                        {
+                            "image_field": {
+                                "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Team/madelaine-krieger.png",
+                                "alt" : "Madelaine Krieger"
+                            },
+                            "member_name": "Madelaine Krieger",
+                            "position": "VP Global Sales"
+                        },
+                        {
+                            "image_field": {
+                                "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Team/daniel-kieser.png",
+                                "alt" : "Daniel Kieser"
+                            },
+                            "member_name": "Daniel Kieser",
+                            "position": "General Manager APAC"
+                        }
+                    ]
+                %}
+
+                {% end_dnd_module %}
+            {% end_dnd_row %}
+        {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {# Global Presence #}
+
+    {% dnd_section
+        background_color={{ context.background_color or "#031535" }},
+        fullWidth: "true"
+    %}
+        {% dnd_column %}
+            {% dnd_row %}
+                {% dnd_module 
+                    path='../modules/section-title.module' 
+                    title="Global Presence",
+                    image_field=null,
+                    subtext=""
+                %}
+
+                {% end_dnd_module %}
+            {% end_dnd_row %}
+
+            {% dnd_row %}
+                {% dnd_module 
+                    path='../modules/locations.module'
+                    regions=[ 
+                        {
+                            "region": "Americas",
+                            "offices": [
+                                {
+                                    "country": "Durham (HQ)",
+                                    "address_1": "320 Blackwell Street",
+                                    "address_2": "Durham, NC 27701"
+                                },
+                                {
+                                    "country": "New York",
+                                    "address_1": "45 East 20th Street, 10th Floor",
+                                    "address_2": "New York, NY 10003"
+                                },
+                                {
+                                    "country": "Toronto",
+                                    "address_1": "40 University Avenue, Suite 720,",
+                                    "address_2": "Toronto, ON M5J 1T1"
+                                }
+                            ]
+                        },
+                        {
+                            "region": "UK & Europe",
+                            "offices": [
+                                {
+                                    "country": "England",
+                                    "address_1": "34-37 Liverpool Street",
+                                    "address_2": "London, EC2M 7PP"
+                                },
+                                {
+                                    "country": "Scotland",
+                                    "address_1": "1, Bo'ness Business Centre",
+                                    "address_2": "12-16, Corbiehall",
+                                    "address_3": "Bo'ness, EH51 OAP"
+                                },
+                                {
+                                    "country": "Romania",
+                                    "address_1": "Bulevardul Revoluției 1989, nr. 20",
+                                    "address_2": "Timișoara, Timiș, Romania"
+                                },
+                                {
+                                    "country": "France",
+                                    "address_1": "58, rue de la Victoire",
+                                    "address_2": "75009 Paris, France"
+                                },
+                                {
+                                    "country": "Latvia",
+                                    "address_1": "Office No: 548 & 549",
+                                    "address_2": "Dzirnavu iela 67",
+                                    "address_3": "Rīga, LV-1011, Latvija"
+                                }
+                            ]
+                        },
+                        {
+                            "region": "Asia-Pacific",
+                            "offices": [
+                                {
+                                    "country": "New Zealand",
+                                    "address_1": "Ground Floor and Level 1, 62 College Hill",
+                                    "address_2": "Freemans Bay, Auckland",
+                                    "address_3": "New Zealand"
+                                },
+                                {
+                                    "country": "India",
+                                    "address_1": "Level 1, Orwell 2, Salarpuria Sattva Knowledge City",
+                                    "address_2": "Inorbit Mall Road, Raidurg Village, Hi-Tech City",
+                                    "address_3": "Hyderabad - 500081, India"
+                                },
+                                {
+                                    "country": "Japan",
+                                    "address_1": "Level 20, Marunouchi Trust Tower - Main 1-8-3",
+                                    "address_2": "Marunouchi Chiyoda-ku",
+                                    "address_3": "Tokyo 100-0005"
+                                },
+                                {
+                                    "country": "Hong Kong",
+                                    "address_1": "Unit 2508, One Chinachem Central",
+                                    "address_2": "22 Des Voeux Road Central",
+                                    "address_3": "Central, Hong Kong"
+                                },
+                                {
+                                    "country": "Philippines",
+                                    "address_1": "26th Floor Menarco Tower, 32nd Street",
+                                    "address_2": "Bonifacio Global City, Taguig City 1630, Philippines"
+                                }
+                            ]
+                        }
+                    ]
+                %}
+
+                {% end_dnd_module %}
+            {% end_dnd_row %}
+        {% end_dnd_column %}
+        
+    {% end_dnd_section %}
+
+    {# Call to action #}
+
+    {% include_dnd_partial 
+        path="../sections/call-to-action.html",
+        context={
+            "title": "Join leading research teams modernizing how insight is created",
+            "text_field": "",
+            "button_text": "Request a demo"
+        }
+    %}
+
+    {# News Cards #}
+    
+    {% dnd_section 
+        background_color={{ context.background_color or "#000F28" }},
+        fullWidth: "true" 
+    %}
+    {% dnd_module path='../modules/news-card.module' %}{% end_dnd_module %}
+    {% end_dnd_section %}
 
 {% end_dnd_area %}
 {% endblock body %}

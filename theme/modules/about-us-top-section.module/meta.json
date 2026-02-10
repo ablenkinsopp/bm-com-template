@@ -1,0 +1,9 @@
+{
+  "global": false,
+  "content_types": [],
+  "host_template_types": [
+    "ANY"
+  ],
+  "label": "About Us Top Section",
+  "is_available_for_new_content": true
+}

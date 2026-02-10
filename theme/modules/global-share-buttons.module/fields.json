@@ -17,5 +17,5 @@
   "preset" : null,
   "type" : "choice",
   "display_width" : null,
-  "default" : [ "tw", "in", "fb", "re", "print" ]
+  "default" : [ "in", "tw", "copy" ]
 } ]

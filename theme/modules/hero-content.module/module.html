@@ -7,11 +7,12 @@
 {% from '../../macros/button.html' import button %}
 
 {% set layout_classes = module.video_position == "right" ? "flex-col lg:flex-row" : "flex-col-reverse lg:flex-row-reverse" %}
+{% set text_classes = module.videoplayer_field.player_id || module.image_field.src ? "lg:text-left lg:items-start" : "" %}
 
 <div class="hero w-full">
     <div class="relative w-full p-4 py-10 lg:p-10 text-text-color flex justify-center items-center bg-[linear-gradient(135deg,_#031D3C_5%,_rgba(32,66,106,0)_78.61%)]">
         <div class="flex w-full max-w-[1516px] gap-6 lg:gap-10 items-center {{ layout_classes }}">
-            <div class="flex flex-col gap-6 flex-1 text-center items-center lg:text-left lg:items-start">
+            <div class="flex flex-col gap-6 flex-1 text-center items-center {{ text_classes }}">
                 {% if module.app_logo %}
                     <img class="h-12" alt="{{ module.app_name }}" src="{{ module.app_logo }}" />
                 {% endif %}
@@ -24,7 +25,9 @@
                 {% for para in module.basic_text %}
                     <p class="lg:text-lg max-w-[600px]">{{ para }}</p>
                 {% endfor %}
-                {{ button(module.button_text, module.button_url, "filled", "large") }}
+                {% if module.show_button %}
+                    {{ button(module.button_text, module.button_url, "filled", "large") }}
+                {% endif %}
             </div>
             {% if module.videoplayer_field.player_id %}
                 {% set max_width = module.videoplayer_field.size_type == 'auto_custom_max' ? module.videoplayer_field.max_width : module.videoplayer_field.width %}
@@ -41,7 +44,7 @@
                         muted={{ module.videoplayer_field.mute_by_default }}
                     %}
                 </div>
-            {% else %}
+            {% elif module.image_field.src %}
                 <div class="flex-1 max-w-3xl w-full">
 	                  <img src="{{ module.image_field.src|escape_url }}" alt="{{ module.image_field.alt|escape_attr }}">
                 </div>

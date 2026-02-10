@@ -1,7 +1,7 @@
 {% set cols = module.stats_list | length %}
 
 {% if cols == 3 %}
-  {% set grid_col_class = 'lg:grid-cols-3' %}
+  {% set grid_col_class = 'md:grid-cols-3' %}
 {% endif %}
 
 {% if cols >= 4 %}
@@ -23,7 +23,7 @@
     {% set initial_text = module.animate ? decimals > 0 ? ('0.' ~ '0' * decimals) : '0' : item.number %}
     {% set animate_class = module.animate ? 'stat-number' : '' %}
 
-    <div class="grid place-items-center text-center gap-2 p-2 {{ 'lg:gradient-border-right' if (cols >= 2 and not loop.last) }}">
+    <div class="grid place-items-center text-center gap-2 p-2 {{ 'md:gradient-border-right' if (cols == 3 and not loop.last) }} {{ 'lg:gradient-border-right' if (cols >= 2 and not loop.last) }}">
         <p class="!font-bold text-turquoise !text-6xl">
         <span 
             class="{{ animate_class }}" 

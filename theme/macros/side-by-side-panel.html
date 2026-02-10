@@ -48,7 +48,7 @@
             </div>
             {% if panel.product_image.src %}
                 {{ product_image(panel.product_image.src, "editor_v5", "Editor screenshot")}}
-            {% else if panel.context_image.src %}
+            {% elif panel.context_image.src %}
                 <div class="self-center flex-1 max-w-[960px]">
                     <img src="{{ panel.context_image.src|escape_url }}" alt="{{ panel.title|escape_attr }}">
                 </div>

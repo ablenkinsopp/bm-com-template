@@ -12,7 +12,7 @@
     {% module "blog-listing-hero" path="../modules/blog-listing-hero", label="Blog Listing Hero", no_wrapper=True %}
 
     <section class="bg-alt-bg">
-        <div class="container">
+        <div class="container !px-4 md:!px-6 !py-8 md:!py-16">
             {% module "blog-listing" path="../modules/blog-listing", title="Blog Listing", no_wrapper=True %}
             {% if contents.total_page_count > 1 and not simple_list_page %}
                 <div id="pagination" class="mt-10 md:mt-20">
@@ -21,5 +21,10 @@
             {% endif %}
         </div>
     </section>
+
+    {# Call to action #}
+    {% dnd_area "cta-area" label="CTA area" %}
+        {% include_dnd_partial path="../sections/call-to-action.html" %}
+    {% end_dnd_area %}
 
 {% endblock body %}

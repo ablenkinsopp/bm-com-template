@@ -65,7 +65,162 @@ form {
 
 }
 
+.body-container--form {
 
+    .hsfc-Form {
+        @media (width >= 48rem) {
+            position: relative;
+            padding-left: 16px;
+            /* no padding needed if you want overlay */
+            &::before {
+                content: '';
+                position: absolute;
+                left: -40px;        /* extends 8px LEFT of parent */
+                top: 0;
+                bottom: 0;
+                width: 1px;
+                background: linear-gradient(180deg, #43e3c2 0%, #30abff 50%, #43e3c2 100%);
+                border-radius: 2px;
+            }
+        }
+    }
+    
+    .hsfc-Step__Content {
+        padding: 0 !important;
+        gap: 24px !important;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .hsfc-Heading {
+        color: #f5f5f5 !important;
+        font-size: 24px !important;
+        font-weight: bold;
+    }
+    
+    .hsfc-RichText {
+        color: #B1B6C0 !important;
+    }
+
+    .hsfc-PostSubmit {
+        padding: 16px 0;
+
+        .hsfc-RichText {
+            color: #f5f5f5 !important;
+            position: relative;
+            padding-top: 3.5rem; /* space for icon */
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+        }
+
+        .hsfc-RichText::before {
+            content: '';
+            position: absolute;
+            left: calc(50% - 1.5rem);
+            top: 0;
+            width: 3rem;
+            height: 3rem;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="%2343e3c2" viewBox="0 0 256 256"><path d="M176.49,95.51a12,12,0,0,1,0,17l-56,56a12,12,0,0,1-17,0l-24-24a12,12,0,1,1,17-17L112,143l47.51-47.52A12,12,0,0,1,176.49,95.51ZM236,128A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128Z"></path></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    .hsfc-TextField,
+    .hsfc-EmailField,
+    .hsfc-PhoneField,
+    .hsfc-DropdownField,
+    .hsfc-TextareaField {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        &:has(.hsfc-TextInput:focus-visible),
+        &:has(.hsfc-TextInput:focus),
+        &:has(.hsfc-TextareaInput:focus-visible),
+        &:has(.hsfc-PhoneInput__FlagAndCaret:focus),
+        &:has(.hsfc-PhoneInput__FlagAndCaret:focus-visible),
+        &:has(.hsfc-TextareaInput:focus),
+        &:has(.hsfc-EmailInput:focus-visible),
+        &:has(.hsfc-EmailInput:focus) {
+            .hsfc-FieldLabel {
+                color: #43E3C2 !important;
+            }
+
+            .hsfc-FieldLabel__RequiredIndicator {
+                color: #FFFFFF !important;
+            }
+        }
+    }
+
+    .hsfc-FieldLabel {
+        font-size: 14px !important;
+        color: #B0B0B0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .hsfc-FieldLabel__RequiredIndicator {
+        color: #B1B6C0 !important;
+        margin-left: 2px;
+    }
+
+    .hsfc-ErrorAlert {
+        font-size: 14px !important;
+        color: #f38b89 !important;
+    }
+
+    .hsfc-TextareaInput,
+    .hsfc-TextInput,
+    .hsfc-PhoneInput,
+    .hsfc-PhoneInput__FlagAndCaret {
+        color: #f5f5f5 !important;
+        border-color: #3C4A63 !important;
+        background-color: transparent !important;
+        margin-bottom: 0 !important;
+        &:focus, &:focus-visible {
+            border-color: #43E3C2 !important;
+        }
+    }
+
+    .hsfc-DropdownInput__Caret span,
+    .hsfc-PhoneInput__FlagAndCaret__Caret {
+        border-top-color: #B0B0B0 !important;
+    }
+
+    .hsfc-Row {
+        grid-template-columns: unset !important;
+        gap: 24px !important;
+        margin-bottom: 0 !important;
+        @media (width >= 40rem) {
+            grid-template-columns: repeat(auto-fit, minmax(0, 1fr)) !important;
+        }
+        @media (width >= 48rem) {
+            grid-template-columns: unset !important;
+        }
+        @media (width >= 64rem) {
+            grid-template-columns: repeat(auto-fit, minmax(0, 1fr)) !important;
+        }
+    }
+
+    .hsfc-NavigationRow {
+        margin-top: 0 !important;
+    }
+
+    button[type=submit] {
+        @apply inline-flex items-center justify-center rounded uppercase overflow-hidden h-10 bg-turquoise text-dark-blue button-streak filled-button-streak text-sm px-5 transition-colors duration-300 ease-in-out outline-none backdrop-blur-14;
+
+        &:hover {
+            @apply !bg-white !text-dark-blue;
+            transform: translateY(0) !important;
+            &::before {
+                transform: skewX(-30deg) translateX(115%);
+            }
+        }
+    }
+}
 
 
 /*
