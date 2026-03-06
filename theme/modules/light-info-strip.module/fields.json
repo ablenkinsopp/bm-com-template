@@ -22,7 +22,7 @@
   "id" : "8097201c-ea62-9c46-e060-ea3aa9711d01",
   "name" : "subtext",
   "label" : "Subtext",
-  "required" : true,
+  "required" : false,
   "locked" : false,
   "allow_new_line" : false,
   "type" : "text",
@@ -64,13 +64,5 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "display_width" : null,
-  "default" : [ {
-    "normal_text" : "RXML Standards"
-  }, {
-    "normal_text" : "GDPR Data Protection"
-  }, {
-    "normal_text" : "SEC Rule 17a-4"
-  }, {
-    "normal_text" : "Web Accessibility"
-  } ]
+  "default" : [ ]
 } ]

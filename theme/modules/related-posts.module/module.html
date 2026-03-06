@@ -28,7 +28,12 @@
             </a>
         </h4>
         {# {{ post.post_summary | striptags | truncatehtml(100) }} #}
-        <span class="text-right group-hover:underline text-base text-text-blue">Read more</span>
+        <div class="flex justify-end">
+            <span class="transition-all duration-250 text-base text-text-blue">
+                Read more
+                <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-text-blue"></span>
+            </span>
+        </div>
     </div>
 </article>
 

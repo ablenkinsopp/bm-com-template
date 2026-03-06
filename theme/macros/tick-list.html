@@ -4,10 +4,10 @@
 -->
 {% from './tick-list-item.html' import tick_list_item %}
 
-{% macro tick_list(ticks) %}
+{% macro tick_list(ticks, size) %}
     <ul class="flex flex-col gap-2 md:gap-4">
         {% for tick in ticks %}
-            {{ tick_list_item(tick) }}
+            {{ tick_list_item(tick, size) }}
         {% endfor %}
     </ul>
 {% endmacro %}

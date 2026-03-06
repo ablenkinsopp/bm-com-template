@@ -13,5 +13,5 @@
   ],
   "label": "Google Maps",
   "icon": "fontawesome-5.14.0:Alternate%20Map%20Marked:SOLID",
-  "is_available_for_new_content": true
+  "is_available_for_new_content": false
 }

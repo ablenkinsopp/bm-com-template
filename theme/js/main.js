@@ -4704,7 +4704,6 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       // Prefetch all pages by default
     });
   });
-  
   function getNearestColoredBackground(el) {
     let node = el.closest(".row-fluid-wrapper");
     if (node) {
@@ -4718,7 +4717,6 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   }
   function applyNearestBackground(selector = ".match-nearest-bg") {
     const elements = document.querySelectorAll(selector);
-    console.log(elements);
     elements.forEach((el) => {
       const bg = getNearestColoredBackground(el);
       if (bg) {

@@ -107,7 +107,7 @@
   "required" : false,
   "locked" : false,
   "occurrence" : {
-    "min" : 2,
+    "min" : 0,
     "max" : 2,
     "sorting_label_field" : null,
     "default" : 2
@@ -205,25 +205,6 @@
     "display_width" : null,
     "default" : "Button Text"
   }, {
-    "id" : "cb5728f8-92a1-20e3-6641-d63fa830a9c6",
-    "name" : "url",
-    "label" : "URL",
-    "required" : true,
-    "locked" : false,
-    "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
-    "show_advanced_rel_options" : false,
-    "type" : "link",
-    "display_width" : null,
-    "default" : {
-      "url" : {
-        "content_id" : 204373406319,
-        "href" : null,
-        "type" : "CONTENT"
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  }, {
     "id" : "a5ed63d2-7d79-1adf-24f5-c01f948cfee8",
     "name" : "style",
     "label" : "Style",
@@ -237,6 +218,25 @@
     "type" : "choice",
     "display_width" : null,
     "default" : "filled"
+  }, {
+    "id" : "3f98848c-f07e-8c7f-1dec-f44597d0f1db",
+    "name" : "link_field",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : 206078525068,
+        "href" : null,
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,

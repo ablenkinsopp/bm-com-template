@@ -1,0 +1,103 @@
+<!-- module html  -->
+{% from '../../macros/tabs.html' import tabs %}
+{% from '../../macros/button.html' import button %}
+{% import '../../macros/tick-list.html' as tl %}
+{% set tabs = [{ "tab_title": "Research & Sales" }, { "tab_title": "Wealth" }, { "tab_title": "Buyside" } ] %}
+
+<div x-data="{ activeTab: 1 }" 
+    x-init="
+        $nextTick(() => {
+            const firstBtn = $el.querySelector('button');
+            const glider = $el.querySelector('#tab-glider');
+            if (firstBtn && glider) {
+                glider.style.width = `${firstBtn.offsetWidth}px`;
+                glider.style.transform = `translateX(${firstBtn.offsetLeft - 4}px)`;
+            }
+        })
+    " 
+    class="flex flex-col gap-10"
+>
+    <div class="flex flex-col items-center justfy-center gap-4">
+        <img class="h-7" alt="BlueMatrix Logo" src="{{ get_asset_url('../../images/bm-logo-light.svg') }}" />
+        <p class="uppercase text-off-white text-lg">For</p>
+        {{ tabs(tabs) }}
+    </div>
+    
+    <div class="flex flex-col w-full">
+
+        <div class="grid grid-cols-4 w-full gap-4">
+            <div class="bg-dark-blue border border-subdued-blue rounded overflow-hidden flex flex-col gap-8 p-6">
+                <div class="flex flex-col gap-4 flex-1">
+                    <h4 class="font-bold text-2xl text-water pb-4 border-b border-b-water w-full">Starter</h4>
+
+                    <div class="flex justify-between text-sm text-white font-bold leading-none">
+                        <p class="text-muted-text">Documents</p>
+                        <p>1,000</p>
+                    </div>
+
+                    <div class="flex justify-between text-sm text-white font-bold leading-none">
+                        <p class="text-muted-text">Users</p>
+                        <p>10</p>
+                    </div>
+
+                    {{ tl.tick_list([{ "normal_text": "Amazing Selling Point 1" }], "small") }}
+                </div>
+
+                {{ button("Request Demo", {}, "outline") }}
+            </div>
+
+            <div class="bg-dark-blue border border-subdued-blue rounded overflow-hidden flex flex-col gap-8 p-6">
+                <div class="flex flex-col gap-4 flex-1">
+                    <h4 class="font-bold text-2xl text-water pb-4 border-b border-b-water w-full">Pro</h4>
+
+                    <div class="flex justify-between text-sm text-white font-bold leading-none">
+                        <p class="text-muted-text">Documents</p>
+                        <p>1,000</p>
+                    </div>
+
+                    <div class="flex justify-between text-sm text-white font-bold leading-none">
+                        <p class="text-muted-text">Users</p>
+                        <p>10</p>
+                    </div>
+
+                    {{ tl.tick_list([{ "normal_text": "Amazing Selling Point 1" }, { "normal_text": "Extra Features" }, { "normal_text": "In lobortis ornare eleifend" }], "small") }}
+                </div>
+
+                {{ button("Request Demo", {}, "outline") }}
+            </div>
+
+            <div class="gradient-border relative rounded">
+                <div class="absolute top-0 bottom-0 right-0 left-0 rounded gradient-shadow"></div>
+                <div class="bg-dark-blue rounded overflow-hidden relative flex flex-col gap-8 p-6 z-10">
+                    <div class="flex flex-col gap-4 flex-1">
+                        <h4 class="font-bold text-2xl text-water pb-4 border-b border-b-water w-full flex justify-between items-center">Advanced <span class="uppercase text-sm text-turquoise font-normal">Popular</span></h4>
+    
+                        <div class="flex justify-between text-sm text-white font-bold leading-none">
+                            <p class="text-muted-text">Documents</p>
+                            <p>1,000</p>
+                        </div>
+
+                        <div class="flex justify-between text-sm text-white font-bold leading-none">
+                            <p class="text-muted-text">Users</p>
+                            <p>10</p>
+                        </div>
+
+                        {{ tl.tick_list([{ "normal_text": "Amazing Selling Point 1" }, { "normal_text": "Extra Features" }, { "normal_text": "In lobortis ornare eleifend" }, { "normal_text": "Professional Services" }], "small") }}
+                    </div>
+
+                    {{ button("Request Demo", {}) }}
+                </div>
+            </div>
+
+            <div class="bg-dark-blue border border-subdued-blue rounded overflow-hidden flex flex-col gap-8 p-6">
+                <div class="flex flex-col gap-4 flex-1">
+                    <h4 class="font-bold text-2xl text-water pb-4 border-b border-b-water w-full">Enterprise</h4>
+                    <p class="text-sm font-bold text-muted-text">Nulla at sapien a diam faucibus congue quis in justo. In lobortis ornare eleifend. Pellentesque et commodo nulla, eget consequat mi. </p>
+                </div>
+
+                {{ button("Contact Sales", {}, "outline") }}
+            </div>
+
+        </div>
+    </div>
+</div>

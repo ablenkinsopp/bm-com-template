@@ -38,4 +38,71 @@
   "type" : "richtext",
   "display_width" : null,
   "default" : "Copyright © {{ year }} BlueMatrix. All rights reserved."
+}, {
+  "id" : "afb7fd4b-c971-1c42-ad55-2296ac48d296",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : true,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Request Demo"
+}, {
+  "id" : "71b771de-892f-9f4a-8c47-70951911eb01",
+  "name" : "button_link",
+  "label" : "Button Link",
+  "required" : true,
+  "locked" : true,
+  "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : 206078525068,
+      "href" : null,
+      "type" : "CONTENT"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "8cd4b1d2-1114-7d03-be26-8a978071b4a8",
+  "name" : "resource_center_link",
+  "label" : "Resource Center Link",
+  "required" : false,
+  "locked" : true,
+  "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "https://resourcecenter.bluematrix.com/",
+      "type" : "EXTERNAL"
+    },
+    "open_in_new_tab" : true,
+    "no_follow" : false
+  }
+}, {
+  "id" : "03e245ae-8ed0-72e7-95b1-53f317151115",
+  "name" : "contact_us_link",
+  "label" : "Contact Us Link",
+  "required" : true,
+  "locked" : true,
+  "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "https://contacts.bluematrix.com/docs/html/13cb7faa-0a35-4165-acb2-e335b663f474.html",
+      "type" : "EXTERNAL"
+    },
+    "open_in_new_tab" : true,
+    "no_follow" : false
+  }
 } ]

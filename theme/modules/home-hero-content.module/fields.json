@@ -55,17 +55,22 @@
   "display_width" : null,
   "default" : "Request Demo"
 }, {
-  "id" : "791c3eab-f7b8-f7fe-9d13-ec2a4a90c5e6",
-  "name" : "button_url",
-  "label" : "Button URL",
+  "id" : "15be560a-489b-680b-3798-a69506646154",
+  "name" : "button_link",
+  "label" : "Button Link",
   "required" : true,
   "locked" : false,
-  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
-  "type" : "url",
+  "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
   "display_width" : null,
   "default" : {
-    "content_id" : null,
-    "href" : "",
-    "type" : "EXTERNAL"
+    "url" : {
+      "content_id" : 206078525068,
+      "href" : null,
+      "type" : "CONTENT"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
   }
 } ]

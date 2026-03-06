@@ -1,283 +1,382 @@
-{% from '../../macros/slugify.html' import slugify %}
-{% from '../../macros/random-int.html' import random_int %}
+{% import '../../macros/mobile-menu-item.html' as mmi %}
 {% from '../../macros/button.html' import button %}
+{% from '../../macros/get-app-logo.html' import app_logo %}
+{% from '../../macros/get-app-wordmark.html' import app_wordmark %}
 
 {%- macro get_navbar_logo(classes) -%}
-  <a href="{{ request.full_url | replace(request.path, '') }}" class="{{ classes or '' }}">
-    <span class="sr-only">{{ module.logo_image.alt or 'Company name' }}</span>
-    {% if module.logo_image.src %}
-      {% set loadingAttr = module.logo_image.loading != 'disabled' ? '' : '' %}
-      <img src="{{ module.logo_image.src }}"
-           class="h-7"
-           alt="BlueMatrix | Home"
-           loading="{{ module.logo_image.loading or 'eager' }}">
-    {% endif %}
-  </a>
+    <a href="{{ request.full_url | replace(request.path, '') }}" class="{{ classes or '' }}">
+        <span class="sr-only">{{ module.logo_image.alt or 'Company name' }}</span>
+        {% if module.logo_image.src %}
+            {% set loadingAttr = module.logo_image.loading != 'disabled' ? '' : '' %}
+            <img src="{{ module.logo_image.src }}"
+                class="h-7"
+                alt="BlueMatrix | Home"
+                loading="{{ module.logo_image.loading or 'eager' }}">
+        {% endif %}
+    </a>
 {%- endmacro -%}
 
 {% set main_menu = menu(module.menu_id) %}
+{% set client_login_menu = menu(module.client_login_menu_id) %}
+{% set app_names = ["Creator", "Courier", "Analyzer", "SalesTool", "BlueMatrix Live", "Portal", "RMS Partners", "Street Context", "Ranos"] %}
 
+<header 
+    class="bg-dark-blue"
+    x-data="{
+        mobileMenuOpen: false
+    }"
+>
 
-<header class="bg-dark-blue"
-        x-data="{
-          mobileMenuOpen: false
-        }">
+    <nav class="flex items-center p-4 py-2 lg:py-4 xl:px-10 lg:gap-4 {{ 'relative' if not module.full_width_dropdown_menus }}" aria-label="Global">
 
-  <nav class="flex items-center p-4 py-2 lg:py-4 xl:px-10 lg:gap-4 {{ 'relative' if not module.full_width_dropdown_menus }}" aria-label="Global">
-
-    {# Logo #}
-    <div class="flex-1">
-      {{ get_navbar_logo() }}
-    </div>
-
-
-    {# Mobile Menu Toggle #}
-    <div class="flex lg:hidden">
-      <button type="button" class="text-turquoise inline-flex items-center justify-center rounded text-xl p-1.5 hover:bg-white/20 cursor-pointer"
-              @click="mobileMenuOpen=!mobileMenuOpen">
-        <span class="sr-only">Open main menu</span>
-        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg>
-      </button>
-    </div>
-
-
-    {# Desktop Menu #}
-    <div class="hidden lg:flex lg:gap-x-12" data-menu-style="{{ module.menu_layout }}">
-      {% if module.menu_layout == "superb" %} {# classic, modern, superb #}
-        <div class="">TODO SuperB Menu</div>
-      {% else %}
-        {% if main_menu.children %}
-          {% for child in main_menu.children %}
-            {% set has_sub_child = child.children and ((child.children|first).children or (child.children|last).children) %}
-            <div class="{{ 'relative' if not has_sub_child or module.menu_layout == 'classic' }}" x-data="{open:false}">
-              <a href="{{ child.url or "#" }}"
-                 {%- if not child.url or child.children -%}
-                 @click="$event.preventDefault(); open=!open;"
-                 {%- endif -%}
-                 class="cursor-pointer uppercase flex items-center gap-1.5 text-sm group">
-                <span class="font-bold text-off-white group-hover:text-turquoise">{{ child.label }}</span>
-                {%- if child.children -%}
-                  <svg class="size-5 flex-none  text-off-white group-hover:text-turquoise" :class="open?'rotate-180':''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
-                {%- endif -%}
-              </a>
-              {% if child.children %}
-                {% if module.menu_layout == "modern" %}
-                  {% set dropdown_styles = "absolute inset-x-0 top-full z-20 px-16" %}
-                  {% if not has_sub_child %}
-                    {% set dropdown_styles = "absolute -left-8 top-full z-20 mt-4 w-screen max-w-xs overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-gray-900/5" %}
-                  {% elif module.full_width_dropdown_menus %}
-                    {% set dropdown_styles = "absolute inset-x-0 mt-6 z-20 w-screen" %}
-                  {% endif %}
-                  <div class="{{ dropdown_styles }}"
-                       x-show="open"
-                       @click.away="open=false"
-                       x-transition:enter="transition ease-out duration-200"
-                       x-transition:enter-start="opacity-0 translate-y-1"
-                       x-transition:enter-end="opacity-100 translate-y-0"
-                       x-transition:leave="transition ease-in duration-150"
-                       x-transition:leave-start="opacity-100 translate-y-0"
-                       x-transition:leave-end="opacity-0 translate-y-1"
-                       x-cloak>
-                      <div class="w-full overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-gray-900/5">
-                      {% if has_sub_child and module.full_width_dropdown_menus %}
-                        <div class="container !py-6">
-                      {% endif %}
-                      <div class="p-4{% if has_sub_child %} grid gap-x-12 gap-y-6 {{ child.children|length|float > 3 ? 'grid-cols-4' : 'grid-cols-3' }}{% endif %}">
-                        {% for sub_child in child.children %}
-                          <div class="">
-                            {% if has_sub_child %}
-                              <fieldset class="rounded-md border border-gray-200 p-2 h-full">
-                                <legend class="font-bold px-2">{{ sub_child.label }}</legend>
-                            {% else %}
-                              <div class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
-                                <a href="{{ sub_child.url or "#" }}"
-                                   class="font-semibold text-current">
-                                  {{ sub_child.label }}
-                                  <span class="absolute inset-0"></span>
-                                </a>
-                              </div>
-                            {% endif %}
-                            {% for deep_sub_child in sub_child.children %}
-                              <div class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
-                                <a href="{{ deep_sub_child.url or "#" }}"
-                                   class="font-semibold text-current">
-                                  {{ deep_sub_child.label }}
-                                  <span class="absolute inset-0"></span>
-                                </a>
-                              </div>
-                            {% endfor %}
-                            {% if has_sub_child %}
-                              </fieldset>
-                            {% endif %}
-                          </div>
-                        {% endfor %}
-                      </div>
-                      {% if has_sub_child and module.full_width_dropdown_menus %}
-                      </div>
-                      {% endif %}
-                    </div>
-                  </div>
-                {% else %}
-                  <div class="absolute -left-8 top-full z-20 mt-3 w-screen max-w-xs overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-gray-900/5"
-                       x-show="open"
-                       @click.away="open=false"
-                       x-transition:enter="transition ease-out duration-200"
-                       x-transition:enter-start="opacity-0 translate-y-1"
-                       x-transition:enter-end="opacity-100 translate-y-0"
-                       x-transition:leave="transition ease-in duration-150"
-                       x-transition:leave-start="opacity-100 translate-y-0"
-                       x-transition:leave-end="opacity-0 translate-y-1"
-                       x-cloak>
-                    <div class="p-4">
-                      {% for sub_child in child.children %}
-                        <div class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
-                          <a href="{{ sub_child.url or "#" }}"
-                             class="block font-semibold text-current">
-                            {{ sub_child.label }}
-                            <span class="absolute inset-0"></span>
-                          </a>
-                        </div>
-                      {% endfor %}
-                    </div>
-                  </div>
-                {% endif %}
-              {% endif %}
-            </div>
-          {% endfor %}
-        {% endif %}
-
-      {% endif %}
-    </div>
-
-
-    {# CTA #}
-    <div class="hidden lg:flex flex-1 justify-end items-center gap-2">
-      {% for cta in module.call_to_actions %}
-        {% set href = cta.link.url.href %}
-        {% if cta.link.url.type is equalto "EMAIL_ADDRESS" %}
-          {% set href = "mailto:" + href %}
-        {% endif %}
-        {{ button(cta.title, cta.link, cta.style) }}
-      {% endfor %}
-    </div>
-
-
-  </nav>
-
-
-  {# Mobile Menu #}
-  <div class="lg:hidden" role="dialog" aria-modal="true" x-cloak>
-    <div class="fixed inset-0 z-20 backdrop-blur bg-black/40"
-         x-show="mobileMenuOpen" @click="mobileMenuOpen=false"
-         x-transition:enter="transition ease-out duration-200"
-         x-transition:enter-start="opacity-0"
-         x-transition:enter-end="opacity-100"
-         x-transition:leave="transition ease-in duration-150"
-         x-transition:leave-start="opacity-100"
-         x-transition:leave-end="opacity-0">
-      {# Background backdrop, show/hide based on slide-over state. #}
-    </div>
-    <div class="fixed inset-y-0 right-0 z-20 flex w-full flex-col justify-between overflow-y-auto bg-dark-blue sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
-         x-show="mobileMenuOpen"
-         x-transition:enter="transition ease-out duration-200"
-         x-transition:enter-start="opacity-0 !translate-x-96"
-         x-transition:enter-end="opacity-100 translate-x-0"
-         x-transition:leave="transition ease-in duration-150"
-         x-transition:leave-start="opacity-100 translate-x-0"
-         x-transition:leave-end="opacity-0 !translate-x-96">
-        <div class="flex items-center justify-center text-off-white px-4 py-2 border-b-white/20 border-b">
-          <p class="flex-1 pl-8 uppercase text-sm text-center">Menu</p>
-          <button type="button" class="text-turquoise inline-flex items-center justify-center rounded text-xl p-1.5 hover:bg-white/20 cursor-pointer"
-                  @click="mobileMenuOpen=!mobileMenuOpen">
-            <span class="sr-only">Close menu</span>
-            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19.281 18.2194C19.3507 18.2891 19.406 18.3718 19.4437 18.4629C19.4814 18.5539 19.5008 18.6515 19.5008 18.7501C19.5008 18.8486 19.4814 18.9462 19.4437 19.0372C19.406 19.1283 19.3507 19.211 19.281 19.2807C19.2114 19.3504 19.1286 19.4056 19.0376 19.4433C18.9465 19.4811 18.849 19.5005 18.7504 19.5005C18.6519 19.5005 18.5543 19.4811 18.4632 19.4433C18.3722 19.4056 18.2895 19.3504 18.2198 19.2807L12.0004 13.0604L5.78104 19.2807C5.64031 19.4214 5.44944 19.5005 5.25042 19.5005C5.05139 19.5005 4.86052 19.4214 4.71979 19.2807C4.57906 19.1399 4.5 18.9491 4.5 18.7501C4.5 18.551 4.57906 18.3602 4.71979 18.2194L10.9401 12.0001L4.71979 5.78068C4.57906 5.63995 4.5 5.44907 4.5 5.25005C4.5 5.05103 4.57906 4.86016 4.71979 4.71943C4.86052 4.5787 5.05139 4.49963 5.25042 4.49963C5.44944 4.49963 5.64031 4.5787 5.78104 4.71943L12.0004 10.9397L18.2198 4.71943C18.3605 4.5787 18.5514 4.49963 18.7504 4.49963C18.9494 4.49963 19.1403 4.5787 19.281 4.71943C19.4218 4.86016 19.5008 5.05103 19.5008 5.25005C19.5008 5.44907 19.4218 5.63995 19.281 5.78068L13.0607 12.0001L19.281 18.2194Z" fill="#43E3C2"/>
-            </svg>
-
-          </button>
+        {# Logo #}
+        <div class="flex-1">
+            {{ get_navbar_logo() }}
         </div>
-        <div class="flow-root flex-1">
-            {% if module.menu_layout == "superb" %} {# classic, modern, superb #}
-              <div class="">TODO SuperB Menu</div>
-            {% else %}
-              {% if main_menu.children %}
-                <div class="flex flex-col">
-                  {% for child in main_menu.children %}
-                    {% set x_ref_id = slugify(child.label) ~ '_' ~ random_int() ~ loop.index %}
-                    <div x-data="{open:false}" @click.away="open=false" :aria-expanded="open">
-                      <div class="group relative flex items-center justify-between gap-2 p-4 text-off-white text-sm leading-6 border-b-white/20 border-b"
-                           :class="open?'bg-white/10 rounded-bl-none':'hover:bg-white/20'">
-                        <a href="{{ child.url or "#" }}" {% if not child.url or child.children %}@click="$event.preventDefault(); open=!open;"{% endif %}
-                           class="flex justify-between w-full text-sm !text-off-white uppercase">
-                          <span class="absolute inset-0"></span>
-                          <span>{{ child.label }}</span>
-                          {%- if child.children -%}
-                            <div class="text-xl h-5 w-8 flex items-center justify-center">
-                                <svg width="20" height="20" class="flex-none" :class="open?'rotate-180':''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
-                            </div>
-                          {%- endif -%}
-                        </a>
-                      </div>
-                      {% if child.children %}
-                        {% set has_sub_child = child.children and ((child.children|first).children or (child.children|last).children) %}
-                        <div class="border-l-4 border-white/20 {{ 'pl-2.5' if not has_sub_child }} relative overflow-hidden max-h-0 transition-all duration-300"
-                             x-ref="{{ x_ref_id }}" :style="open?`max-height:${$refs['{{x_ref_id}}'].scrollHeight}px`:``">
-                          {% for sub_child in child.children %}
-                            {% if has_sub_child and module.menu_layout == "modern" %}
-                              <div class="">
-                                <div class="px-5 py-1.5 mt-2.5 text-sm font-semibold bg-gradient-to-r from-gray-100 to-white">{{ sub_child.label }}</div>
-                                <div class="pl-2.5">
-                                  {% for deep_sub_child in sub_child.children %}
-                                    <div class="group relative flex gap-x-6 rounded-lg p-2 my-2.5 text-sm leading-6 hover:bg-gray-50">
-                                      <a href="{{ deep_sub_child.url or "#" }}"
-                                         class="font-semibold text-current">
-                                        <span class="absolute inset-0"></span>
-                                        {{ deep_sub_child.label }}
-                                      </a>
-                                    </div>
-                                  {% endfor %}
-                                </div>
-                              </div>
-                            {% else %}
-                              <div class="group relative flex gap-x-6 rounded-lg p-2 my-2.5 text-sm leading-6 hover:bg-gray-50">
-                                <a href="{{ sub_child.url or "#" }}"
-                                   class="font-semibold text-current">
-                                  <span class="absolute inset-0"></span>
-                                  {{ sub_child.label }}
-                                </a>
-                              </div>
-                            {% endif %}
-                          {% endfor %}
-                        </div>
-                      {% endif %}
-                    </div>
-                  {% endfor %}
-                </div>
-              {% endif %}
-            {% endif %}
-      </div>
 
-      <div class="sticky bottom-0 grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-100 items-center text-center">
-        {% for cta in module.call_to_actions %}
-          {% if cta.style == "ghost" %}
-            {% set cta_inner_style = "button button--ghost" %}
-          {% elif cta.style == "primary" %}
-            {% set cta_inner_style = "button" %}
-          {% else %}
-            {% set cta_inner_style = "text-sm font-semibold leading-6 text-current" %}
-          {% endif %}
-          {% set href = cta.link.url.href %}
-          {% if cta.link.url.type is equalto "EMAIL_ADDRESS" %}
-            {% set href = "mailto:" + href %}
-          {% endif %}
-          <a href="{{ href }}"
-             class="{{ cta_inner_style }} button--square whitespace-nowrap"
-             {% if cta.link.open_in_new_tab %}target="_blank"{% endif %}
-            {% if cta.link.rel %}rel="{{ cta.link.rel }}"{% endif %}
-          >{{ cta.title | striptags | safe }}</a>
-        {% endfor %}
-      </div>
+
+        {# Mobile Menu Toggle #}
+        <div class="flex lg:hidden">
+            <button type="button" class="text-turquoise inline-flex items-center justify-center rounded text-xl p-1.5 hover:bg-white/20 cursor-pointer"
+                    @click="mobileMenuOpen=!mobileMenuOpen">
+                <span class="sr-only">Open main menu</span>
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg>
+            </button>
+        </div>
+
+
+        {# Desktop Menu #}
+        <div class="hidden lg:flex lg:gap-x-12" data-menu-style="{{ module.menu_layout }}">
+            {% if module.menu_layout == "superb" %} {# classic, modern, superb #}
+                <div class="">TODO SuperB Menu</div>
+            {% else %}
+                {% if main_menu.children %}
+                    {% for child in main_menu.children %}
+                        {% set has_sub_child = child.children and ((child.children|first).children or (child.children|last).children) %}
+                        <div x-data="{open:false}">
+                            <a 
+                                href="{{ child.url or "#" }}"
+                                {%- if not child.url or child.children -%}
+                                    @click="$event.preventDefault(); open=!open;"
+                                {%- endif -%}
+                                class="cursor-pointer uppercase text-sm group"
+                            >
+                                <div class="flex items-center gap-0.5">
+                                    <span class="font-bold text-off-white group-hover:text-turquoise transition-all duration-250">
+                                        {{ child.label }}
+                                        
+                                    </span>
+                                    {%- if child.children -%}
+                                        <svg class="size-5 flex-none translate-x-1 text-off-white group-hover:text-turquoise transition-all duration-250" :class="open?'rotate-180':''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                                    {%- endif -%}
+                                </div>
+                                <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-turquoise"></span>
+                            </a>
+
+                            {% if child.children %}
+                                {% if module.menu_layout == "modern" %}
+                                    {% set dropdown_styles = "absolute inset-x-0 top-full z-20 px-16" %}
+                                    {% if not has_sub_child %}
+                                        {% set dropdown_styles = "absolute left-1/2 -translate-x-1/2 z-20 mt-4 max-w-[1024px] rounded-lg overflow-hidden overflow-hidden bg-blue-overlay border border-turquoise/20" %}
+                                    {% elif module.full_width_dropdown_menus %}
+                                        {% set dropdown_styles = "absolute inset-x-0 mt-6 z-20 w-screen" %}
+                                    {% endif %}
+                                    <div class="{{ dropdown_styles }}"
+                                        x-show="open"
+                                        @click.away="open=false"
+                                        x-transition:enter="transition ease-out duration-200"
+                                        x-transition:enter-start="opacity-0 translate-y-1"
+                                        x-transition:enter-end="opacity-100 translate-y-0"
+                                        x-transition:leave="transition ease-in duration-150"
+                                        x-transition:leave-start="opacity-100 translate-y-0"
+                                        x-transition:leave-end="opacity-0 translate-y-1"
+                                        x-cloak
+                                    >
+                                        <div class="w-full overflow-hidden">
+                                            {% if has_sub_child and module.full_width_dropdown_menus %}
+                                                <div class="container !py-6">
+                                            {% endif %}
+                                            <div class="min-w-[816px] flex flex-wrap p-2{% if has_sub_child %} grid gap-x-12 gap-y-6 {{ child.children|length|float > 3 ? 'grid-cols-4' : 'grid-cols-3' }}{% endif %}">
+                                                {% for sub_child in child.children %}
+                                                    {% if has_sub_child %}
+                                                        <fieldset class="rounded-md border border-gray-200 p-2 h-full">
+                                                            <legend class="font-bold px-2">{{ sub_child.label }}</legend>
+                                                    {% else %}
+                                                        {% set label = sub_child.label %}
+                                                        {% if label is within app_names %}
+                                                            {% set product_match = module.products|selectattr('product_name', 'equalto', label)|list %}
+                                                            {% set product = product_match[0] if product_match|length > 0 else None %}
+                                                            <a href="{{ sub_child.url or "#" }}" class="hover:bg-dark-blue flex flex-col flex-1/2 gap-1 rounded-lg p-4 text-white/80 hover:text-white">
+                                                                <div class="h-8">
+                                                                    {{ app_wordmark(product.product_name) }}
+                                                                </div>
+                                                                <p>{{ product.product_description }}</p>
+                                                            </a>
+                                                        {% else %}
+                                                            <!-- <div class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"></div>
+                                                                <a href="{{ sub_child.url or "#" }}" class="font-semibold text-current">
+                                                                    {{ label }}
+                                                                    <span class="absolute inset-0"></span>
+                                                                </a>
+                                                            </div> -->
+                                                        {% endif %}
+                                                    {% endif %}
+                                                    {% for deep_sub_child in sub_child.children %}
+                                                        <div class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                                                            <a href="{{ deep_sub_child.url or "#" }}" class="font-semibold text-current">
+                                                                {{ deep_sub_child.label }}
+                                                                <span class="absolute inset-0"></span>
+                                                            </a>
+                                                        </div>
+                                                    {% endfor %}
+                                                    {% if has_sub_child %}
+                                                        </fieldset>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                            {% if has_sub_child and module.full_width_dropdown_menus %}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <div class="absolute -left-8 top-full z-20 mt-3 w-screen max-w-xs overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-gray-900/5"
+                                        x-show="open"
+                                        @click.away="open=false"
+                                        x-transition:enter="transition ease-out duration-200"
+                                        x-transition:enter-start="opacity-0 translate-y-1"
+                                        x-transition:enter-end="opacity-100 translate-y-0"
+                                        x-transition:leave="transition ease-in duration-150"
+                                        x-transition:leave-start="opacity-100 translate-y-0"
+                                        x-transition:leave-end="opacity-0 translate-y-1"
+                                        x-cloak
+                                    >
+                                        <div class="p-4">
+                                            {% for sub_child in child.children %}
+                                                <div class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                                                    <a href="{{ sub_child.url or "#" }}" class="block font-semibold text-current">
+                                                        {{ sub_child.label }} here 4
+                                                        <span class="absolute inset-0"></span>
+                                                    </a>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endif %}
+        </div>
+
+
+        {# CTA & Client Login #}
+        <div class="hidden lg:flex flex-1 justify-end items-center gap-2">
+            {% for cta in module.call_to_actions %}
+                {% set href = cta.link.url.href %}
+                    {% if cta.link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+                    {% endif %}
+                {{ button(cta.title, cta.link, cta.style) }}
+            {% endfor %}
+            
+            {# Client Login #}
+            {% for child in client_login_menu.children %}
+                {% set has_sub_child = child.children and ((child.children|first).children or (child.children|last).children) %}
+                <div class="relative ml-4" x-data="{clientMenuOpen:false}">
+                    <a 
+                        href="{{ child.url or "#" }}"
+                        {%- if not child.url or child.children -%}
+                            @click="$event.preventDefault(); clientMenuOpen=!clientMenuOpen;"
+                        {%- endif -%}
+                        class="bm-button"
+                    >
+                        <div class="bm-button__outer bm-button__outer--filled w-full">
+                            <div class="bm-button__inner w-full flex gap-0.5 justify-center">
+                                {{ child.label }}
+                                
+                                {%- if child.children -%}
+                                    <svg class="size-5 flex-none translate-x-1 transition-all duration-250" :class="clientMenuOpen?'rotate-180':''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+                                {%- endif -%}
+                            </div>
+                        </div>
+                        <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-turquoise"></span>
+                    </a>
+
+                    {% if child.children %}
+                        {% if module.menu_layout == "modern" %}
+                            {% set dropdown_styles = "absolute inset-x-0 top-full z-20 px-16" %}
+                            {% if not has_sub_child %}
+                                {% set dropdown_styles = "absolute right-0 top-full z-20 mt-4 max-w-xs rounded-lg overflow-hidden bg-blue-overlay border border-turquoise/20" %}
+                            {% elif module.full_width_dropdown_menus %}
+                                {% set dropdown_styles = "absolute inset-x-0 mt-6 z-20 w-screen" %}
+                            {% endif %}
+                            <div class="{{ dropdown_styles }}"
+                                x-show="clientMenuOpen"
+                                @click.away="clientMenuOpen=false"
+                                x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0 translate-y-1"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                                x-transition:leave="transition ease-in duration-150"
+                                x-transition:leave-start="opacity-100 translate-y-0"
+                                x-transition:leave-end="opacity-0 translate-y-1"
+                                x-cloak
+                            >
+                                <div class="w-full overflow-hidden">
+                                    {% if has_sub_child and module.full_width_dropdown_menus %}
+                                        <div class="container !py-6">
+                                    {% endif %}
+                                    <div class="p-2{% if has_sub_child %} grid gap-x-12 gap-y-6 {{ child.children|length|float > 3 ? 'grid-cols-4' : 'grid-cols-3' }}{% endif %}">
+                                        {% for sub_child in child.children %}
+                                            <div class="">
+                                                {% if has_sub_child %}
+                                                    <fieldset class="rounded-md border border-gray-200 p-2 h-full">
+                                                        <legend class="font-bold px-2">{{ sub_child.label }}</legend>
+                                                {% else %}
+                                                    <div class="group p-2 leading-6 text-sm rounded-lg overflow-hidden text-off-white hover:bg-white/20 uppercase">
+                                                        <a href="{{ sub_child.url or "#" }}"
+                                                            class="font-semibold text-current">
+                                                            <div class="flex items-center gap-1 h-10 text-nowrap">
+                                                                {% if sub_child.label is within app_names %}
+                                                                    <span class="h-10 w-10">{{ app_logo(sub_child.label, "desktop_CL") }}</span>
+                                                                    {{ sub_child.label }}
+                                                                {% else %}
+                                                                    <span class="mx-1.5">{{ sub_child.label }}</span>
+                                                                {% endif %}
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                {% endif %}
+                                                {% for deep_sub_child in sub_child.children %}
+                                                    <div class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                                                        <a href="{{ deep_sub_child.url or "#" }}"
+                                                            class="font-semibold text-current">
+                                                            {{ deep_sub_child.label }}
+                                                            <span class="absolute inset-0"></span>
+                                                        </a>
+                                                    </div>
+                                                {% endfor %}
+                                                {% if has_sub_child %}
+                                                    </fieldset>
+                                                {% endif %}
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                    {% if has_sub_child and module.full_width_dropdown_menus %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="absolute -left-8 top-full z-20 mt-3 w-screen max-w-xs overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-gray-900/5"
+                                x-show="clientMenuOpen"
+                                @click.away="clientMenuOpen=false"
+                                x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0 translate-y-1"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                                x-transition:leave="transition ease-in duration-150"
+                                x-transition:leave-start="opacity-100 translate-y-0"
+                                x-transition:leave-end="opacity-0 translate-y-1"
+                                x-cloak
+                            >
+                                <div class="p-4">
+                                    {% for sub_child in child.children %}
+                                        <div class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                                            <a href="{{ sub_child.url or "#" }}" class="block font-semibold text-current">
+                                                {{ sub_child.label }} here 4
+                                                <span class="absolute inset-0"></span>
+                                            </a>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+
+        
+    </nav>
+
+
+    {# Mobile Menu #}
+    <div class="lg:hidden" role="dialog" aria-modal="true" x-cloak>
+        <div class="fixed inset-0 z-20 backdrop-blur bg-black/40"
+            x-show="mobileMenuOpen" @click="mobileMenuOpen=false"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+        >
+            {# Background backdrop, show/hide based on slide-over state. #}
+        </div>
+        <div class="fixed inset-y-0 right-0 z-20 flex w-full flex-col overflow-y-auto bg-dark-blue sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+            x-show="mobileMenuOpen"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 !translate-x-96"
+            x-transition:enter-end="opacity-100 translate-x-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-x-0"
+            x-transition:leave-end="opacity-0 !translate-x-96"
+        >
+            <div class="flex items-center justify-center text-off-white px-4 py-2 border-b-white/20 border-b">
+                <p class="flex-1 pl-8 uppercase text-sm text-center">Menu</p>
+                <button type="button" class="text-turquoise inline-flex items-center justify-center rounded text-xl p-1.5 hover:bg-white/20 cursor-pointer"
+                    @click="mobileMenuOpen=!mobileMenuOpen"
+                >
+                    <span class="sr-only">Close menu</span>
+                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.281 18.2194C19.3507 18.2891 19.406 18.3718 19.4437 18.4629C19.4814 18.5539 19.5008 18.6515 19.5008 18.7501C19.5008 18.8486 19.4814 18.9462 19.4437 19.0372C19.406 19.1283 19.3507 19.211 19.281 19.2807C19.2114 19.3504 19.1286 19.4056 19.0376 19.4433C18.9465 19.4811 18.849 19.5005 18.7504 19.5005C18.6519 19.5005 18.5543 19.4811 18.4632 19.4433C18.3722 19.4056 18.2895 19.3504 18.2198 19.2807L12.0004 13.0604L5.78104 19.2807C5.64031 19.4214 5.44944 19.5005 5.25042 19.5005C5.05139 19.5005 4.86052 19.4214 4.71979 19.2807C4.57906 19.1399 4.5 18.9491 4.5 18.7501C4.5 18.551 4.57906 18.3602 4.71979 18.2194L10.9401 12.0001L4.71979 5.78068C4.57906 5.63995 4.5 5.44907 4.5 5.25005C4.5 5.05103 4.57906 4.86016 4.71979 4.71943C4.86052 4.5787 5.05139 4.49963 5.25042 4.49963C5.44944 4.49963 5.64031 4.5787 5.78104 4.71943L12.0004 10.9397L18.2198 4.71943C18.3605 4.5787 18.5514 4.49963 18.7504 4.49963C18.9494 4.49963 19.1403 4.5787 19.281 4.71943C19.4218 4.86016 19.5008 5.05103 19.5008 5.25005C19.5008 5.44907 19.4218 5.63995 19.281 5.78068L13.0607 12.0001L19.281 18.2194Z" fill="#43E3C2"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="flow-root">
+                {% if module.menu_layout == "superb" %} {# classic, modern, superb #}
+                    <div class="">TODO SuperB Menu</div>
+                {% else %}
+                    {% if main_menu.children %}
+                        <div class="flex flex-col">
+                            {% for child in main_menu.children %}
+                                {{ mmi.mobile_menu_item(child, "modile_main") }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+
+            <div class="flex flex-col-reverse">
+                {% for cta in module.call_to_actions %}
+                    {% if cta.title == "Client Login" %}
+
+                    {% else %}
+                        {% set href = cta.link.url.href %}
+
+                        {% if cta.link.url.type is equalto "EMAIL_ADDRESS" %}
+                            {% set href = "mailto:" + href %}
+                        {% endif %}
+                        
+                        <a href="{{ href }}"
+                            {% if cta.link.open_in_new_tab %}target="_blank"{% endif %}
+                            {% if cta.link.rel %}rel="{{ cta.link.rel }}"{% endif %}
+                            class="flex items-center p-4 text-off-white text-sm w-full font-bold uppercase leading-6 border-b-white/20 border-b hover:bg-white/20"
+                        >
+                            {{ cta.title | striptags | safe }}
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="flex flex-col">
+                {% for child in client_login_menu.children %}
+                    {{ mmi.mobile_menu_item(child, "mobile_cl") }}
+                {% endfor %}
+            </div>
+        </div>
     </div>
-  </div>
 </header>
 

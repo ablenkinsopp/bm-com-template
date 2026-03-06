@@ -132,7 +132,7 @@
     "id" : "69b697fa-1e58-d1aa-c68e-cc37d4653a43",
     "name" : "text_field",
     "label" : "Text",
-    "required" : true,
+    "required" : false,
     "locked" : false,
     "allow_new_line" : false,
     "type" : "text",

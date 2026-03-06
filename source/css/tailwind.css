@@ -29,6 +29,7 @@
   --color-turquoise: #43e3c2;
   --color-water: #ccfaf2;
   --color-saffron: #fac433;
+  --color-blue-overlay: #031431;
 
   --color-blog-text: #4a4a4a;
   --color-blog-subdued-text: #868686;
@@ -39,6 +40,8 @@
   --color-tag-blue-text: #20426A;
   --color-tag-purple-bg: #FDE1EA;
   --color-tag-purple-text: #9C185B;
+  
+  --color-subdued-blue: #3C4A63;
 
   --color-product-image-border: #334155;
   --color-product-image-bg: #1e293b;
@@ -296,6 +299,17 @@
         z-index: 10;
         --tw-translate-y: calc(calc(1/2 * 100%) /* 50% */ * -1) /* -50% */;
         translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+}
+
+.body-container--about {
+    .timeline-item {
+        a {
+            @apply text-turquoise;
+            &:hover {
+                @apply underline;
+            }
+        }
     }
 }
 

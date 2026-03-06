@@ -14,5 +14,5 @@
   ],
   "label": "Global Footer for Landing Pages",
   "icon": "../../images/module-icons/fresh-juice.svg",
-  "is_available_for_new_content": true
+  "is_available_for_new_content": false
 }

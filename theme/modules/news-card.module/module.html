@@ -22,9 +22,10 @@
             <p class="text-lg text-off-white">{{ article.name }}</p>
             <p
                 href="{{ article.absolute_url }}"
-                class="text-light-blue text-lg underline group-hover:text-turquoise"
+                class="text-light-blue text-lg group-hover:text-turquoise transition-all duration-250 self-start"
             >
                 Read Full Post
+                <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-turquoise"></span>
             </p>
         </a>
     {% endfor %}

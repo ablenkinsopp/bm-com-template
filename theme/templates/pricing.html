@@ -14,7 +14,60 @@
 
   {# Pricing #}
 
-  {% include_dnd_partial path="../sections/pricing.html" %}
+  {# Hero #}
+    
+    {% include_dnd_partial 
+        path="../sections/hero-banner.html",
+        context={
+            "video_player_field": null,
+            "image_field": {
+                "size_type": "auto",
+                "src": "",
+                "alt": "",
+                "loading": "lazy",
+                "width": null,
+                "height": null,
+                "max_width": null,
+                "max_height": null
+            },
+            "app_logo": "",
+            "headline_top": "Compare Solutions",
+            "headline_bottom": "",
+            "basic_text": ["Integer tincidunt quam quis dui ultricies commodo a at enim."],
+            "show_button": false
+        }
+    %}
+
+    {# Pricing #}
+    {% dnd_section 
+        background_color={{ context.background_color or "#000F28" }},
+        fullWidth: "true"
+    %}
+        {% dnd_module 
+            path='../modules/pricing.module'
+        %}
+        {% end_dnd_module %}
+    {% end_dnd_section %}
+
+    {# Call to action #}
+
+    {% include_dnd_partial 
+        path="../sections/call-to-action.html",
+        context={
+            "title": "Join leading research teams modernizing how insight is created",
+            "text_field": "",
+            "button_text": "Request a demo"
+        }
+    %}
+
+    {# News Cards #}
+    
+    {% dnd_section 
+        background_color={{ context.background_color or "#000F28" }},
+        fullWidth: "true" 
+    %}
+        {% dnd_module path='../modules/news-card.module' %}{% end_dnd_module %}
+    {% end_dnd_section %}
 
 {% end_dnd_area %}
 {% endblock body %}

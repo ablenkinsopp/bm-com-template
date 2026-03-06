@@ -11,7 +11,7 @@
     {% set inner_classes = panel.bordered ? "rounded p-10 match-nearest-bg" : "" %}
     {% set flex_classes = panel.image_position == "right" ? "flex-col md:flex-row" : "flex-col-reverse md:flex-row-reverse" %}
     {% set title_classes = panel.app_logo ? "text-turquoise uppercase text-xl font-medium" : "text-water font-light text-4xl" %}
-    
+
     <div class="{{ outer_classes }}">
         <div class="flex {{ flex_classes }} {{ inner_classes }} gap-16">
             <div class="flex flex-col md:flex-1 justify-center items-start gap-6 text-text-color text">
@@ -41,7 +41,7 @@
                 {% if panel.button|length > 0 %}
                     <div class="flex gap-6">
                         {% for btn in panel.button %}
-                            {{ button(btn.button_text, btn.url, btn.style) }}
+                            {{ button(btn.button_text, btn.link_field, btn.style) }}
                         {% endfor %}
                     </div>
                 {% endif %}

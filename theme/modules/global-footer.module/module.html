@@ -38,11 +38,15 @@
                     <p class="text-water text-sm uppercase">{{ section.label }}</p>
                     <div class="flex flex-col items-start gap-2">
                       {% for item in section.children %}
-                        <a class="flex items-center gap-2 hover:text-water text-turquoise cursor-pointer min-h-6" target="_blank" href="{{ item.url }}">
-                            {% if item.url is string_containing "linkedin.com" or item.url is string_containing "://x.com/" %}
-                                <span class='text-white text-lg'>{{ get_social_icon(item.url) }}</span>
-                            {% endif %}
-                            {{ item.label }}
+                        <a class="group  hover:text-water text-turquoise transition-all duration-250 cursor-pointer min-h-6" target="_blank" href="{{ item.url }}">
+                            <div class="flex items-center gap-2">
+                                {% if item.url is string_containing "linkedin.com" or item.url is string_containing "://x.com/" %}
+                                    <span class='text-white text-lg'>{{ get_social_icon(item.url) }}</span>
+                                {% endif %}
+                                {{ item.label }}
+                            </div>
+                                
+                            <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-water"></span>
                         </a>
                       {% endfor %}
                   </div>
@@ -61,36 +65,75 @@
                 <p>Durham, NC 27701</p>
                 <p>United States</p>
             </div>
-            <ul class="flex flex-col gap-4">
-                <a href="/" class="flex items-center gap-2 hover:!text-water !text-turquoise cursor-pointer min-h-6">View All Locations</a>
+            <ul class="flex flex-col items-start gap-4">
+                <a href="/" class="group hover:!text-water !text-turquoise cursor-pointer min-h-6 transition-all duration-250">
+                    View All Locations
+                    <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-water"></span>
+                </a>
             </ul>
         </div>
         <div class="-mx-4 md:mx-0 p-4 py-4 md:p-8 flex flex-1 flex-col gap-2 md:gap-8 bg-[#01102A] md:rounded">
             <p class="!text-water text-sm uppercase">Contact</p>
-            <ul class="flex flex-col gap-4">
-                <a href="/" class="flex items-center gap-2 hover:!text-water !text-turquoise cursor-pointer min-h-6">Email Sales</a>
+            <ul class="flex items-start flex-col gap-4">
+                <a href="/" class="group transition-all duration-250 hover:!text-water !text-turquoise cursor-pointer min-h-6">
+                    Email Sales
+                    <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-water"></span>
+                </a>
             </ul>
             <div class="flex flex-col gap-4 items-start">
                 <p class="text-muted-text">
                     Learn more about how we can help your business.
                 </p>
-                {{ button("Request Demo", { "url": { "href": "/" } }, "outline") }}
+                {{ button(module.button_text, module.button_link, "outline") }}
             </div>
-            <div class="flex flex-col gap-4 text-text-color">
+            <div class="flex flex-col items-start gap-4 text-text-color">
                 <p class="text-white font-bold">Client Support</p>
                 <p>
                     For support matters, clients can access our
+                    {% set href = module.resource_center_link.url.href %}
+                    {% if module.resource_center_link.url.type is equalto "EMAIL_ADDRESS" %}
+                        {% set href = "mailto:" + href %}
+                    {% elif module.resource_center_link.url.type is equalto "PHONE_NUMBER" %}
+                      { % set href = "tel:" + href %}
+                    {% endif %}
                     <a
-                        href="/"
-                        class="hover:!text-water !text-turquoise cursor-pointer "
+                        class="hover:!text-water !text-turquoise cursor-pointer"
+                        {% if module.resource_center_link.url.type is equalto "CALL_TO_ACTION"  %}
+                            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                        {% else %}
+                            href="{{ href|escape_url }}"
+                        {% endif %}
+                        {% if module.resource_center_link.open_in_new_tab %}
+                            target="_blank"
+                        {% endif %}
+                        {% if module.resource_center_link.rel %}
+                            rel="{{ module.resource_center_link.rel|escape_attr }}"
+                        {% endif %}
                     >
                         Resource Center
-                </a> or <a
-                        href="/"
+                    </a> or 
+                    {% set href = module.contact_us_link.url.href %}
+                    {% if module.contact_us_link.url.type is equalto "EMAIL_ADDRESS" %}
+                        {% set href = "mailto:" + href %}
+                    {% elif module.contact_us_link.url.type is equalto "PHONE_NUMBER" %}
+                        {% set href = "tel:" + href %}
+                    {% endif %}
+                    <a
                         class="hover:!text-water !text-turquoise cursor-pointer "
+                        {% if module.contact_us_link.url.type is equalto "CALL_TO_ACTION"  %}
+                            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                        {% else %}
+                            href="{{ href|escape_url }}"
+                        {% endif %}
+                        {% if module.contact_us_link.open_in_new_tab %}
+                            target="_blank"
+                        {% endif %}
+                        {% if module.contact_us_link.rel %}
+                            rel="{{ module.contact_us_link.rel|escape_attr }}"
+                        {% endif %}
                     >
                         Contact Us
-                </a> 
+                    </a> 
                 </p>
             </div>
         </div>
@@ -100,13 +143,13 @@
         {% if module.logo.src %}
               {% set sizeAttrs = 'width="{{ module.logo.width / 2 }}" height="{{ module.logo.height / 2 }}"' %}
               {% if module.logo.size_type == 'auto' %}
-                {% set sizeAttrs = 'width="{{ module.logo.width / 2 }}" height="{{ module.logo.height / 2 }}"' %}
+                  {% set sizeAttrs = 'width="{{ module.logo.width / 2 }}" height="{{ module.logo.height / 2 }}"' %}
               {% elif module.logo.size_type == 'auto_custom_max' %}
-                {% set sizeAttrs = 'width="{{ module.logo.max_width / 2 }}" height="{{ module.logo.max_height / 2 }}"' %}
+                  {% set sizeAttrs = 'width="{{ module.logo.max_width / 2 }}" height="{{ module.logo.max_height / 2 }}"' %}
               {% endif %}
-               {% set loadingAttr = module.logo.loading != 'disabled' ? 'loading="{{ module.logo.loading }}"' : '' %}
+                  {% set loadingAttr = module.logo.loading != 'disabled' ? 'loading="{{ module.logo.loading }}"' : '' %}
               <img class="h-8 w-auto" src="{{ module.logo.src }}" alt="{{ module.logo.alt or 'Company' }} logo" {{ loadingAttr }} {{ sizeAttrs }}>
-            {% endif %}
+        {% endif %}
         <p class="text-text-color text-center">{{ module.copyrights }}</p>
     </div>
 </footer>

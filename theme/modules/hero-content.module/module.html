@@ -26,7 +26,7 @@
                     <p class="lg:text-lg max-w-[600px]">{{ para }}</p>
                 {% endfor %}
                 {% if module.show_button %}
-                    {{ button(module.button_text, module.button_url, "filled", "large") }}
+                    {{ button(module.button_text, module.button_link, "filled", "large") }}
                 {% endif %}
             </div>
             {% if module.videoplayer_field.player_id %}
