@@ -7,8 +7,8 @@
   "responsive" : true,
   "resizable" : true,
   "show_loading" : false,
-  "type" : "image",
   "display_width" : null,
+  "type" : "image",
   "default" : {
     "size_type" : "auto",
     "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Frame-6.svg",
@@ -26,8 +26,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "Monetize Your Content"
 }, {
   "id" : "43463a05-186a-7d9d-a5f1-40832cd89e43",
@@ -36,8 +36,8 @@
   "required" : false,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "We address the challenges facing research analysts so they can focus on what’s important-creating value in the market."
 }, {
   "id" : "d8163ed8-eec2-23b5-57f6-e4375c1df8e1",
@@ -50,7 +50,7 @@
   "multiple" : false,
   "reordering_enabled" : true,
   "preset" : null,
-  "type" : "choice",
   "display_width" : null,
+  "type" : "choice",
   "default" : "center"
 } ]

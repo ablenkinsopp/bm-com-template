@@ -8,8 +8,8 @@
   "tab" : "STYLE",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : { }
 }, {
   "id" : "47dff199-f950-784d-1aa7-f62696e4b01d",
@@ -25,8 +25,8 @@
     "locked" : false,
     "placeholder" : "",
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Permanent"
   }, {
     "id" : "83801df9-2b05-660e-7d4b-cdc02bde71dc",
@@ -35,8 +35,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "$200"
   }, {
     "id" : "01066ced-bac4-03ed-a71e-e032009b438b",
@@ -45,8 +45,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "/ forever"
   }, {
     "id" : "d33809b1-0446-b634-76cc-847f1587812a",
@@ -55,8 +55,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Permanent Single-Time Purchase Subscription to unlock all juiciness."
   }, {
     "id" : "2c8bf8dd-a3e5-9c43-bde7-80921b3ecc6a",
@@ -65,8 +65,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Unlock Now"
   }, {
     "id" : "e4ba68ef-9a75-9ddf-7444-a6c0a227ed21",
@@ -84,8 +84,8 @@
     },
     "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
     "show_advanced_rel_options" : false,
-    "type" : "link",
     "display_width" : null,
+    "type" : "link",
     "default" : {
       "url" : {
         "content_id" : null,
@@ -102,8 +102,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Our Benefits:"
   }, {
     "id" : "61462360-f170-d415-7d81-f3644954e212",
@@ -118,15 +118,15 @@
       "default" : 3
     },
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : [ "Permanent VIP Access", "Infinite Juices", "Ultra Secret Juice" ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : {
     "tier_name" : "Permanent",
     "price" : "$200",

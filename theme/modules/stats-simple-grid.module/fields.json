@@ -17,8 +17,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "44 million"
   }, {
     "id" : "59f2d969-4974-c92d-b56c-18d69ae416e4",
@@ -27,8 +27,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Things"
   }, {
     "id" : "7280ee0a-e85b-367c-59e0-5574f5953742",
@@ -37,14 +37,14 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null
+    "display_width" : null,
+    "type" : "text"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ {
     "number" : "1.2",
     "subtext" : "Things",
@@ -68,7 +68,7 @@
   "required" : false,
   "locked" : false,
   "display" : "toggle",
-  "type" : "boolean",
   "display_width" : null,
+  "type" : "boolean",
   "default" : true
 } ]

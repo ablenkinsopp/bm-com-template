@@ -46,31 +46,19 @@
                 @apply gradient-border-button-hover;
 
                 .bm-button__inner {
-                    @apply border-glass-border-hover text-turquoise;
-
-                    &::before {
-                        transform: skewX(-30deg) translateX(115%);
-                    }
+                    @apply border-glass-border-hover text-turquoise skew-button-streak;
                 }
             }
 
             &.bm-button__outer--filled {
                 .bm-button__inner {
-                    @apply bg-white;
-
-                    &::before {
-                        transform: skewX(-30deg) translateX(115%);
-                    }
+                    @apply bg-white skew-button-streak;
                 }
             }
 
             &.bm-button__outer--ghost {
                 .bm-button__inner {
-                    @apply text-turquoise;
-
-                    &::before {
-                        transform: skewX(-30deg) translateX(115%);
-                    }
+                    @apply text-turquoise skew-button-streak;
                 }
             }
         }

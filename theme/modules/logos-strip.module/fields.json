@@ -5,8 +5,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "Trusted by industry leaders"
 }, {
   "id" : "6a1d1aa6-7ab7-fb01-13d4-bd97c52b161e",
@@ -28,8 +28,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Jeffries"
   }, {
     "picker" : "image",
@@ -38,15 +38,15 @@
     "label" : "Company Logo",
     "required" : true,
     "locked" : false,
-    "type" : "file",
     "display_width" : null,
+    "type" : "file",
     "default" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/client%20logos/logo%20bar/raffeisen.png"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ {
     "company_name" : "Jeffries",
     "company_logo" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Client%20Logos/jefferies.png"
@@ -66,4 +66,14 @@
     "company_name" : "Oppenheimer",
     "company_logo" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Client%20Logos/oppenheimer.png"
   } ]
+}, {
+  "id" : "29f070db-7005-c052-253d-d25c2607d778",
+  "name" : "animate",
+  "label" : "Animate",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "display_width" : null,
+  "type" : "boolean",
+  "default" : false
 } ]

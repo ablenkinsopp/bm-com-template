@@ -7,8 +7,8 @@
   "responsive" : true,
   "resizable" : true,
   "show_loading" : false,
-  "type" : "image",
   "display_width" : null,
+  "type" : "image",
   "default" : {
     "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/raw_assets/public/FreshJuice/images/fresh-juice-logo.png",
     "alt" : "Fresh Juice",
@@ -36,8 +36,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
     "display_width" : null,
+    "type" : "choice",
     "default" : "primary"
   }, {
     "id" : "bb670a24-25b9-9d8f-ba99-81a8f6287034",
@@ -47,8 +47,8 @@
     "locked" : false,
     "placeholder" : "Link Name",
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : ""
   }, {
     "id" : "a5e5d6c5-2c96-d974-c197-26ddb8e25b9b",
@@ -58,8 +58,8 @@
     "locked" : false,
     "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER" ],
     "show_advanced_rel_options" : false,
-    "type" : "link",
     "display_width" : null,
+    "type" : "link",
     "default" : {
       "url" : {
         "content_id" : null,
@@ -73,8 +73,8 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : {
     "style" : "primary",
     "title" : "Link Name",

@@ -5,8 +5,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "A Vision Brought to Life"
 }, {
   "id" : "5d370f17-d687-f8c9-e9d3-1bae1edc7bc9",
@@ -21,9 +21,9 @@
     "default" : null
   },
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
-  "default" : [ "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa." ]
+  "type" : "text",
+  "default" : "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa."
 }, {
   "id" : "bcbc6575-5ed2-bfe6-9b38-f9889ded4a32",
   "name" : "timeline",
@@ -40,40 +40,28 @@
     "id" : "d1832ca4-5064-21bf-d8e1-39e98b246a52",
     "name" : "year",
     "label" : "Year",
-    "required" : false,
+    "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "1999"
   }, {
     "id" : "25745649-021e-d6b6-9c59-126926aff025",
     "name" : "event",
     "label" : "Event",
-    "required" : false,
+    "required" : true,
     "locked" : false,
-    "type" : "richtext",
     "display_width" : null,
+    "type" : "richtext",
     "default" : "<span>BlueMatrix secures investment from <a href=\"https://www.thomabravo.com/\" rel=\"noopener\" target=\"_blank\">Thoma Bravo</a>, one of the world’s leading </span><span>software investors.</span>"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
-  "default" : [ {
-    "year" : "1999",
-    "event" : "<span>Founded in New York City by Skye Hauptman and Patricia Horotan</span>"
-  }, {
-    "year" : "2010s",
-    "event" : "<span>Global expansion begins with the opening of offices in London and Romania</span>"
-  }, {
-    "year" : "2024",
-    "event" : "<span>BlueMatrix secures investment from <a href=\"https://www.thomabravo.com/\" rel=\"noopener\" target=\"_blank\">Thoma Bravo</a>, one of the world’s leading </span><span>software investors</span>"
-  }, {
-    "year" : "Today",
-    "event" : "<span>BlueMatrix is the world’s leading and most trusted research publishing platform</span>"
-  } ]
+  "type" : "group",
+  "default" : [ ]
 }, {
   "id" : "7ac1b042-c6ad-23a4-b66c-0385e2ecc4e7",
   "name" : "image_field",
@@ -83,8 +71,8 @@
   "responsive" : true,
   "resizable" : true,
   "show_loading" : false,
-  "type" : "image",
   "display_width" : null,
+  "type" : "image",
   "default" : {
     "size_type" : "auto",
     "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/bm-ph-sh.jpg",
@@ -102,7 +90,7 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "Skye & Patricia, circa 2006, at our New York Roundtable"
 } ]

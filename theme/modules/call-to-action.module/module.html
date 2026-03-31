@@ -1,12 +1,35 @@
 {% from '../../macros/button.html' import button %}
 
+{% set cta_bg_360 = get_asset_url("../../images/cta/cta-360.jpg") %}
+{% set cta_bg_640 = get_asset_url("../../images/cta/cta-640.jpg") %}
+{% set cta_bg_1024 = get_asset_url("../../images/cta/cta-1024.jpg") %}
+{% set cta_bg_2000 = get_asset_url("../../images/cta/cta-2000.jpg") %}
+
 <style>
-	.hero::before {
-		background-image: url('{{ module.background_image }}');
+	.cta-bg {
+		background-image: url('{{ cta_bg_360 }}');
 	}
+
+    @media (min-width: 640px) {
+        .cta-bg {
+            background-image: url('{{ cta_bg_640 }}');
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .cta-bg {
+            background-image: url('{{ cta_bg_1024 }}');
+        }
+    }
+
+    @media (min-width: 1536px) {
+        .cta-bg {
+            background-image: url('{{ cta_bg_2000 }}');
+        }
+    }
 </style>
 
-<div class="hero w-full p-4 px-10">
+<div class="hero cta-bg w-full p-4 px-10">
     <div class="relative z-1 mx-auto max-w-[1600px]">
         <div class="py-24 flex flex-col gap-6 justify-center items-center">
             <h2 class="!text-white !font-light !text-3xl sm:!text-4xl text-center">{{ module.title }}</h2>

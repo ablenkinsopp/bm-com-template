@@ -17,8 +17,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Basic"
   }, {
     "id" : "2629d9b9-46b4-a443-08d3-5313daafd29f",
@@ -27,8 +27,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "123"
   }, {
     "id" : "58caa5af-22e7-f152-be67-a6baa3cf119c",
@@ -37,8 +37,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "/ month"
   }, {
     "id" : "a0e41c7a-48ac-266c-0fd3-0d42ea1cc705",
@@ -47,8 +47,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Single-member plan for personal projects, prototypes, and getting started."
   }, {
     "id" : "ec4cd19d-7c47-c5c6-595f-8f3091935195",
@@ -57,8 +57,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Get Started"
   }, {
     "id" : "1bb378bf-31d3-a398-485b-8d91a98bab01",
@@ -76,8 +76,8 @@
     },
     "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER" ],
     "show_advanced_rel_options" : false,
-    "type" : "link",
     "display_width" : null,
+    "type" : "link",
     "default" : {
       "url" : {
         "content_id" : null,
@@ -94,8 +94,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Everything necessary to get started."
   }, {
     "id" : "6b615b91-b7a3-632c-4a2a-fea2f9134f5f",
@@ -110,15 +110,15 @@
       "default" : 3
     },
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : [ "Awesome Feature", "Awesome Feature", "Awesome Feature" ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ {
     "tier_name" : "Starter",
     "price" : "$15",

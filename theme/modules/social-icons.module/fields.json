@@ -5,8 +5,8 @@
   "required" : false,
   "locked" : false,
   "display" : "checkbox",
-  "type" : "boolean",
   "display_width" : null,
+  "type" : "boolean",
   "default" : true
 }, {
   "id" : "935f07c7-bad0-21da-bcdd-1da81702ad28",
@@ -15,8 +15,8 @@
   "required" : false,
   "locked" : false,
   "display" : "checkbox",
-  "type" : "boolean",
   "display_width" : null,
+  "type" : "boolean",
   "default" : false
 }, {
   "id" : "0bc5877a-957d-fec9-6858-60e65f9c3328",
@@ -32,8 +32,8 @@
     "operator" : "EQUAL",
     "access" : null
   },
-  "type" : "color",
   "display_width" : null,
+  "type" : "color",
   "default" : {
     "color" : "#FFFFFF",
     "opacity" : 100
@@ -52,8 +52,8 @@
     "operator" : "EQUAL",
     "access" : null
   },
-  "type" : "color",
   "display_width" : null,
+  "type" : "color",
   "default" : {
     "color" : "#2663EB",
     "opacity" : 100
@@ -77,8 +77,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Facebook"
   }, {
     "id" : "74aba557-d450-c36e-ac67-7a800aeb3963",
@@ -87,8 +87,8 @@
     "required" : true,
     "locked" : false,
     "icon_set" : "fontawesome-6.4.2",
-    "type" : "icon",
     "display_width" : null,
+    "type" : "icon",
     "default" : {
       "name" : "Facebook",
       "unicode" : "f09a",
@@ -102,8 +102,8 @@
     "locked" : false,
     "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
     "show_advanced_rel_options" : false,
-    "type" : "link",
     "display_width" : null,
+    "type" : "link",
     "default" : {
       "url" : {
         "content_id" : null,
@@ -127,8 +127,8 @@
       "operator" : "EQUAL",
       "access" : null
     },
-    "type" : "color",
     "display_width" : null,
+    "type" : "color",
     "default" : {
       "color" : "#fff",
       "opacity" : 100
@@ -147,8 +147,8 @@
       "operator" : "EQUAL",
       "access" : null
     },
-    "type" : "color",
     "display_width" : null,
+    "type" : "color",
     "default" : {
       "color" : "#2663EB",
       "opacity" : 100
@@ -157,8 +157,8 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ {
     "icon_name" : "Facebook",
     "social_icon" : {

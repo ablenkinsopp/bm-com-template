@@ -10,7 +10,24 @@
     {% elif text == "Industry News" %}
         {% set color_classes = "bg-tag-purple-bg text-tag-purple-text" %}
     {% else %}
-        {% set color_classes = "bg-water text-turquoise" %}
+        {# Curated fallback palette #}
+        {% set palette = [
+            {"bg": "bg-tag-green-bg",  "text": "text-tag-green-text"},
+            {"bg": "bg-tag-blue-bg",   "text": "text-tag-blue-text"},
+            {"bg": "bg-tag-purple-bg", "text": "text-tag-purple-text"},
+            {"bg": "bg-water",         "text": "text-text-blue"},
+            {"bg": "bg-alt-bg",        "text": "text-subdued-blue"},
+            {"bg": "bg-tag-green-bg",  "text": "text-tag-green-text"}
+        ] %}
+
+        {# Deterministic index from the tag text #}
+        {% set ns = namespace(seed=0) %}
+        {% for ch in text|lower|list %}
+            {% set ns.seed = ns.seed + loop.index * ch|length %}
+        {% endfor %}
+
+        {% set choice = palette[ns.seed % (palette|length)] %}
+        {% set color_classes = choice.bg + " " + choice.text %}
     {% endif %}
 
     {% if link %}

@@ -17,29 +17,9 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled book."
-  }, {
-    "id" : "6391bb3e-c8aa-9373-3e21-eed950979482",
-    "name" : "author_name",
-    "label" : "Author Name",
-    "required" : true,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Explosive Banana"
-  }, {
-    "id" : "9f262078-6877-b0a6-04a1-8cbdee0798a1",
-    "name" : "author_job_title",
-    "label" : "Author Job Title",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Officer"
   }, {
     "id" : "edf48a77-00c4-38af-4c9c-d69949814f60",
     "name" : "company_logo",
@@ -49,8 +29,8 @@
     "responsive" : true,
     "resizable" : true,
     "show_loading" : false,
-    "type" : "image",
     "display_width" : null,
+    "type" : "image",
     "default" : {
       "size_type" : "auto_custom_max",
       "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/logoipsum-297.svg",
@@ -68,19 +48,37 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Company Name"
+  }, {
+    "id" : "6391bb3e-c8aa-9373-3e21-eed950979482",
+    "name" : "author_name",
+    "label" : "Author Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : ""
+  }, {
+    "id" : "9f262078-6877-b0a6-04a1-8cbdee0798a1",
+    "name" : "author_job_title",
+    "label" : "Author Job Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Officer"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ {
     "blockquote" : "BlueMatrix has proven, year-in and year-out, its strategic value. It is far more than a publishing system and we regard them as an extension of our own organization.",
-    "author_name" : "Louis Giglio",
-    "author_job_title" : "Officer",
     "company_logo" : {
       "size_type" : "auto_custom_max",
       "src" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/client%20logos/testimonials/b-riley.png",
@@ -89,11 +87,11 @@
       "height" : 30,
       "max_width" : 30
     },
-    "company_name" : "B. Riley Securities"
+    "company_name" : "B. Riley Securities",
+    "author_name" : "",
+    "author_job_title" : "Officer"
   }, {
     "blockquote" : "BlueMatrix has proven, year-in and year-out, its strategic value. It is far more than a publishing system and we regard them as an extension of our own organization.",
-    "author_name" : "Louis Giglio",
-    "author_job_title" : "Officer",
     "company_logo" : {
       "size_type" : "auto_custom_max",
       "src" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/client%20logos/testimonials/b-riley.png",
@@ -102,6 +100,8 @@
       "height" : 30,
       "max_width" : 30
     },
-    "company_name" : "B. Riley Securities"
+    "company_name" : "B. Riley Securities",
+    "author_name" : "",
+    "author_job_title" : "Officer"
   } ]
 } ]

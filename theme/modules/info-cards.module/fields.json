@@ -5,8 +5,8 @@
   "required" : false,
   "locked" : false,
   "display" : "toggle",
-  "type" : "boolean",
   "display_width" : null,
+  "type" : "boolean",
   "default" : true
 }, {
   "id" : "6173b2d1-2bad-7fb5-5c46-ccf319d0e650",
@@ -29,8 +29,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Monetize Your Content"
   }, {
     "id" : "f9c9ed41-91a2-ce10-20f3-9caaf65325e5",
@@ -41,8 +41,8 @@
     "responsive" : true,
     "resizable" : true,
     "show_loading" : false,
-    "type" : "image",
     "display_width" : null,
+    "type" : "image",
     "default" : {
       "size_type" : "auto",
       "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Frame-6.svg",
@@ -60,8 +60,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "We address the challenges facing research analysts so they can focus on what’s important-creating value in the market."
   }, {
     "id" : "d8163ed8-eec2-23b5-57f6-e4375c1df8e1",
@@ -74,15 +74,15 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
     "display_width" : null,
+    "type" : "choice",
     "default" : "center"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : {
     "title" : "Monetize Your Content",
     "image_field" : {
@@ -111,23 +111,23 @@
     "default" : null
   },
   "children" : [ {
-    "picker" : "image",
-    "id" : "76565840-e034-77dc-65f3-9f16418af931",
-    "name" : "image",
-    "label" : "Image",
-    "required" : false,
-    "locked" : false,
-    "type" : "file",
-    "display_width" : null
-  }, {
     "id" : "84793f2a-3116-9d77-b637-1197384507d8",
     "name" : "title",
     "label" : "Title",
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null
+    "display_width" : null,
+    "type" : "text"
+  }, {
+    "picker" : "image",
+    "id" : "76565840-e034-77dc-65f3-9f16418af931",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "file"
   }, {
     "id" : "69b697fa-1e58-d1aa-c68e-cc37d4653a43",
     "name" : "text_field",
@@ -135,8 +135,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Collaborative Workflow"
   }, {
     "id" : "497a7081-6d6f-5031-c3c3-93572d724857",
@@ -157,8 +157,8 @@
       "required" : false,
       "locked" : false,
       "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null
+      "display_width" : null,
+      "type" : "text"
     }, {
       "id" : "f76ce90e-51e0-d84b-c891-540bf54a715e",
       "name" : "bold_text",
@@ -166,20 +166,20 @@
       "required" : false,
       "locked" : false,
       "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null
+      "display_width" : null,
+      "type" : "text"
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "group_occurrence_meta" : null,
-    "type" : "group",
     "display_width" : null,
+    "type" : "group",
     "default" : [ ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ ]
 } ]

@@ -1,14 +1,20 @@
 {% from '../../macros/logos-strip.html' import logos_strip %}
 
 <div class="flex flex-col justify-center items-center text-center gap-8 md:pt-2 md:pr-4">
-    <img src="https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/bm-logo-white.svg" alt="BlueMatrix" class="h-8"/>
-    <h1 class='flex flex-col !text-4xl sm:!text-5xl xl:!text-6xl !text-white !font-black'>
-        <span class="text-water lg:whitespace-nowrap">{{ module.headline_top }}</span>
-        {% if module.headline_bottom %}
-            <span class="lg:whitespace-nowrap">{{ module.headline_bottom }}</span>
-        {% endif %}
-    </h1>
-    {{ logos_strip(module.logos, module.logos_title, true) }}
+    <div data-animate-on-scroll
+        data-animate-class="animate-fade-up"
+        style="--delay: 100ms; --duration: 600ms;" 
+        class="flex flex-col justify-center items-center gap-8 animate-start-fade-up-16"
+    >
+        <img src="https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/bm-logo-white.svg" alt="BlueMatrix" class="h-8"/>
+        <h1 class='flex flex-col !text-4xl sm:!text-5xl xl:!text-6xl !text-white !font-black'>
+            <span class="text-water lg:whitespace-nowrap">{{ module.headline_top }}</span>
+            {% if module.headline_bottom %}
+                <span class="lg:whitespace-nowrap">{{ module.headline_bottom }}</span>
+            {% endif %}
+        </h1>
+    </div>
+    {{ logos_strip(module.logos, module.logos_title, true, true) }}
 </div>
 
 

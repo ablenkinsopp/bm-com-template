@@ -17,8 +17,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null
+    "display_width" : null,
+    "type" : "text"
   }, {
     "id" : "aea8e172-a386-6573-029d-90411f04f9c8",
     "name" : "top_panel",
@@ -36,8 +36,8 @@
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
-      "type" : "choice",
       "display_width" : null,
+      "type" : "choice",
       "default" : "right"
     }, {
       "picker" : "image",
@@ -46,8 +46,8 @@
       "label" : "Image",
       "required" : true,
       "locked" : false,
-      "type" : "file",
       "display_width" : null,
+      "type" : "file",
       "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png"
     }, {
       "picker" : "image",
@@ -56,8 +56,8 @@
       "label" : "App Logo",
       "required" : false,
       "locked" : false,
-      "type" : "file",
       "display_width" : null,
+      "type" : "file",
       "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg"
     }, {
       "id" : "tabs.top_panel.app_name",
@@ -66,8 +66,8 @@
       "required" : true,
       "locked" : false,
       "allow_new_line" : false,
-      "type" : "text",
       "display_width" : null,
+      "type" : "text",
       "default" : "Creator"
     }, {
       "id" : "69a88ddb-a4c5-904b-6758-3d693437f9d0",
@@ -76,8 +76,8 @@
       "required" : true,
       "locked" : false,
       "allow_new_line" : false,
-      "type" : "text",
       "display_width" : null,
+      "type" : "text",
       "default" : "Authoring, Compliance, Distribution"
     }, {
       "id" : "b62bf55f-c704-3fa8-2718-6b1ddff158f5",
@@ -92,8 +92,8 @@
         "default" : null
       },
       "allow_new_line" : false,
-      "type" : "text",
       "display_width" : null,
+      "type" : "text",
       "default" : "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa."
     }, {
       "id" : "tabs.top_panel.ticks",
@@ -114,8 +114,8 @@
         "required" : false,
         "locked" : false,
         "allow_new_line" : false,
-        "type" : "text",
-        "display_width" : null
+        "display_width" : null,
+        "type" : "text"
       }, {
         "id" : "tabs.top_panel.ticks.bold_text",
         "name" : "bold_text",
@@ -123,14 +123,14 @@
         "required" : false,
         "locked" : false,
         "allow_new_line" : false,
-        "type" : "text",
-        "display_width" : null
+        "display_width" : null,
+        "type" : "text"
       } ],
       "tab" : "CONTENT",
       "expanded" : false,
       "group_occurrence_meta" : null,
-      "type" : "group",
       "display_width" : null,
+      "type" : "group",
       "default" : [ ]
     }, {
       "id" : "bba6e11c-7143-d07a-6746-712e98acc9af",
@@ -151,8 +151,8 @@
         "required" : false,
         "locked" : false,
         "allow_new_line" : false,
-        "type" : "text",
-        "display_width" : null
+        "display_width" : null,
+        "type" : "text"
       }, {
         "id" : "e9e4ebdf-d7a5-6009-21be-62c492f63022",
         "name" : "url",
@@ -161,8 +161,8 @@
         "locked" : false,
         "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
         "show_advanced_rel_options" : false,
-        "type" : "link",
         "display_width" : null,
+        "type" : "link",
         "default" : {
           "url" : {
             "content_id" : 204233406304,
@@ -183,22 +183,22 @@
         "multiple" : false,
         "reordering_enabled" : true,
         "preset" : null,
-        "type" : "choice",
         "display_width" : null,
+        "type" : "choice",
         "default" : "filled"
       } ],
       "tab" : "CONTENT",
       "expanded" : false,
       "group_occurrence_meta" : null,
-      "type" : "group",
       "display_width" : null,
+      "type" : "group",
       "default" : [ ]
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "group_occurrence_meta" : null,
-    "type" : "group",
     "display_width" : null,
+    "type" : "group",
     "default" : {
       "image_position" : "right",
       "image" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png",
@@ -226,8 +226,8 @@
       "required" : false,
       "locked" : false,
       "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null
+      "display_width" : null,
+      "type" : "text"
     }, {
       "id" : "cd19dedd-6afe-3b74-e6d0-647052803307",
       "name" : "text_field",
@@ -235,8 +235,8 @@
       "required" : false,
       "locked" : false,
       "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null
+      "display_width" : null,
+      "type" : "text"
     }, {
       "picker" : "image",
       "id" : "cf272032-5e93-86b6-07e4-075907b8fc09",
@@ -244,14 +244,14 @@
       "label" : "Image",
       "required" : false,
       "locked" : false,
-      "type" : "file",
-      "display_width" : null
+      "display_width" : null,
+      "type" : "file"
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "group_occurrence_meta" : null,
-    "type" : "group",
     "display_width" : null,
+    "type" : "group",
     "default" : [ ]
   }, {
     "id" : "28467dc2-694b-44dc-ecf9-74518f5017bf",
@@ -270,8 +270,8 @@
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
-      "type" : "choice",
       "display_width" : null,
+      "type" : "choice",
       "default" : "right"
     }, {
       "picker" : "image",
@@ -280,8 +280,8 @@
       "label" : "Image",
       "required" : true,
       "locked" : false,
-      "type" : "file",
       "display_width" : null,
+      "type" : "file",
       "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png"
     }, {
       "picker" : "image",
@@ -290,8 +290,8 @@
       "label" : "App Logo",
       "required" : false,
       "locked" : false,
-      "type" : "file",
       "display_width" : null,
+      "type" : "file",
       "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg"
     }, {
       "id" : "tabs.bottom_panel.app_name",
@@ -300,8 +300,8 @@
       "required" : true,
       "locked" : false,
       "allow_new_line" : false,
-      "type" : "text",
       "display_width" : null,
+      "type" : "text",
       "default" : "Creator"
     }, {
       "id" : "8a302134-cb1f-56a7-656a-da407c4f28b3",
@@ -310,8 +310,8 @@
       "required" : true,
       "locked" : false,
       "allow_new_line" : false,
-      "type" : "text",
       "display_width" : null,
+      "type" : "text",
       "default" : "Authoring, Compliance, Distribution"
     }, {
       "id" : "6c30d02e-9060-e916-9e27-ad8c51a3b096",
@@ -326,8 +326,8 @@
         "default" : null
       },
       "allow_new_line" : false,
-      "type" : "text",
       "display_width" : null,
+      "type" : "text",
       "default" : "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa."
     }, {
       "id" : "tabs.bottom_panel.ticks",
@@ -348,8 +348,8 @@
         "required" : false,
         "locked" : false,
         "allow_new_line" : false,
-        "type" : "text",
-        "display_width" : null
+        "display_width" : null,
+        "type" : "text"
       }, {
         "id" : "tabs.bottom_panel.ticks.bold_text",
         "name" : "bold_text",
@@ -357,14 +357,14 @@
         "required" : false,
         "locked" : false,
         "allow_new_line" : false,
-        "type" : "text",
-        "display_width" : null
+        "display_width" : null,
+        "type" : "text"
       } ],
       "tab" : "CONTENT",
       "expanded" : false,
       "group_occurrence_meta" : null,
-      "type" : "group",
       "display_width" : null,
+      "type" : "group",
       "default" : [ ]
     }, {
       "id" : "ab703a7e-2954-b9d8-e4ec-c8cd108d82a9",
@@ -385,8 +385,8 @@
         "required" : false,
         "locked" : false,
         "allow_new_line" : false,
-        "type" : "text",
-        "display_width" : null
+        "display_width" : null,
+        "type" : "text"
       }, {
         "id" : "490a9295-db01-356d-1a77-122650ff5095",
         "name" : "url",
@@ -395,8 +395,8 @@
         "locked" : false,
         "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
         "show_advanced_rel_options" : false,
-        "type" : "link",
         "display_width" : null,
+        "type" : "link",
         "default" : {
           "url" : {
             "content_id" : 204233406304,
@@ -417,22 +417,22 @@
         "multiple" : false,
         "reordering_enabled" : true,
         "preset" : null,
-        "type" : "choice",
         "display_width" : null,
+        "type" : "choice",
         "default" : "filled"
       } ],
       "tab" : "CONTENT",
       "expanded" : false,
       "group_occurrence_meta" : null,
-      "type" : "group",
       "display_width" : null,
+      "type" : "group",
       "default" : [ ]
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "group_occurrence_meta" : null,
-    "type" : "group",
     "display_width" : null,
+    "type" : "group",
     "default" : {
       "image_position" : "right",
       "image" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png",
@@ -445,8 +445,8 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ {
     "tab_title" : "Buyside",
     "top_panel" : {

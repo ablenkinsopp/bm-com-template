@@ -6,8 +6,8 @@
   "required" : false,
   "locked" : false,
   "display" : "checkbox",
-  "type" : "boolean",
   "display_width" : null,
+  "type" : "boolean",
   "default" : false
 }, {
   "id" : "5e392f36-799f-9f13-dc8f-2942dbb48557",
@@ -17,8 +17,8 @@
   "required" : false,
   "locked" : false,
   "display" : "checkbox",
-  "type" : "boolean",
   "display_width" : null,
+  "type" : "boolean",
   "default" : true
 }, {
   "id" : "fbfffa08-8a71-cfaf-f554-7034996e3f8c",
@@ -28,8 +28,8 @@
   "required" : false,
   "locked" : false,
   "display" : "checkbox",
-  "type" : "boolean",
   "display_width" : null,
+  "type" : "boolean",
   "default" : true
 }, {
   "id" : "cb1904de-452e-b424-6644-7a37c7693dd9",
@@ -46,8 +46,8 @@
     "access" : null
   },
   "icon_set" : "fontawesome-5.14.0",
-  "type" : "icon",
   "display_width" : null,
+  "type" : "icon",
   "default" : {
     "name" : "Check Circle",
     "unicode" : "f058",
@@ -59,8 +59,8 @@
   "label" : "Global Icon Color",
   "required" : false,
   "locked" : false,
-  "type" : "color",
   "display_width" : null,
+  "type" : "color",
   "default" : {
     "color" : "#2463EB",
     "opacity" : 100
@@ -80,8 +80,8 @@
     "display" : "slider",
     "min" : 0,
     "step" : 1,
-    "type" : "number",
     "display_width" : null,
+    "type" : "number",
     "default" : 10
   }, {
     "id" : "05c7f97f-3ae1-301e-324e-e8c8eaba0335",
@@ -91,8 +91,8 @@
     "locked" : false,
     "display" : "slider",
     "step" : 1,
-    "type" : "number",
     "display_width" : null,
+    "type" : "number",
     "default" : 10
   }, {
     "id" : "525e41df-e27e-d897-71e8-e8bc88d4747a",
@@ -112,8 +112,8 @@
     "min" : -50,
     "max" : 100,
     "step" : 1,
-    "type" : "number",
     "display_width" : null,
+    "type" : "number",
     "default" : 0
   }, {
     "id" : "ebc166bf-587e-3b09-6d7b-55314a4850ca",
@@ -126,15 +126,15 @@
     "min" : 0,
     "max" : 200,
     "step" : 1,
-    "type" : "number",
     "display_width" : null,
+    "type" : "number",
     "default" : 24
   } ],
   "tab" : "STYLE",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : {
     "gap" : 10,
     "list_items_alignment" : 10,
@@ -167,8 +167,8 @@
       "operator" : "EQUAL",
       "access" : null
     },
-    "type" : "richtext",
     "display_width" : null,
+    "type" : "richtext",
     "default" : "<h3><strong>Priority First for VIPs</strong></h3>\n<p><br>when it comes to exclusive cocktails and juices.</p>"
   }, {
     "id" : "7c1cd551-26e2-7418-8727-897a869b1b33",
@@ -185,8 +185,8 @@
       "access" : null
     },
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Banana Superpowers by FreshJuice"
   }, {
     "id" : "807d3301-25aa-3adf-41c4-784722bb2970",
@@ -203,8 +203,8 @@
       "access" : null
     },
     "icon_set" : "fontawesome-5.14.0",
-    "type" : "icon",
     "display_width" : null,
+    "type" : "icon",
     "default" : {
       "name" : "Check Square",
       "unicode" : "f14a",
@@ -224,8 +224,8 @@
       "operator" : "EQUAL",
       "access" : null
     },
-    "type" : "color",
     "display_width" : null,
+    "type" : "color",
     "default" : {
       "color" : "#2463EB",
       "opacity" : 100
@@ -234,8 +234,8 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ {
     "item_rich_text" : "<h3><strong>Priority First for VIPs</strong></h3>\n<p><br>when it comes to exclusive cocktails and juices.</p>",
     "item_text" : "Priority First for VIPs when it comes to exclusive cocktails and juices.",

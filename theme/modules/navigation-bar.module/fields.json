@@ -7,8 +7,8 @@
   "responsive" : true,
   "resizable" : true,
   "show_loading" : false,
-  "type" : "image",
   "display_width" : null,
+  "type" : "image",
   "default" : {
     "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/bm-logo-white.svg",
     "alt" : "BlueMatrix Logo",
@@ -31,8 +31,8 @@
   "multiple" : false,
   "reordering_enabled" : true,
   "preset" : null,
-  "type" : "choice",
   "display_width" : null,
+  "type" : "choice",
   "default" : "modern"
 }, {
   "id" : "127da6c1-4810-3052-eb74-b5b9acdcf8c0",
@@ -49,8 +49,8 @@
     "access" : null
   },
   "display" : "toggle",
-  "type" : "boolean",
   "display_width" : null,
+  "type" : "boolean",
   "default" : true
 }, {
   "id" : "a7d48009-6333-b463-ad86-30d661ae273e",
@@ -66,8 +66,8 @@
     "operator" : "NOT_EQUAL",
     "access" : null
   },
-  "type" : "menu",
   "display_width" : null,
+  "type" : "menu",
   "default" : 207281794910
 }, {
   "id" : "eec64ec4-dcc1-ac8a-4b0e-0b4b8aac9dbe",
@@ -92,8 +92,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice",
     "display_width" : null,
+    "type" : "choice",
     "default" : "filled"
   }, {
     "id" : "bb670a24-25b9-9d8f-ba99-81a8f6287034",
@@ -102,8 +102,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Link Name"
   }, {
     "id" : "a5e5d6c5-2c96-d974-c197-26ddb8e25b9b",
@@ -113,8 +113,8 @@
     "locked" : false,
     "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER" ],
     "show_advanced_rel_options" : false,
-    "type" : "link",
     "display_width" : null,
+    "type" : "link",
     "default" : {
       "url" : {
         "content_id" : null,
@@ -128,8 +128,8 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ {
     "style" : "outline",
     "title" : "Request Demo",
@@ -161,8 +161,8 @@
   "label" : "Client Login Menu",
   "required" : false,
   "locked" : false,
-  "type" : "menu",
   "display_width" : null,
+  "type" : "menu",
   "default" : 207275017879
 }, {
   "id" : "fb9fa4c4-f80f-f911-085b-3d182afa3f86",
@@ -183,8 +183,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Creator"
   }, {
     "id" : "6dff0bed-a829-0d6d-8a6e-e0b519b5fc47",
@@ -193,15 +193,15 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Aliquam viverra lobortis erat sed sollicitudin. Vivamus arcu est, auctor ut dui pretium. Tincidunt porttitor velit. Nam fermentum at ipsum nec ornare."
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ {
     "product_name" : "Creator",
     "product_description" : "Aliquam viverra lobortis erat sed sollicitudin. Vivamus arcu est, auctor ut dui pretium. Tincidunt porttitor velit. Nam fermentum at ipsum nec ornare."

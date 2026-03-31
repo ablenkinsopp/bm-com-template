@@ -14,9 +14,13 @@
 
 <div class="grid grid-cols-1 gap-6 lg:gap-10 w-full {{ grid_col_class }}">
     {% for article in articles %}
+        {% set delay_ms = (loop.index - 1) * 200 %}
         <a
+            data-animate-on-scroll
+            data-animate-class="animate-fade-up"
             href="{{ article.absolute_url }}"
-            class="group flex flex-col text-left gradient-border-bottom gap-4 p-6 bg-dark-blue hover:bg-white/10"
+            class="group flex flex-col text-left gradient-border-bottom gap-4 p-6 bg-dark-blue hover:bg-white/10 animate-start-fade-up-8"
+            style="--delay: {{ delay_ms }}ms; --duration: 400ms;"
         >
             <p class="text-water text-sm uppercase">{{ article.topic_list[0].name }}</p>
             <p class="text-lg text-off-white">{{ article.name }}</p>

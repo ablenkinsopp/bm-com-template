@@ -7,8 +7,8 @@
   "responsive" : true,
   "resizable" : true,
   "show_loading" : false,
-  "type" : "image",
   "display_width" : null,
+  "type" : "image",
   "default" : {
     "size_type" : "auto",
     "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/global-presence.svg",
@@ -38,8 +38,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Americas"
   }, {
     "id" : "82c7bcd5-bc34-afb4-b3e9-c157ffb8ec53",
@@ -60,8 +60,8 @@
       "required" : true,
       "locked" : false,
       "allow_new_line" : false,
-      "type" : "text",
       "display_width" : null,
+      "type" : "text",
       "default" : "Durham (HQ)"
     }, {
       "id" : "7a537fb4-b84b-27c5-b94e-cac8755482e7",
@@ -70,8 +70,8 @@
       "required" : true,
       "locked" : false,
       "allow_new_line" : false,
-      "type" : "text",
       "display_width" : null,
+      "type" : "text",
       "default" : "320 Blackwell Street, Suite 300"
     }, {
       "id" : "135f8366-0b82-ee55-520a-4d0879d445cf",
@@ -80,8 +80,8 @@
       "required" : true,
       "locked" : false,
       "allow_new_line" : false,
-      "type" : "text",
       "display_width" : null,
+      "type" : "text",
       "default" : "Durham, NC27701"
     }, {
       "id" : "44faaf3e-9c1b-37cc-f4b5-58898cc2b1cc",
@@ -90,21 +90,21 @@
       "required" : false,
       "locked" : false,
       "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null
+      "display_width" : null,
+      "type" : "text"
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "group_occurrence_meta" : null,
-    "type" : "group",
     "display_width" : null,
+    "type" : "group",
     "default" : [ ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ {
     "region" : "Americas",
     "offices" : [ {

@@ -7,8 +7,8 @@
   "responsive" : true,
   "resizable" : true,
   "show_loading" : false,
-  "type" : "image",
   "display_width" : null,
+  "type" : "image",
   "default" : {
     "size_type" : "auto_custom_max",
     "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/bm-logo-light.svg",
@@ -26,8 +26,8 @@
   "inline_help_text" : "The footer menu includes links or options usually found at the bottom of a webpage for quick access to additional information or site navigation.",
   "required" : false,
   "locked" : true,
-  "type" : "menu",
   "display_width" : null,
+  "type" : "menu",
   "default" : 202287332761
 }, {
   "id" : "f86c63ec-cd18-adf7-bd87-b3fe8347d44e",
@@ -35,8 +35,8 @@
   "label" : "Copyrights",
   "required" : false,
   "locked" : true,
-  "type" : "richtext",
   "display_width" : null,
+  "type" : "richtext",
   "default" : "Copyright © {{ year }} BlueMatrix. All rights reserved."
 }, {
   "id" : "afb7fd4b-c971-1c42-ad55-2296ac48d296",
@@ -45,8 +45,8 @@
   "required" : true,
   "locked" : true,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "Request Demo"
 }, {
   "id" : "71b771de-892f-9f4a-8c47-70951911eb01",
@@ -56,8 +56,8 @@
   "locked" : true,
   "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
   "show_advanced_rel_options" : false,
-  "type" : "link",
   "display_width" : null,
+  "type" : "link",
   "default" : {
     "url" : {
       "content_id" : 206078525068,
@@ -75,8 +75,8 @@
   "locked" : true,
   "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
   "show_advanced_rel_options" : false,
-  "type" : "link",
   "display_width" : null,
+  "type" : "link",
   "default" : {
     "url" : {
       "content_id" : null,
@@ -94,8 +94,8 @@
   "locked" : true,
   "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
   "show_advanced_rel_options" : false,
-  "type" : "link",
   "display_width" : null,
+  "type" : "link",
   "default" : {
     "url" : {
       "content_id" : null,

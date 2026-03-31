@@ -5,8 +5,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "Intelligence That"
 }, {
   "id" : "db7de352-2cfa-cfe2-8389-aebdece6dbcd",
@@ -15,8 +15,8 @@
   "required" : false,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "Moves Markets"
 }, {
   "id" : "6af3c66f-814c-c10b-b1e3-ad8650268137",
@@ -25,8 +25,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "Trusted by industry leaders"
 }, {
   "id" : "6a1d1aa6-7ab7-fb01-13d4-bd97c52b161e",
@@ -48,8 +48,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Jeffries"
   }, {
     "picker" : "image",
@@ -58,15 +58,15 @@
     "label" : "Company Logo",
     "required" : true,
     "locked" : false,
-    "type" : "file",
     "display_width" : null,
+    "type" : "file",
     "default" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/client%20logos/logo%20bar/raffeisen.png"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ {
     "company_name" : "Jeffries",
     "company_logo" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Client%20Logos/jefferies.png"

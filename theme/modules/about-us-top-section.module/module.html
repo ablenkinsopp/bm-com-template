@@ -10,7 +10,9 @@
             <div class="gradient-border rounded overflow-hidden max-w-xl p-px mx-auto">
                 <div class="bg-[#031535] rounded flex flex-col overflow-hidden">
                     {% if module.image_field.src %}
-                        <img src="{{ module.image_field.src|escape_url }}" alt="{{ module.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                        <img 
+                            src="{{ module.image_field.src|escape_url }}" alt="{{ module.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}
+                        >
                     {% endif %}
                     <p class="text-muted-text text-center py-6 px-4">{{ module.caption }}</p>
                 </div>
@@ -20,7 +22,12 @@
         <div class="flex flex-col">
             {% for item in module.timeline %}
                 {% set padding_class = loop.index == module.timeline|length ? "" : "pb-4" %}
-                <div class="flex gap-4 {{ padding_class }} relative">
+                {% set delay_ms = (loop.index - 1) * 200 %}
+                <div data-animate-on-scroll
+                    data-animate-class="animate-fade-up"
+                    style="--delay: {{ delay_ms }}ms; --duration: 200ms;" 
+                    class="flex gap-4 {{ padding_class }} relative animate-start-fade-up-8"
+                >
                     {% if loop.index != module.timeline|length %}
                         <div class="absolute border-l-2 bottom-0 left-[7px] top-0 border-l-[#3E5661] z-0"></div>
                     {% endif %}

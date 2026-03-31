@@ -7,12 +7,12 @@
   "resizable" : true,
   "show_preview" : true,
   "show_advanced_options" : false,
-  "type" : "videoplayer",
-  "display_width" : null
+  "display_width" : null,
+  "type" : "videoplayer"
 }, {
   "id" : "02c55a45-8760-bd80-6170-148e9a2852ba",
   "name" : "video_position",
-  "label" : "Video/Image Position",
+  "label" : "Video/Animation/Image Position",
   "required" : false,
   "locked" : false,
   "display" : "select",
@@ -20,9 +20,19 @@
   "multiple" : false,
   "reordering_enabled" : true,
   "preset" : null,
-  "type" : "choice",
   "display_width" : null,
+  "type" : "choice",
   "default" : "right"
+}, {
+  "picker" : "file",
+  "id" : "f4dfbe9a-c7a2-3e2b-d714-b5943388935a",
+  "name" : "animation",
+  "label" : "Animation",
+  "required" : false,
+  "locked" : false,
+  "display_width" : null,
+  "type" : "file",
+  "default" : ""
 }, {
   "id" : "64da1989-e0d3-5a1a-e628-0592837bfadd",
   "name" : "image_field",
@@ -40,8 +50,8 @@
   "responsive" : true,
   "resizable" : true,
   "show_loading" : false,
-  "type" : "image",
   "display_width" : null,
+  "type" : "image",
   "default" : {
     "size_type" : "auto",
     "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Placeholders/hero-generic-placeholder.png",
@@ -59,8 +69,8 @@
   "label" : "Product Logo",
   "required" : false,
   "locked" : false,
-  "type" : "file",
   "display_width" : null,
+  "type" : "file",
   "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg"
 }, {
   "id" : "app_name",
@@ -69,8 +79,8 @@
   "required" : false,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "Creator"
 }, {
   "id" : "aaacd89f-3b1c-6ede-04eb-7c6d012fa757",
@@ -79,8 +89,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "A Modern System of Record"
 }, {
   "id" : "db7de352-2cfa-cfe2-8389-aebdece6dbcd",
@@ -89,8 +99,8 @@
   "required" : false,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "for Investment Research"
 }, {
   "id" : "ab8d23a4-5bfd-a537-f4b6-f4be5f40c459",
@@ -105,19 +115,9 @@
     "default" : null
   },
   "allow_new_line" : false,
+  "display_width" : null,
   "type" : "text",
-  "display_width" : null,
   "default" : "Creator is the industry's leading system of record for sell-side research replacing Word, email, and fragmented tools with structured authoring, standardized templates, and workflows designed for consistency, compliance, and scale."
-}, {
-  "picker" : "image",
-  "id" : "676abe1d-4694-c7b3-9296-e25089eb13f1",
-  "name" : "background_image",
-  "label" : "Background Image",
-  "required" : false,
-  "locked" : false,
-  "type" : "file",
-  "display_width" : null,
-  "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/generic%20hero.png"
 }, {
   "id" : "4a69e37b-a5b5-d655-0cc7-5ba62c599e95",
   "name" : "show_button",
@@ -125,8 +125,8 @@
   "required" : false,
   "locked" : false,
   "display" : "toggle",
-  "type" : "boolean",
   "display_width" : null,
+  "type" : "boolean",
   "default" : true
 }, {
   "id" : "0f6b68e2-5515-a5af-f0b5-3f9ba5cc5108",
@@ -143,8 +143,8 @@
     "access" : null
   },
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "Request Demo"
 }, {
   "id" : "21554b4a-c8e5-ac58-8c6b-1a9b673f9e1b",
@@ -162,8 +162,8 @@
   },
   "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
   "show_advanced_rel_options" : false,
-  "type" : "link",
   "display_width" : null,
+  "type" : "link",
   "default" : {
     "url" : {
       "content_id" : 206078525068,

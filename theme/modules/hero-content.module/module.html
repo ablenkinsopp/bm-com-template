@@ -1,25 +1,52 @@
+{% set hero_bg_360 = get_asset_url("../../images/hero-bg/hero-360.jpg") %}
+{% set hero_bg_640 = get_asset_url("../../images/hero-bg/hero-640.jpg") %}
+{% set hero_bg_1024 = get_asset_url("../../images/hero-bg/hero-1024.jpg") %}
+{% set hero_bg_2000 = get_asset_url("../../images/hero-bg/hero-2000.jpg") %}
+
 <style>
-	.hero::before {
-		background-image: url('{{ module.background_image }}');
+	.hero {
+		background-image: url('{{ hero_bg_360 }}');
 	}
+
+    @media (min-width: 640px) {
+        .hero {
+            background-image: url('{{ hero_bg_640 }}');
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .hero {
+            background-image: url('{{ hero_bg_1024 }}');
+        }
+    }
+
+    @media (min-width: 1536px) {
+        .hero {
+            background-image: url('{{ hero_bg_2000 }}');
+        }
+    }
 </style>
 
 {% from '../../macros/button.html' import button %}
 
 {% set layout_classes = module.video_position == "right" ? "flex-col lg:flex-row" : "flex-col-reverse lg:flex-row-reverse" %}
-{% set text_classes = module.videoplayer_field.player_id || module.image_field.src ? "lg:text-left lg:items-start" : "" %}
+{% set text_classes = module.videoplayer_field.player_id || module.image_field.src || module.animation ? "lg:text-left lg:items-start" : "" %}
 
 <div class="hero w-full">
-    <div class="relative w-full p-4 py-10 lg:p-10 text-text-color flex justify-center items-center bg-[linear-gradient(135deg,_#031D3C_5%,_rgba(32,66,106,0)_78.61%)]">
+    <div class="relative w-full p-4 py-10 lg:p-10 text-text-color flex justify-center items-center">
         <div class="flex w-full max-w-[1516px] gap-6 lg:gap-10 items-center {{ layout_classes }}">
-            <div class="flex flex-col gap-6 flex-1 text-center items-center {{ text_classes }}">
+            <div data-animate-on-scroll
+                data-animate-class="animate-fade-up"
+                style="--delay: 100ms; --duration: 600ms;" 
+                class="flex flex-col gap-6 flex-1 text-center items-center {{ text_classes }} animate-start-fade-up-16"
+            >
                 {% if module.app_logo %}
                     <img class="h-12" alt="{{ module.app_name }}" src="{{ module.app_logo }}" />
                 {% endif %}
                 <h1 class='flex flex-col !text-4xl sm:!text-5xl xl:!text-6xl !text-white !font-black'>
-                    <span class="text-water lg:whitespace-nowrap">{{ module.headline_top }}</span>
+                    <span class="text-water ">{{ module.headline_top }}</span>
                     {% if module.headline_bottom %}
-                        <span class="lg:whitespace-nowrap">{{ module.headline_bottom }}</span>
+                        <span class="">{{ module.headline_bottom }}</span>
                     {% endif %}
                 </h1>
                 {% for para in module.basic_text %}
@@ -43,6 +70,18 @@
                         loop={{ module.videoplayer_field.loop_video }}
                         muted={{ module.videoplayer_field.mute_by_default }}
                     %}
+                </div>
+            {% elif module.animation %}
+                <div class="md:flex-1 max-w-[500px] flex justify-center">
+                    <div class="w-full aspect-[1/1]">
+                        <dotlottie-wc
+                            src="{{ module.animation }}"
+                            autoplay
+                            loop
+                            mode="normal"
+                            class="w-full h-full"
+                        ></dotlottie-wc>
+                    </div>
                 </div>
             {% elif module.image_field.src %}
                 <div class="flex-1 max-w-3xl w-full">

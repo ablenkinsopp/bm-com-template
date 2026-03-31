@@ -3,6 +3,41 @@
         <div class="w-full flex flex-col gap-4 justify-center items-center text-center md:gap-6">
             <h1 class="text-water font-black text-3xl sm:text-5xl md:text-6xl" x-balance-text>{{ module.blog_name }}</h1>
             <p class="text-white sm:text-2xl font-light" x-balance-text>{{ module.blog_description }}</p>
+            {% if blog_author or tag %}
+                {% if blog_author %}
+                    <div class="flex items-center bg-white rounded-4xl p-4 gap-2">
+                        <img loading="lazy"
+                            class="h-10 leading-none rounded-full"
+                            src="{{ blog_author.avatar }}"
+                            alt="{{ blog_author.display_name | striptags }}"
+                        />
+                        <div class="flex flex-col leading-none items-start">
+                            <p class="text-xs">{{ module.blog_author_listing.subheading }}</p>
+                            <p class="font-bold">{{ blog_author.display_name }}</p>
+                        </div>
+                    </div>
+                {% elif tag %}
+                    {% set tag_name = page_meta.html_title | split(' | ') | last | split(' (') | first %}
+                    {% if tag_name == "Technology" %}
+                        {% set color_classes = "bg-tag-green-bg text-tag-green-text" %}
+                    {% elif tag_name == "Company News" %}
+                        {% set color_classes = "bg-tag-blue-bg text-tag-blue-text" %}
+                    {% elif tag_name == "Industry News" %}
+                        {% set color_classes = "bg-tag-purple-bg text-tag-purple-text" %}
+                    {% else %}
+                        {% set color_classes = "bg-water text-turquoise" %}
+                    {% endif %}
+                    <div class="flex gap-2 {{ color_classes }} rounded-4xl py-2 px-4 items-center">
+                        <div class="h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-full w-full" fill="currentColor" viewBox="0 0 256 256"><path d="M246.15,133.18,146.83,33.86A19.85,19.85,0,0,0,132.69,28H40A12,12,0,0,0,28,40v92.69a19.85,19.85,0,0,0,5.86,14.14l99.32,99.32a20,20,0,0,0,28.28,0l84.69-84.69A20,20,0,0,0,246.15,133.18Zm-98.83,93.17L52,131V52h79l95.32,95.32ZM104,88A16,16,0,1,1,88,72,16,16,0,0,1,104,88Z"></path></svg>
+                        </div>
+                        <div class="flex flex-col leading-none items-start ">
+                            <p class="text-xs">{{ module.blog_tag_listing.subheading }}</p>
+                            <p class="font-bold">{{ tag_name }}</p>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endif %}
         </div>
     </div>
 </header>

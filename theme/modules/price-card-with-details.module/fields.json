@@ -11,8 +11,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Juicy Permanent"
   }, {
     "id" : "a4ca36af-76ae-770a-f896-743348937a9d",
@@ -21,8 +21,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "The best, the mightiest, the bravest juices and smoothies are there to help you smooth up for the day."
   }, {
     "id" : "4d13341b-ebf6-9c32-120b-e35e6f07ef30",
@@ -31,8 +31,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "What's included"
   }, {
     "id" : "a0b675a1-c232-5c7a-d638-4789a941e235",
@@ -47,15 +47,15 @@
       "default" : 4
     },
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : [ "Permanent Juiciness", "VIP access to secret Juicy Events", "Private Juice and Smoothie Butlers", "Hotels Secret Juice Service" ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : {
     "title" : "Juicy Permanent",
     "description" : "The best, the mightiest, the bravest juices and smoothies are there to help you smooth up for the day.",
@@ -75,8 +75,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Pay once, be juicy forever"
   }, {
     "id" : "92df9402-f998-f648-c234-ac827a557f38",
@@ -85,8 +85,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "$349"
   }, {
     "id" : "77177926-9187-1c83-97d3-1f8fbfe752c8",
@@ -95,8 +95,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "USD"
   }, {
     "id" : "c574064a-3430-990d-1d95-6988c4bd360a",
@@ -106,8 +106,8 @@
     "locked" : false,
     "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER" ],
     "show_advanced_rel_options" : false,
-    "type" : "link",
     "display_width" : null,
+    "type" : "link",
     "default" : {
       "url" : {
         "content_id" : null,
@@ -124,8 +124,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Get Juicy"
   }, {
     "id" : "35860b0d-061e-a20c-9a54-140dd6662713",
@@ -134,15 +134,15 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Invoices and receipts available for easy juicy reevaluations"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : {
     "slogan" : "Pay once, be juicy forever",
     "cost" : "$349",

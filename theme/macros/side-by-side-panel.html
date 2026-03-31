@@ -7,13 +7,13 @@
 {% from './tick-list.html' import tick_list %}
 
 {% macro side_by_side_panel(panel) %}
-    {% set outer_classes = panel.bordered ? "gradient-border rounded p-px" : "" %}
+    {% set outer_classes = panel.bordered ? "gradient-border rounded p-px max-w-[1280px]" : "max-w-[1200px]" %}
     {% set inner_classes = panel.bordered ? "rounded p-10 match-nearest-bg" : "" %}
     {% set flex_classes = panel.image_position == "right" ? "flex-col md:flex-row" : "flex-col-reverse md:flex-row-reverse" %}
     {% set title_classes = panel.app_logo ? "text-turquoise uppercase text-xl font-medium" : "text-water font-light text-4xl" %}
 
-    <div class="{{ outer_classes }}">
-        <div class="flex {{ flex_classes }} {{ inner_classes }} gap-16">
+    <div class="{{ outer_classes }} mx-auto">
+        <div class="flex {{ flex_classes }} {{ inner_classes }} items-center gap-16">
             <div class="flex flex-col md:flex-1 justify-center items-start gap-6 text-text-color text">
                 {% if panel.app_logo %}
                     <img class="h-11" alt="{{ panel.app_name }}" src="{{ panel.app_logo }}" />
@@ -46,12 +46,36 @@
                     </div>
                 {% endif %}
             </div>
-            {% if panel.product_image.src %}
-                {{ product_image(panel.product_image.src, "editor_v5", "Editor screenshot")}}
-            {% elif panel.context_image.src %}
-                <div class="self-center flex-1 max-w-[960px]">
-                    <img src="{{ panel.context_image.src|escape_url }}" alt="{{ panel.title|escape_attr }}">
+            {% if panel.video.player_id %}
+                {% set max_width = panel.video.size_type == 'auto_custom_max' ? panel.video.max_width : panel.video.width %}
+                {% set max_height = panel.video.size_type == 'auto_custom_max' ? panel.video.max_height : panel.video.height %}
+                <div class="md:flex-1 max-w-[500px]">
+                    {% video_player "embed_player"
+                        player_id={{ panel.video.player_id }}
+                        type={{ panel.video.player_type || 'scriptV4' }}
+                        full_width={{ panel.video.size_type == 'auto_full_width' }},
+                        conversion_asset={{ panel.video.conversion_asset|tojson|safe }}
+                        autoplay={{ panel.video.autoplay }}
+                        hidden_controls={{ panel.video.hide_controls }}
+                        loop={{ panel.video.loop_video }}
+                        muted={{ panel.video.mute_by_default }}
+                    %}
                 </div>
+                
+            {% elif panel.animation %}
+                <div class="md:flex-1 flex justify-center">
+                    <div class="w-full max-w-[500px] aspect-[1/1]">
+                        <dotlottie-wc
+                            src="{{ panel.animation }}"
+                            autoplay
+                            loop
+                            mode="normal"
+                            class="w-full h-full"
+                        ></dotlottie-wc>
+                    </div>
+                </div>
+            {% elif panel.product_image.src %}
+                {{ product_image(panel.product_image.src, "editor_v5", "Editor screenshot")}}
             {% endif %}
         </div>
     </div>

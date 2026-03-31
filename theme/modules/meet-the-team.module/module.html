@@ -1,9 +1,12 @@
-<!-- module html  -->
 {% from '../../macros/button.html' import button %}
 
 <div class="flex flex-wrap sm:flex-row gap-4 md:gap-8 pt-10 md:pt-20 justify-center max-w-6xl mx-auto">
     {% for member in module.team_members %}
-        <div class="gradient-border rounded overflow-hidden p-px sm:basis-[calc(33.333%-0.667rem)] md:basis-[calc(25%-1.5rem)] lg:basis-[calc(20%-1.6rem)] max-w-52 sm:max-w-none">
+    {% set delay_ms = (loop.index - 1) * 100 %}
+        <div data-animate-on-scroll
+            data-animate-class="animate-fade-up"
+            style="--delay: {{ delay_ms }}ms; --duration: 200ms;" 
+            class="gradient-border rounded overflow-hidden p-px sm:basis-[calc(33.333%-0.667rem)] md:basis-[calc(25%-1.5rem)] lg:basis-[calc(20%-1.6rem)] max-w-52 sm:max-w-none animate-start-fade-up-8">
             <div class="bg-dark-blue rounded overflow-hidden flex flex-col h-full w-full">
                 {% if member.image_field.src %}
                     <img src="{{ member.image_field.src|escape_url }}" alt="{{ member.image_field.alt|escape_attr }}">

@@ -17,8 +17,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "44 million"
   }, {
     "id" : "fe8a34f2-08eb-e26e-3092-029ade0e4149",
@@ -26,15 +26,15 @@
     "label" : "Subtext",
     "required" : false,
     "locked" : false,
-    "type" : "richtext",
     "display_width" : null,
+    "type" : "richtext",
     "default" : "Transactions every 24 hours"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ {
     "stats_title" : "44 million",
     "subtext" : "Transactions of Fresh Juice every day"

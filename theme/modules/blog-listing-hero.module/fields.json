@@ -5,8 +5,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "{{blog.public_title}}"
 }, {
   "id" : "4d9bbebc-dd42-d9a2-645a-575444da2be0",
@@ -15,8 +15,8 @@
   "required" : false,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "{{blog.description}}"
 }, {
   "id" : "c6e60aeb-03c7-8eb5-ce11-c12eb742e2f5",
@@ -31,8 +31,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Posts by"
   }, {
     "id" : "093fbfa0-b45d-22a2-e234-bc30cba46d5a",
@@ -41,8 +41,8 @@
     "required" : true,
     "locked" : false,
     "display" : "toggle",
-    "type" : "boolean",
     "display_width" : null,
+    "type" : "boolean",
     "default" : true
   }, {
     "id" : "b2f5ecf4-5bd9-abd8-bae9-1224ca2676a4",
@@ -51,15 +51,15 @@
     "required" : true,
     "locked" : false,
     "display" : "toggle",
-    "type" : "boolean",
     "display_width" : null,
+    "type" : "boolean",
     "default" : true
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : {
     "subheading" : "Posts by",
     "show_headshot" : true,
@@ -78,15 +78,15 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Posts about"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : {
     "subheading" : "Posts about"
   }

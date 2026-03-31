@@ -77,6 +77,97 @@ function applyNearestBackground(selector = '.match-nearest-bg') {
     });
 }
 
+let animationObserver = null;
+
+function applyAnimationObserver() {
+    if (animationObserver) return; // Already running
+
+    animationObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const animClass = el.dataset.animateClass || 'animate-fade-up';
+            el.classList.add(animClass);
+            
+            el.className.split(' ').forEach(cls => {
+                if (cls.startsWith('animate-start-')) {
+                    el.classList.remove(cls);
+                }
+            });
+            obs.unobserve(el);
+        });
+    }, { threshold: 0.2 });
+    
+    // Observe existing items immediately
+    document.querySelectorAll('[data-animate-on-scroll]').forEach(el => {
+        animationObserver.observe(el);
+    });
+}
+
+function enhanceForm() {
+    const container = document.querySelector('.body-container--form');
+    const formWrapper = container.querySelector('.hsfc-FormWrapper');
+    if (!formWrapper) return false;
+    
+    formWrapper.classList.add('animate-start-fade-up-8');
+    formWrapper.dataset.animateOnScroll = true;
+    formWrapper.dataset.animateClass = 'animate-fade-up';
+    formWrapper.style.setProperty('--delay', '100ms');
+    formWrapper.style.setProperty('--duration', '600ms');
+
+    if (animationObserver) {
+        animationObserver.observe(formWrapper);
+    }
+
+    return true;
+}
+
+function waitForForm() {
+    if (!document.querySelector('.body-container--form')) return;
+
+    if (enhanceForm()) return;
+    
+    requestAnimationFrame(waitForForm);
+}
+
+function applyLottieAnimations() {
+    var nodes = document.querySelectorAll('[data-lottie]');
+    if (!nodes.length || !window.lottie) return;
+
+    nodes.forEach(function (node) {
+        if (node.dataset.lottieInitialized) return;
+
+        var url = node.dataset.lottieUrl;
+        if (!url) return;
+
+        var autoplay = node.dataset.lottieAutoplay === 'true';
+        var loop = node.dataset.lottieLoop === 'true';
+        var hover = node.dataset.lottieHover === 'true';
+        var speed = parseFloat(node.dataset.lottieSpeed || '1');
+
+        var anim = lottie.loadAnimation({
+            container: node,
+            renderer: 'svg',
+            loop: loop,
+            autoplay: autoplay,
+            path: url
+        });
+
+        anim.setSpeed(speed);
+
+        if (hover) {
+            node.addEventListener('mouseenter', function () { anim.play(); });
+            node.addEventListener('mouseleave', function () { anim.stop(); });
+        }
+
+        // avoid double init in editor / partial reloads
+        node.dataset.lottieInitialized = 'true';
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    waitForForm();
     applyNearestBackground();
+    applyAnimationObserver();
+    applyLottieAnimations();
 });

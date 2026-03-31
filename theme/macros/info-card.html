@@ -4,15 +4,19 @@
 -->  
 {% from './tick-list.html' import tick_list %}
 
-{% macro info_card(image, title, text_field, ticks, classes="") %}
+{% macro info_card(image, title, text_field, ticks, classes="", delay) %}
 
     {% set highlighted = "AskBlue" %}
     {% set highlighted_html = '<span class="font-bold text-white"><span class="text-bright-blue">Ask</span>Blue</span>' %}
     {% set title_final = title is string_containing highlighted ? title|replace(highlighted, highlighted_html, 1) : title %}
     {% set text_final = text_field is string_containing highlighted ? text_field|replace(highlighted, highlighted_html, 1) : text_field %}
 
-    <li class="gradient-border rounded overflow-hidden text-center {{ classes }}">
-        <div class="rounded flex h-full flex-col px-2 gap-2 md:gap-4 py-2 sm:py-4 md:py-10 items-center text-center text-off-white text-sm sm:text-base md:text-lg bg-dark-blue">
+    <li data-animate-on-scroll
+        data-animate-class="animate-fade-up"
+        class="gradient-border rounded overflow-hidden text-center {{ classes }} {% if is_in_editor %}animate-fade-up{% else %}animate-start-fade-up-8{% endif %}"
+        style="--delay: {{ delay }}ms; --duration: 400ms;"
+    >
+        <div class="rounded flex h-full flex-col px-2 gap-2 md:gap-4 py-2 sm:py-4 md:py-10 md:px-4 lg:px-6 items-center text-center text-off-white text-sm sm:text-base md:text-lg bg-dark-blue">
             {% if image %}
                 {# Only treat it as an icon mask if the path contains 'Icons' #}
                 {% if 'Icons' in image %}

@@ -5,8 +5,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "Get Started"
 }, {
   "id" : "cc1340cc-8e57-6aca-814d-2da928514e0e",
@@ -16,8 +16,8 @@
   "locked" : false,
   "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
   "show_advanced_rel_options" : false,
-  "type" : "link",
   "display_width" : null,
+  "type" : "link",
   "default" : {
     "url" : {
       "content_id" : null,
@@ -38,8 +38,8 @@
   "multiple" : false,
   "reordering_enabled" : true,
   "preset" : null,
-  "type" : "choice",
   "display_width" : null,
+  "type" : "choice",
   "default" : "filled"
 }, {
   "id" : "6c8608a4-2c77-7b5f-adc8-6f1ec4f4ea93",
@@ -52,7 +52,7 @@
   "multiple" : false,
   "reordering_enabled" : true,
   "preset" : null,
-  "type" : "choice",
   "display_width" : null,
+  "type" : "choice",
   "default" : "md"
 } ]

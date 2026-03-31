@@ -210,7 +210,7 @@ form {
     }
 
     button[type=submit] {
-        @apply inline-flex items-center justify-center rounded uppercase overflow-hidden h-10 bg-turquoise text-dark-blue button-streak filled-button-streak text-sm px-5 transition-colors duration-300 ease-in-out outline-none backdrop-blur-14;
+        @apply inline-flex items-center justify-center rounded uppercase overflow-hidden font-normal h-10 bg-turquoise text-dark-blue button-streak filled-button-streak text-sm px-5 transition-colors duration-300 ease-in-out outline-none backdrop-blur-14;
 
         &:hover {
             @apply !bg-white !text-dark-blue;

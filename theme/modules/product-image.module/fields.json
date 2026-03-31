@@ -5,8 +5,8 @@
   "label" : "Image",
   "required" : true,
   "locked" : false,
-  "type" : "file",
   "display_width" : null,
+  "type" : "file",
   "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png"
 }, {
   "id" : "a6bf8161-da19-3bf3-f381-16b0ac157dd4",
@@ -15,8 +15,8 @@
   "required" : false,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "editor_v5"
 }, {
   "id" : "a32d04c6-610f-0e76-415b-cf9375ca8c59",
@@ -26,8 +26,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "Editor screenshot from BlueMatrix Creator"
 }, {
   "id" : "d2ab164d-558d-992e-4863-eb65e0e87d50",
@@ -40,6 +40,6 @@
   "multiple" : false,
   "reordering_enabled" : true,
   "preset" : null,
-  "type" : "choice",
-  "display_width" : null
+  "display_width" : null,
+  "type" : "choice"
 } ]

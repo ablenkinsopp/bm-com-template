@@ -7,8 +7,8 @@
   "required" : true,
   "locked" : false,
   "display" : "toggle",
-  "type" : "boolean",
   "display_width" : null,
+  "type" : "boolean",
   "default" : true
 }, {
   "id" : "c4417de9-40a1-508b-e008-3fc1dba64479",
@@ -20,8 +20,8 @@
   "min" : 0,
   "max" : 300,
   "step" : 1,
-  "type" : "number",
   "display_width" : null,
+  "type" : "number",
   "default" : 50
 }, {
   "id" : "77514360-8469-8186-4503-06c65aa5fb35",
@@ -30,6 +30,6 @@
   "required" : false,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null
+  "display_width" : null,
+  "type" : "text"
 } ]

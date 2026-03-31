@@ -17,8 +17,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Sep 2019"
   }, {
     "id" : "9222b38b-b8bb-afee-2185-79553eab0067",
@@ -27,8 +27,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "Creation of Juicy Drink"
   }, {
     "id" : "236bfdd1-465d-7168-6a55-b5d53bf79bf9",
@@ -37,15 +37,15 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
     "display_width" : null,
+    "type" : "text",
     "default" : "The brightest out of us, King Banana, gave us the mystical recipe to create the best banana smoothie in the kingdom"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ {
     "date" : "Sep 2019",
     "title" : "Creation of Juicy Drink",

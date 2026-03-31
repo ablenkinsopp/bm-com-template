@@ -4,7 +4,7 @@
   "label" : "Blog",
   "required" : false,
   "locked" : false,
-  "type" : "blog",
   "display_width" : null,
+  "type" : "blog",
   "default" : 201043800338
 } ]

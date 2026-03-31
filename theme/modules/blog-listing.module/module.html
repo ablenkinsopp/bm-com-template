@@ -1,6 +1,7 @@
 {% from '../../macros/slugify.html' import slugify %}
 {% from '../../macros/minutes-to-read.html' import minutes_to_read %}
 {% from '../../macros/blog-tag.html' import blog_tag %}
+{% from '../../macros/button.html' import button %}
 
 {% set blog_id = module.selected_blog.id or group.id %}
 
@@ -16,7 +17,7 @@
     {% set my_tags = blog_tags(blog_id, 250) %}
     {% set currentURL = content.absolute_url | split('/page/') | first | regex_replace('^(http|https):', '') %}
 
-    <div class="grid gap-8 md:items-end md:grid-cols-2 lg:grid-cols-3 md:gap-12 mb-8 md:mb-12">
+    <div class="grid gap-8 md:items-end md:grid-cols-2 lg:grid-cols-3 md:gap-12 mb-8 md:mb-12 max-w-6xl mx-auto">
 
         {% if blog_author or tag %}
 
@@ -137,9 +138,11 @@
                 </div>
                 <div class="flex items-center justify-between gap-2">
                     <p class="text-blog-subdued-text text-sm">{{ featured_post.publish_date|format_date('MMMM d, yyyy') }}</p>
-                    <button class="gradient-border p-px rounded">
-                        <div class="bg-white group-hover:bg-water transition-all ease-in-out duration-200 px-5 py-2 text-text-blue rounded">
-                            Read More
+                    <button class="bm-button">
+                        <div class="bm-button__outer gradient-border p-px transition-colors duration-500 ease-in-out w-full group-hover:gradient-border-button-hover">
+                            <div class="bm-button__inner bg-white button-streak outline-button-streak group-hover:border-glass-border-hover group-hover:bg-turquoise group-hover:skew-button-streak">
+                                Read More
+                            </div>
                         </div>
                     </button>
                 </div>

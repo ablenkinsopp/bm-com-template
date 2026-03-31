@@ -7,8 +7,8 @@
   "locked" : false,
   "placeholder" : "<script src=\"https://gist.github.com/reatlat/9a5a1391f8e2268cd039f835d32196b0.js\"></script>",
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "<script src=\"https://gist.github.com/reatlat/9a5a1391f8e2268cd039f835d32196b0.js\"></script>"
 }, {
   "id" : "7dd06aab-16a2-12a0-dc9e-48e71958038f",
@@ -19,8 +19,8 @@
   "locked" : false,
   "placeholder" : "example.js",
   "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null
+  "display_width" : null,
+  "type" : "text"
 }, {
   "id" : "11f2b67b-6646-7525-3aeb-c8ba011d790a",
   "name" : "caption",
@@ -29,8 +29,8 @@
   "required" : false,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null
+  "display_width" : null,
+  "type" : "text"
 }, {
   "id" : "b678de46-3600-4057-eb80-b8daf764d60f",
   "name" : "lines",
@@ -40,8 +40,8 @@
   "locked" : false,
   "placeholder" : "1,4,6-8",
   "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null
+  "display_width" : null,
+  "type" : "text"
 }, {
   "id" : "4eab725d-4e5a-69d9-e835-8b15441a465a",
   "name" : "lines_expanded",
@@ -49,8 +49,8 @@
   "required" : false,
   "locked" : false,
   "display" : "toggle",
-  "type" : "boolean",
   "display_width" : null,
+  "type" : "boolean",
   "default" : false
 }, {
   "id" : "29beeff9-d346-579c-e87f-86e9c0cd7fec",
@@ -61,8 +61,8 @@
   "locked" : false,
   "placeholder" : "1,4,6-8",
   "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null
+  "display_width" : null,
+  "type" : "text"
 }, {
   "id" : "764236f0-54d8-c950-913c-c1cee181a758",
   "name" : "show_footer",
@@ -71,8 +71,8 @@
   "required" : false,
   "locked" : false,
   "display" : "toggle",
-  "type" : "boolean",
   "display_width" : null,
+  "type" : "boolean",
   "default" : true
 }, {
   "id" : "064aeea1-e8ac-b4fd-267e-7e78ffd6cd46",
@@ -82,8 +82,8 @@
   "required" : false,
   "locked" : false,
   "display" : "toggle",
-  "type" : "boolean",
   "display_width" : null,
+  "type" : "boolean",
   "default" : true
 }, {
   "id" : "40cd6cf9-3e2d-823d-fff3-2b3a4a3a1a71",
@@ -96,7 +96,7 @@
   "multiple" : false,
   "reordering_enabled" : true,
   "preset" : null,
-  "type" : "choice",
   "display_width" : null,
+  "type" : "choice",
   "default" : "system"
 } ]

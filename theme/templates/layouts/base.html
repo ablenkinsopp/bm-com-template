@@ -2,7 +2,7 @@
   templateType: none
 -->
 <!doctype html>
-<html lang="{{ html_lang }}" {{ html_lang_dir }} x-data="xDOM" hs-cms-theme="FreshJuice">
+<html lang="{{ html_lang }}" {{ html_lang_dir }} x-data="xDOM" hs-cms-theme="BlueMatrix">
   <head>
     <meta charset="utf-8">
     {% if page_meta.html_title or pageTitle %}<title>{{ page_meta.html_title or pageTitle }}</title>{% endif %}
@@ -14,6 +14,9 @@
       {{ require_css(get_asset_url(template_css)) }}
     {% endif %}
     {# To see a full list of what is included via standard_header_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
+    <!-- <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js" defer></script> -->
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.3/dist/dotlottie-wc.js" type="module"></script>
     {{ standard_header_includes }}
   </head>
   <body>

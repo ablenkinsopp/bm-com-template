@@ -8,7 +8,13 @@
 
 <div class="not-prose grid grid-cols-1 max-w-lg lg:max-w-full place-items-center lg:place-items-baseline mx-auto gap-10 {{ grid_col_class or 'max-w-2xl' }}">
     {% for item in module.quotes_group %}
-        <div class="w-full flex flex-col place-content-center lg:gap-2">
+        {% set delay_ms = (loop.index - 1) * 200 %}
+        <div 
+            data-animate-on-scroll
+            data-animate-class="animate-fade-up"
+            class="w-full flex flex-col place-content-center lg:gap-2 {% if is_in_editor %}animate-fade-up{% else %}animate-start-fade-up-16{% endif %}"
+            style="--delay: {{ delay_ms }}ms; --duration: 400ms;"
+        >
             <div class="w-full flex gap-2">
                 <span class='font-bold text-5xl sm:text-8xl bg-[linear-gradient(0deg,#30ABFF_0%,#43E3C2_100%)] bg-clip-text text-transparent'>“</span>
                 <blockquote>

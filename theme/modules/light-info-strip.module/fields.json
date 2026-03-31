@@ -5,8 +5,8 @@
   "required" : false,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "Designed as a"
 }, {
   "id" : "880d612a-992f-15dc-c0df-def26184d318",
@@ -15,8 +15,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "MiFID II Best Practice Platform"
 }, {
   "id" : "8097201c-ea62-9c46-e060-ea3aa9711d01",
@@ -25,8 +25,8 @@
   "required" : false,
   "locked" : false,
   "allow_new_line" : false,
-  "type" : "text",
   "display_width" : null,
+  "type" : "text",
   "default" : "Ensure your firm stays ahead of the regulatory curve without slowing down your analysts."
 }, {
   "id" : "497a7081-6d6f-5031-c3c3-93572d724857",
@@ -47,8 +47,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null
+    "display_width" : null,
+    "type" : "text"
   }, {
     "id" : "ticks.bold_text",
     "name" : "bold_text",
@@ -56,13 +56,13 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null
+    "display_width" : null,
+    "type" : "text"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ ]
 } ]

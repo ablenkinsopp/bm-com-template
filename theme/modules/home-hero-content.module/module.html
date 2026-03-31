@@ -15,20 +15,25 @@
     {% endif %}
 
     <!-- Hero content -->
-    <div class='relative z-10 flex flex-col items-center justify-center h-full gap-6 text-center p-4 sm:p-10 home-hero'>
-        <h1 class='flex flex-col !text-5xl sm:!text-6xl md:!text-7xl !text-white !font-black'>
-            <span class='text-water'>{{ module.headline_top }}</span>
-            {% if module.headline_bottom %}
-                <span>{{ module.headline_bottom }}</span>
-            {% endif %}
-        </h1>
-        {% for subtext in module.subtext %}
-            <p class='text-xl sm:text-2xl text-white max-w-[630px] font-light'>
-                {{ subtext }}
-            </p>
-        {% endfor %}
+    <div class='relative z-10 home-hero h-full flex items-center justify-center'>
+        <div data-animate-on-scroll
+            data-animate-class="animate-fade-up"
+            style="--delay: 100ms; --duration: 600ms;" 
+            class="flex flex-col items-center justify-center gap-6 text-center p-4 sm:p-10 animate-start-fade-up-16">
+            <h1 class='flex flex-col !text-5xl sm:!text-6xl md:!text-7xl !text-white !font-black'>
+                <span class='text-water'>{{ module.headline_top }}</span>
+                {% if module.headline_bottom %}
+                    <span class="">{{ module.headline_bottom }}</span>
+                {% endif %}
+            </h1>
+            {% for subtext in module.subtext %}
+                <p class='text-xl sm:text-2xl text-white max-w-[630px] font-light'>
+                    {{ subtext }}
+                </p>
+            {% endfor %}
 
-        {{ button(module.button_text, module.button_link, "filled", "large") }}
+            {{ button(module.button_text, module.button_link, "filled", "large") }}
+        </div>
     </div>
 
 </section>

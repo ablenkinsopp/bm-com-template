@@ -17,7 +17,8 @@
 
     <ul class="grid gap-2 sm:gap-4 lg:gap-10 {{ grid_col_class }}">
         {% for item in cards %}
-            {{ info_card(item.image, item.title, item.text_field, item.ticks) }}
+            {% set delay_ms = (loop.index - 1) * 200 %}
+            {{ info_card(item.image, item.title, item.text_field, item.ticks, "", delay_ms) }}
         {% endfor %}
     </ul>
 {% endmacro %}

@@ -19,8 +19,8 @@
       "access" : null
     },
     "alignment_direction" : "HORIZONTAL",
-    "type" : "alignment",
     "display_width" : null,
+    "type" : "alignment",
     "default" : {
       "horizontal_align" : "CENTER"
     }
@@ -38,8 +38,8 @@
       "operator" : "NOT_EMPTY",
       "access" : null
     },
-    "type" : "textalignment",
     "display_width" : null,
+    "type" : "textalignment",
     "default" : {
       "text_align" : "CENTER"
     }
@@ -47,8 +47,8 @@
   "tab" : "STYLE",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : {
     "image_alignment" : {
       "horizontal_align" : "CENTER"
@@ -78,8 +78,8 @@
     "responsive" : true,
     "resizable" : true,
     "show_loading" : true,
-    "type" : "image",
     "display_width" : null,
+    "type" : "image",
     "default" : {
       "loading" : "lazy",
       "alt" : "Pineapple Juice",
@@ -96,15 +96,15 @@
     "required" : false,
     "locked" : false,
     "enabled_features" : [ "emoji", "lists", "font_size", "standard_emphasis", "block", "font_family", "alignment", "advanced_emphasis" ],
-    "type" : "richtext",
     "display_width" : null,
+    "type" : "richtext",
     "default" : "<h3>This is a title</h3><p>Contextual advertising can be profitable. It can either pay for your hosting and maintenance costs for you website or it can pay for a lot more.</p>"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "type" : "group",
   "display_width" : null,
+  "type" : "group",
   "default" : [ {
     "image" : {
       "loading" : "lazy",
