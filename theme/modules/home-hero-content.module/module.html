@@ -1,6 +1,6 @@
 {% from '../../macros/button.html' import button %}
 
-<section class='h-[75vh] max-h-[800px] relative w-full'>
+<section class='relative w-full'>
 
     <!-- Overlay -->
     <div class='absolute top-0 h-full w-full bg-[#3466B8] mix-blend-multiply -z-2'>
@@ -15,11 +15,11 @@
     {% endif %}
 
     <!-- Hero content -->
-    <div class='relative z-10 home-hero h-full flex items-center justify-center'>
+    <div class='relative z-10 home-hero h-full flex items-center justify-center py-10 sm:py-0 sm:pb-24 sm:min-h-[800px] lg:min-h-[700px]'>
         <div data-animate-on-scroll
             data-animate-class="animate-fade-up"
             style="--delay: 100ms; --duration: 600ms;" 
-            class="flex flex-col items-center justify-center gap-6 text-center p-4 sm:p-10 animate-start-fade-up-16">
+            class="flex flex-col items-center justify-center gap-6 xl:gap-8 text-center p-4 sm:p-10 w-full {% if is_in_editor %}animate-fade-up{% else %}animate-start-fade-up-16{% endif %}">
             <h1 class='flex flex-col !text-5xl sm:!text-6xl md:!text-7xl !text-white !font-black'>
                 <span class='text-water'>{{ module.headline_top }}</span>
                 {% if module.headline_bottom %}
@@ -32,7 +32,23 @@
                 </p>
             {% endfor %}
 
-            {{ button(module.button_text, module.button_link, "filled", "large") }}
+            <ul class="w-full flex flex-wrap items-center justify-center gap-y-2 gap-4">
+                {% for tick in module.tick_list %}
+                    <li class="text-off-white md:text-lg uppercase flex items-center gap-2 ">
+                        <div class="text-darkest-blue bg-linear-to-r from-light-blue to-turquoise w-5 h-5 md:w-7 md:h-7 text-base md:text-xl rounded-2xl flex items-center justify-center ">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
+                        </div>
+                        <p>{{ tick }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <div class="flex flex-col sm:flex-row gap-6">
+                {% for button in module.buttons %}
+                    {{ button(button.button_text, button.button_link, button.button_style, "large") }}
+                {% endfor %}
+            </div>
+            
         </div>
     </div>
 

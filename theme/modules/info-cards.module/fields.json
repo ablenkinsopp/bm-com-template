@@ -34,7 +34,7 @@
     "default" : "Monetize Your Content"
   }, {
     "id" : "f9c9ed41-91a2-ce10-20f3-9caaf65325e5",
-    "name" : "image_field",
+    "name" : "image",
     "label" : "Image",
     "required" : false,
     "locked" : false,

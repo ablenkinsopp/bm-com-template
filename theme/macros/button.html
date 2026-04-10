@@ -2,7 +2,7 @@
   templateType: "none"
   isAvailableForNewContent: false
 -->
-{% macro button(button_text, cta_link, style="filled", size="default", sr_only) %}
+{% macro button(button_text, cta_link, style="filled", size="default", has_chevron=false, sr_only) %}
   {% set href = cta_link == '/'
     ? cta_link
     : (
@@ -20,8 +20,13 @@
         {% endif %}
         
         <div class="bm-button__outer bm-button__outer--{{ style }} w-full">
-            <div class="bm-button__inner w-full justify-center">
+            <div class="bm-button__inner w-full justify-center flex gap-2">
                 {{ button_text | striptags | safe }}
+                {% if has_chevron %}
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.1922 10.442L7.94217 16.692C7.8841 16.7501 7.81516 16.7962 7.73929 16.8276C7.66342 16.859 7.5821 16.8752 7.49998 16.8752C7.41786 16.8752 7.33654 16.859 7.26067 16.8276C7.1848 16.7962 7.11586 16.7501 7.05779 16.692C6.99972 16.634 6.95366 16.565 6.92224 16.4892C6.89081 16.4133 6.87463 16.332 6.87463 16.2499C6.87463 16.1677 6.89081 16.0864 6.92224 16.0105C6.95366 15.9347 6.99972 15.8657 7.05779 15.8077L12.8664 9.99986L7.05779 4.19205C6.94052 4.07477 6.87463 3.91571 6.87463 3.74986C6.87463 3.58401 6.94052 3.42495 7.05779 3.30767C7.17507 3.1904 7.33413 3.12451 7.49998 3.12451C7.66583 3.12451 7.82489 3.1904 7.94217 3.30767L14.1922 9.55767C14.2503 9.61572 14.2964 9.68465 14.3278 9.76052C14.3593 9.8364 14.3755 9.91772 14.3755 9.99986C14.3755 10.082 14.3593 10.1633 14.3278 10.2392C14.2964 10.3151 14.2503 10.384 14.1922 10.442Z" fill="currentColor"/>
+                    </svg>
+                {% endif %}
             </div>
         </div>
     </a>

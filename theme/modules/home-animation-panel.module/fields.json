@@ -1,0 +1,127 @@
+[ {
+  "id" : "0666ee26-0495-b2c7-014a-c9e8484c2986",
+  "name" : "title",
+  "label" : "Title",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Secure. Compliant. Scalable. Powerful"
+}, {
+  "id" : "97a8a713-da53-65ab-02d2-df3344127aec",
+  "name" : "subtitle",
+  "label" : "Subtitle",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "The end-to-end solution powering research analysts, compliance teams, sales desks, investment banking, asset managers, wealth management, and beyond."
+}, {
+  "picker" : "file",
+  "id" : "cf43d08b-16d2-4999-3dec-fc3c5de22e0d",
+  "name" : "animation",
+  "label" : "Animation",
+  "help_text" : "Only use a .lottie file here, or .json file containing lottie data",
+  "required" : true,
+  "locked" : false,
+  "display_width" : null,
+  "type" : "file",
+  "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Animations/bm-lifecycle-draft.lottie"
+}, {
+  "id" : "4872119b-c0d9-7718-128d-901604fc25d5",
+  "name" : "info_cards",
+  "label" : "Info Cards",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "e69261f3-0241-ed85-1963-fa5aa9b5bc47",
+    "name" : "title",
+    "label" : "Title",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Creation"
+  }, {
+    "id" : "2ff3bc02-f67d-b66a-5201-c9abb6cab74e",
+    "name" : "text_field",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text"
+  }, {
+    "picker" : "image",
+    "id" : "76565840-e034-77dc-65f3-9f16418af931",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "file"
+  }, {
+    "id" : "1c216ab4-f008-9516-0391-2f7c448c2be3",
+    "name" : "link_field",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "display_width" : null,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : 208168425629,
+        "href" : null,
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group",
+  "default" : [ ]
+}, {
+  "id" : "4c717ca0-d2fc-8669-4863-a68472933c86",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Request A Demo"
+}, {
+  "id" : "fe99e5ac-fc77-e1f7-4854-2bf884c21f18",
+  "name" : "button_link",
+  "label" : "Button Link",
+  "required" : true,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+  "show_advanced_rel_options" : false,
+  "display_width" : null,
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : 206078525068,
+      "href" : null,
+      "type" : "CONTENT"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+} ]

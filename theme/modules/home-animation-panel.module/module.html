@@ -1,0 +1,19 @@
+{% from '../../macros/button.html' import button %}
+{% from '../../macros/section-title.html' import section_title %}
+{% import '../../macros/info-cards.html' as ic %}
+
+<div class="w-full items-center align-center flex flex-col gap-6 md:gap-20">
+    {{ section_title(module.title, "center", null, module.subtitle)}}
+    <div class="w-full flex justify-center">
+        <dotlottie-wc
+            src="{{ module.animation }}"
+            autoplay loop mode="normal"
+            class="w-full max-w-[1200px]"
+            style="aspect-ratio: 1200 / 211"
+        ></dotlottie-wc>
+    </div>
+    <div class="w-full">
+        {{ ic.info_cards(module.info_cards) }}
+    </div>
+    {{ button(module.button_text, module.button_link, "filled", "large") }}
+</div>

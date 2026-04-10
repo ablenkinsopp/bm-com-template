@@ -1,0 +1,87 @@
+[ {
+  "id" : "14ba73ab-158a-23c8-3d76-5b9b07930a85",
+  "name" : "title",
+  "label" : "Title",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Global Presence, Hands-On Service"
+}, {
+  "id" : "e669be6d-2536-9d5a-2866-106e923fe06a",
+  "name" : "panel_title",
+  "label" : "Panel Title",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Offices"
+}, {
+  "id" : "b70d073e-1d0a-4e59-5323-eb885267dd96",
+  "name" : "map_image",
+  "label" : "Map Image",
+  "required" : true,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "display_width" : null,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/global-presence.svg",
+    "alt" : "A world map showing the locations of BlueMatrix offices",
+    "loading" : "lazy",
+    "width" : 877,
+    "height" : 433,
+    "max_width" : 877,
+    "max_height" : 433
+  }
+}, {
+  "id" : "4bc1865a-1efd-6c00-2520-3718de1f1ba2",
+  "name" : "location",
+  "label" : "Location",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Durham (HQ)"
+}, {
+  "id" : "8618b406-438d-6c3e-7906-2059cca95ade",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Contact Us"
+}, {
+  "id" : "7401b6e4-88d7-345a-5720-d9c80e9b0da0",
+  "name" : "button_link",
+  "label" : "Button Link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+  "show_advanced_rel_options" : false,
+  "display_width" : null,
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "https://contacts.bluematrix.com/docs/html/13cb7faa-0a35-4165-acb2-e335b663f474.html",
+      "type" : "EXTERNAL"
+    },
+    "open_in_new_tab" : true,
+    "no_follow" : false
+  }
+} ]

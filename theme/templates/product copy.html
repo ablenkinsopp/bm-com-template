@@ -1,0 +1,238 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Product
+  screenshotPath: ../images/template-previews/product.png
+-->
+
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+{# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+
+{% dnd_area "dnd_area"
+    label="Main section",
+    class="body-container body-container--product"
+%}
+
+    {# Hero #}
+
+    {% include_dnd_partial 
+        path="../sections/hero-banner.html", 
+        context={
+            "video_player_field": null,
+            "image_field": {
+                "size_type" : "auto",
+                "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Placeholders/hero-generic-placeholder.png",
+                "alt" : "hero-generic-placeholder",
+                "loading" : "lazy",
+                "width" : 872,
+                "height" : 576,
+                "max_width" : 872,
+                "max_height" : 576
+            },
+            "headline_top": "A Modern System of Record",
+            "headline_bottom": "for Investment Research",
+            "basic_text": [
+                "Creator is the industry’s leading system of record for sell-side research replacing Word, email, and fragmented tools with structured authoring, standardized templates, and workflows designed for consistency, compliance, and scale."
+            ]
+        }
+    %}
+
+    {# Standard Info Cards #}
+
+    {% dnd_section 
+        background_color={{ context.background_color or "#000F28" }},
+        fullWidth: "true" 
+    %}
+        {% dnd_module 
+            path='../modules/info-cards.module',
+            show_section_title="false",
+            info_cards=[
+                {
+                    "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/stack-fill.svg",
+                    "title": "Authoring Excellence Built for Scale",
+                    "text_field": "A structured authoring framework that enables research teams to create once and scale everywhere, producing accurate, consistent research while reducing manual errors and streamlining the authoring process as markets change."
+                }, {
+                    "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/shield-check-fill.svg",
+                    "title": "Built for Regulated Compliance",
+                    "text_field": "From analysts to compliance, Creator supports every role in the research lifecycle with structured workflows and full traceability, so teams move faster with confidence, not friction."
+                }, {
+                    "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/magnifying-glass-plus-fill.svg",
+                    "title": "Single Source of Truth for Research",
+                    "text_field": "Creator brings all investment research into one source of truth, capturing every version, approval, and disclosure in a governed platform teams can rely on."
+                }, {
+                    "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/paper-plane-tilt-fill.svg",
+                    "title": "Seamless Distribution and Measurable Client Impact",
+                    "text_field": "Creator distributes research so it reaches the right audience in the right format, while providing visibility into consumption so firms understand what content is actually used."
+                }
+            ]
+        %}
+        {% end_dnd_module %}
+    {% end_dnd_section %}
+
+    {# Call to action 1 #}
+
+    {% include_dnd_partial 
+        path="../sections/call-to-action.html",
+        context={
+            "title": "Rethink what your research team can publish with BlueMatrix",
+            "text_field": "",
+            "button_text": "Talk with an expert"
+        }
+    %}
+
+    {# Side By Side Section 1 #}
+
+    {% include_dnd_partial 
+        path="../sections/row-content-img-left.html",
+        context={
+            "background_color": "#031D3C",
+            "title": "Create Once. Scale Everywhere",
+            "basic_text": [
+                "Research teams shouldn't have to rebuild the same insight for every update, region, or audience. Creator replaces manual copy-and-paste with a structured authoring model that allows teams to create content once and reuse it everywhere.",
+                "Approved language, tables, graphs, and data stay connected as markets change, so updates happen automatically without introducing errors or inconsistency. As volume grows, teams gain leverage instead of complexity, publishing faster while maintaining accuracy, consistency, and control."
+            ],
+            "product_image": null,
+            "button": []
+        }
+    %}
+
+    {# Side By Side Section 2 #}
+
+    {% include_dnd_partial 
+        path="../sections/row-content-img-right.html",
+        context={
+            "background_color": "#000F28",
+            "title": "One Workflow for the Entire Research Lifecycle",
+            "basic_text": [
+                "Creator brings drafting, collaboration, review, compliance, and publishing into a single, connected workflow. Instead of managing handoffs through email and disconnected tools, every step of research production happens in one place.",
+                "Workflows are structured and automated, reducing manual coordination and eliminating bottlenecks as research moves from draft to publish. The result is faster time to market, fewer errors, and a smoother experience for everyone involved, from analysts to compliance."
+            ],
+            "button": []
+        }
+    %}
+
+    {# Horizontal Rule #}
+
+    {% include_dnd_partial path="../sections/horizontal-divider.html" %}
+
+    {# Side By Side Section 3 #}
+
+    {% include_dnd_partial 
+        path="../sections/row-content-img-left.html",
+        context={
+            "background_color": "#031D3C",
+            "title": "Distribute Insight With Precision",
+            "basic_text": [
+                "Research only delivers value when it reaches the right audience in the right form. Creator ensures insight is distributed consistently across teams, clients, and channels, without manual coordination or rework.",
+                "Because distribution is connected directly to research production, firms can tailor delivery by audience while maintaining accuracy and consistency. Built-in visibility shows how insight is consumed, helping teams understand what content is actually used and where it drives impact."
+            ],
+            "button": []
+        }
+    %}
+
+    {# Side By Side Section 4 #}
+
+    {% include_dnd_partial 
+        path="../sections/row-content-img-right.html",
+        context={
+            "background_color": "#000F28",
+            "bordered": true,
+            "title": "See What Actually Matters",
+            "basic_text": [
+                "Research teams produce enormous volumes of insight, but without visibility into what's actually used, it's hard for leaders to know what's working. Creator provides clear insight into research consumption, showing which views are read, reused, and referenced across the firm.",
+                "These engagement signals create a feedback loop between research production and impact. Leaders can refine content strategy, focus resources on what resonates most, and make more informed decisions about where to invest time and effort."
+            ],
+            "button": []
+        }
+    %}
+
+    {# Testimonials #}
+    
+    {% dnd_section
+        background_color={{ context.background_color or "#031D3C" }},
+        fullWidth: "true"
+    %}
+        {% dnd_module 
+            path='../modules/testimonials-side-by-side.module' 
+            quotes_group=[
+                {
+                    "blockquote" : "BlueMatrix's one-stop shop makes publishing and distributing research easy. Creator 4.0 is by far the most intuitive publishing platform they've developed thus far. The new platform has made the transition to HTML5 for our analysts much easier than anticipated.",
+                    "author_name" : "Unknown",
+                    "author_job_title" : "Unknown",
+                    "company_logo" : {
+                        "size_type" : "auto_custom_max",
+                        "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Client%20Logos/jefferies.png",
+                        "alt" : "Jefferies",
+                        "loading" : "lazy",
+                        "height" : 30,
+                        "max_width" : 30
+                    },
+                    "company_name" : "Jefferies"
+                }, {
+                    "blockquote" : "Over the past 15 years, BlueMatrix has been a true partner with Oppenheimer to help us create and distribute our research product. Their dedication, timeliness, and professionalism is outstanding and we would not be able to produce the research that we do without their service.",
+                    "author_name" : "Erica L. Moffett",
+                    "author_job_title" : "Associate Director of Research, Head of Research Marketing Services",
+                    "company_logo" : {
+                        "size_type" : "auto_custom_max",
+                        "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Client%20Logos/oppenheimer.png",
+                        "alt" : "Oppenheimer & Co",
+                        "loading" : "lazy",
+                        "height" : 30,
+                        "max_width" : 30
+                    },
+                    "company_name" : "Oppenheimer & Co"
+                }, {
+                    "blockquote" : "BlueMatrix has proven, year-in and year-out, its strategic value. It is far more than a publishing system and we regard them as an extension of our own organization.",
+                    "author_name" : "Louis Giglio",
+                    "author_job_title" : "Officer",
+                    "company_logo" : {
+                        "size_type" : "auto_custom_max",
+                        "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Client%20Logos/b-riley.png",
+                        "alt" : "B. Riley Securities",
+                        "loading" : "lazy",
+                        "height" : 30,
+                        "max_width" : 30
+                    },
+                    "company_name" : "B. Riley Securities"
+                }
+            ]
+        %}
+        {% end_dnd_module %}
+    {% end_dnd_section %}
+
+    {# Call to action 2 #}
+
+    {% include_dnd_partial 
+        path="../sections/call-to-action.html",
+        context={
+            "title": "Join leading research teams modernizing how insight is created",
+            "text_field": "",
+            "button_text": "Request a demo"
+        }
+    %}
+
+    {# Light Info Strip #}
+
+    {% include_dnd_partial 
+        path="../sections/light-info-strip.html", 
+        context={
+            "title_bold": "Designed as a MiFID II Best Practice Platform",
+            "ticks": [ { "normal_text" : "RXML Standards" }, { "normal_text" : "GDPR Data Protection" }, { "normal_text" : "SEC Rule 17a-4" }, { "normal_text" : "Web Accessibility" }]
+        }
+    %}
+
+    {# News Cards #}
+    
+    {% dnd_section 
+        background_color={{ context.background_color or "#000F28" }},
+        fullWidth: "true" 
+    %}
+    {% dnd_module path='../modules/news-card.module' %}{% end_dnd_module %}
+    {% end_dnd_section %}
+
+
+{% end_dnd_area %}
+{% endblock body %}

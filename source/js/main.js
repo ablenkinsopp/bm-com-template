@@ -130,44 +130,8 @@ function waitForForm() {
     requestAnimationFrame(waitForForm);
 }
 
-function applyLottieAnimations() {
-    var nodes = document.querySelectorAll('[data-lottie]');
-    if (!nodes.length || !window.lottie) return;
-
-    nodes.forEach(function (node) {
-        if (node.dataset.lottieInitialized) return;
-
-        var url = node.dataset.lottieUrl;
-        if (!url) return;
-
-        var autoplay = node.dataset.lottieAutoplay === 'true';
-        var loop = node.dataset.lottieLoop === 'true';
-        var hover = node.dataset.lottieHover === 'true';
-        var speed = parseFloat(node.dataset.lottieSpeed || '1');
-
-        var anim = lottie.loadAnimation({
-            container: node,
-            renderer: 'svg',
-            loop: loop,
-            autoplay: autoplay,
-            path: url
-        });
-
-        anim.setSpeed(speed);
-
-        if (hover) {
-            node.addEventListener('mouseenter', function () { anim.play(); });
-            node.addEventListener('mouseleave', function () { anim.stop(); });
-        }
-
-        // avoid double init in editor / partial reloads
-        node.dataset.lottieInitialized = 'true';
-    });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     waitForForm();
     applyNearestBackground();
     applyAnimationObserver();
-    applyLottieAnimations();
 });

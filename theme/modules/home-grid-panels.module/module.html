@@ -1,0 +1,39 @@
+{% from '../../macros/button.html' import button %}
+
+<section class="flex flex-col gap-10">
+
+    <div class="flex flex-col gap-6 items-center justify-center text-center">
+        {% if module.small_title %}
+            <p class="text-off-white/80 text-2xl font-semibold">{{ module.small_title }}</p>
+        {% endif %}
+        {% if module.title %}
+            <h2 class="text-water text-5xl font-light max-w-[960px]">{{ module.title }}</h2>
+        {% endif %}
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-5">
+        {% for panel in module.panels %}
+            <div class="rounded-lg p-px {% if loop.index == 1 or loop.index == loop.length %}gradient-border{% else %}bg-[#031535]{% endif %}">
+                <div class="rounded-lg p-10 gap-10 items-center flex {% if loop.index == 1 or loop.index == loop.length %}bg-dark-blue{% endif %} {{ loop.index > 2 ? 'flex-row-reverse' : 'flex-row' }}">
+                    <div class="flex-1 flex flex-col items-start gap-6">
+                        <div class="inline-flex items-center gap-2 bg-[#C834C8] text-white rounded-xl px-2 py-1 w-fit">
+                            <img src="{{ panel.tag_image }}" alt="" class="w-5 h-5 brightness-0 invert" />
+                            <span class="text-lg font-medium">{{ panel.tag_text }}</span>
+                        </div>
+                        <h3 class="text-water-light text-4xl font-light">{{ panel.title }}</h3>
+                        {% if panel.body_text %}
+                            <p class="text-off-white text-lg">{{ panel.body_text }}</p>
+                        {% endif %}
+                        
+                        {{ button(panel.button_text, panel.button_link, "filled", "default", true) }}
+                    </div>
+                    
+                    <div class="flex-1">
+                        <img class="w-full" src="{{ panel.image_field.src }}" alt="{{ panel.image_field.alt }}"/>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+</section>

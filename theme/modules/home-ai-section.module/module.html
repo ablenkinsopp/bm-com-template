@@ -1,0 +1,78 @@
+{% from '../../macros/button.html' import button %}
+
+<div 
+    class="bg-darkest-blue p-12 text-center flex flex-col gap-5 items-center justify-center"
+    {% if module.blueiq_cta.background %}
+        style="background-image: url('{{ module.blueiq_cta.background.src }}'); background-size: cover; background-position: center;"
+    {% endif %}
+>
+    <div class="w-40">
+        <img class="w-full" src="{{ module.blueiq_cta.logo.src }}" alt="{{ module.blueiq_cta.logo.src }}" />
+    </div>
+    <p class="text-white text-2xl max-w-2xl">{{ module.blueiq_cta.text }}</p>
+    {{ button(module.blueiq_cta.button_text, module.blueiq_cta.button_link)}}
+</div>
+
+<div class="w-full bg-white text-dark-blue px-6 py-12 md:px-10 md:py-20">
+    <div class="flex w-full max-w-[1568px] mx-auto flex-col gap-14 items-center">
+        <div class="text-center flex flex-col gap-6 items-center justify-center">
+            <h3 class="font-light text-4xl max-w-3xl">{{ module.problem_statement.title }}</h3>
+            {{ module.problem_statement.subtitle }}
+        </div>
+
+        <div class="flex flex-col gap-6 lg:flex-row lg:gap-10 max-w-5xl">
+            <div class="bg-dark-blue flex-1 p-8 rounded-lg text-water-light flex gap-6 items-center justify-center">
+                <div class="sm:flex-1">
+                    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="72" height="72" rx="36" fill="url(#paint0_linear_1567_1559)"/>
+                        <path d="M52.5625 28.5188C52.2105 28.1199 51.7777 27.8005 51.2928 27.5817C50.8079 27.363 50.282 27.2499 49.75 27.25H41V24.75C41 23.0924 40.3415 21.5027 39.1694 20.3306C37.9973 19.1585 36.4076 18.5 34.75 18.5C34.5178 18.4998 34.2901 18.5644 34.0925 18.6863C33.8949 18.8083 33.7352 18.983 33.6312 19.1906L27.7281 31H21C20.337 31 19.7011 31.2634 19.2322 31.7322C18.7634 32.2011 18.5 32.837 18.5 33.5V47.25C18.5 47.913 18.7634 48.5489 19.2322 49.0178C19.7011 49.4866 20.337 49.75 21 49.75H47.875C48.7886 49.7503 49.6709 49.4171 50.3562 48.8129C51.0415 48.2088 51.4827 47.3752 51.5969 46.4688L53.4719 31.4688C53.5383 30.9407 53.4916 30.4045 53.3348 29.8958C53.178 29.3872 52.9147 28.9178 52.5625 28.5188ZM21 33.5H27.25V47.25H21V33.5ZM50.9906 31.1562L49.1156 46.1562C49.0776 46.4584 48.9305 46.7363 48.7021 46.9376C48.4736 47.139 48.1795 47.2501 47.875 47.25H29.75V32.5453L35.4859 21.0719C36.3361 21.242 37.101 21.7015 37.6505 22.3721C38.2001 23.0427 38.5002 23.883 38.5 24.75V28.5C38.5 28.8315 38.6317 29.1495 38.8661 29.3839C39.1005 29.6183 39.4185 29.75 39.75 29.75H49.75C49.9274 29.7499 50.1027 29.7876 50.2644 29.8606C50.4261 29.9335 50.5704 30.04 50.6878 30.173C50.8051 30.3061 50.8928 30.4625 50.945 30.632C50.9973 30.8016 51.0128 30.9803 50.9906 31.1562Z" fill="white"/>
+                        <defs>
+                            <linearGradient id="paint0_linear_1567_1559" x1="0" y1="36" x2="72" y2="36" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#30ABFF"/>
+                                <stop offset="1" stop-color="#43E3C2"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <p class="font-bold text-2xl">{{ module.problem_statement.positive_headline }}</p>
+                    <p class="text-xl">{{ module.problem_statement.positive_text }}</p>
+                </div>
+            </div>
+
+            <div class="bg-[#001027] flex-1 p-8 rounded-lg text-water-light flex gap-6 items-center justify-center">
+                <div class="sm:flex-1">
+                    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="72" height="72" rx="36" fill="url(#paint0_linear_1567_1565)"/>
+                        <path d="M53.4719 40.5312L51.5969 25.5313C51.4827 24.6248 51.0415 23.7912 50.3562 23.1871C49.6709 22.5829 48.7886 22.2497 47.875 22.25H21C20.337 22.25 19.7011 22.5134 19.2322 22.9822C18.7634 23.4511 18.5 24.087 18.5 24.75V38.5C18.5 39.163 18.7634 39.7989 19.2322 40.2678C19.7011 40.7366 20.337 41 21 41H27.7281L33.6313 52.8094C33.7352 53.017 33.8949 53.1917 34.0925 53.3137C34.2901 53.4356 34.5178 53.5002 34.75 53.5C36.4076 53.5 37.9973 52.8415 39.1694 51.6694C40.3415 50.4973 41 48.9076 41 47.25V44.75H49.75C50.2821 44.7502 50.8082 44.6371 51.2933 44.4183C51.7784 44.1995 52.2113 43.8799 52.5634 43.4809C52.9154 43.0818 53.1785 42.6124 53.3351 42.1039C53.4918 41.5953 53.5384 41.0592 53.4719 40.5312ZM27.25 38.5H21V24.75H27.25V38.5ZM50.6875 41.8266C50.571 41.9606 50.4269 42.0678 50.2651 42.1409C50.1033 42.214 49.9276 42.2512 49.75 42.25H39.75C39.4185 42.25 39.1005 42.3817 38.8661 42.6161C38.6317 42.8505 38.5 43.1685 38.5 43.5V47.25C38.5002 48.117 38.2001 48.9573 37.6505 49.6279C37.101 50.2985 36.3361 50.758 35.4859 50.9281L29.75 39.4547V24.75H47.875C48.1795 24.7499 48.4736 24.861 48.7021 25.0624C48.9305 25.2637 49.0776 25.5416 49.1156 25.8438L50.9906 40.8438C51.014 41.0197 50.9991 41.1987 50.9468 41.3684C50.8944 41.538 50.806 41.6943 50.6875 41.8266Z" fill="white"/>
+                        <defs>
+                            <linearGradient id="paint0_linear_1567_1565" x1="0" y1="36" x2="72" y2="36" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#30ABFF"/>
+                                <stop offset="1" stop-color="#43E3C2"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <p class="font-bold text-2xl">{{ module.problem_statement.negative_headline }}</p>
+                    <p class="text-xl">{{ module.problem_statement.negative_text }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-full bg-water-light text-dark-blue px-6 py-12 md:px-10 md:py-20">
+    <div class="flex flex-col lg:flex-row w-full max-w-[1568px] gap-10 mx-auto justify-center items-center">
+        <div class="flex flex-1 flex-col text-center items-center lg:items-end lg:text-right gap-6">
+            <h3 class="font-light text-4xl max-w-3xl">{{ module.solution_panel.headline }}</h3>
+            <p class="text-lg">{{ module.solution_panel.text }}</p>
+            {{ button(module.solution_panel.button_text, module.solution_panelbutton_link) }}
+        </div>
+
+        <div class="lg:flex-1">
+            <img class="w-full max-w-[600px]" src="{{ module.solution_panel.image.src }}" alt="{{ module.solution_panel.image.alt }}" />
+        </div>
+    </div>
+</div>

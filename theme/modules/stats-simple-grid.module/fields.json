@@ -47,18 +47,18 @@
   "type" : "group",
   "default" : [ {
     "number" : "1.2",
-    "subtext" : "Things",
+    "subtext" : "emails sent annually",
     "unit" : "b+"
   }, {
     "number" : "1400",
-    "subtext" : "Things"
+    "subtext" : "research providers"
   }, {
     "number" : "1.5",
-    "subtext" : "Things",
+    "subtext" : "documents published annually",
     "unit" : "m+"
   }, {
     "number" : "40",
-    "subtext" : "Things",
+    "subtext" : "of N. American research distributed",
     "unit" : "%"
   } ]
 }, {

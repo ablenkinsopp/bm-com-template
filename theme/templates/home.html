@@ -41,203 +41,97 @@
         {% end_dnd_column %}
     {% end_dnd_section %}
 
-    {# Section Title #}
+    {# Homepage animation #}
 
     {% dnd_section 
-        background_color={{ context.background_color or "#000F28" }},
-        fullWidth: "true",
-        margin={
-            'bottom': 0
-        },
-        padding={
-            'bottom': 0,
-        },
+        background_color={{ context.background_color or "#000F28" }}
     %}
         {% dnd_column %}
             {% dnd_row %}
                 {% dnd_module
-                    path='../modules/section-title.module',
-                    image_field=null,
-                    title="One Platform. Multiple Solutions",
-                    subtext="",
+                    path='../modules/home-animation-panel.module'
                 %}
                 {% end_dnd_module %}
             {% end_dnd_row %}
         {% end_dnd_column %}
     {% end_dnd_section %}
 
-    {# Side By Side Panel #1 #}
-
-    {% include_dnd_partial 
-        path="../sections/row-content-img-right.html",
-        context={
-            "app_logo": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg",
-            "background_color": "#000F28",
-            "title": "Authoring, Compliance, Distribution",
-            "basic_text": [
-                "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa.",
-                "Integer nisi libero, lobortis consequat leo condimentum, cursus congue justo. Quisque placerat convallis pulvinar. Integer tincidunt quam quis dui ultricies commodo a at enim."
-            ],
-            "product_image": null,
-            "button":[
-                {
-                    button_text: "Learn More",
-                    style: "outline"
-                },
-                {
-                    button_text: "Request Demo",
-                    style: "filled",
-                    link_field: {
-                        "url": {
-                            "content_id": 206078525068,
-                            "href": null,
-                            "type": "CONTENT"
-                        },
-                        "open_in_new_tab": false,
-                        "no_follow": false
-                    }
-                }
-            ],
-        }
-    %}
-
-    {# Standard Info Cards #}
-
     {% dnd_section 
-        background_color={{ context.background_color or "#000F28" }},
-        fullWidth: "true" 
-        margin={
-            'top': '0',
-        },
-        padding={
-            'top': '0',
-        },
+        background_color={{ context.background_color or "#031D3C" }}
     %}
-        {% dnd_module 
-            path='../modules/info-cards.module',
-            show_section_title="false",
-            info_cards=[
-                {
-                    "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Info%20Images/collaborators.png",
-                    "title": "",
-                    "text_field": "Collaborative Workflow"
-                }, {
-                    "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Info%20Images/publish-formats.png",
-                    "title": "",
-                    "text_field": "Publish to PDF, HTML5, Email and more"
-                }, {
-                    "image": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Info%20Images/askblue.png",
-                    "title": "",
-                    "text_field": "AskBlue AI companion enabled"
-                }
-            ]
-        %}
-        {% end_dnd_module %}
+        {% dnd_column %}
+            {% dnd_row %}
+                {% dnd_module
+                    path='../modules/home-grid-panels.module'
+                %}
+                {% end_dnd_module %}
+            {% end_dnd_row %}
+        {% end_dnd_column %}
     {% end_dnd_section %}
 
-    {# Horizontal Rule #}
-
-    {% include_dnd_partial path="../sections/horizontal-divider.html" %}
-
-    {# Side By Side Panel #2 #}
-
-    {% include_dnd_partial 
-        path="../sections/row-content-img-left.html",
-        context={
-            "background_color": "#000F28",
-            "app_logo": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/rms.svg",
-            "title": "Research",
-            "basic_text": [
-                "Integer nisi libero, lobortis consequat leo condimentum, cursus congue justo. Quisque placerat convallis pulvinar. Integer tincidunt quam quis dui ultricies commodo a at enim."
-            ],
-            "ticks": [
-                {
-                    "normal_text": "Selling Point 1",
-                },
-                {
-                    "normal_text": "Selling Point 2",
-                },
-                {
-                    "normal_text": "Selling Point 3",
-                }
-            ],
-            "button":[
-                {
-                    button_text: "Learn More",
-                    style: "filled"
-                }
-            ],
+    {% dnd_section
+        full_width="true",
+        padding={
+            'top': 0,
+            'bottom': 0,
+            'left': 0,
+            'right': 0,
+        },
+        margin={
+            'top': 0,
+            'bottom': 0,
+            'left': 0,
+            'right': 0,
         }
     %}
-
-    {# Side By Side Panel #3 #}
-
-    {% include_dnd_partial 
-        path="../sections/row-content-img-right.html",
-        context={
-            "bordered": true,
-            "app_logo": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/ranos.svg",
-            "background_color": "#031D3C",
-            "title": "Valuation",
-            "basic_text": [
-                "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa.",
-                "Integer nisi libero, lobortis consequat leo condimentum, cursus congue justo. Quisque placerat convallis pulvinar. Integer tincidunt quam quis dui ultricies commodo a at enim."
-            ],
-            "ticks": [
-                {
-                    "normal_text": "Selling Point 1",
-                },
-                {
-                    "normal_text": "Selling Point 2",
-                },
-                {
-                    "normal_text": "Selling Point 3",
-                }
-            ],
-            "button":[
-                {
-                    button_text: "Learn More",
-                    style: "filled"
-                }
-            ],
-        }
-    %}
-
-    {# Side By Side Panel #4 #}
-
-    {% include_dnd_partial 
-        path="../sections/row-content-img-left.html",
-        context={
-            "background_color": "#031D3C",
-            "margin":{
-                "top": "0",
+        {% dnd_column 
+            padding={
+                'top': 0,
+                'bottom': 0,
+                'left': 0,
+                'right': 0,
             },
-            "padding":{
-                "top": "0",
-            },
-            "app_logo": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/scx.svg",
-            "title": "Valuation",
-            "basic_text": [
-                "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa.",
-                "Integer nisi libero, lobortis consequat leo condimentum, cursus congue justo. Quisque placerat convallis pulvinar. Integer tincidunt quam quis dui ultricies commodo a at enim.",
-                "Duis sed tempus purus. Cras vitae rhoncus neque. Mauris semper ipsum eu enim posuere mollis. Phasellus elementum faucibus purus. Pellentesque eget tellus massa."
-            ],
-            "button":[
-                {
-                    button_text: "Learn More",
-                    style: "filled"
-                }
-            ],
-        }
+            margin={
+                'top': 0,
+                'bottom': 0,
+                'left': 0,
+                'right': 0,
+            }
+        %}
+            {% dnd_row %}
+                {% dnd_module path='../modules/home-ai-section.module' %}
+                {% end_dnd_module %}
+            {% end_dnd_row %}
+        {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {# Trusted By #}
+
+    {% dnd_section 
+        background_color={{ context.background_color or "#031D3C" }}
     %}
+        {% dnd_column %}
+            {% dnd_row %}
+                {% dnd_module path='../modules/info-cards.module' %}
+                {% end_dnd_module %}
+            {% end_dnd_row %}
+        {% end_dnd_column %}
+    {% end_dnd_section %}
 
     {# Testimonials #}
     
     {% dnd_section
-        background_color={{ context.background_color or "#000F28" }},
-        fullWidth: "true"
+        background_color={{ context.background_color or "#000F28" }}
     %}
         {% dnd_module path='../modules/testimonials-side-by-side.module' %}{% end_dnd_module %}
+    {% end_dnd_section %}
+
+    {# Location #}
+    
+    {% dnd_section
+        background_color={{ context.background_color or "#031D3C" }}
+    %}
+        {% dnd_module path='../modules/home-location-panel.module' %}{% end_dnd_module %}
     {% end_dnd_section %}
 
     {# Call to action #}
@@ -247,8 +141,7 @@
     {# News Cards #}
     
     {% dnd_section 
-        background_color={{ context.background_color or "#000F28" }},
-        fullWidth: "true" 
+        background_color={{ context.background_color or "#000F28" }}
     %}
         {% dnd_module path='../modules/news-card.module' %}{% end_dnd_module %}
     {% end_dnd_section %}

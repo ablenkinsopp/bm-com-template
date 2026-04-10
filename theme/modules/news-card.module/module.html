@@ -1,3 +1,5 @@
+{% from '../../macros/button.html' import button %}
+
 {% set articles = blog_recent_posts(module.blog_field, 4) %}
 
 {% if articles | length == 2 %}
@@ -12,25 +14,31 @@
   {% set grid_col_class = 'md:grid-cols-2 lg:grid-cols-4' %}
 {% endif %}
 
-<div class="grid grid-cols-1 gap-6 lg:gap-10 w-full {{ grid_col_class }}">
-    {% for article in articles %}
-        {% set delay_ms = (loop.index - 1) * 200 %}
-        <a
-            data-animate-on-scroll
-            data-animate-class="animate-fade-up"
-            href="{{ article.absolute_url }}"
-            class="group flex flex-col text-left gradient-border-bottom gap-4 p-6 bg-dark-blue hover:bg-white/10 animate-start-fade-up-8"
-            style="--delay: {{ delay_ms }}ms; --duration: 400ms;"
-        >
-            <p class="text-water text-sm uppercase">{{ article.topic_list[0].name }}</p>
-            <p class="text-lg text-off-white">{{ article.name }}</p>
-            <p
+<div class="flex flex-col gap-6 md:gap-10 w-full items-center">
+    <div class="grid grid-cols-1 gap-6 lg:gap-10 w-full {{ grid_col_class }}">
+        {% for article in articles %}
+            {% set delay_ms = (loop.index - 1) * 200 %}
+            <a
+                data-animate-on-scroll
+                data-animate-class="animate-fade-up"
                 href="{{ article.absolute_url }}"
-                class="text-light-blue text-lg group-hover:text-turquoise transition-all duration-250 self-start"
+                class="group flex flex-col text-left gradient-border-bottom gap-4 p-6 bg-dark-blue hover:bg-white/10 animate-start-fade-up-8"
+                style="--delay: {{ delay_ms }}ms; --duration: 400ms;"
             >
-                Read Full Post
-                <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-turquoise"></span>
-            </p>
-        </a>
-    {% endfor %}
+                <p class="text-water text-sm uppercase">{{ article.topic_list[0].name }}</p>
+                <p class="text-lg text-off-white">{{ article.name }}</p>
+                <p
+                    href="{{ article.absolute_url }}"
+                    class="text-light-blue text-lg group-hover:text-turquoise transition-all duration-250 self-start"
+                >
+                    Read Full Post
+                    <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-turquoise"></span>
+                </p>
+            </a>
+        {% endfor %}
+    </div>
+  
+    {% if module.show_link %}
+        {{ button(module.button_text, module.button_link, "outline", "default", true) }}
+    {% endif %}
 </div>

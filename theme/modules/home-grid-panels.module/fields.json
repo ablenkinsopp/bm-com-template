@@ -1,0 +1,130 @@
+[ {
+  "id" : "01521d08-d12c-50a7-3dfa-e0dded2b896e",
+  "name" : "small_title",
+  "label" : "Small Title",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Explore the Platform"
+}, {
+  "id" : "75fd1e7a-243a-1f04-5d6d-6125c4b63783",
+  "name" : "title",
+  "label" : "Title",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "The Core Infrastructure Supporting the Global Research System"
+}, {
+  "id" : "e76443c6-d1aa-ac98-38fc-2057ead77a14",
+  "name" : "panels",
+  "label" : "Panels",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "8b6906f7-671e-87a7-5dab-1e79cc33f0ca",
+    "name" : "tag_text",
+    "label" : "Tag Text",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Authoring"
+  }, {
+    "picker" : "image",
+    "id" : "ef0563d9-807b-8a1a-4c40-bdc194d360f4",
+    "name" : "tag_image",
+    "label" : "Tag Image",
+    "required" : true,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "file",
+    "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/note-pencil-fill.svg"
+  }, {
+    "id" : "54052c02-0b22-850f-b640-dcbecc9d8048",
+    "name" : "title",
+    "label" : "Title",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "The Gold Standard for Content Creation"
+  }, {
+    "id" : "225489a5-f7c9-1ef0-d693-39adffe0c7da",
+    "name" : "body_text",
+    "label" : "Body Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Create research efficiently with a centralized, scalable, and compliant workflow - with accelerated AI-powered content creation and insight discovery."
+  }, {
+    "id" : "819cd568-449a-2a5d-9e6b-1fdf9797aa13",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Explore Creator"
+  }, {
+    "id" : "660155b4-66a6-a227-a0c9-f2238b48691a",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : true,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "display_width" : null,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : 205658305551,
+        "href" : null,
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "b9d1c443-cf4f-eb2b-d6a5-95c7ab151c28",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : true,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "display_width" : null,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Illusion.png",
+      "alt" : "Illusion",
+      "loading" : "lazy",
+      "width" : 600,
+      "height" : 350,
+      "max_width" : 600,
+      "max_height" : 350
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group",
+  "default" : [ ]
+} ]

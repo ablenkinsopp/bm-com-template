@@ -17,7 +17,7 @@
   "allow_new_line" : false,
   "display_width" : null,
   "type" : "text",
-  "default" : "Intelligence That"
+  "default" : "Powering the Full Lifecycle"
 }, {
   "id" : "971a7085-44a4-0115-8f12-af5fa1d7977d",
   "name" : "headline_bottom",
@@ -27,7 +27,7 @@
   "allow_new_line" : false,
   "display_width" : null,
   "type" : "text",
-  "default" : "Moves Markets"
+  "default" : "of Investment Research"
 }, {
   "id" : "d38c43cb-7b01-e8f5-fef0-02e241d6a23b",
   "name" : "subtext",
@@ -43,34 +43,89 @@
   "allow_new_line" : false,
   "display_width" : null,
   "type" : "text",
-  "default" : "Powering the future of finance with AI-ready infrastructure to transform data into advantage."
+  "default" : [ "BlueMatrix is the platform & core infrastructure that global firms rely on to create, control, deliver and ingest research at scale" ]
 }, {
-  "id" : "0f6b68e2-5515-a5af-f0b5-3f9ba5cc5108",
-  "name" : "button_text",
-  "label" : "Button Text",
-  "required" : true,
+  "id" : "b1734842-f980-5ea3-d826-805fbea5a39a",
+  "name" : "tick_list",
+  "label" : "Tick List",
+  "required" : false,
   "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
   "allow_new_line" : false,
   "display_width" : null,
   "type" : "text",
-  "default" : "Request Demo"
+  "default" : [ "Authoring", "Compliance", "Entitlements", "Distribution", "AI Governance" ]
 }, {
-  "id" : "15be560a-489b-680b-3798-a69506646154",
-  "name" : "button_link",
-  "label" : "Button Link",
-  "required" : true,
+  "id" : "e398eff1-7f1a-17c0-7add-ecf147dda13e",
+  "name" : "buttons",
+  "label" : "Buttons",
+  "required" : false,
   "locked" : false,
-  "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
-  "show_advanced_rel_options" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "0f6b68e2-5515-a5af-f0b5-3f9ba5cc5108",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Request Demo"
+  }, {
+    "id" : "15be560a-489b-680b-3798-a69506646154",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : true,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "display_width" : null,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : 206078525068,
+        "href" : null,
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "1ba1ceeb-6692-35b8-2aef-43899d60d2aa",
+    "name" : "button_style",
+    "label" : "Button Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "filled", "Filled" ], [ "outline", "Outline" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "filled"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
   "display_width" : null,
-  "type" : "link",
-  "default" : {
-    "url" : {
-      "content_id" : 206078525068,
-      "href" : null,
-      "type" : "CONTENT"
-    },
-    "open_in_new_tab" : false,
-    "no_follow" : false
-  }
+  "type" : "group",
+  "default" : [ {
+    "button_text" : "Request A Demo",
+    "button_style" : "filled"
+  }, {
+    "button_text" : "About Us",
+    "button_style" : "outline"
+  } ]
 } ]

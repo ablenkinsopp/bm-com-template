@@ -1,0 +1,23 @@
+{% from '../../macros/button.html' import button %}
+
+<div class="w-full flex flex-col gap-20 items-center justify-center">
+    <h3 class="text-water text-center text-4xl">{{ module.title }}</h3>
+
+    <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="flex-1 max-w-4xl">
+            <img class="w-full" src="{{ module.map_image.src|escape_url }}" alt="{{ module.image_field.alt|escape_attr }}">
+        </div>
+
+        <div class="flex flex-col items-center md:items-start rounded-lg gap-8 p-8 bg-darkest-blue">
+            <h4 class="font-bold text-water text-base uppercase">{{ module.panel_title }}</h4>
+
+            <ul class="flex flex-wrap gap-6 justify-center md:items-start md:flex-col md:gap-1">
+                {% for office in module.location %}
+                    <li class="text-white">{{ office }}</li>
+                {% endfor %}
+            </ul>
+
+            {{ button(module.button_text, module.button_link, "outline") }}
+        </div>
+    </div>
+</div>
