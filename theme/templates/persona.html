@@ -42,12 +42,19 @@
 
     {# Persona Side By Side #}
     
+    {% dnd_section
+        background_color={{ context.background_color or "#F2FFFD"}}
+    %}
+        {% dnd_module 
+            path='../modules/problem-statement-side-by-side.module'
+        %}
+        {% end_dnd_module %}
+    {% end_dnd_section %}
 
     {# Standard Info Cards #}
 
     {% dnd_section 
-        background_color={{ context.background_color or "#000F28" }},
-        fullWidth: "true" 
+        background_color={{ context.background_color or "#000F28" }}
     %}
         {% dnd_module 
             path='../modules/info-cards.module',
@@ -75,17 +82,6 @@
         {% end_dnd_module %}
     {% end_dnd_section %}
 
-    {# Call to action 1 #}
-
-    {% include_dnd_partial 
-        path="../sections/call-to-action.html",
-        context={
-            "title": "Rethink what your research team can publish with BlueMatrix",
-            "text_field": "",
-            "button_text": "Talk with an expert"
-        }
-    %}
-
     {# Side By Side Section 1 #}
 
     {% include_dnd_partial 
@@ -102,12 +98,16 @@
         }
     %}
 
+    {# Horizontal Rule #}
+
+    {% include_dnd_partial path="../sections/horizontal-divider.html" %}
+
     {# Side By Side Section 2 #}
 
     {% include_dnd_partial 
         path="../sections/row-content-img-right.html",
         context={
-            "background_color": "#000F28",
+            "background_color": "#031D3C",
             "title": "One Workflow for the Entire Research Lifecycle",
             "basic_text": [
                 "Creator brings drafting, collaboration, review, compliance, and publishing into a single, connected workflow. Instead of managing handoffs through email and disconnected tools, every step of research production happens in one place.",
@@ -136,77 +136,7 @@
         }
     %}
 
-    {# Side By Side Section 4 #}
-
-    {% include_dnd_partial 
-        path="../sections/row-content-img-right.html",
-        context={
-            "background_color": "#000F28",
-            "bordered": true,
-            "title": "See What Actually Matters",
-            "basic_text": [
-                "Research teams produce enormous volumes of insight, but without visibility into what's actually used, it's hard for leaders to know what's working. Creator provides clear insight into research consumption, showing which views are read, reused, and referenced across the firm.",
-                "These engagement signals create a feedback loop between research production and impact. Leaders can refine content strategy, focus resources on what resonates most, and make more informed decisions about where to invest time and effort."
-            ],
-            "button": []
-        }
-    %}
-
-    {# Testimonials #}
-    
-    {% dnd_section
-        background_color={{ context.background_color or "#031D3C" }},
-        fullWidth: "true"
-    %}
-        {% dnd_module 
-            path='../modules/testimonials-side-by-side.module' 
-            quotes_group=[
-                {
-                    "blockquote" : "BlueMatrix's one-stop shop makes publishing and distributing research easy. Creator 4.0 is by far the most intuitive publishing platform they've developed thus far. The new platform has made the transition to HTML5 for our analysts much easier than anticipated.",
-                    "author_name" : "Unknown",
-                    "author_job_title" : "Unknown",
-                    "company_logo" : {
-                        "size_type" : "auto_custom_max",
-                        "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Client%20Logos/jefferies.png",
-                        "alt" : "Jefferies",
-                        "loading" : "lazy",
-                        "height" : 30,
-                        "max_width" : 30
-                    },
-                    "company_name" : "Jefferies"
-                }, {
-                    "blockquote" : "Over the past 15 years, BlueMatrix has been a true partner with Oppenheimer to help us create and distribute our research product. Their dedication, timeliness, and professionalism is outstanding and we would not be able to produce the research that we do without their service.",
-                    "author_name" : "Erica L. Moffett",
-                    "author_job_title" : "Associate Director of Research, Head of Research Marketing Services",
-                    "company_logo" : {
-                        "size_type" : "auto_custom_max",
-                        "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Client%20Logos/oppenheimer.png",
-                        "alt" : "Oppenheimer & Co",
-                        "loading" : "lazy",
-                        "height" : 30,
-                        "max_width" : 30
-                    },
-                    "company_name" : "Oppenheimer & Co"
-                }, {
-                    "blockquote" : "BlueMatrix has proven, year-in and year-out, its strategic value. It is far more than a publishing system and we regard them as an extension of our own organization.",
-                    "author_name" : "Louis Giglio",
-                    "author_job_title" : "Officer",
-                    "company_logo" : {
-                        "size_type" : "auto_custom_max",
-                        "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Client%20Logos/b-riley.png",
-                        "alt" : "B. Riley Securities",
-                        "loading" : "lazy",
-                        "height" : 30,
-                        "max_width" : 30
-                    },
-                    "company_name" : "B. Riley Securities"
-                }
-            ]
-        %}
-        {% end_dnd_module %}
-    {% end_dnd_section %}
-
-    {# Call to action 2 #}
+    {# Call to action #}
 
     {% include_dnd_partial 
         path="../sections/call-to-action.html",
@@ -216,24 +146,13 @@
             "button_text": "Request a demo"
         }
     %}
-
-    {# Light Info Strip #}
-
-    {% include_dnd_partial 
-        path="../sections/light-info-strip.html", 
-        context={
-            "title_bold": "Designed as a MiFID II Best Practice Platform",
-            "ticks": [ { "normal_text" : "RXML Standards" }, { "normal_text" : "GDPR Data Protection" }, { "normal_text" : "SEC Rule 17a-4" }, { "normal_text" : "Web Accessibility" }]
-        }
-    %}
-
     {# News Cards #}
     
     {% dnd_section 
         background_color={{ context.background_color or "#000F28" }},
         fullWidth: "true" 
     %}
-    {% dnd_module path='../modules/news-card.module' %}{% end_dnd_module %}
+        {% dnd_module path='../modules/news-card.module' %}{% end_dnd_module %}
     {% end_dnd_section %}
 
 

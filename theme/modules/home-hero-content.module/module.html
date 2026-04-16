@@ -19,11 +19,11 @@
         <div data-animate-on-scroll
             data-animate-class="animate-fade-up"
             style="--delay: 100ms; --duration: 600ms;" 
-            class="flex flex-col items-center justify-center gap-6 xl:gap-8 text-center p-4 sm:p-10 w-full {% if is_in_editor %}animate-fade-up{% else %}animate-start-fade-up-16{% endif %}">
+            class="flex flex-col items-center justify-center gap-6 xl:gap-10 text-center p-4 sm:p-10 w-full {% if is_in_editor %}animate-fade-up{% else %}animate-start-fade-up-16{% endif %}">
             <h1 class='flex flex-col !text-5xl sm:!text-6xl md:!text-7xl !text-white !font-black'>
-                <span class='text-water'>{{ module.headline_top }}</span>
+                <span>{{ module.headline_top }}</span>
                 {% if module.headline_bottom %}
-                    <span class="">{{ module.headline_bottom }}</span>
+                    <span class="text-water">{{ module.headline_bottom }}</span>
                 {% endif %}
             </h1>
             {% for subtext in module.subtext %}
@@ -31,23 +31,34 @@
                     {{ subtext }}
                 </p>
             {% endfor %}
+            
+            <div class="flex flex-col sm:flex-row gap-6">
+                {% for button in module.buttons %}
+                    {{ button(button.button_text, button.button_link, button.button_style, "large") }}
+                {% endfor %}
+            </div>
 
-            <ul class="w-full flex flex-wrap items-center justify-center gap-y-2 gap-4">
+            <ul class="w-full flex flex-wrap items-center justify-center gap-y-2 gap-6">
                 {% for tick in module.tick_list %}
-                    <li class="text-off-white md:text-lg uppercase flex items-center gap-2 ">
-                        <div class="text-darkest-blue bg-linear-to-r from-light-blue to-turquoise w-5 h-5 md:w-7 md:h-7 text-base md:text-xl rounded-2xl flex items-center justify-center ">
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
+                    <li class="text-off-white md:text-lg uppercase flex items-center gap-1">
+                        <div class="w-5 h-5 md:w-7 md:h-7 text-base md:text-xl rounded-2xl flex items-center justify-center ">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1627_15245)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9998 1.5C14.7846 1.5 17.4555 2.60606 19.4246 4.5752C21.3938 6.54433 22.4998 9.21523 22.4998 12C22.4998 14.0766 21.8839 16.1064 20.7303 17.833C19.5766 19.5597 17.9369 20.9064 16.0184 21.7012C14.0998 22.4959 11.9878 22.703 9.951 22.2979C7.91437 21.8926 6.04337 20.8931 4.57502 19.4248C3.10668 17.9565 2.10718 16.0855 1.70197 14.0488C1.29683 12.012 1.50393 9.90007 2.29865 7.98145C3.09338 6.06289 4.44015 4.42325 6.16682 3.26953C7.89346 2.11593 9.92326 1.5 11.9998 1.5ZM15.4442 3.68555C13.7996 3.00436 11.9898 2.82558 10.244 3.17285C8.49815 3.52012 6.89423 4.37708 5.63557 5.63574C4.3769 6.89441 3.51995 8.49832 3.17268 10.2441C2.82541 11.99 3.00418 13.7998 3.68537 15.4443C4.36658 17.0887 5.51988 18.4945 6.99983 19.4834C8.47983 20.4723 10.2199 21 11.9998 21C14.3868 21 16.6763 20.0521 18.3641 18.3643C20.0519 16.6764 20.9998 14.3869 20.9998 12C20.9998 10.22 20.4721 8.48001 19.4832 7C18.4944 5.52005 17.0886 4.36675 15.4442 3.68555ZM17.2498 9.31152L10.4998 16.0605L6.74983 12.3096L7.8094 11.25L10.4998 13.9395L16.1883 8.25L17.2498 9.31152Z" fill="white"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1627_15245">
+                                        <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
                         </div>
                         <p>{{ tick }}</p>
                     </li>
                 {% endfor %}
             </ul>
 
-            <div class="flex flex-col sm:flex-row gap-6">
-                {% for button in module.buttons %}
-                    {{ button(button.button_text, button.button_link, button.button_style, "large") }}
-                {% endfor %}
-            </div>
             
         </div>
     </div>

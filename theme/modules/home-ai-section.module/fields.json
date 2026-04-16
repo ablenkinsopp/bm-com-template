@@ -1,325 +1,343 @@
-[
- {
-  "type": "group",
-  "id": "d7f1ca62-8008-d4da-558e-3681e43b1e32",
-  "label": "BlueIQ Cta",
-  "children": [
-   {
-    "type": "image",
-    "id": "c97d86d6-4385-dde1-93c9-34f7f298a2d7",
-    "default": {
-     "size_type": "auto",
-     "src": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Placeholders/blueIQ-wip.png",
-     "alt": "blueIQ-wip",
-     "loading": "lazy",
-     "width": 159,
-     "height": 82,
-     "max_width": 159,
-     "max_height": 82
+[ {
+  "id" : "d7f1ca62-8008-d4da-558e-3681e43b1e32",
+  "name" : "blueiq_cta",
+  "label" : "BlueIQ Cta",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "c97d86d6-4385-dde1-93c9-34f7f298a2d7",
+    "name" : "logo",
+    "label" : "Logo",
+    "required" : true,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "display_width" : null,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Placeholders/blueIQ-wip.png",
+      "alt" : "blueIQ-wip",
+      "loading" : "lazy",
+      "width" : 159,
+      "height" : 82,
+      "max_width" : 159,
+      "max_height" : 82
+    }
+  }, {
+    "id" : "9c3c8dbf-9a16-b159-48a2-fb1a2bdf6bbd",
+    "name" : "background",
+    "label" : "Background",
+    "required" : true,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "display_width" : null,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Hero%20Images/ai-cta-2000.png",
+      "alt" : "ai-cta-2000",
+      "loading" : "lazy",
+      "width" : 2000,
+      "height" : 396,
+      "max_width" : 2000,
+      "max_height" : 396
+    }
+  }, {
+    "id" : "ae064101-8703-a56d-e203-883c22ed182a",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "With AI-Powered Platform Tooling Providing Long-Standing Benefits Across Both the Sell-Side and Buy-Side"
+  }, {
+    "id" : "53e66ee4-169e-afbc-3331-ef867dd1c7d0",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Request a demo"
+  }, {
+    "id" : "c6fdbf71-2f0e-c9c4-7fc4-4ed276b07c35",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : true,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "display_width" : null,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : 206078525068,
+        "href" : null,
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group",
+  "default" : {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Placeholders/blueIQ-wip.png",
+      "alt" : "blueIQ-wip",
+      "loading" : "lazy",
+      "width" : 159,
+      "height" : 82,
+      "max_width" : 159,
+      "max_height" : 82
     },
-    "resizable": true,
-    "responsive": true,
-    "show_loading": false,
-    "label": "Logo",
-    "name": "logo",
-    "required": true
-   },
-   {
-    "type": "image",
-    "id": "9c3c8dbf-9a16-b159-48a2-fb1a2bdf6bbd",
-    "default": {
-     "size_type": "auto",
-     "src": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Hero%20Images/ai-cta-2000.png",
-     "alt": "ai-cta-2000",
-     "loading": "lazy",
-     "width": 2000,
-     "height": 396,
-     "max_width": 2000,
-     "max_height": 396
+    "background" : {
+      "size_type" : "auto",
+      "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Hero%20Images/ai-cta-2000.png",
+      "alt" : "ai-cta-2000",
+      "loading" : "lazy",
+      "width" : 2000,
+      "height" : 396,
+      "max_width" : 2000,
+      "max_height" : 396
     },
-    "resizable": true,
-    "responsive": true,
-    "show_loading": false,
-    "label": "Background",
-    "name": "background",
-    "required": true
-   },
-   {
-    "type": "text",
-    "id": "ae064101-8703-a56d-e203-883c22ed182a",
-    "validation_regex": "",
-    "label": "Text",
-    "name": "text",
-    "default": "With AI-Powered Platform Tooling Providing Long-Standing Benefits Across Both the Sell-Side and Buy-Side"
-   },
-   {
-    "type": "text",
-    "id": "53e66ee4-169e-afbc-3331-ef867dd1c7d0",
-    "validation_regex": "",
-    "label": "Button Text",
-    "name": "button_text",
-    "default": "Request a demo",
-    "required": true
-   },
-   {
-    "type": "link",
-    "id": "c6fdbf71-2f0e-c9c4-7fc4-4ed276b07c35",
-    "default": {
-     "url": {
-      "content_id": 206078525068,
-      "href": null,
-      "type": "CONTENT"
-     },
-     "open_in_new_tab": false,
-     "no_follow": false
-    },
-    "supported_types": [
-     "EXTERNAL",
-     "FILE",
-     "CONTENT",
-     "BLOG",
-     "CALL_TO_ACTION",
-     "PAYMENT",
-     "EMAIL_ADDRESS",
-     "PHONE_NUMBER",
-     "WHATSAPP_NUMBER"
-    ],
-    "label": "Button Link",
-    "name": "button_link",
-    "required": true
-   }
-  ],
-  "name": "blueiq_cta",
-  "default": {
-   "logo": {
-    "size_type": "auto",
-    "src": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Placeholders/blueIQ-wip.png",
-    "alt": "blueIQ-wip",
-    "loading": "lazy",
-    "width": 159,
-    "height": 82,
-    "max_width": 159,
-    "max_height": 82
-   },
-   "background": {
-    "size_type": "auto",
-    "src": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Hero%20Images/ai-cta-2000.png",
-    "alt": "ai-cta-2000",
-    "loading": "lazy",
-    "width": 2000,
-    "height": 396,
-    "max_width": 2000,
-    "max_height": 396
-   },
-   "text": "With AI-Powered Platform Tooling Providing Long-StandingBenefits Across Both the Sell-Side and Buy-Side",
-   "button_text": "Request a demo",
-   "button_link": {
-    "url": {
-     "content_id": 206078525068,
-     "href": null,
-     "type": "CONTENT"
-    },
-    "open_in_new_tab": false,
-    "no_follow": false
-   }
+    "text" : "With AI-Powered Platform Tooling Providing Long-Standing Benefits Across Both the Sell-Side and Buy-Side",
+    "button_text" : "Request a demo",
+    "button_link" : {
+      "url" : {
+        "content_id" : 206078525068,
+        "href" : null,
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   }
- },
- {
-  "type": "group",
-  "id": "eca9aec2-8786-c366-c9a2-24a002249f25",
-  "label": "Problem Statement",
-  "children": [
-   {
-    "allow_new_line": false,
-    "default": "The Financial Research Ecosystem is Experiencing a Structural Transformation",
-    "display_width": null,
-    "id": "8932ec8e-38c6-e9d4-55bd-719f20323cb6",
-    "label": "Title",
-    "locked": false,
-    "name": "title",
-    "required": true,
-    "type": "text"
-   },
-   {
-    "default": "<span style=\"font-size: 24px;\">AI tools dramatically increase <strong>research utility</strong>, but also introduce a <strong>fundamental challenge</strong></span>",
-    "display_width": null,
-    "id": "2578e3bc-4635-adee-37b1-eacd9266826d",
-    "label": "Subtitle",
-    "locked": false,
-    "name": "subtitle",
-    "required": true,
-    "type": "richtext"
-   },
-   {
-    "allow_new_line": false,
-    "default": "AI Increasingly Prevalent in Investment Workflows",
-    "display_width": null,
-    "id": "33da2427-77fa-08c2-568d-fb00650c6f51",
-    "label": "Positive Headline",
-    "locked": false,
-    "name": "positive_headline",
-    "required": true,
-    "type": "text"
-   },
-   {
-    "allow_new_line": false,
-    "default": "Vast volumes of research can be ingested, synthesized, and summarized",
-    "display_width": null,
-    "id": "7b07fa03-11a1-96b3-0d0c-215173a50116",
-    "label": "Positive Text",
-    "locked": false,
-    "name": "positive_text",
-    "required": true,
-    "type": "text"
-   },
-   {
-    "allow_new_line": false,
-    "default": "Attribution Fades as AI Obscures Originating Content",
-    "display_width": null,
-    "id": "b1c6a0da-ef90-f2a2-07e9-d49f5ae82b0f",
-    "label": "Negative Headline",
-    "locked": false,
-    "name": "negative_headline",
-    "required": true,
-    "type": "text"
-   },
-   {
-    "allow_new_line": false,
-    "default": "Intellectual property control weakens as insights are synthesized from research",
-    "display_width": null,
-    "id": "fa863dc1-768f-6cf9-ad12-a7a82e16330f",
-    "label": "Negative Text",
-    "locked": false,
-    "name": "negative_text",
-    "required": true,
-    "type": "text"
-   }
-  ],
-  "name": "problem_statement",
-  "default": {
-   "title": "The Financial Research Ecosystem is Experiencing a Structural Transformation",
-   "subtitle": "<span style=\"font-size: 24px;\">AI tools dramatically increase <strong>research utility</strong>, but also introduce a <strong>fundamental challenge</strong></span>",
-   "positive_headline": "AI Increasingly Prevalent in Investment Workflows",
-   "positive_text": "Vast volumes of research can be ingested, synthesized, and summarized",
-   "negative_headline": "Attribution Fades as AI Obscures Originating Content",
-   "negative_text": "Intellectual property control weakens as insights are synthesized from research"
+}, {
+  "id" : "eca9aec2-8786-c366-c9a2-24a002249f25",
+  "name" : "problem_statement",
+  "label" : "Problem Statement",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "8932ec8e-38c6-e9d4-55bd-719f20323cb6",
+    "name" : "title",
+    "label" : "Title",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "The Financial Research Ecosystem is Experiencing a Structural Transformation"
+  }, {
+    "id" : "2578e3bc-4635-adee-37b1-eacd9266826d",
+    "name" : "subtitle",
+    "label" : "Subtitle",
+    "required" : true,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "<span style=\"font-size: 24px;\">AI tools dramatically increase <strong>research utility</strong>, but also introduce a <strong>fundamental challenge</strong></span>"
+  }, {
+    "id" : "33da2427-77fa-08c2-568d-fb00650c6f51",
+    "name" : "positive_headline",
+    "label" : "Positive Headline",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "AI Increasingly Prevalent in Investment Workflows"
+  }, {
+    "id" : "7b07fa03-11a1-96b3-0d0c-215173a50116",
+    "name" : "positive_text",
+    "label" : "Positive Text",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Vast volumes of research can be ingested, synthesized, and summarized"
+  }, {
+    "id" : "b1c6a0da-ef90-f2a2-07e9-d49f5ae82b0f",
+    "name" : "negative_headline",
+    "label" : "Negative Headline",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Attribution Fades as AI Obscures Originating Content"
+  }, {
+    "id" : "fa863dc1-768f-6cf9-ad12-a7a82e16330f",
+    "name" : "negative_text",
+    "label" : "Negative Text",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Intellectual property control weakens as insights are synthesized from research"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group",
+  "default" : {
+    "title" : "The Financial Research Ecosystem is Experiencing a Structural Transformation",
+    "subtitle" : "<span style=\"font-size: 24px;\">AI tools dramatically increase <strong>research utility</strong>, but also introduce a <strong>fundamental challenge</strong></span>",
+    "positive_headline" : "AI Increasingly Prevalent in Investment Workflows",
+    "positive_text" : "Vast volumes of research can be ingested, synthesized, and summarized",
+    "negative_headline" : "Attribution Fades as AI Obscures Originating Content",
+    "negative_text" : "Intellectual property control weakens as insights are synthesized from research"
   }
- },
- {
-  "type": "group",
-  "id": "e9aed27b-a89e-565c-98b9-37fbdd92c319",
-  "label": "Solution Panel",
-  "children": [
-   {
-    "allow_new_line": false,
-    "default": "At the Center of the AI Ecosystem",
-    "display_width": null,
-    "id": "e30deb76-08ab-c7f0-7c65-6a086f4cfc65",
-    "label": "Headline",
-    "locked": false,
-    "name": "headline",
-    "required": true,
-    "type": "text"
-   },
-   {
-    "allow_new_line": false,
-    "default": "BlueMatrix is committed to serve as the controlled and secure infrastructure layer through which institutional research is consumed by AI, with full visibility across the research lifecycle.",
-    "display_width": null,
-    "id": "aa5dbd5a-8c76-8c37-ccb6-ea36b5657a0f",
-    "label": "Text",
-    "locked": false,
-    "name": "text",
-    "required": true,
-    "type": "text"
-   },
-   {
-    "default": {
-     "size_type": "auto",
-     "src": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Placeholders/ai-diagram-temp.svg",
-     "alt": "ai-diagram-temp",
-     "loading": "lazy",
-     "width": 618,
-     "height": 512,
-     "max_width": 618,
-     "max_height": 512
+}, {
+  "id" : "e9aed27b-a89e-565c-98b9-37fbdd92c319",
+  "name" : "solution_panel",
+  "label" : "Solution Panel",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "e30deb76-08ab-c7f0-7c65-6a086f4cfc65",
+    "name" : "headline",
+    "label" : "Headline",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "At the Center of the AI Ecosystem"
+  }, {
+    "id" : "aa5dbd5a-8c76-8c37-ccb6-ea36b5657a0f",
+    "name" : "text",
+    "label" : "Text",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "BlueMatrix is committed to serve as the controlled and secure infrastructure layer through which institutional research is consumed by AI, with full visibility across the research lifecycle."
+  }, {
+    "id" : "069dca99-8ed2-7577-352b-fc0c83c672ec",
+    "name" : "desktop_image",
+    "label" : "Desktop Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "display_width" : null,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/ai-web-desktop.svg",
+      "alt" : "ai-web-desktop",
+      "loading" : "lazy",
+      "width" : 688,
+      "height" : 514,
+      "max_width" : 688,
+      "max_height" : 514
+    }
+  }, {
+    "id" : "25ab2c46-e15f-68c5-8fde-f217327d1d9a",
+    "name" : "mobile_image",
+    "label" : "Mobile Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "display_width" : null,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/ai-web-mobile.svg",
+      "alt" : "ai-web-mobile",
+      "loading" : "lazy",
+      "width" : 688,
+      "height" : 514,
+      "max_width" : 688,
+      "max_height" : 514
+    }
+  }, {
+    "id" : "60e46e6c-de22-fbb5-f01c-e4857b96e812",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Learn More about bluematrix ai"
+  }, {
+    "id" : "7900878e-4ca6-62d9-fa58-4042966b9249",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : true,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "display_width" : null,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : 208168425629,
+        "href" : null,
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group",
+  "default" : {
+    "headline" : "At the Center of the AI Ecosystem",
+    "text" : "BlueMatrix is committed to serve as the controlled and secure infrastructure layer through which institutional research is consumed by AI, with full visibility across the research lifecycle.",
+    "desktop_image" : {
+      "size_type" : "auto",
+      "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/ai-web-desktop.svg",
+      "alt" : "ai-web-desktop",
+      "loading" : "lazy",
+      "width" : 688,
+      "height" : 514,
+      "max_width" : 688,
+      "max_height" : 514
     },
-    "display_width": null,
-    "id": "069dca99-8ed2-7577-352b-fc0c83c672ec",
-    "label": "Image",
-    "locked": false,
-    "name": "image",
-    "required": false,
-    "resizable": true,
-    "responsive": true,
-    "show_loading": false,
-    "type": "image"
-   },
-   {
-    "allow_new_line": false,
-    "default": "Learn More about bluematrix ai",
-    "display_width": null,
-    "id": "60e46e6c-de22-fbb5-f01c-e4857b96e812",
-    "label": "Button Text",
-    "locked": false,
-    "name": "button_text",
-    "required": true,
-    "type": "text"
-   },
-   {
-    "default": {
-     "url": {
-      "content_id": 208168425629,
-      "href": null,
-      "type": "CONTENT"
-     },
-     "open_in_new_tab": false,
-     "no_follow": false
+    "mobile_image" : {
+      "size_type" : "auto",
+      "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/ai-web-mobile.svg",
+      "alt" : "ai-web-mobile",
+      "loading" : "lazy",
+      "width" : 688,
+      "height" : 514,
+      "max_width" : 688,
+      "max_height" : 514
     },
-    "display_width": null,
-    "id": "7900878e-4ca6-62d9-fa58-4042966b9249",
-    "label": "Button Link",
-    "locked": false,
-    "name": "button_link",
-    "required": true,
-    "show_advanced_rel_options": false,
-    "supported_types": [
-     "EXTERNAL",
-     "FILE",
-     "CONTENT",
-     "BLOG",
-     "CALL_TO_ACTION",
-     "PAYMENT",
-     "EMAIL_ADDRESS",
-     "PHONE_NUMBER",
-     "WHATSAPP_NUMBER"
-    ],
-    "type": "link"
-   }
-  ],
-  "name": "solution_panel",
-  "default": {
-   "headline": "At the Center of the AI Ecosystem",
-   "text": "BlueMatrix is committed to serve as the controlled and secure infrastructure layer through which institutional research is consumed by AI, with full visibility across the research lifecycle.",
-   "image": {
-    "size_type": "auto",
-    "src": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Placeholders/ai-diagram-temp.svg",
-    "alt": "ai-diagram-temp",
-    "loading": "lazy",
-    "width": 618,
-    "height": 512,
-    "max_width": 618,
-    "max_height": 512
-   },
-   "button_text": "Learn More about bluematrix ai",
-   "button_link": {
-    "url": {
-     "content_id": 208168425629,
-     "href": null,
-     "type": "CONTENT"
-    },
-    "open_in_new_tab": false,
-    "no_follow": false
-   }
+    "button_text" : "Learn More about bluematrix ai",
+    "button_link" : {
+      "url" : {
+        "content_id" : 208168425629,
+        "href" : null,
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   }
- }
-]
+} ]

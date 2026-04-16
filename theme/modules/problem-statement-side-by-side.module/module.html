@@ -1,0 +1,17 @@
+<div class="w-full flex flex-col lg:flex-row gap-6 lg:gap-10 lg:items-center">
+    <div class="flex flex-col flex-1 gap-6">
+        <h2 class="text-darkest-blue text-5xl font-light">{{ module.title }}</h2>
+        {% for para in module.basic_text %}
+            <p class="text-shadow-dark-blue/80 text-xl">{{ para }}</p>
+        {% endfor %}
+    </div>
+
+    <div class="flex-1 max-w-[500px]">
+        <dotlottie-wc
+            src="{{ module.animation }}"
+            autoplay loop mode="normal"
+            class="w-full max-w-[1200px]"
+            style="aspect-ratio: 1 / 1"
+        ></dotlottie-wc>
+    </div>
+</div>

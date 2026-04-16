@@ -42,12 +42,13 @@
             {% dnd_module
                 path="../modules/hero-content",
                 video_player_field={{ context.video_player_field or null }},
-                app_logo={{ context.app_logo }},
+                app_logo={{ context.app_logo or null }},
                 image_field={{ context.image_field is truthy ? context.image_field : null }},
                 headline_top={{ context.headline_top or "Top Headline" }},
                 headline_bottom={{ context.headline_bottom or "" }},
                 basic_text={{ context.basic_text or ["Text goes here"] }},
-                show_button={{ not (context.show_button is false) }}
+                show_button={{ not (context.show_button is false) }},
+                tick_list={{ context.tick_list or [] }}
             %}
             {% end_dnd_module %}
         {% end_dnd_row %}

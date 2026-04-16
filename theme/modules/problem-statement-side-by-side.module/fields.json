@@ -1,0 +1,37 @@
+[ {
+  "id" : "1195b0ea-28df-c035-29d0-573d99784c23",
+  "name" : "title",
+  "label" : "Title",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Wealth teams are producing more insight than ever but the way they work hasn’t evolved."
+}, {
+  "id" : "f6d8391e-66aa-2c83-57ce-3fe9672c6144",
+  "name" : "basic_text",
+  "label" : "Basic Text",
+  "required" : true,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Wealth management teams produce a constant stream of insight — daily market commentary, portfolio strategy updates, and CIO viewpoints that power advisor conversations and client relationships. Yet behind the scenes, this content is still created in Word, distributed through email, and buried in inboxes."
+}, {
+  "picker" : "file",
+  "id" : "d03e2105-78f3-4923-f7f3-87d11a1d18ae",
+  "name" : "animation",
+  "label" : "Animation",
+  "required" : false,
+  "locked" : false,
+  "display_width" : null,
+  "type" : "file",
+  "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Animations/wealth-teams.lottie"
+} ]

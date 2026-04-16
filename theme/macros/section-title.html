@@ -14,7 +14,9 @@
     {% if image_field.src %}
         <img class="h-16" src="{{ image_field.src|escape_url }}" alt="{{ image_field.alt|escape_attr }}">
     {% endif %}
-    <h2 class="text-water font-light text-4xl {{ text_classes }}">{{ title }}</h2>
+    {% if title %}
+        <h2 class="text-water font-light text-4xl {{ text_classes }}">{{ title }}</h2>
+    {% endif %}
     {% if subtext %}
         <p class="text-text-color font-bold text-xl max-w-[960px] {{ text_classes }}">{{ subtext }}</p>
     {% endif %}

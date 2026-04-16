@@ -1,0 +1,182 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Use Case
+  screenshotPath: ../images/template-previews/product.png
+-->
+
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+{# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+
+{% dnd_area "dnd_area"
+    label="Main section",
+    class="body-container body-container--persona"
+%}
+
+    {# Hero #}
+
+    {% include_dnd_partial 
+        path="../sections/hero-banner.html", 
+        context={
+            "app_logo": null,
+            "image_field": null,
+            "video_player_field": null,
+            "headline_top": "Structured Content Creation",
+            "headline_bottom": "",
+            "basic_text": [
+                "Author, Structured Content Creation manage, and publish investment research in a single, fully integrated workflow"
+            ],
+            "tick_list": [
+                "Authoring Consistency",
+                "Compliance Protection",
+                "Operational Efficiency"
+            ]
+        }
+    %}
+
+    {# Use Case Standout #}
+    
+    {% dnd_section 
+        background_color={{ context.background_color or "#000F28" }}
+    %}
+        {% dnd_module 
+            path='../modules/use-case-standout.module'
+        %}
+        {% end_dnd_module %}
+    {% end_dnd_section %}
+
+    {# Section Title #}
+
+    {% dnd_section
+        padding={
+            'bottom': 0,
+        } 
+    %}
+        {% dnd_module 
+            path='../modules/section-title.module',
+            title="One Workflow for the Entire Content Production Lifecycle",
+            image_field=null,
+            subtext=""
+        %}
+        {% end_dnd_module %}
+    {% end_dnd_section %}
+
+    {# Side By Side Section 1 #}
+
+    {% include_dnd_partial 
+        path="../sections/row-content-img-left.html",
+        context={
+            "background_color": "#031D3C",
+            "title": "Content Creation, Made Easy",
+            "basic_text": [
+                "Create and publish research content in a unified workflow, replacing fragmented tools and handoffs with seamless collaboration and approval tools."
+            ],
+            "ticks": [
+                { bold_text: "Structured, branded research templates" },
+                { bold_text: "Intuitive tagging and financial metadata" },
+                { bold_text: "Multi-channel (PDF, HTML, Email, API)" }
+            ],
+            "button": []
+        }
+    %}
+
+    {# Horizontal Rule #}
+
+    {% include_dnd_partial path="../sections/horizontal-divider.html" %}
+
+    {# Side By Side Section 2 #}
+
+    {% include_dnd_partial 
+        path="../sections/row-content-img-right.html",
+        context={
+            "background_color": "#031D3C",
+            "title": "Secure, Compliant, Scalable",
+            "basic_text": [
+                "Embed compliance and approval workflows directly into the authoring process, reducing risk and protecting your intellectual property."
+            ],
+            "ticks": [
+                { bold_text: "Integrated compliance & approval flows" },
+                { bold_text: "Built-in entitlements & access controls" },
+                { bold_text: "End-to-end auditability and governance" }
+            ],
+            "button": []
+        }
+    %}
+
+    {# Horizontal Rule #}
+
+    {% include_dnd_partial path="../sections/horizontal-divider.html" %}
+
+    {# Side By Side Section 3 #}
+
+    {% include_dnd_partial 
+        path="../sections/row-content-img-left.html",
+        context={
+            "background_color": "#031D3C",
+            "title": "Workflow Acceleration with AI",
+            "basic_text": [
+                "Empower analysts and research teams with AI embedded directly into their authoring - speeding up content creation without sacrificing control."
+            ],
+            "ticks": [
+                { bold_text: "Draft company notes & updates instantly" },
+                { bold_text: "Automate repetitive formatting & tagging" },
+                { bold_text: "Surface insights from internal & external data" }
+            ],
+            "button": []
+        }
+    %}
+
+    {# Testimonials #}
+    
+    {% dnd_section
+        background_color={{ context.background_color or "#000F28" }},
+        fullWidth: "true"
+    %}
+        {% dnd_module 
+            path='../modules/testimonials-side-by-side.module', 
+            quotes_group=[
+                {
+                    "blockquote" : "Over the past 15 years, BlueMatrix has been a true partner with Oppenheimer to help us create and distribute our research product. Their dedication, timeliness, and professionalism is outstanding and we would not be able to produce the research that we do without their service.",
+                    "author_name" : "",
+                    "author_job_title" : "",
+                    "company_logo" : {
+                        "size_type" : "auto_custom_max",
+                        "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Client%20Logos/oppenheimer.png",
+                        "alt" : "Oppenheimer",
+                        "loading" : "lazy",
+                        "height" : 30,
+                        "max_width" : 30
+                    },
+                    "company_name" : ""
+                }
+            ]
+        %}
+        {% end_dnd_module %}
+    {% end_dnd_section %}
+
+    {# Call to action #}
+
+    {% include_dnd_partial 
+        path="../sections/call-to-action.html",
+        context={
+            "title": "Get Started Today",
+            "text_field": "The end-to-end platform powering research analysts, compliance teams, and sales desks.",
+            "button_text": "Request a demo"
+        }
+    %}
+
+    {# News Cards #}
+    
+    {% dnd_section 
+        background_color={{ context.background_color or "#000F28" }},
+        fullWidth: "true" 
+    %}
+        {% dnd_module path='../modules/news-card.module' %}{% end_dnd_module %}
+    {% end_dnd_section %}
+
+
+{% end_dnd_area %}
+{% endblock body %}

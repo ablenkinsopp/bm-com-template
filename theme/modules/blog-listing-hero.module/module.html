@@ -2,7 +2,7 @@
     <div class="relative p-4 md:p-10 bg-[linear-gradient(135deg,_#031D3C_5%,_rgba(32,66,106,0)_78.61%)]">
         <div class="w-full flex flex-col gap-4 justify-center items-center text-center md:gap-6">
             <h1 class="text-water font-black text-3xl sm:text-5xl md:text-6xl" x-balance-text>{{ module.blog_name }}</h1>
-            <p class="text-white sm:text-2xl font-light" x-balance-text>{{ module.blog_description }}</p>
+            <p class="text-white sm:text-2xl font-light max-w-[800px]" x-balance-text >{{ module.blog_description }}</p>
             {% if blog_author or tag %}
                 {% if blog_author %}
                     <div class="flex items-center bg-white rounded-4xl p-4 gap-2">

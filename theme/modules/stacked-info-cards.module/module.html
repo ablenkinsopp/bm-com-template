@@ -1,0 +1,44 @@
+<div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-center">
+    <div class="flex flex-col gap-2 md:gap-4 flex-1">
+        <h3 class="text-water font-light text-4xl text-center">{{ module.title }}</h3>
+
+        {% for card in module.info_cards %}
+            {% set href = card.link == '/'
+                ? card.link
+                : (
+                    card.link and card.link != '/' and card.link.url and card.link.url.type == "EMAIL_ADDRESS"
+                    ? "mailto:" ~ card.link.url.href
+                    : (card.link and card.link != '/' and card.link.url ? card.link.url.href : '/')
+                )
+            %}
+            <a 
+                href="{{ card.link.url.type == "CALL_TO_ACTION" ? href : href|escape_url }}"
+                class="group rounded-lg flex gap-2 lg:gap-4 py-5 px-4 bg-darkest-blue"
+            >
+                <div class="w-8 text-turquoise">
+                    <img 
+                        class="info-card-icon-mask h-8"
+                        src="{{ card.icon }}"
+                        style="
+                            -webkit-mask-image: url('{{ card.icon|escape_url }}');
+                            mask-image: url('{{ card.icon|escape_url }}');
+                        "
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2 lg:gap-4 flex-1">
+                    <h4 class="font-bold text-off-white text-lg md:text-xl">{{ card.title }}</h4>
+                    <p class="md:text-lg text-off-white/80">{{ card.text }}</p>
+                    <p class="text-light-blue md:text-lg group-hover:text-turquoise transition-all duration-250 self-start"
+                    >
+                        {{ card.link_text }}
+                        <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-turquoise"></span>
+                    </p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+    <div class="flex-1 rounded-lg overflow-hidden max-w-[740px]">
+        <img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" />
+    </div>
+</div>

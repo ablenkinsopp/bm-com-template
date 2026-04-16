@@ -1,0 +1,110 @@
+[ {
+  "id" : "920e4b4b-2012-e37e-dc98-eaf07ff3bb1a",
+  "name" : "title",
+  "label" : "Title",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Trusted By"
+}, {
+  "id" : "888858aa-ecb0-e69d-caa8-e290c3a74dee",
+  "name" : "info_cards",
+  "label" : "Info Cards",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "624261c8-d2ff-b552-885c-c8a6d4d18ed6",
+    "name" : "title",
+    "label" : "Title",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Research"
+  }, {
+    "picker" : "image",
+    "id" : "5791e386-f285-e061-b185-8a53c32dae5e",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : true,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "file",
+    "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/note-pencil-fill.svg"
+  }, {
+    "id" : "d8115c6a-ced6-d02d-03ab-6d24fb937b37",
+    "name" : "text",
+    "label" : "Text",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Phasellus ultricies nisi magna, nec ullamcorper dolor tempus et. Nullam ut"
+  }, {
+    "id" : "cc20443d-6bdf-fd14-dbcd-be99addd1078",
+    "name" : "link",
+    "label" : "Link",
+    "required" : true,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "display_width" : null,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : 210824060314,
+        "href" : null,
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "dea570f1-a36f-2a36-7ee3-0a465aac8f4b",
+    "name" : "link_text",
+    "label" : "Link Text",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Explore Research"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group",
+  "default" : [ ]
+}, {
+  "id" : "388cafc4-9db1-0218-05be-e385f092abe6",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : true,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "display_width" : null,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto_custom_max",
+    "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Product_Mock_7_740w.png",
+    "alt" : "BlueMatrix products on various devices",
+    "loading" : "lazy",
+    "width" : 740,
+    "height" : 555,
+    "max_width" : 740,
+    "max_height" : 555
+  }
+} ]

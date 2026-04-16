@@ -4,7 +4,7 @@
 -->  
 {% from './tick-list.html' import tick_list %}
 
-{% macro info_card(image, title, text_field, ticks, classes="", delay, link="") %}
+{% macro info_card(image, title, text_field, ticks, classes="", delay, link) %}
 
     {% set highlighted = "AskBlue" %}
     {% set highlighted_html = '<span class="font-bold text-white"><span class="text-bright-blue">Ask</span>Blue</span>' %}
@@ -21,7 +21,7 @@
 
     {% set shared_attrs %}data-animate-on-scroll
         data-animate-class="animate-fade-up"
-        class="gradient-border rounded overflow-hidden text-center group {{ classes }}{% if is_in_editor %}animate-fade-up{% else %}animate-start-fade-up-8{% endif %}"
+        class="gradient-border rounded overflow-hidden text-center {{ classes }} {% if link %}group{% endif %} {% if is_in_editor %}animate-fade-up{% else %}animate-start-fade-up-8{% endif %}"
         style="--delay: {{ delay }}ms; --duration: 400ms;"
     {% endset %}
 

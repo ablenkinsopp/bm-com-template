@@ -45,7 +45,7 @@
     "id" : "a3d3782c-cd1f-c3e3-f8d8-c3f428533538",
     "name" : "company_name",
     "label" : "Company Name",
-    "required" : true,
+    "required" : false,
     "locked" : false,
     "allow_new_line" : false,
     "display_width" : null,

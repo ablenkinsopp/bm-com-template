@@ -1,0 +1,11 @@
+{% from '../../macros/button.html' import button %}
+
+<div class="w-full flex flex-col gap-6 md:gap-12 justify-center items-center">
+    <h3 class="text-water text-4xl font-light text-center max-w-5xl">{{ module.title }}</h3>
+    
+    <div class="max-w-5xl">
+        <img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" />
+    </div>
+
+    {{ button(module.button_text, module.button_link) }}
+</div>

@@ -70,6 +70,7 @@
     {% end_dnd_section %}
 
     {% dnd_section
+        background_color={{ context.background_color or "#031D3C" }},
         full_width="true",
         padding={
             'top': 0,
@@ -112,7 +113,7 @@
     %}
         {% dnd_column %}
             {% dnd_row %}
-                {% dnd_module path='../modules/info-cards.module' %}
+                {% dnd_module path='../modules/stacked-info-cards.module' %}
                 {% end_dnd_module %}
             {% end_dnd_row %}
         {% end_dnd_column %}
