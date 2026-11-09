@@ -1,26 +1,30 @@
+{% if module.quotes_group | length == 1 %}
+    {% set grid_col_class = 'lg:grid-cols-1 place-items-center' %}
+{% endif %}
+
 {% if module.quotes_group | length == 2 %}
-  {% set grid_col_class = 'lg:grid-cols-2' %}
+    {% set grid_col_class = 'lg:grid-cols-2 place-items-start' %}
 {% endif %}
 
 {% if module.quotes_group | length == 3 %}
-  {% set grid_col_class = 'lg:grid-cols-3' %}
+    {% set grid_col_class = 'lg:grid-cols-3 place-items-start' %}
 {% endif %}
 
-<div class="not-prose grid grid-cols-1 max-w-lg lg:max-w-full place-items-center lg:place-items-baseline mx-auto gap-10 {{ grid_col_class or 'max-w-2xl' }}">
+<div class="not-prose grid grid-cols-1 max-w-lg lg:max-w-full mx-auto gap-10 {{ grid_col_class or 'max-w-2xl' }}">
     {% for item in module.quotes_group %}
         {% set delay_ms = (loop.index - 1) * 200 %}
         <div 
             data-animate-on-scroll
             data-animate-class="animate-fade-up"
-            class="w-full flex flex-col place-content-center lg:gap-2 {% if is_in_editor %}animate-fade-up{% else %}animate-start-fade-up-16{% endif %}"
+            class="w-full flex flex-col place-content-center lg:gap-2 {% if is_in_editor %}animate-fade-up{% else %}animate-start-fade-up-16{% endif %} max-w-4xl"
             style="--delay: {{ delay_ms }}ms; --duration: 400ms;"
         >
             <div class="w-full flex gap-2">
-                <span class='font-bold text-5xl sm:text-8xl bg-[linear-gradient(0deg,#30ABFF_0%,#43E3C2_100%)] bg-clip-text text-transparent'>“</span>
+                <span class='font-bold text-5xl sm:text-8xl bg-[linear-gradient(0deg,#0854A1_0%,#2EA8FF_100%)] bg-clip-text text-transparent'>“</span>
                 <blockquote>
                     <p class="text-white text-lg md:text-xl text-center lg:text-left pt-2 sm:pt-4">{{ item.blockquote }}</p>
                 </blockquote>
-                <span class='h-5 sm:h-8 self-end font-bold text-5xl sm:text-8xl bg-[linear-gradient(0deg,#30ABFF_0%,#43E3C2_100%)] bg-clip-text text-transparent lg:hidden'>”</span>
+                <span class='h-5 sm:h-8 self-end font-bold text-5xl sm:text-8xl bg-[linear-gradient(0deg,#0854A1_0%,#2EA8FF_100%)] bg-clip-text text-transparent lg:hidden'>”</span>
             </div>
             <div class="flex items-center lg:items-start lg:pl-12 flex-col gap-4 pt-4">
                 {% if item.company_logo.src %}
@@ -33,7 +37,7 @@
                     {% set loadingAttr = item.company_logo.loading != 'disabled' ? 'loading="{{ item.company_logo.loading|escape_attr }}"' : '' %}
                     <img class="h-7" src="{{ item.company_logo.src|escape_url }}" alt="{{ item.company_logo.alt|escape_attr }}" {{ loadingAttr }}>
                 {% endif %}
-                <div class='text-water text-base flex flex-col gap text-center  lg:text-left'>
+                <div class='text-silver text-base flex flex-col gap text-center  lg:text-left'>
                     <p>{{ item.author_name }}</p>
                     <p>{{ item.author_job_title }}</p>
                     <p class="font-bold">{{ item.company_name }}</p>

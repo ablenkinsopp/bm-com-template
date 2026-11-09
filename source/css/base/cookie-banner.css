@@ -1,0 +1,47 @@
+#hs-banner-parent {
+    
+    #hs-eu-cookie-confirmation {
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: auto !important;
+        max-width: unset !important;
+        border-radius: 0 !important;
+        @apply border-t border-sky bg-cinder;
+        
+        #hs-eu-cookie-confirmation-inner {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        #hs-eu-confirmation-button,
+        #hs-eu-decline-button {
+            border: none;
+            @apply !cursor-pointer !whitespace-nowrap !no-underline !inline-flex !items-center !justify-center !rounded uppercase !overflow-hidden !h-10 !text-sm !px-5 !transition-colors !duration-300 !ease-in-out !outline-none !backdrop-blur-14 button-streak filled-button-streak;
+            &:hover {
+                @apply skew-button-streak;
+            }
+        }
+
+        #hs-eu-confirmation-button {
+            @apply !bg-blue !text-cinder;
+            &:hover {
+                @apply bg-white;
+            }
+        }
+
+        #hs-eu-decline-button {
+            @apply !text-white bg-transparent;
+            &:hover {
+                @apply text-sky;
+            }
+        }
+
+        a {
+            color: var(--color-sky) !important;
+            &:hover {
+                text-decoration: underline;
+            }
+        } 
+    }
+}

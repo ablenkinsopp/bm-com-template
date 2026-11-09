@@ -5,8 +5,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "Global Presence, Hands-On Service"
 }, {
   "id" : "e669be6d-2536-9d5a-2866-106e923fe06a",
@@ -15,9 +15,19 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "Offices"
+}, {
+  "picker" : "file",
+  "id" : "760c04d9-e6ed-2e9a-d664-f435a0df290e",
+  "name" : "animation",
+  "label" : "Map Animation",
+  "required" : false,
+  "locked" : false,
+  "type" : "file",
+  "display_width" : null,
+  "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Animations/bm-offices.lottie"
 }, {
   "id" : "b70d073e-1d0a-4e59-5323-eb885267dd96",
   "name" : "map_image",
@@ -27,8 +37,8 @@
   "responsive" : true,
   "resizable" : true,
   "show_loading" : false,
-  "display_width" : null,
   "type" : "image",
+  "display_width" : null,
   "default" : {
     "size_type" : "auto",
     "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/global-presence.svg",
@@ -52,29 +62,29 @@
     "default" : null
   },
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "Durham (HQ)"
 }, {
   "id" : "8618b406-438d-6c3e-7906-2059cca95ade",
   "name" : "button_text",
-  "label" : "Button Text",
+  "label" : "Link Text",
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
-  "default" : "Contact Us"
+  "display_width" : null,
+  "default" : "all locations"
 }, {
   "id" : "7401b6e4-88d7-345a-5720-d9c80e9b0da0",
   "name" : "button_link",
-  "label" : "Button Link",
+  "label" : "Link",
   "required" : false,
   "locked" : false,
   "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
   "show_advanced_rel_options" : false,
-  "display_width" : null,
   "type" : "link",
+  "display_width" : null,
   "default" : {
     "url" : {
       "content_id" : null,

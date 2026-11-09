@@ -22,16 +22,16 @@
             @apply gradient-border p-px transition-colors duration-500 ease-in-out;
 
             .bm-button__inner {
-                @apply text-water bg-dark-blue button-streak outline-button-streak;
+                @apply text-white bg-cinder button-streak outline-button-streak;
             }
         }
 
         &.bm-button__outer--filled .bm-button__inner {
-            @apply bg-turquoise text-dark-blue button-streak filled-button-streak;
+            @apply bg-blue text-cinder button-streak filled-button-streak;
         }
 
         &.bm-button__outer--ghost .bm-button__inner {
-            @apply text-off-white button-streak filled-button-streak;
+            @apply text-white button-streak filled-button-streak;
         }
 
         .bm-button__inner {
@@ -46,7 +46,7 @@
                 @apply gradient-border-button-hover;
 
                 .bm-button__inner {
-                    @apply border-glass-border-hover text-turquoise skew-button-streak;
+                    @apply border-glass-border-hover skew-button-streak text-blue;
                 }
             }
 
@@ -58,7 +58,7 @@
 
             &.bm-button__outer--ghost {
                 .bm-button__inner {
-                    @apply text-turquoise skew-button-streak;
+                    @apply skew-button-streak;
                 }
             }
         }
@@ -68,7 +68,7 @@
         .bm-button__outer {
             &.bm-button__outer--outline {
                 .bm-button__inner {
-                    @apply bg-dark-blue opacity-80 duration-100
+                    @apply bg-cinder opacity-80 duration-100
                 }
             }
 

@@ -108,11 +108,11 @@
                 class="m-0 w-full md:h-full object-cover aspect-video"
             />
 
-            <div class="flex flex-col p-4 md:p-10 gap-4 justify-center text-blog-text">
+            <div class="flex flex-col p-4 md:p-10 gap-4 justify-center text-cinder">
                 <div class="flex items-center gap-2">
                     {{ blog_tag(featured_post.topic_list[0].name) }}
                     {% if module.show_read_time %}
-                        <span class="text-blog-subdued-text text-sm">{{ minutes_to_read(featured_post, '', ' min read') }}</span>
+                        <span class="text-cinder/70 text-sm">{{ minutes_to_read(featured_post, '', ' min read') }}</span>
                     {% endif %}
                 </div>
                 <h4 class="text-xl md:text-2xl">
@@ -124,7 +124,7 @@
                         {{ featured_post.name | striptags | safe }}
                     </a>
                 </h4>
-                <div class="pb-4 border-b border-b-[#E5E7EB]">
+                <div class="pb-4 border-b border-b-silver">
                     <p class="line-clamp-3 md:text-lg">
                         {% set post_words = featured_post.post_body | replace('&nbsp;', ' ') | striptags | trim | safe | split(' ') %}
                         {% if post_words | length %}
@@ -137,10 +137,10 @@
                     </p>
                 </div>
                 <div class="flex items-center justify-between gap-2">
-                    <p class="text-blog-subdued-text text-sm">{{ featured_post.publish_date|format_date('MMMM d, yyyy') }}</p>
+                    <p class="text-cinder/70 text-sm">{{ featured_post.publish_date|format_date('MMMM d, yyyy') }}</p>
                     <button class="bm-button">
                         <div class="bm-button__outer gradient-border p-px transition-colors duration-500 ease-in-out w-full group-hover:gradient-border-button-hover">
-                            <div class="bm-button__inner bg-white button-streak outline-button-streak group-hover:border-glass-border-hover group-hover:bg-turquoise group-hover:skew-button-streak">
+                            <div class="bm-button__inner bg-white button-streak outline-button-streak group-hover:border-glass-border-hover group-hover:bg-blue group-hover:skew-button-streak">
                                 Read More
                             </div>
                         </div>
@@ -158,19 +158,20 @@
                 data-post-id="{{ content.id }}"
             >
                 <div class="aspect-video">
+                    {% set featured_image = get_asset_url("../../images/blog/bm-default.png") %}
                     {% if content.featured_image %}
                         {% set featured_image = resize_image_url( content.featured_image, 360, 189, 360 ) %}
                     {% endif %}
-                    <img src="{{ featured_image or 'https://resources.freshjuice.dev/images/400/a-rainbow-of-refreshments-a-table-filled-with-gla.jpg' }}"
+                    <img src="{{ featured_image }}"
                         alt="{{ content.name | striptags | safe }}"
                         width="360" height="189"
                         class="m-0 w-full object-cover aspect-video"/>
                 </div>
-                <div class="flex flex-1 flex-col p-4 gap-4 justify-center text-blog-text">
+                <div class="flex flex-1 flex-col p-4 gap-4 justify-center text-cinder">
                     <div class="flex items-center gap-2">
                         {{ blog_tag(content.topic_list[0].name) }}
                         {% if module.show_read_time %}
-                            <span class="text-blog-subdued-text text-sm">{{ minutes_to_read(content, '', ' min read') }}</span>
+                            <span class="text-cinder/70 text-sm">{{ minutes_to_read(content, '', ' min read') }}</span>
                         {% endif %}
                     </div>
                     <h4 class="text-xl md:text-2xl">
@@ -182,7 +183,7 @@
                             {{ content.name | striptags | safe }}
                         </a>
                     </h4>
-                    <div class="pb-4 border-b border-b-[#E5E7EB]">
+                    <div class="pb-4 border-b border-b-silver">
                         <p class="line-clamp-3 md:text-lg">
                             {% set post_words = content.post_body | replace('&nbsp;', ' ') | striptags | trim | safe | split(' ') %}
                             {% if post_words | length %}
@@ -196,10 +197,10 @@
                     </div>
                     <div class="flex flex-1 flex-col justify-end">
                         <div class="flex items-center justify-between gap-2">
-                            <p class="text-blog-subdued-text text-sm">{{ content.publish_date|format_date('MMMM d, yyyy') }}</p>
-                            <button class="transition-all ease-in-out duration-250 py-1 text-text-blue">
+                            <p class="text-cinder/70 text-sm">{{ content.publish_date|format_date('MMMM d, yyyy') }}</p>
+                            <button class="transition-all ease-in-out duration-250 py-1 text-navy-blue">
                                 Read More
-                                <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-text-blue"></span>
+                                <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-navy-blue"></span>
                             </button>
                         </div>
                     </div>

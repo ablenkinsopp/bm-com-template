@@ -1,6 +1,6 @@
 <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-center">
     <div class="flex flex-col gap-2 md:gap-4 flex-1">
-        <h3 class="text-water font-light text-4xl text-center">{{ module.title }}</h3>
+        <h3 class="text-white font-bold text-3xl lg:text-4xl text-center lg:text-left">{{ module.title }}</h3>
 
         {% for card in module.info_cards %}
             {% set href = card.link == '/'
@@ -13,12 +13,13 @@
             %}
             <a 
                 href="{{ card.link.url.type == "CALL_TO_ACTION" ? href : href|escape_url }}"
-                class="group rounded-lg flex gap-2 lg:gap-4 py-5 px-4 bg-darkest-blue"
+                class="group rounded-lg flex gap-2 lg:gap-4 p-4 bg-cinder border border-cosmos transition-all duration-250 hover:bg-cosmos"
             >
-                <div class="w-8 text-turquoise">
+                <div class="w-8 text-blue">
                     <img 
                         class="info-card-icon-mask h-8"
                         src="{{ card.icon }}"
+                        alt="{{ card.title }}"
                         style="
                             -webkit-mask-image: url('{{ card.icon|escape_url }}');
                             mask-image: url('{{ card.icon|escape_url }}');
@@ -26,13 +27,13 @@
                     />
                 </div>
 
-                <div class="flex flex-col gap-2 lg:gap-4 flex-1">
-                    <h4 class="font-bold text-off-white text-lg md:text-xl">{{ card.title }}</h4>
-                    <p class="md:text-lg text-off-white/80">{{ card.text }}</p>
-                    <p class="text-light-blue md:text-lg group-hover:text-turquoise transition-all duration-250 self-start"
+                <div class="flex flex-col gap-2 flex-1">
+                    <h4 class="font-bold text-white text-lg md:text-xl">{{ card.title }}</h4>
+                    <p class="text-silver">{{ card.text }}</p>
+                    <p class="text-blue transition-all duration-250 self-start uppercase"
                     >
                         {{ card.link_text }}
-                        <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-turquoise"></span>
+                        <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-blue"></span>
                     </p>
                 </div>
             </a>

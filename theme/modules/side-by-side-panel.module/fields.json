@@ -9,8 +9,8 @@
   "multiple" : false,
   "reordering_enabled" : true,
   "preset" : null,
-  "display_width" : null,
   "type" : "choice",
+  "display_width" : null,
   "default" : "right"
 }, {
   "id" : "fd8e17ea-7495-742a-e995-a595f6241d4d",
@@ -19,8 +19,8 @@
   "required" : false,
   "locked" : false,
   "display" : "toggle",
-  "display_width" : null,
   "type" : "boolean",
+  "display_width" : null,
   "default" : false
 }, {
   "id" : "8270363c-c22c-f993-f81c-68bdae235539",
@@ -31,8 +31,8 @@
   "resizable" : true,
   "show_preview" : true,
   "show_advanced_options" : false,
-  "display_width" : null,
-  "type" : "videoplayer"
+  "type" : "videoplayer",
+  "display_width" : null
 }, {
   "picker" : "file",
   "id" : "f4dfbe9a-c7a2-3e2b-d714-b5943388935a",
@@ -40,8 +40,8 @@
   "label" : "Animation",
   "required" : false,
   "locked" : false,
-  "display_width" : null,
   "type" : "file",
+  "display_width" : null,
   "default" : ""
 }, {
   "id" : "084cba1b-7111-1da8-cfe5-51ab5d0dd022",
@@ -52,8 +52,8 @@
   "responsive" : false,
   "resizable" : true,
   "show_loading" : false,
-  "display_width" : null,
   "type" : "image",
+  "display_width" : null,
   "default" : {
     "size_type" : "auto",
     "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png",
@@ -65,14 +65,24 @@
     "max_height" : 772
   }
 }, {
+  "id" : "80242e1d-3eb4-256a-f351-943474dde67a",
+  "name" : "image_glow",
+  "label" : "Image Glow",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
   "picker" : "image",
   "id" : "2e3445f4-6b6c-2239-c615-bc6590d407ed",
   "name" : "app_logo",
   "label" : "App Logo",
   "required" : false,
   "locked" : false,
-  "display_width" : null,
   "type" : "file",
+  "display_width" : null,
   "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/creator-wordmark-blue.svg"
 }, {
   "id" : "c6d0adca-7c18-5485-a8d1-3a07990c9a5b",
@@ -81,8 +91,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "Title Goes Here"
 }, {
   "id" : "fea0f205-fee3-4c0c-57dd-079bbe1e6390",
@@ -97,8 +107,8 @@
     "default" : null
   },
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "Here is a basic paragraph of text"
 }, {
   "id" : "76c7dcf2-31c6-a0aa-3539-e8e8533a50b2",
@@ -119,8 +129,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Demonstrate process with transparency, auditability, and built-in entitlements."
   }, {
     "id" : "6498ed09-841a-21f6-f337-2e240823266a",
@@ -129,15 +139,15 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Simplify Compliance"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "display_width" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : [ {
     "text_field" : "Demonstrate process with transparency, auditability, and built-in entitlements.",
     "heading" : "Simplify Compliance"
@@ -164,8 +174,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
-    "type" : "text"
+    "type" : "text",
+    "display_width" : null
   }, {
     "id" : "ticks.bold_text",
     "name" : "bold_text",
@@ -173,14 +183,14 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
-    "type" : "text"
+    "type" : "text",
+    "display_width" : null
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "display_width" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : [ ]
 }, {
   "id" : "e975db12-338a-163d-a71b-decad819e83f",
@@ -201,8 +211,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Button Text"
   }, {
     "id" : "a5ed63d2-7d79-1adf-24f5-c01f948cfee8",
@@ -211,12 +221,12 @@
     "required" : false,
     "locked" : false,
     "display" : "select",
-    "choices" : [ [ "filled", "Filled" ], [ "outline", "Outline" ], [ "ghost", "Ghost" ] ],
+    "choices" : [ [ "filled", "Filled" ], [ "outline", "Outline" ], [ "ghost", "Ghost" ], [ "text", "Text" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "display_width" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "filled"
   }, {
     "id" : "3f98848c-f07e-8c7f-1dec-f44597d0f1db",
@@ -226,8 +236,8 @@
     "locked" : false,
     "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
     "show_advanced_rel_options" : false,
-    "display_width" : null,
     "type" : "link",
+    "display_width" : null,
     "default" : {
       "url" : {
         "content_id" : 206078525068,
@@ -241,7 +251,7 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "display_width" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : [ ]
 } ]

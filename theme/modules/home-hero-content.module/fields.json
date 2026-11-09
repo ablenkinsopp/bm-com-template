@@ -1,13 +1,95 @@
 [ {
+  "id" : "1ca71c0a-cf6f-995e-8c7e-6137aab48725",
+  "name" : "show_announcement",
+  "label" : "Show Announcement",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "8e32cdf4-fe34-b5f6-186f-1bf854d73f55",
+  "name" : "announcement_details",
+  "label" : "Announcement Details",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_announcement",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "8f8e3de7-ad8f-223f-ea81-85fcde0ba63b",
+    "name" : "announcement_text",
+    "label" : "Announcement Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Join us on August 19 for our Research in the Age of AI webinar."
+  }, {
+    "id" : "ecc7273e-3a96-4fe6-a510-e75e03e819ea",
+    "name" : "announcement_link_text",
+    "label" : "Announcement Link Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Reserve your spot now"
+  }, {
+    "id" : "8d43cdf8-7160-daf5-6cb6-c8502733c592",
+    "name" : "announcement_link",
+    "label" : "Announcement Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://events.zoom.us/ev/AoDKdrgWPscJ03joQKMlJ8JdYki7epZdpn9jqaAjwZy4epJF27tB~Ao8jacbWKoTXt6ZhkuOzXsJ11miLRM2acCR2x3j_4_qqQuQZ4MB4-blZxg",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "announcement_text" : "Join us on August 19 for our Research in the Age of AI webinar.",
+    "announcement_link_text" : "Reserve your spot now",
+    "announcement_link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://events.zoom.us/ev/AoDKdrgWPscJ03joQKMlJ8JdYki7epZdpn9jqaAjwZy4epJF27tB~Ao8jacbWKoTXt6ZhkuOzXsJ11miLRM2acCR2x3j_4_qqQuQZ4MB4-blZxg",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }
+}, {
   "picker" : "video",
   "id" : "69a293b4-d42a-63eb-3ee2-b97681ffe906",
   "name" : "video_file",
   "label" : "Background Video",
   "required" : false,
-  "locked" : true,
-  "display_width" : null,
+  "locked" : false,
   "type" : "file",
-  "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/homepage-hero-video-loop.mp4"
+  "display_width" : null,
+  "default" : "https://51829591.fs1.hubspotusercontent-na1.net/hubfs/51829591/Video/compressed_new_bg.mp4"
 }, {
   "id" : "5ad7bb8c-ec2c-4ce8-b8b5-b2db05aaf10b",
   "name" : "headline_top",
@@ -15,8 +97,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "Powering the Full Lifecycle"
 }, {
   "id" : "971a7085-44a4-0115-8f12-af5fa1d7977d",
@@ -25,8 +107,8 @@
   "required" : false,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "of Investment Research"
 }, {
   "id" : "d38c43cb-7b01-e8f5-fef0-02e241d6a23b",
@@ -41,25 +123,9 @@
     "default" : null
   },
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
-  "default" : [ "BlueMatrix is the platform & core infrastructure that global firms rely on to create, control, deliver and ingest research at scale" ]
-}, {
-  "id" : "b1734842-f980-5ea3-d826-805fbea5a39a",
-  "name" : "tick_list",
-  "label" : "Tick List",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : null,
-    "sorting_label_field" : null,
-    "default" : null
-  },
-  "allow_new_line" : false,
   "display_width" : null,
-  "type" : "text",
-  "default" : [ "Authoring", "Compliance", "Entitlements", "Distribution", "AI Governance" ]
+  "default" : "BlueMatrix is the platform & core infrastructure that global firms rely on to create, control, deliver and ingest research at scale"
 }, {
   "id" : "e398eff1-7f1a-17c0-7add-ecf147dda13e",
   "name" : "buttons",
@@ -79,8 +145,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Request Demo"
   }, {
     "id" : "15be560a-489b-680b-3798-a69506646154",
@@ -90,8 +156,8 @@
     "locked" : false,
     "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
     "show_advanced_rel_options" : false,
-    "display_width" : null,
     "type" : "link",
+    "display_width" : null,
     "default" : {
       "url" : {
         "content_id" : 206078525068,
@@ -112,20 +178,30 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "display_width" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "filled"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "display_width" : null,
   "type" : "group",
-  "default" : [ {
-    "button_text" : "Request A Demo",
-    "button_style" : "filled"
-  }, {
-    "button_text" : "About Us",
-    "button_style" : "outline"
-  } ]
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "b1734842-f980-5ea3-d826-805fbea5a39a",
+  "name" : "tick_list",
+  "label" : "Tick List",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Authoring"
 } ]

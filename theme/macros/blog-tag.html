@@ -7,17 +7,14 @@
         {% set color_classes = "bg-tag-green-bg text-tag-green-text" %}
     {% elif text == "Company News" %}
         {% set color_classes = "bg-tag-blue-bg text-tag-blue-text" %}
-    {% elif text == "Industry News" %}
+    {% elif text == "AI" %}
         {% set color_classes = "bg-tag-purple-bg text-tag-purple-text" %}
     {% else %}
         {# Curated fallback palette #}
         {% set palette = [
-            {"bg": "bg-tag-green-bg",  "text": "text-tag-green-text"},
-            {"bg": "bg-tag-blue-bg",   "text": "text-tag-blue-text"},
-            {"bg": "bg-tag-purple-bg", "text": "text-tag-purple-text"},
-            {"bg": "bg-water",         "text": "text-text-blue"},
-            {"bg": "bg-alt-bg",        "text": "text-subdued-blue"},
-            {"bg": "bg-tag-green-bg",  "text": "text-tag-green-text"}
+            {"bg": "bg-sky",         "text": "text-cinder"},
+            {"bg": "bg-blue",        "text": "text-cinder"},
+            {"bg": "bg-navy-blue",  "text": "text-white"}
         ] %}
 
         {# Deterministic index from the tag text #}

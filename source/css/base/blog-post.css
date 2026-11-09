@@ -4,7 +4,7 @@
     #hs_cos_wrapper_post_body {
         p:first-child {
             a {
-                color: var(--color-light-blue) !important;
+                color: var(--color-navy-blue) !important;
                 &:hover {
                     text-decoration: underline;
                 }
@@ -16,7 +16,7 @@
         margin-bottom: 1rem;
         
         a {
-            color: var(--color-light-blue) !important;
+            color: var(--color-navy-blue) !important;
             &:hover {
                 text-decoration: underline;
             }

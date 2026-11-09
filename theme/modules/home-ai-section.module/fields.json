@@ -1,4 +1,14 @@
 [ {
+  "id" : "6c691f9d-7c9c-fa11-c9a2-b82154d2bcb5",
+  "name" : "show_blueiq",
+  "label" : "Show BlueIQ",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
   "id" : "d7f1ca62-8008-d4da-558e-3681e43b1e32",
   "name" : "blueiq_cta",
   "label" : "BlueIQ Cta",
@@ -13,8 +23,8 @@
     "responsive" : true,
     "resizable" : true,
     "show_loading" : false,
-    "display_width" : null,
     "type" : "image",
+    "display_width" : null,
     "default" : {
       "size_type" : "auto",
       "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Placeholders/blueIQ-wip.png",
@@ -34,8 +44,8 @@
     "responsive" : true,
     "resizable" : true,
     "show_loading" : false,
-    "display_width" : null,
     "type" : "image",
+    "display_width" : null,
     "default" : {
       "size_type" : "auto",
       "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Hero%20Images/ai-cta-2000.png",
@@ -53,8 +63,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "With AI-Powered Platform Tooling Providing Long-Standing Benefits Across Both the Sell-Side and Buy-Side"
   }, {
     "id" : "53e66ee4-169e-afbc-3331-ef867dd1c7d0",
@@ -63,8 +73,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Request a demo"
   }, {
     "id" : "c6fdbf71-2f0e-c9c4-7fc4-4ed276b07c35",
@@ -74,8 +84,8 @@
     "locked" : false,
     "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
     "show_advanced_rel_options" : false,
-    "display_width" : null,
     "type" : "link",
+    "display_width" : null,
     "default" : {
       "url" : {
         "content_id" : 206078525068,
@@ -89,8 +99,8 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "display_width" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : {
     "logo" : {
       "size_type" : "auto",
@@ -137,8 +147,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "The Financial Research Ecosystem is Experiencing a Structural Transformation"
   }, {
     "id" : "2578e3bc-4635-adee-37b1-eacd9266826d",
@@ -146,8 +156,8 @@
     "label" : "Subtitle",
     "required" : true,
     "locked" : false,
-    "display_width" : null,
     "type" : "richtext",
+    "display_width" : null,
     "default" : "<span style=\"font-size: 24px;\">AI tools dramatically increase <strong>research utility</strong>, but also introduce a <strong>fundamental challenge</strong></span>"
   }, {
     "id" : "33da2427-77fa-08c2-568d-fb00650c6f51",
@@ -156,8 +166,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "AI Increasingly Prevalent in Investment Workflows"
   }, {
     "id" : "7b07fa03-11a1-96b3-0d0c-215173a50116",
@@ -166,8 +176,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Vast volumes of research can be ingested, synthesized, and summarized"
   }, {
     "id" : "b1c6a0da-ef90-f2a2-07e9-d49f5ae82b0f",
@@ -176,8 +186,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Attribution Fades as AI Obscures Originating Content"
   }, {
     "id" : "fa863dc1-768f-6cf9-ad12-a7a82e16330f",
@@ -186,15 +196,15 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Intellectual property control weakens as insights are synthesized from research"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "display_width" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : {
     "title" : "The Financial Research Ecosystem is Experiencing a Structural Transformation",
     "subtitle" : "<span style=\"font-size: 24px;\">AI tools dramatically increase <strong>research utility</strong>, but also introduce a <strong>fundamental challenge</strong></span>",
@@ -216,8 +226,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "At the Center of the AI Ecosystem"
   }, {
     "id" : "aa5dbd5a-8c76-8c37-ccb6-ea36b5657a0f",
@@ -225,9 +235,15 @@
     "label" : "Text",
     "required" : true,
     "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "BlueMatrix is committed to serve as the controlled and secure infrastructure layer through which institutional research is consumed by AI, with full visibility across the research lifecycle."
   }, {
     "id" : "069dca99-8ed2-7577-352b-fc0c83c672ec",
@@ -238,8 +254,8 @@
     "responsive" : true,
     "resizable" : true,
     "show_loading" : false,
-    "display_width" : null,
     "type" : "image",
+    "display_width" : null,
     "default" : {
       "size_type" : "auto",
       "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/ai-web-desktop.svg",
@@ -259,8 +275,8 @@
     "responsive" : true,
     "resizable" : true,
     "show_loading" : false,
-    "display_width" : null,
     "type" : "image",
+    "display_width" : null,
     "default" : {
       "size_type" : "auto",
       "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/ai-web-mobile.svg",
@@ -278,8 +294,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Learn More about bluematrix ai"
   }, {
     "id" : "7900878e-4ca6-62d9-fa58-4042966b9249",
@@ -289,8 +305,8 @@
     "locked" : false,
     "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
     "show_advanced_rel_options" : false,
-    "display_width" : null,
     "type" : "link",
+    "display_width" : null,
     "default" : {
       "url" : {
         "content_id" : 208168425629,
@@ -304,8 +320,8 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "display_width" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : {
     "headline" : "At the Center of the AI Ecosystem",
     "text" : "BlueMatrix is committed to serve as the controlled and secure infrastructure layer through which institutional research is consumed by AI, with full visibility across the research lifecycle.",

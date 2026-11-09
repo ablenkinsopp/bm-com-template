@@ -581,7 +581,7 @@ tfoot td {
 {###########################################################################}
 
 .footer {
-  background-color: {{ footer_bg_color }};
+  background-color: --var(--color-black);
 }
 
 /* Footer content */

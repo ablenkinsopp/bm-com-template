@@ -1,7 +1,7 @@
 {
-  "name": "freshjuice-dev-hubspot-theme",
-  "version": "3.0.0",
-  "description": "FreshJuice DEV is the open-source Community Edition of the FreshJuice theme — built for developers using HubSpot CMS, Tailwind CSS, Alpine.js, and more. Clean, fast, and flexible. The PRO version with additional modules and templates is available separately.",
+  "name": "bluematrix-theme",
+  "version": "1.0.0",
+  "description": "A tweaked clone of the original BlueMatrix HubSpot theme, updated to match the new brand guidelines.",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf './_temp' './_dist' && mkdir './_temp' './_dist'",

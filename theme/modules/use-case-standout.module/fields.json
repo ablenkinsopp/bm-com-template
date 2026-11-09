@@ -1,67 +1,82 @@
-[
- {
-  "type": "text",
-  "id": "6680d666-628f-2ec8-bdad-b17a9dad916a",
-  "validation_regex": "",
-  "label": "Title",
-  "name": "title",
-  "default": "From first draft to approval to final distribution, BlueMatrix unifies every step of research creation into a single platform",
-  "required": true
- },
- {
-  "type": "image",
-  "id": "dcc41d27-d845-78e7-05d3-a568db63ce2e",
-  "default": {
-   "size_type": "auto",
-   "src": "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Page%20Images/creation-image.png",
-   "alt": "creation-image",
-   "loading": "lazy",
-   "width": 1416,
-   "height": 790,
-   "max_width": 1416,
-   "max_height": 790
-  },
-  "resizable": true,
-  "responsive": true,
-  "show_loading": false,
-  "label": "Image",
-  "name": "image_field",
-  "required": true
- },
- {
-  "type": "text",
-  "id": "cb94a26f-9430-e67d-3f25-7c5e4e525ee6",
-  "validation_regex": "",
-  "label": "Button Text",
-  "name": "button_text",
-  "default": "Request A Demo",
-  "required": true
- },
- {
-  "type": "link",
-  "id": "f47dce40-77dd-580a-0efb-a659faf8cc61",
-  "default": {
-   "url": {
-    "content_id": 206078525068,
-    "href": null,
-    "type": "CONTENT"
-   },
-   "open_in_new_tab": false,
-   "no_follow": false
-  },
-  "supported_types": [
-   "EXTERNAL",
-   "FILE",
-   "CONTENT",
-   "BLOG",
-   "CALL_TO_ACTION",
-   "PAYMENT",
-   "EMAIL_ADDRESS",
-   "PHONE_NUMBER",
-   "WHATSAPP_NUMBER"
-  ],
-  "label": "Button Link",
-  "name": "button_link",
-  "required": true
- }
-]
+[ {
+  "id" : "6680d666-628f-2ec8-bdad-b17a9dad916a",
+  "name" : "title",
+  "label" : "Title",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "From first draft to approval to final distribution, BlueMatrix unifies every step of research creation into a single platform"
+}, {
+  "id" : "dcc41d27-d845-78e7-05d3-a568db63ce2e",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : true,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Page%20Images/creation-image.png",
+    "alt" : "creation-image",
+    "loading" : "lazy",
+    "width" : 1416,
+    "height" : 790,
+    "max_width" : 1416,
+    "max_height" : 790
+  }
+}, {
+  "id" : "a37cd40e-1a47-af22-a36b-e3bfe41e3f69",
+  "name" : "image_mobile",
+  "label" : "Image (Mobile)",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Page%20Images/use%20cases/Creation%20Main%20Mobile.png",
+    "alt" : "Creation Main Mobile",
+    "loading" : "lazy",
+    "width" : 685,
+    "height" : 460,
+    "max_width" : 685,
+    "max_height" : 460
+  }
+}, {
+  "id" : "cb94a26f-9430-e67d-3f25-7c5e4e525ee6",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Request A Demo"
+}, {
+  "id" : "f47dce40-77dd-580a-0efb-a659faf8cc61",
+  "name" : "button_link",
+  "label" : "Button Link",
+  "required" : true,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : 206078525068,
+      "href" : null,
+      "type" : "CONTENT"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+} ]

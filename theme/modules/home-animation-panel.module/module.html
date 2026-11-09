@@ -3,14 +3,45 @@
 {% import '../../macros/info-cards.html' as ic %}
 
 <div class="w-full items-center align-center flex flex-col gap-6 md:gap-20">
-    {{ section_title(module.title, "center", null, module.subtitle)}}
+    {{ section_title(module.title, "center", null, module.subtitle, null, null, false)}}
     <div class="w-full flex justify-center">
-        <dotlottie-wc
-            src="{{ module.animation }}"
-            autoplay loop mode="normal"
-            class="w-full max-w-[1200px]"
-            style="aspect-ratio: 1200 / 211"
-        ></dotlottie-wc>
+        {% if module.animation_mobile %}
+            <dotlottie-wc
+                id="process-anim"
+                autoplay loop mode="normal"
+                class="w-full"
+            ></dotlottie-wc>
+            <script>
+            (function() {
+                var el = document.getElementById('process-anim');
+                var mobileSrc = '{{ module.animation_mobile }}';
+                var desktopSrc = '{{ module.animation }}';
+                var mq = window.matchMedia('(min-width: 768px)');
+
+                function update(e) {
+                    if (e.matches) {
+                        el.setAttribute('src', desktopSrc);
+                        el.style.aspectRatio = '1200 / 211';
+                        el.style.maxWidth = '1200px';
+                    } else {
+                        el.setAttribute('src', mobileSrc);
+                        el.style.aspectRatio = '600 / 451';
+                        el.style.maxWidth = '';
+                    }
+                }
+
+                mq.addEventListener('change', update);
+                update(mq);
+            })();
+            </script>
+        {% else %}
+            <dotlottie-wc
+                src="{{ module.animation }}"
+                autoplay loop mode="normal"
+                class="w-full max-w-[1200px]"
+                style="aspect-ratio: 1200 / 211"
+            ></dotlottie-wc>
+        {% endif %}
     </div>
     <div class="w-full">
         {{ ic.info_cards(module.info_cards) }}

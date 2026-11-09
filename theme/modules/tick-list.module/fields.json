@@ -1,0 +1,54 @@
+[ {
+  "id" : "cbf9545d-18f7-68cd-ef60-44688ed35d01",
+  "name" : "size",
+  "label" : "Size",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default" ], [ "small", "Small" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+}, {
+  "id" : "d81d6d68-62b6-a0ff-8056-53a9ef4ab305",
+  "name" : "ticks",
+  "label" : "Ticks",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "3d66cd0d-0ec1-786f-1720-8a4e64a657be",
+    "name" : "bold_text",
+    "label" : "Bold Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "I am bold text"
+  }, {
+    "id" : "faa7f6cc-0347-7cfd-d765-4fbd6c3b010b",
+    "name" : "normal_text",
+    "label" : "Normal Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "I am normal text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+} ]

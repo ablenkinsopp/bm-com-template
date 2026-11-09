@@ -8,6 +8,7 @@
 <style>
 	.cta-bg {
 		background-image: url('{{ cta_bg_360 }}');
+        background-position: center center;
 	}
 
     @media (min-width: 640px) {
@@ -29,8 +30,12 @@
     }
 </style>
 
-<div class="hero cta-bg w-full p-4 px-10">
-    <div class="relative z-1 mx-auto max-w-[1600px]">
+<div class="hero cta-bg w-full">
+    <!-- Overlay -->
+    <div class="absolute top-0 h-full w-full bg-[linear-gradient(135deg,var(--black,#0C1119)_40.92%,rgba(0,0,0,0)_78.61%)]">
+    </div>
+
+    <div class="relative z-1 mx-auto max-w-[1600px] p-4 px-10">
         <div class="py-24 flex flex-col gap-6 justify-center items-center">
             <h2 class="!text-white !font-light !text-3xl sm:!text-4xl text-center">{{ module.title }}</h2>
             {% if module.text_field %}

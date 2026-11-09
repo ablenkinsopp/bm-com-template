@@ -5,8 +5,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "Intelligence That"
 }, {
   "id" : "db7de352-2cfa-cfe2-8389-aebdece6dbcd",
@@ -15,9 +15,64 @@
   "required" : false,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "Moves Markets"
+}, {
+  "id" : "d185ec7d-65e6-2501-9b9a-a171c3c93742",
+  "name" : "subtext",
+  "label" : "Subtext",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+}, {
+  "id" : "b4313e3b-8c1a-d50d-23ff-9ccdd8807fa2",
+  "name" : "ticks",
+  "label" : "Ticks",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "f8c39747-01c4-757c-b118-d4f28e2bf2a8",
+    "name" : "normal_text",
+    "label" : "Normal Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "I am a tick list"
+  }, {
+    "id" : "8116ba9a-be2b-7743-89a7-61d2b23019e2",
+    "name" : "bold_text",
+    "label" : "Bold Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "I am a tick list"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
 }, {
   "id" : "6af3c66f-814c-c10b-b1e3-ad8650268137",
   "name" : "logos_title",
@@ -25,8 +80,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "Trusted by industry leaders"
 }, {
   "id" : "6a1d1aa6-7ab7-fb01-13d4-bd97c52b161e",
@@ -48,8 +103,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Jeffries"
   }, {
     "picker" : "image",
@@ -58,15 +113,15 @@
     "label" : "Company Logo",
     "required" : true,
     "locked" : false,
-    "display_width" : null,
     "type" : "file",
+    "display_width" : null,
     "default" : "https://50789941.fs1.hubspotusercontent-na1.net/hubfs/50789941/client%20logos/logo%20bar/raffeisen.png"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "display_width" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : [ {
     "company_name" : "Jeffries",
     "company_logo" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Client%20Logos/jefferies.png"

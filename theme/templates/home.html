@@ -26,12 +26,6 @@
     {# Stats Block #}
     
     {% dnd_section
-        margin={
-            'top': 0,
-        },
-        padding={
-            'top': 0,
-        },
         vertical_alignment="MIDDLE"
     %}
         {% dnd_column %}
@@ -44,7 +38,7 @@
     {# Homepage animation #}
 
     {% dnd_section 
-        background_color={{ context.background_color or "#000F28" }}
+        background_color={{ context.background_color or "none" }}
     %}
         {% dnd_column %}
             {% dnd_row %}
@@ -57,7 +51,7 @@
     {% end_dnd_section %}
 
     {% dnd_section 
-        background_color={{ context.background_color or "#031D3C" }}
+        background_color={{ context.background_color or "none" }}
     %}
         {% dnd_column %}
             {% dnd_row %}
@@ -70,7 +64,7 @@
     {% end_dnd_section %}
 
     {% dnd_section
-        background_color={{ context.background_color or "#031D3C" }},
+        background_color={{ context.background_color or "none" }},
         full_width="true",
         padding={
             'top': 0,
@@ -109,7 +103,7 @@
     {# Trusted By #}
 
     {% dnd_section 
-        background_color={{ context.background_color or "#031D3C" }}
+        background_color={{ context.background_color or "none" }}
     %}
         {% dnd_column %}
             {% dnd_row %}
@@ -122,7 +116,7 @@
     {# Testimonials #}
     
     {% dnd_section
-        background_color={{ context.background_color or "#000F28" }}
+        background_color={{ context.background_color or "none" }}
     %}
         {% dnd_module path='../modules/testimonials-side-by-side.module' %}{% end_dnd_module %}
     {% end_dnd_section %}
@@ -130,7 +124,7 @@
     {# Location #}
     
     {% dnd_section
-        background_color={{ context.background_color or "#031D3C" }}
+        background_color={{ context.background_color or "none" }}
     %}
         {% dnd_module path='../modules/home-location-panel.module' %}{% end_dnd_module %}
     {% end_dnd_section %}
@@ -142,7 +136,7 @@
     {# News Cards #}
     
     {% dnd_section 
-        background_color={{ context.background_color or "#000F28" }}
+        background_color={{ context.background_color or "none" }}
     %}
         {% dnd_module path='../modules/news-card.module' %}{% end_dnd_module %}
     {% end_dnd_section %}

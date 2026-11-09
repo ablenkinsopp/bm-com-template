@@ -5,8 +5,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "Trusted By"
 }, {
   "id" : "888858aa-ecb0-e69d-caa8-e290c3a74dee",
@@ -27,8 +27,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Research"
   }, {
     "picker" : "image",
@@ -37,8 +37,8 @@
     "label" : "Icon",
     "required" : true,
     "locked" : false,
-    "display_width" : null,
     "type" : "file",
+    "display_width" : null,
     "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/note-pencil-fill.svg"
   }, {
     "id" : "d8115c6a-ced6-d02d-03ab-6d24fb937b37",
@@ -47,8 +47,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Phasellus ultricies nisi magna, nec ullamcorper dolor tempus et. Nullam ut"
   }, {
     "id" : "cc20443d-6bdf-fd14-dbcd-be99addd1078",
@@ -58,8 +58,8 @@
     "locked" : false,
     "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
     "show_advanced_rel_options" : false,
-    "display_width" : null,
     "type" : "link",
+    "display_width" : null,
     "default" : {
       "url" : {
         "content_id" : 210824060314,
@@ -76,15 +76,15 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Explore Research"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "display_width" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : [ ]
 }, {
   "id" : "388cafc4-9db1-0218-05be-e385f092abe6",
@@ -95,8 +95,8 @@
   "responsive" : true,
   "resizable" : true,
   "show_loading" : false,
-  "display_width" : null,
   "type" : "image",
+  "display_width" : null,
   "default" : {
     "size_type" : "auto_custom_max",
     "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Product_Mock_7_740w.png",

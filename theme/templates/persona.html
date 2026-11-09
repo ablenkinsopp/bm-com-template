@@ -43,7 +43,7 @@
     {# Persona Side By Side #}
     
     {% dnd_section
-        background_color={{ context.background_color or "#F2FFFD"}}
+        background_color={{ context.background_color or "#FCFCFC"}}
     %}
         {% dnd_module 
             path='../modules/problem-statement-side-by-side.module'
@@ -54,7 +54,7 @@
     {# Standard Info Cards #}
 
     {% dnd_section 
-        background_color={{ context.background_color or "#000F28" }}
+        background_color={{ context.background_color or "none" }}
     %}
         {% dnd_module 
             path='../modules/info-cards.module',
@@ -87,7 +87,6 @@
     {% include_dnd_partial 
         path="../sections/row-content-img-left.html",
         context={
-            "background_color": "#031D3C",
             "title": "Create Once. Scale Everywhere",
             "basic_text": [
                 "Research teams shouldn't have to rebuild the same insight for every update, region, or audience. Creator replaces manual copy-and-paste with a structured authoring model that allows teams to create content once and reuse it everywhere.",
@@ -107,7 +106,6 @@
     {% include_dnd_partial 
         path="../sections/row-content-img-right.html",
         context={
-            "background_color": "#031D3C",
             "title": "One Workflow for the Entire Research Lifecycle",
             "basic_text": [
                 "Creator brings drafting, collaboration, review, compliance, and publishing into a single, connected workflow. Instead of managing handoffs through email and disconnected tools, every step of research production happens in one place.",
@@ -126,7 +124,6 @@
     {% include_dnd_partial 
         path="../sections/row-content-img-left.html",
         context={
-            "background_color": "#031D3C",
             "title": "Distribute Insight With Precision",
             "basic_text": [
                 "Research only delivers value when it reaches the right audience in the right form. Creator ensures insight is distributed consistently across teams, clients, and channels, without manual coordination or rework.",
@@ -149,7 +146,7 @@
     {# News Cards #}
     
     {% dnd_section 
-        background_color={{ context.background_color or "#000F28" }},
+        background_color={{ context.background_color or "none" }},
         fullWidth: "true" 
     %}
         {% dnd_module path='../modules/news-card.module' %}{% end_dnd_module %}

@@ -40,7 +40,7 @@
     {# Use Case Standout #}
     
     {% dnd_section 
-        background_color={{ context.background_color or "#000F28" }}
+        background_color={{ context.background_color or "none" }}
     %}
         {% dnd_module 
             path='../modules/use-case-standout.module'
@@ -69,7 +69,6 @@
     {% include_dnd_partial 
         path="../sections/row-content-img-left.html",
         context={
-            "background_color": "#031D3C",
             "title": "Content Creation, Made Easy",
             "basic_text": [
                 "Create and publish research content in a unified workflow, replacing fragmented tools and handoffs with seamless collaboration and approval tools."
@@ -92,7 +91,6 @@
     {% include_dnd_partial 
         path="../sections/row-content-img-right.html",
         context={
-            "background_color": "#031D3C",
             "title": "Secure, Compliant, Scalable",
             "basic_text": [
                 "Embed compliance and approval workflows directly into the authoring process, reducing risk and protecting your intellectual property."
@@ -115,7 +113,6 @@
     {% include_dnd_partial 
         path="../sections/row-content-img-left.html",
         context={
-            "background_color": "#031D3C",
             "title": "Workflow Acceleration with AI",
             "basic_text": [
                 "Empower analysts and research teams with AI embedded directly into their authoring - speeding up content creation without sacrificing control."
@@ -132,7 +129,7 @@
     {# Testimonials #}
     
     {% dnd_section
-        background_color={{ context.background_color or "#000F28" }},
+        background_color={{ context.background_color or "none" }},
         fullWidth: "true"
     %}
         {% dnd_module 
@@ -171,7 +168,7 @@
     {# News Cards #}
     
     {% dnd_section 
-        background_color={{ context.background_color or "#000F28" }},
+        background_color={{ context.background_color or "none" }},
         fullWidth: "true" 
     %}
         {% dnd_module path='../modules/news-card.module' %}{% end_dnd_module %}

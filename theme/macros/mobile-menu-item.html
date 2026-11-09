@@ -11,10 +11,11 @@
     {% set x_ref_id = slugify(child.label) ~ '_' ~ random_int() ~ loop.index %}
     <div x-data="{open:false}" @click.away="open=false" :aria-expanded="open">
         <div class="group relative flex items-center justify-between gap-2 p-4 text-off-white text-sm leading-6 border-b-white/20 border-b"
-            :class="open?'bg-white/10 rounded-bl-none':'hover:bg-white/20'"
+            :class="open?'bg-cosmos rounded-bl-none':'hover:bg-white/20'"
         >
             <a href="{{ child.url or "#" }}" {% if not child.url or child.children %}@click="$event.preventDefault(); open=!open;"{% endif %}
-                class="flex justify-between w-full text-sm !text-off-white uppercase"
+                class="flex justify-between w-full text-sm text-silver hover:text-white uppercase"
+                {% if child.linkTarget %}target="{{ child.linkTarget }}"{% endif %}
             >
                 <span class="absolute inset-0"></span>
                 <span class="font-bold">{{ child.label }}</span>
@@ -27,30 +28,36 @@
         </div>
         {% if child.children %}
             {% set has_sub_child = child.children and ((child.children|first).children or (child.children|last).children) %}
-            <div class="border-l-4 border-white/20 relative overflow-hidden max-h-0 transition-all duration-300"
+            <div class="border-l-4 border-cosmos relative overflow-hidden max-h-0 transition-all duration-300"
                 x-ref="{{ x_ref_id }}" :style="open?`max-height:${$refs['{{x_ref_id}}'].scrollHeight}px`:``"
             >
                 {% for sub_child in child.children %}
                     {% if has_sub_child and module.menu_layout == "modern" %}
                         <div class="">
-                            <div class="px-5 py-1.5 mt-2.5 text-sm font-semibold bg-gradient-to-r from-gray-100 to-white">{{ sub_child.label }} here 1</div>
-                            <div class="pl-2.5">
-                                {% for deep_sub_child in sub_child.children %}
-                                    <div class="group relative flex gap-x-6 rounded-lg p-2 my-2.5 text-sm leading-6 hover:bg-gray-50">
-                                        <a href="{{ deep_sub_child.url or "#" }}" class="font-semibold text-current">
-                                            <span class="absolute inset-0"></span>
-                                            {{ deep_sub_child.label }} here 2
-                                        </a>
-                                    </div>
-                                {% endfor %}
-                            </div>
+                            <div class="p-2 pl-3 pr-4 bg-cinder text-xs text-white/80 uppercase font-bold">BlueMatrix For:</div>
+                            {% for deep_sub_child in sub_child.children %}
+                                <div class="group relative flex p-4 pl-3 text-sm text-off-white hover:bg-white/20 uppercase border-b-white/20 border-b">
+                                    <a href="{{ deep_sub_child.url or "#" }}"
+                                        {% if deep_sub_child.linkTarget %}target="{{ deep_sub_child.linkTarget }}"{% endif %}
+                                    >
+                                        <span class="absolute inset-0"></span>
+                                        {{ deep_sub_child.label }}
+                                    </a>
+                                </div>
+                            {% endfor %}
                         </div>
                     {% else %}
-                        <div class="group relative flex p-2 text-sm text-off-white hover:bg-white/20 uppercase border-b-white/20 border-b">
-                            <a href="{{ sub_child.url or "#" }}">
+                        {% set logo = app_logo(sub_child.label, instance) %}
+                        <div class="group relative flex {% if logo|trim %}p-2 pr-3{% else %}px-3 py-2{% endif %} text-sm text-off-white hover:bg-white/20 uppercase border-b-white/20 border-b">
+                            <a href="{{ sub_child.url or "#" }}"
+                                {% if sub_child.linkTarget %}target="{{ sub_child.linkTarget }}"{% endif %}
+                            >
                                 <span class="absolute inset-0"></span>
-                                <div class="flex items-center gap-1">
-                                    <span class="h-10">{{ app_logo(sub_child.label, instance) }}</span>
+                                <div class="flex items-center gap-1 h-10">
+                                    
+                                    {% if logo|trim %}
+                                        <span class="h-10 w-10">{{ logo }}</span>
+                                    {% endif %}
                                     {{ sub_child.label }}
                                 </div>
                             </a>

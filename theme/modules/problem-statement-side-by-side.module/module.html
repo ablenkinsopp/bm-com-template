@@ -1,8 +1,8 @@
-<div class="w-full flex flex-col lg:flex-row gap-6 lg:gap-10 lg:items-center">
-    <div class="flex flex-col flex-1 gap-6">
-        <h2 class="text-darkest-blue text-5xl font-light">{{ module.title }}</h2>
+<div class="w-full flex flex-col items-center lg:flex-row gap-6 lg:gap-10 lg:items-center">
+    <div class="flex text-cinder flex-col flex-1 gap-6">
+        <h2 class=" text-3xl md:text-5xl font-light">{{ module.title }}</h2>
         {% for para in module.basic_text %}
-            <p class="text-shadow-dark-blue/80 text-xl">{{ para }}</p>
+            <p class="md:text-xl">{{ para }}</p>
         {% endfor %}
     </div>
 

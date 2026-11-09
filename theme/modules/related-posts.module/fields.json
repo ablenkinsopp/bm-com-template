@@ -9,7 +9,7 @@
   "multiple" : false,
   "reordering_enabled" : true,
   "preset" : null,
-  "display_width" : null,
   "type" : "choice",
+  "display_width" : null,
   "default" : "row"
 } ]

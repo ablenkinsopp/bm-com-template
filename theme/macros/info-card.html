@@ -21,18 +21,18 @@
 
     {% set shared_attrs %}data-animate-on-scroll
         data-animate-class="animate-fade-up"
-        class="gradient-border rounded overflow-hidden text-center {{ classes }} {% if link %}group{% endif %} {% if is_in_editor %}animate-fade-up{% else %}animate-start-fade-up-8{% endif %}"
+        class="border-cosmos border rounded overflow-hidden {{ classes }} {% if link %}group{% endif %} {% if is_in_editor %}animate-fade-up{% else %}animate-start-fade-up-8{% endif %}"
         style="--delay: {{ delay }}ms; --duration: 400ms;"
     {% endset %}
 
     {% set inner_content %}
-        <div class="rounded flex h-full flex-col px-2 gap-2 md:gap-4 py-2 sm:py-4 md:py-10 md:px-4 lg:px-6 items-center text-center text-off-white text-sm sm:text-base md:text-lg bg-dark-blue group-hover:bg-darkest-blue group-hover:text-turquoise">
+        <div class="transition-all rounded flex h-full flex-col gap-2 md:gap-4 p-4 md:py-10 lg:px-6 text-white text-sm sm:text-base md:text-lg bg-cinder group-hover:bg-cosmos group-hover:text-blue">
             {% if image %}
                 {% if 'Icons' in image %}
-                    <div class="text-turquoise">
+                    <div class="text-blue">
                         <img
                             class="info-card-icon-mask h-6 sm:h-8"
-                            alt="{{ title or text_field }}"
+                            alt="{{ title_final or text_final }}"
                             src="{{ image }}"
                             style="
                                 -webkit-mask-image: url('{{ image|escape_url }}');

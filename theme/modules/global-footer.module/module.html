@@ -29,16 +29,16 @@
     {% endif %}
 {% endmacro %}
 
-<footer class="bg-dark-blue mx-auto p-4 lg:p-10 w-full">
+<footer class="bg-black mx-auto p-4 lg:p-10 w-full">
     <div class="mx-auto max-w-[1600px] w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
         {% if module.footer_menu %}
             {% set footer_menu = menu(module.footer_menu) %}
             {% for section in footer_menu.children %}
                 <div class="py-4 md:p-8 flex flex-1 flex-col gap-2 md:gap-8">
-                    <p class="text-water text-sm uppercase">{{ section.label }}</p>
+                    <p class="text-silver text-sm uppercase">{{ section.label }}</p>
                     <div class="flex flex-col items-start gap-2">
                       {% for item in section.children %}
-                        <a class="group  hover:text-water text-turquoise transition-all duration-250 cursor-pointer min-h-6" target="_blank" href="{{ item.url }}">
+                        <a class="group text-sky transition-all duration-250 cursor-pointer min-h-6" {% if item.linkTarget %}target="{{ item.linkTarget }}"{% endif %} href="{{ item.url }}">
                             <div class="flex items-center gap-2">
                                 {% if item.url is string_containing "linkedin.com" or item.url is string_containing "://x.com/" %}
                                     <span class='text-white text-lg'>{{ get_social_icon(item.url) }}</span>
@@ -46,7 +46,7 @@
                                 {{ item.label }}
                             </div>
                                 
-                            <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-water"></span>
+                            <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-sky"></span>
                         </a>
                       {% endfor %}
                   </div>
@@ -55,7 +55,7 @@
             {% endfor %}
         {% endif %}
         <div class="py-4 md:p-8 flex flex-1 flex-col gap-2 md:gap-8">
-            <p class="text-water text-sm uppercase">Locations</p>
+            <p class="text-silver text-sm uppercase">Locations</p>
             <div class="flex flex-col text-text-color">
                 <p class="font-bold text-white">
                     Durham, NC (Global HQ)
@@ -66,27 +66,27 @@
                 <p>United States</p>
             </div>
             <ul class="flex flex-col items-start gap-4">
-                <a href="/" class="group hover:!text-water !text-turquoise cursor-pointer min-h-6 transition-all duration-250">
+                <a href="/about-us#offices" class="group !text-sky cursor-pointer min-h-6 transition-all duration-250">
                     View All Locations
-                    <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-water"></span>
+                    <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-sky"></span>
                 </a>
             </ul>
         </div>
-        <div class="-mx-4 md:mx-0 p-4 py-4 md:p-8 flex flex-1 flex-col gap-2 md:gap-8 bg-[#01102A] md:rounded">
-            <p class="!text-water text-sm uppercase">Contact</p>
+        <div class="-mx-4 md:mx-0 p-4 py-4 md:p-8 flex flex-1 flex-col gap-2 md:gap-8 bg-cinder border border-cosmos md:rounded">
+            <p class="!text-silver text-sm uppercase">Contact</p>
             <ul class="flex items-start flex-col gap-4">
-                <a href="/" class="group transition-all duration-250 hover:!text-water !text-turquoise cursor-pointer min-h-6">
+                <a href="mailto:sales@bluematrix.com" class="group transition-all duration-250 !text-sky cursor-pointer min-h-6">
                     Email Sales
-                    <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-water"></span>
+                    <span class="block max-w-0 group-hover:max-w-full transition-all duration-250 h-px bg-sky"></span>
                 </a>
             </ul>
             <div class="flex flex-col gap-4 items-start">
-                <p class="text-muted-text">
+                <p class="text-silver">
                     Learn more about how we can help your business.
                 </p>
                 {{ button(module.button_text, module.button_link, "outline") }}
             </div>
-            <div class="flex flex-col items-start gap-4 text-text-color">
+            <div class="flex flex-col items-start gap-4 text-silver">
                 <p class="text-white font-bold">Client Support</p>
                 <p>
                     For support matters, clients can access our
@@ -97,7 +97,7 @@
                       { % set href = "tel:" + href %}
                     {% endif %}
                     <a
-                        class="hover:!text-water !text-turquoise cursor-pointer"
+                        class="text-sky hover:underline cursor-pointer"
                         {% if module.resource_center_link.url.type is equalto "CALL_TO_ACTION"  %}
                             href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
                         {% else %}
@@ -110,8 +110,7 @@
                             rel="{{ module.resource_center_link.rel|escape_attr }}"
                         {% endif %}
                     >
-                        Resource Center
-                    </a> or 
+                        Resource Center</a> or 
                     {% set href = module.contact_us_link.url.href %}
                     {% if module.contact_us_link.url.type is equalto "EMAIL_ADDRESS" %}
                         {% set href = "mailto:" + href %}
@@ -119,7 +118,7 @@
                         {% set href = "tel:" + href %}
                     {% endif %}
                     <a
-                        class="hover:!text-water !text-turquoise cursor-pointer "
+                        class="text-sky hover:underline cursor-pointer "
                         {% if module.contact_us_link.url.type is equalto "CALL_TO_ACTION"  %}
                             href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
                         {% else %}

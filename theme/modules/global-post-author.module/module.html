@@ -1,4 +1,4 @@
-<div class="article__author bg-transparent flex flex-col item-center justify-center sm:flex-row gap-2">
+<div class="article__author bg-transparent flex items-center justify-center gap-2">
 
     <div class="shrink-0 size-8 overflow-hidden object-cover object-center rounded-full">
         {% if content.blog_post_author.avatar %}
@@ -8,20 +8,20 @@
                 alt="{{ content.blog_post_author.display_name | striptags }}"
                 width="96" height="96"/>
         {% else %}
-            <div class="size-8 m-0! text-sm leading-none bg-turquoise flex justify-center items-center select-none"
+            <div class="size-8 m-0! text-sm leading-none bg-blue flex justify-center items-center select-none"
                 x-data="{
                     name: `{{ content.blog_post_author.display_name | striptags }}`,
                     nameAbbr: `NA`
                 }"
                 x-init="nameAbbr = name.split(' ').map(word => word[0]).join('')">
-                <span class="text-sm text-white font-bold" x-text="nameAbbr"></span>
+                <span class="text-sm text-cinder font-bold" x-text="nameAbbr"></span>
             </div>
         {% endif %}
     </div>
 
     <div class="author__info flex items-center">
         <div class="author__name">
-            <a class="text-sm font-bold no-underline"
+            <a class="text-sm font-bold no-underline hover:underline"
                 href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}"
                 rel="author">
                 {{ content.blog_post_author.display_name | striptags }}

@@ -2,11 +2,14 @@
   templateType: "none"
   isAvailableForNewContent: false
 -->
-{% macro section_title(title, alignment, image_field, subtext) %}
+{% from '../macros/button.html' import button %}
+
+{% macro section_title(title, alignment, image_field, subtext, link_text, link, subtext_bold=true) %}
+
 {% set container_classes = alignment == "center" ? "items-center" : (
     aligment == "left" ? "items-start" : "items-end"
 ) %}
-{% set text_classes = alignment == "center" ? "text-center" : (
+{% set alignment_classes = alignment == "center" ? "text-center" : (
     aligment == "left" ? "text-start" : "text-end"
 ) %}
 
@@ -15,10 +18,15 @@
         <img class="h-16" src="{{ image_field.src|escape_url }}" alt="{{ image_field.alt|escape_attr }}">
     {% endif %}
     {% if title %}
-        <h2 class="text-water font-light text-4xl {{ text_classes }}">{{ title }}</h2>
+        <h2 class="text-white font-bold text-3xl md:text-4xl {{ alignment_classes }}">{{ title }}</h2>
     {% endif %}
     {% if subtext %}
-        <p class="text-text-color font-bold text-xl max-w-[960px] {{ text_classes }}">{{ subtext }}</p>
+        <p class="text-silver max-w-[960px] {{ alignment_classes }}">{{ subtext }}</p>
+    {% endif %}
+    {% if link.url %}
+        <div class="flex items-center justify-center">
+            {{ button(link_text, link, "text") }}
+        </div>
     {% endif %}
 </div>
 

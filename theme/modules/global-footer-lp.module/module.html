@@ -3,22 +3,8 @@
 <footer aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="sr-only">Footer</h2>
   <div class="mx-auto">
-    <div class="">
-      <div class="flex flex-col md:items-center md:flex-row-reverse md:justify-between gap-4 w-full">
-        {% if module.footer_legal_menu %}
-        <ul role="list" class="flex flex-wrap gap-4">
-          {% set legal_menu = menu(module.footer_legal_menu) %}
-          {% for child in legal_menu.children %}
-            <li>
-              <a href="{{ child.url }}" class="text-sm leading-5 text-stone-600 hover:text-stone-900 no-underline hover:underline">{{ child.label }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-        {% else %}
-        <div><!-- 🍍 --></div>
-        {% endif %}
-        <div class="text-sm leading-5 text-stone-600 [&>*]:p-0 [&>*]:m-0">{{ module.copyrights }}</div>
-      </div>
+    <div class="w-full">
+        <div class="text-sm leading-5 text-silver [&>*]:p-0 [&>*]:m-0">{{ module.copyrights }}</div>
     </div>
   </div>
 </footer>

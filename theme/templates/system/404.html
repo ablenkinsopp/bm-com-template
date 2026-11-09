@@ -4,38 +4,29 @@
   label: FreshJuice - 404 Not Found
   screenshotPath: ../../images/template-previews/404.png
 -->
+{% from "../../macros/button.html" import button %}
 {% extends "../layouts/base.html" %}
 {# pageTitle is used on system templates for setting a value for the title tag #}
 {% set pageTitle = "404 Not Found" %}
 
 {% block body %}
-<section class="min-h-screenSinNav grid items-center error-page" data-error="404">
-  <div class="container grid gap-8 md:grid-cols-2 items-center">
-    <div class="prose sm:prose-lg md:prose-xl [&_img]:rounded-md">
-      {% module_block module "content" path="@hubspot/rich_text", no_wrapper=True %}
-        {% module_attribute "html" %}
-          <p><small><b>{{ pageTitle }}</b></small></p>
-          <h1>
-            Ahhhhhhh!<br/>
-            <small>This page does not exist</small>
-          </h1>
-          <p>
-            <em>
-              Don't get angry with me<br/>
-              I never caused you no pain...
-            </em>
-          </p>
-          <p>
-            You can go back to <a href="/">homepage</a>.<br/>
-            Or sit here and listen to some music.
-          </p>
-        {% end_module_attribute %}
-      {% end_module_block %}
+<section 
+    x-init="
+        setTimeout(function() {
+            window.location.replace('https://www.bluematrix.com');
+        }, 3000);
+    "
+    class="min-h-screenSinNav grid items-center error-page bg-darkest-blue"
+    data-error="404"
+>
+    <div class="container flex flex-col gap-8 justify-center items-center text-white/80">
+        <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="#43e3c2" viewBox="0 0 256 256"><path d="M237.2,151.87v0a47.1,47.1,0,0,0-2.35-5.45L193.26,51.8a7.82,7.82,0,0,0-1.66-2.44,32,32,0,0,0-45.26,0A8,8,0,0,0,144,55V80H112V55a8,8,0,0,0-2.34-5.66,32,32,0,0,0-45.26,0,7.82,7.82,0,0,0-1.66,2.44L21.15,146.4a47.1,47.1,0,0,0-2.35,5.45v0A48,48,0,1,0,112,168V96h32v72a48,48,0,1,0,93.2-16.13ZM76.71,59.75a16,16,0,0,1,19.29-1v73.51a47.9,47.9,0,0,0-46.79-9.92ZM64,200a32,32,0,1,1,32-32A32,32,0,0,1,64,200ZM160,58.74a16,16,0,0,1,19.29,1l27.5,62.58A47.9,47.9,0,0,0,160,132.25ZM192,200a32,32,0,1,1,32-32A32,32,0,0,1,192,200Z"></path></svg>
+        <div class="flex flex-col items-center gap-4">
+            <h1 class="text-center text-3xl md:text-5xl text-water">Page Not Found</h1>
+            <p class="text-center">We can't find the page you're looking for. We'll take you to our homepage.</p>
+            {{ button("Go to Homepage", "/") }}
+        </div>
     </div>
-      {% module "light-youtube"
-        path="../../modules/lite-youtube",
-        label="YouYube",
-        no_wrapper=True %}
-  </div>
 </section>
 {% endblock body %}
+

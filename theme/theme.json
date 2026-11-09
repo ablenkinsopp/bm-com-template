@@ -1,12 +1,12 @@
 {
-  "label": "BM Tailwind Theme",
+  "label": "BlueMatrix Theme (Brand Guidelines Update)",
   "version": "1.0.0",
   "author": {
     "name": "BlueMatrix",
     "url": "https://www.bluematrix.com"
   },
   "preview_path": "./templates/home.html",
-  "screenshot_path": "./images/template-previews/blog-index.png",
+  "screenshot_path": "./images/template-previews/theme.png",
   "enable_domain_stylesheets": false,
   "license": "MIT",
   "responsive_breakpoints": [

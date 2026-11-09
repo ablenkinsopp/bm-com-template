@@ -9,13 +9,14 @@
     aria-label="Blog post summary: {{ post.name }}">
 
     <div class="article__thumbnail rounded-t overflow-clip aspect-video">
+        {% set featured_image = get_asset_url('/bm-tailwind-theme/images/blog/bm-default.png') %}
         {% if post.featured_image %}
-            <img class="w-full h-auto object-cover aspect-video"
-                src="{{ resize_image_url( post.featured_image, 0, 0, 400 ) }}"
-                loading="lazy"
-                width="400"
-                alt="Featured image: {{ post.featured_image_alt_text or post.name | striptags }}">
+            {% set featured_image = resize_image_url( post.featured_image, 0, 0, 400 ) %}
         {% endif %}
+        <img class="w-full h-auto object-cover aspect-video"
+            src="{{ featured_image }}"
+            loading="lazy"
+            alt="Featured image: {{ post.featured_image_alt_text or post.name | striptags }}">
     </div>
 
     <div class="article__content p-2 md:p-4 flex flex-col flex-1 gap-2">

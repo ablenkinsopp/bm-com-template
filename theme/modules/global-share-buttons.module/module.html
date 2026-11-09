@@ -24,7 +24,7 @@
 <div class="flex justify-end items-center gap-6 mt-6 py-6 border-b border-t border-b-[#E5E7EB] border-t-[#E5E7EB]"
      x-intersect.once="loadScript(`//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js`)">
 
-    <div class="text-sm font-bold text-blog-text uppercase whitespace-nowrap">Share</div>
+    <div class="text-sm font-bold text-cinder uppercase whitespace-nowrap">Share</div>
 
     <div class="share-btn flex flex-wrap gap-4"
         data-title="{{ content.name|safe|striptags }}"
@@ -34,7 +34,7 @@
         {% for item in module.share_button %}
             <a data-id="{{ item }}"
                 href="#" @click="$event.preventDefault()"
-                class="transition-all cursor-pointer border items-center justify-center border-turquoise bg-white rounded-4xl h-9 px-4 [&>svg]:size-5 text-blog-text hover:bg-water flex gap-2"
+                class="transition-all cursor-pointer border items-center justify-center border-blue bg-white rounded-4xl h-9 px-4 [&>svg]:size-5 text-cinder hover:bg-blue flex gap-2"
             >
                 {% set icon_path = '../../images/icons/social/' + item + '.svg.html' %}
                 {% include icon_path %}

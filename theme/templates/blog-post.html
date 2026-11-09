@@ -13,34 +13,35 @@
 <div class="bg-white">
 
     <article class="px-4 md:px-5 py-8 md:py-16 !pb-0 max-w-5xl mx-auto flex flex-col gap-10">
-        <header class="flex flex-col items-center justify-center text-blog-text">
+        <header class="flex flex-col items-center justify-center text-cinder">
             <div class="flex flex-col gap-1.5 text-center prose items-center justify-center align-center text-balance">
                 <div class="flex justify-center items-center gap-2">
                     {{ blog_tag(content.topic_list[0].name, blog_tag_url(group.id, content.topic_list[0].slug)) }}
-                    <span class="text-blog-subdued-text text-sm">{{ minutes_to_read(content, '', ' min read') }}</span>
+                    <span class="text-cinder/70 text-sm">{{ minutes_to_read(content, '', ' min read') }}</span>
                 </div>
 
                 <h1 class="text-xl md:text-2xl font-bold max-w-2xl" x-balance-text>{{ content.name | striptags }}</h1>
                 
-                <div class="flex gap-2 items-center justify-center">
+                <div class="flex flex-col md:flex-row gap-2 items-center justify-center">
                     {% if content.blog_post_author %}
-                        <p class="text-blog-subdued-text text-sm">Posted by:</p>
+                        <p class="text-cinder/70 text-sm">Posted by:</p>
                         {% module "global-post-author"
                             path="../modules/global-post-author",
                             label="Post Author",
                             no_wrapper=True
                         %}
                     {% endif %}
-                    <time datetime="{{ content.publish_date }}" class="text-blog-subdued-text text-sm">{{ content.publish_date|format_date('MMMM d, yyyy') }}</time>
+                    <time datetime="{{ content.publish_date }}" class="text-cinder/70 text-sm">{{ content.publish_date|format_date('MMMM d, yyyy') }}</time>
                 </div>
             </div>
         </header>
 
+        {% set featured_image = get_asset_url('/bm-tailwind-theme/images/blog/bm-default.png') %}
         {% if content.featured_image %}
             {% set featured_image = resize_image_url( content.featured_image, 600, 315, 600 ) %}
         {% endif %}
-        <img src="{{ featured_image or 'https://50649146.hs-sites.com/hs-fs/hubfs/generic%20hero.png' }}"
-            alt="{{ featured_post.name | striptags | safe }}"
+        <img src="{{ featured_image }}"
+            alt="{{ content.name | striptags | safe }}"
             class="m-0 w-full object-cover rounded-lg shadow-xl"
         />
     
@@ -128,7 +129,7 @@
 {% endif %}
 
 
-<section class="bg-alt-bg">
+<section class="bg-white/95">
     <div class="container !py-8 flex flex-col gap-4 md:gap-8">
         <div class="mx-auto prose text-2xl font-bold sm:prose-lg md:prose-xl text-center">
             <h2>Related Posts</h2>

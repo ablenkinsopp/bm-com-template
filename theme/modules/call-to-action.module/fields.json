@@ -5,8 +5,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "Rethink what your research team can publish with BlueMatrix"
 }, {
   "id" : "5b98b4aa-2a7d-2bcf-5678-f044350122f2",
@@ -15,8 +15,8 @@
   "required" : false,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : ""
 }, {
   "id" : "60ee9f14-d20d-efc6-62fb-76ed296f756e",
@@ -25,8 +25,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "Talk with an expert"
 }, {
   "id" : "e6db22f5-50f7-6cca-8e3a-ce0bc2c8d9c7",
@@ -36,8 +36,8 @@
   "locked" : false,
   "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
   "show_advanced_rel_options" : false,
-  "display_width" : null,
   "type" : "link",
+  "display_width" : null,
   "default" : {
     "url" : {
       "content_id" : 206078525068,

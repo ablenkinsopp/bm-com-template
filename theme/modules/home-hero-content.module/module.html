@@ -1,65 +1,130 @@
-{% from '../../macros/button.html' import button %}
+{% from "../../macros/button.html" import button %}
 
-<section class='relative w-full'>
+{% set hero_bg_360 = get_asset_url("../../images/hero-bg/hero-360.jpg") %}
+{% set hero_bg_640 = get_asset_url("../../images/hero-bg/hero-640.jpg") %}
+{% set hero_bg_1024 = get_asset_url("../../images/hero-bg/hero-1024.jpg") %}
+{% set hero_bg_2000 = get_asset_url("../../images/hero-bg/hero-2000.jpg") %}
+
+<style>
+	.hero-bg {
+		background-image: url("{{ hero_bg_360 }}");
+	}
+
+    @media (min-width: 640px) {
+        .hero-bg {
+            background-image: url("{{ hero_bg_640 }}");
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .hero-bg {
+            background-image: url("{{ hero_bg_1024 }}");
+        }
+    }
+
+    @media (min-width: 1536px) {
+        .hero-bg {
+            background-image: url("{{ hero_bg_2000 }}");
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .home-video {
+            display: none;
+        }
+    }
+</style>
+
+{% if module.show_announcement %}
+    <div class="w-full bg-sky">
+        <div class="flex gap-4 py-2 items-center px-4 xl:px-10">
+            <div class="w-6">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.62496 11.25C2.62645 9.95753 3.14054 8.71842 4.05446 7.8045C4.96838 6.89058 6.20749 6.37649 7.49996 6.375H11.22C11.5425 6.35532 16.1512 6 20.5443 2.31563C20.8176 2.08619 21.1507 1.9395 21.5044 1.89277C21.8582 1.84605 22.2179 1.90123 22.5414 2.05185C22.8649 2.20246 23.1387 2.44225 23.3306 2.74305C23.5225 3.04386 23.6247 3.39318 23.625 3.75V18.75C23.6272 19.1072 23.5263 19.4575 23.3344 19.7589C23.1425 20.0602 22.8678 20.2997 22.5431 20.4488C22.2198 20.6014 21.8594 20.6577 21.505 20.611C21.1505 20.5643 20.817 20.4165 20.5443 20.1853C18.2957 18.295 15.6205 16.9809 12.75 16.3566V18.8128C12.75 19.1214 12.6739 19.4253 12.5283 19.6974C12.3828 19.9695 12.1723 20.2015 11.9156 20.3728C11.874 20.4009 11.8304 20.4259 11.7853 20.4478L10.4315 21.1097C10.1813 21.2595 9.89959 21.3488 9.60878 21.3707C9.31797 21.3925 9.02608 21.3462 8.7563 21.2354C8.48653 21.1246 8.24631 20.9525 8.05474 20.7326C7.86317 20.5127 7.72554 20.2512 7.65277 19.9688L6.61309 16.0481C5.49282 15.8396 4.48082 15.2457 3.75244 14.3694C3.02406 13.493 2.62519 12.3895 2.62496 11.25ZM21.375 17.9653V4.5375C17.984 7.16907 14.609 8.10938 12.75 8.44313V14.0625C14.609 14.3925 17.984 15.3328 21.375 17.9653ZM9.7134 18.9563L10.5 18.5719V16.125H8.96246L9.7134 18.9563ZM7.49996 13.875H10.5V8.625H7.49996C6.80377 8.625 6.13609 8.90156 5.64381 9.39385C5.15152 9.88613 4.87496 10.5538 4.87496 11.25C4.87496 11.9462 5.15152 12.6139 5.64381 13.1062C6.13609 13.5984 6.80377 13.875 7.49996 13.875Z" fill="#031D3C"/>
+                </svg>
+            </div>
+                
+            <div class="flex flex-col sm:flex-row gap-0 sm:gap-4 text-sm md:text-base">
+                <p>{{ module.announcement_details.announcement_text }}</p>
+                {% if module.announcement_details.announcement_link %}
+                    {% set link = module.announcement_details.announcement_link %}
+                    {% set href = link.url.type == "EMAIL_ADDRESS" ? "mailto:" + link.url.href : link.url.href %}
+
+                    <a href="{{ href }}"
+                        {% if link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}
+                        {% if link.no_follow %}rel="nofollow"{% endif %}
+                        class="underline font-bold hover:opacity-75">
+                            {{ module.announcement_details.announcement_link_text }}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+<section class="relative w-full{% if !module.video_file %} hero-bg {% endif %}" id="hero-section">
 
     <!-- Overlay -->
-    <div class='absolute top-0 h-full w-full bg-[#3466B8] mix-blend-multiply -z-2'>
+    <div class="absolute top-0 h-full w-full bg-[linear-gradient(135deg,var(--black,#0C1119)_40.92%,rgba(0,0,0,0)_78.61%)] -z-1">
     </div>
 
     <!-- Video -->
     {% if module.video_file %}
-    <video class='absolute inset-0 w-full h-full object-cover -z-1 mix-blend-exclusion opacity-45'
-           autoplay loop muted playsinline>
-        <source src='{{ module.video_file }}' type='video/mp4'>
-    </video>
+        <video class="home-video absolute inset-0 w-full h-full object-cover -z-2 mix-blend-exclusion"
+            autoplay loop muted playsinline>
+            <source src="{{ module.video_file }}" type="video/mp4">
+        </video>
     {% endif %}
 
     <!-- Hero content -->
-    <div class='relative z-10 home-hero h-full flex items-center justify-center py-10 sm:py-0 sm:pb-24 sm:min-h-[800px] lg:min-h-[700px]'>
-        <div data-animate-on-scroll
-            data-animate-class="animate-fade-up"
-            style="--delay: 100ms; --duration: 600ms;" 
-            class="flex flex-col items-center justify-center gap-6 xl:gap-10 text-center p-4 sm:p-10 w-full {% if is_in_editor %}animate-fade-up{% else %}animate-start-fade-up-16{% endif %}">
-            <h1 class='flex flex-col !text-5xl sm:!text-6xl md:!text-7xl !text-white !font-black'>
-                <span>{{ module.headline_top }}</span>
-                {% if module.headline_bottom %}
-                    <span class="text-water">{{ module.headline_bottom }}</span>
-                {% endif %}
-            </h1>
-            {% for subtext in module.subtext %}
-                <p class='text-xl sm:text-2xl text-white max-w-[630px] font-light'>
-                    {{ subtext }}
-                </p>
-            {% endfor %}
-            
-            <div class="flex flex-col sm:flex-row gap-6">
-                {% for button in module.buttons %}
-                    {{ button(button.button_text, button.button_link, button.button_style, "large") }}
+    <div class="
+        relative z-10 home-hero min-h-[600px] flex items-center
+        {% if module.show_announcement %}sm:h-[calc(100vh-264px)] lg:h-[calc(100vh-296px)]{% else %}sm:h-[calc(100vh-224px)] lg:h-[calc(100vh-256px)]{% endif %}
+    ">
+        <div class="w-full max-w-[1240px] px-[1rem] mx-auto flex items-center py-8 sm:py-0">
+            <div data-animate-on-scroll
+                data-animate-class="animate-fade-up"
+                style="--delay: 100ms; --duration: 600ms;" 
+                class="flex flex-col justify-center gap-10 w-full {% if is_in_editor %}animate-fade-up{% else %}animate-start-fade-up-16{% endif %}">
+                <h1 class="flex flex-col !text-5xl sm:!text-6xl md:!text-7xl !text-white !font-black">
+                    <span>{{ module.headline_top }}</span>
+                    {% if module.headline_bottom %}
+                        <span>{{ module.headline_bottom }}</span>
+                    {% endif %}
+                </h1>
+                {% for subtext in module.subtext %}
+                    <p class="text-xl sm:text-2xl text-white max-w-3xl font-light">
+                        {{ subtext }}
+                    </p>
                 {% endfor %}
+                
+                <div class="flex flex-col sm:flex-row gap-6">
+                    {% for button in module.buttons %}
+                        {{ button(button.button_text, button.button_link, button.button_style, "large") }}
+                    {% endfor %}
+                </div>
+    
+                <ul class="w-full flex justify-center sm:justify-start flex-wrap gap-y-2 gap-6">
+                    {% for tick in module.tick_list %}
+                        <li class="text-off-white md:text-lg uppercase flex items-center gap-1">
+                            <div class="w-5 h-5 md:w-7 md:h-7 text-base text-blue md:text-xl rounded-2xl flex items-center justify-center ">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1627_15245)">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9998 1.5C14.7846 1.5 17.4555 2.60606 19.4246 4.5752C21.3938 6.54433 22.4998 9.21523 22.4998 12C22.4998 14.0766 21.8839 16.1064 20.7303 17.833C19.5766 19.5597 17.9369 20.9064 16.0184 21.7012C14.0998 22.4959 11.9878 22.703 9.951 22.2979C7.91437 21.8926 6.04337 20.8931 4.57502 19.4248C3.10668 17.9565 2.10718 16.0855 1.70197 14.0488C1.29683 12.012 1.50393 9.90007 2.29865 7.98145C3.09338 6.06289 4.44015 4.42325 6.16682 3.26953C7.89346 2.11593 9.92326 1.5 11.9998 1.5ZM15.4442 3.68555C13.7996 3.00436 11.9898 2.82558 10.244 3.17285C8.49815 3.52012 6.89423 4.37708 5.63557 5.63574C4.3769 6.89441 3.51995 8.49832 3.17268 10.2441C2.82541 11.99 3.00418 13.7998 3.68537 15.4443C4.36658 17.0887 5.51988 18.4945 6.99983 19.4834C8.47983 20.4723 10.2199 21 11.9998 21C14.3868 21 16.6763 20.0521 18.3641 18.3643C20.0519 16.6764 20.9998 14.3869 20.9998 12C20.9998 10.22 20.4721 8.48001 19.4832 7C18.4944 5.52005 17.0886 4.36675 15.4442 3.68555ZM17.2498 9.31152L10.4998 16.0605L6.74983 12.3096L7.8094 11.25L10.4998 13.9395L16.1883 8.25L17.2498 9.31152Z" fill="currentColor"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1627_15245">
+                                            <rect width="24" height="24" fill="currentColor"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+    
+                            </div>
+                            <p>{{ tick }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
-
-            <ul class="w-full flex flex-wrap items-center justify-center gap-y-2 gap-6">
-                {% for tick in module.tick_list %}
-                    <li class="text-off-white md:text-lg uppercase flex items-center gap-1">
-                        <div class="w-5 h-5 md:w-7 md:h-7 text-base md:text-xl rounded-2xl flex items-center justify-center ">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_1627_15245)">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9998 1.5C14.7846 1.5 17.4555 2.60606 19.4246 4.5752C21.3938 6.54433 22.4998 9.21523 22.4998 12C22.4998 14.0766 21.8839 16.1064 20.7303 17.833C19.5766 19.5597 17.9369 20.9064 16.0184 21.7012C14.0998 22.4959 11.9878 22.703 9.951 22.2979C7.91437 21.8926 6.04337 20.8931 4.57502 19.4248C3.10668 17.9565 2.10718 16.0855 1.70197 14.0488C1.29683 12.012 1.50393 9.90007 2.29865 7.98145C3.09338 6.06289 4.44015 4.42325 6.16682 3.26953C7.89346 2.11593 9.92326 1.5 11.9998 1.5ZM15.4442 3.68555C13.7996 3.00436 11.9898 2.82558 10.244 3.17285C8.49815 3.52012 6.89423 4.37708 5.63557 5.63574C4.3769 6.89441 3.51995 8.49832 3.17268 10.2441C2.82541 11.99 3.00418 13.7998 3.68537 15.4443C4.36658 17.0887 5.51988 18.4945 6.99983 19.4834C8.47983 20.4723 10.2199 21 11.9998 21C14.3868 21 16.6763 20.0521 18.3641 18.3643C20.0519 16.6764 20.9998 14.3869 20.9998 12C20.9998 10.22 20.4721 8.48001 19.4832 7C18.4944 5.52005 17.0886 4.36675 15.4442 3.68555ZM17.2498 9.31152L10.4998 16.0605L6.74983 12.3096L7.8094 11.25L10.4998 13.9395L16.1883 8.25L17.2498 9.31152Z" fill="white"/>
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_1627_15245">
-                                        <rect width="24" height="24" fill="white"/>
-                                    </clipPath>
-                                </defs>
-                            </svg>
-
-                        </div>
-                        <p>{{ tick }}</p>
-                    </li>
-                {% endfor %}
-            </ul>
-
-            
         </div>
     </div>
 

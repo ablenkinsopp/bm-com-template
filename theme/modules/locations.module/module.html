@@ -1,19 +1,26 @@
 <!-- module html  -->
 <div class="w-full flex flex-col gap-20 pt-10 md:pt-20 items-center justify-center">
-    {% if module.image_field.src %}
+    {% if module.animation %}
+        <dotlottie-wc
+            src="{{ module.animation }}"
+            autoplay loop mode="normal"
+            class="w-full max-w-4xl"
+            style="aspect-ratio: 877 / 433"
+        ></dotlottie-wc>
+    {% elif module.image_field.src %}
     	<img class="w-full max-w-4xl" src="{{ module.image_field.src|escape_url }}" alt="{{ module.image_field.alt|escape_attr }}">
     {% endif %}
 
-    <div class="flex flex-col md:flex-row gap-4 lg:gap-8 w-full">
-
+    <div class="flex flex-col md:flex-row gap-4 lg:gap-8 w-full relative">
+        <div id="offices" class="absolute -top-24"></div>
         {% for region in module.regions %}
-            <div class="gradient-border rounded overflow-hidden md:flex-1">
-                <div class="bg-dark-blue rounded overflow-hidden h-full flex flex-col gap-4 lg:gap-8 p-2 sm:p-4 xl:p-8">
-                    <h6 class="text-water font-light text-2xl lg:text-4xl">{{ region.region }}</h6>
+            <div class="border border-cosmos rounded overflow-hidden md:flex-1">
+                <div class="bg-black rounded overflow-hidden h-full flex flex-col gap-4 lg:gap-8 p-2 sm:p-4 xl:p-8">
+                    <h6 class="text-white font-bold text-2xl lg:text-4xl">{{ region.region }}</h6>
                     {% for office in region.offices %}
                         <div class="flex flex-col gap-1 lg:gap-2">
-                            <p class="text-off-white font-bold text-lg lg:text-xl leading-none">{{ office.country }}</p>
-                            <div class="flex flex-col gap-0.5 lg:text-lg text-[#B1B6C0] leading-none">
+                            <p class="text-white font-bold text-lg lg:text-xl leading-none">{{ office.country }}</p>
+                            <div class="flex flex-col gap-0.5 lg:text-lg text-silver leading-none">
                                 <p>{{ office.address_1 }}</p>
                                 <p>{{ office.address_2 }}</p>
                                 {% if office.address_3 %}
@@ -25,6 +32,6 @@
                 </div>
             </div>
         {% endfor %}
-
+        <div id="careers" class="absolute -bottom-16"></div>
     </div>
 </div>

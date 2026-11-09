@@ -5,8 +5,8 @@
   "label" : "Image",
   "required" : true,
   "locked" : false,
-  "display_width" : null,
   "type" : "file",
+  "display_width" : null,
   "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/product-image.png"
 }, {
   "id" : "a6bf8161-da19-3bf3-f381-16b0ac157dd4",
@@ -15,8 +15,8 @@
   "required" : false,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "editor_v5"
 }, {
   "id" : "a32d04c6-610f-0e76-415b-cf9375ca8c59",
@@ -26,20 +26,17 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "Editor screenshot from BlueMatrix Creator"
 }, {
-  "id" : "d2ab164d-558d-992e-4863-eb65e0e87d50",
-  "name" : "color",
-  "label" : "Color",
+  "id" : "eee4a6ad-ee24-192d-9c36-40f3203e3a3e",
+  "name" : "enable_glow",
+  "label" : "Enable Glow",
   "required" : false,
   "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "dark", "Dark" ], [ "light", "Light" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
+  "display" : "toggle",
+  "type" : "boolean",
   "display_width" : null,
-  "type" : "choice"
+  "default" : true
 } ]

@@ -5,8 +5,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "Explore the Platform"
 }, {
   "id" : "75fd1e7a-243a-1f04-5d6d-6125c4b63783",
@@ -15,8 +15,8 @@
   "required" : true,
   "locked" : false,
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "The Core Infrastructure Supporting the Global Research System"
 }, {
   "id" : "e76443c6-d1aa-ac98-38fc-2057ead77a14",
@@ -37,8 +37,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Authoring"
   }, {
     "picker" : "image",
@@ -47,8 +47,8 @@
     "label" : "Tag Image",
     "required" : true,
     "locked" : false,
-    "display_width" : null,
     "type" : "file",
+    "display_width" : null,
     "default" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Icons/note-pencil-fill.svg"
   }, {
     "id" : "54052c02-0b22-850f-b640-dcbecc9d8048",
@@ -57,8 +57,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "The Gold Standard for Content Creation"
   }, {
     "id" : "225489a5-f7c9-1ef0-d693-39adffe0c7da",
@@ -67,8 +67,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Create research efficiently with a centralized, scalable, and compliant workflow - with accelerated AI-powered content creation and insight discovery."
   }, {
     "id" : "819cd568-449a-2a5d-9e6b-1fdf9797aa13",
@@ -77,8 +77,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Explore Creator"
   }, {
     "id" : "660155b4-66a6-a227-a0c9-f2238b48691a",
@@ -88,8 +88,8 @@
     "locked" : false,
     "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
     "show_advanced_rel_options" : false,
-    "display_width" : null,
     "type" : "link",
+    "display_width" : null,
     "default" : {
       "url" : {
         "content_id" : 205658305551,
@@ -108,8 +108,8 @@
     "responsive" : true,
     "resizable" : true,
     "show_loading" : false,
-    "display_width" : null,
     "type" : "image",
+    "display_width" : null,
     "default" : {
       "size_type" : "auto",
       "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/Illusion.png",
@@ -124,7 +124,7 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "display_width" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : [ ]
 } ]

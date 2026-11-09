@@ -28,19 +28,19 @@
      @click="window.scrollTo({ top: 0, behavior: 'smooth' })">
 
   <span class="size-16 relative">
-    <span class="relative size-16 flex items-center justify-center bg-cursor/75 backdrop-saturate-150 backdrop-blur-sm rounded-full overflow-hidden shadow-2xl">
+    <span class="relative size-16 flex items-center justify-center bg-white backdrop-saturate-150 backdrop-blur-sm rounded-full overflow-hidden shadow-2xl">
       <span class="size-8 flex items-center justify-center">
         <svg class="size-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="48 160 128 80 208 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
       </span>
 
       <span class="size-16 rounded-full z-30 absolute">
         <svg width="64" height="64" class="w-full h-full absolute z-10" aria-hidden="true">
-            <circle class="text-stone-200"
+            <circle class="text-silver"
                     stroke-width="8" stroke="currentColor"
                     fill="transparent" r="28" cx="32" cy="32"/>
         </svg>
         <svg width="64" height="64" class="w-full h-full absolute z-20">
-           <circle class="text-turquoise transition-all ease-in duration-100"
+           <circle class="text-blue transition-all ease-in duration-100"
                    stroke-width="8"
                    :stroke-dasharray="circumference"
                    :stroke-dashoffset="circumference - percent / 100 * circumference"

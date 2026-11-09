@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap");
+
 @import "tailwindcss" source(none);
 
 @source "../../theme/**/*.html";
@@ -13,6 +14,21 @@
   --color-terminal-500: #000000;
 
   --font-sans: "Roboto", sans-serif;
+
+  /* Primary Palette */
+  --color-cinder: #10151D;
+  --color-white: #FCFCFC;
+  --color-blue: #2EA8FF;
+
+  /* Secondary Palette */
+  --color-black: #0C1119;
+  --color-cosmos: #222A35;
+  --color-navy-blue: #0854A1;
+  --color-sky: #C2DEFF;
+  --color-silver: #CACBCC;
+
+  /* Gradients */
+  --g-top-bottom: linear-gradient(180deg, var(--color-blue) 0%, var(--color-navy-blue) 100%);
 
   --color-text-color: rgba(252, 252, 252, 0.80);
   --color-off-white: #fcfcfc;
@@ -77,18 +93,10 @@
 @layer base {
   body {
     font-family: var(--font-sans);
-    background-color: var(--color-body-bg-color);
-    color: var(--color-text-color);
+    background-color: var(--color-cinder);
+    color: var(--color-white);
     margin: 0;
     padding: 0;
-  }
-
-  .home-hero {
-    background: linear-gradient(
-      135deg,
-      #031d3c 40.92%,
-      rgba(32, 66, 106, 0) 78.61%
-    );
   }
 }
 
@@ -117,7 +125,7 @@
         position: absolute;
         inset: 0;
 
-        background-image: url("https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/generic%20hero.png");
+        background-image: url("https://www.bluematrix.com/hubfs/raw_assets/public/bm-tailwind-theme/images/hero-bg/hero-1024.jpg");
         background-size: cover;
         background-position: 0 -200px;
         background-repeat: no-repeat;
@@ -131,17 +139,17 @@
 /* BASE GRADIENT BORDER UTILITY */
 /* ----------------------------- */
 @utility gradient-border {
-    background: linear-gradient(90deg, #43e3c2 0%, #30abff 50%, #43e3c2 100%);
+    background: linear-gradient(90deg, var(--color-blue) 0%, var(--color-navy-blue) 50%, var(--color-blue) 100%);
     padding: 1px;
 }
 
 @utility gradient-border-button-hover {
-    background: linear-gradient(90deg,rgba(67, 227, 194, 1) 0%, rgba(67, 227, 194, 1) 50%, rgba(67, 227, 194, 1) 100%);
+    background: linear-gradient(90deg, var(--color-blue) 0%, var(--color-blue) 50%, var(--color-blue) 100%);
 }
 
 @utility gradient-shadow {
     opacity: 0.5;
-    background: var(--cool-border, linear-gradient(90deg, #43E3C2 0%, #30ABFF 50%, #43E3C2 100%));
+    background: var(--cool-border, linear-gradient(90deg, var(--color-blue) 0%, var(--color-navy-blue) 50%, var(--color-blue) 100%));
     filter: blur(37.5px);
 }
 
@@ -206,7 +214,7 @@
         top: 0;
         bottom: 0;
         width: 1px;
-        background: linear-gradient(180deg, #43e3c2 0%, #30abff 100%);
+        background: var(--g-top-bottom);
     }
 }
 
@@ -222,7 +230,7 @@
         top: 0;
         bottom: 0;
         width: 1px;
-        background: linear-gradient(180deg, #43e3c2 0%, #30abff 100%);
+        background: linear-gradient(180deg, var(--color-blue) 0%, var(--color-navy-blue) 100%);
     }
 }
 
@@ -238,7 +246,7 @@
         right: 0;
         top: 0;
         height: 1px;
-        background: linear-gradient(90deg, #43e3c2 0%, #30abff 100%);
+        background: linear-gradient(90deg, var(--color-blue) 0%, var(--color-navy-blue) 100%);
     }
 }
 
@@ -254,13 +262,17 @@
         right: 0;
         bottom: 0;
         height: 1px;
-        background: linear-gradient(90deg, #43e3c2 0%, #30abff 100%);
+        background: linear-gradient(90deg, var(--color-blue) 0%, var(--color-navy-blue) 100%);
     }
 }
 
 /* ----------------------------- */
 /* RANDOM STUFF                  */
 /* ----------------------------- */
+@utility gilroy {
+    font-family: 'Gilroy';
+    letter-spacing: -0.03em;
+}
 
 .info-card-icon-mask {
     -webkit-mask-position: center;
@@ -274,28 +286,20 @@
     object-position: 9999in;
 }
 
-.home-logos {
-    @media (width < 40rem) {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-    @media (width >= 40rem /* 1024px */) {
-        position: relative;
-        padding-bottom: 0 !important;
-        z-index: 10;
-        --tw-translate-y: calc(calc(1/2 * 100%) /* 50% */ * -1) /* -50% */;
-        translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
-}
-
 .body-container--about {
     .timeline-item {
         a {
-            @apply text-turquoise;
+            @apply text-blue;
             &:hover {
                 @apply underline;
             }
         }
+    }
+}
+
+.footer.bg-black {
+    .footer-row-0-background-layers {
+        background: none !important;
     }
 }
 
@@ -327,6 +331,7 @@
 @import "./base/buttons.css";
 @import "./base/text-pages.css";
 @import "./base/blog-post.css";
+@import "./base/cookie-banner.css";
 
 /* 3rd party styles */
 /*@import "lite-youtube-embed";*/

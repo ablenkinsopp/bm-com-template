@@ -39,7 +39,7 @@
     {# Top Section #}
 
     {% dnd_section
-        background_color={{ context.background_color or "#031535" }},
+        background_color={{ context.background_color or "none" }},
         fullWidth: "true"
     %}
         {% dnd_column %}
@@ -103,7 +103,7 @@
     {# Meet The Team #}
 
     {% dnd_section
-        background_color={{ context.background_color or "#031D3C" }},
+        background_color={{ context.background_color or "none" }},
         fullWidth: "true"
     %}
         {% dnd_column %}
@@ -189,7 +189,7 @@
     {# Global Presence #}
 
     {% dnd_section
-        background_color={{ context.background_color or "#031535" }},
+        background_color={{ context.background_color or "none" }},
         fullWidth: "true"
     %}
         {% dnd_column %}
@@ -317,7 +317,7 @@
     {# News Cards #}
     
     {% dnd_section 
-        background_color={{ context.background_color or "#000F28" }},
+        background_color={{ context.background_color or "none" }},
         fullWidth: "true" 
     %}
         {% dnd_module path='../modules/news-card.module' %}{% end_dnd_module %}

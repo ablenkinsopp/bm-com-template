@@ -1,0 +1,116 @@
+{# Modal image. Shown above the text normally, or below it when "Fullscreen Image" is on. #}
+{% macro modal_image(card, group) %}
+                    {% if card.modal_image.src %}
+                    {# Fixed 600:363 aspect ratio (no layout shift); fullscreen images use their natural height once loaded (aspect ratio only reserves space while loading) + skeleton + fade-in. Image is also prefetched on card hover/focus/touch. Image fades in once it has loaded AND the modal has finished fading in (settled), whichever is later. #}
+                    <div class="relative w-full shrink-0 overflow-hidden rounded-md {% if card.fullscreen_image %}shadow-[0_-10px_15px_-3px_rgb(0_0_0/0.1),0_-4px_6px_-4px_rgb(0_0_0/0.1)]{% else %}shadow-lg{% endif %}" {% if card.fullscreen_image %}:style="loaded ? '' : 'aspect-ratio: {{ card.modal_image.width|default(1200) }} / {{ card.modal_image.height|default(726) }}'"{% else %}style="aspect-ratio: 600 / 363"{% endif %}
+                        x-data="{ loaded: false }"
+                        x-init="$nextTick(() => { if ($refs.img.complete) loaded = true })">
+                        <div class="absolute inset-0 bg-silver/30 animate-pulse motion-reduce:animate-none" x-show="!(loaded && settled)" aria-hidden="true"></div>
+                        {% if group.logo.src %}
+                            <div class="bg-white shadow-md rounded-md absolute bottom-2 right-2 z-10 p-1 flex items-center justify-center">
+                                <img class="h-6 w-auto max-w-full self-start object-contain object-left" src="{{ group.logo.src }}" alt="{{ group.logo.alt }}">
+                            </div>
+                            {% endif %}
+                        <img x-ref="img" @load="loaded = true" @error="loaded = true"
+                            class="block {% if card.fullscreen_image %}w-full h-auto{% else %}size-full object-cover{% endif %} opacity-0 transition-opacity duration-300 motion-reduce:transition-none"
+                            :class="loaded && settled ? 'opacity-100!' : ''"
+                            decoding="async" fetchpriority="high"
+                            src="{{ card.modal_image.src }}" alt="{{ card.modal_image.alt|default(card.title) }}">
+                    </div>
+{% endif %}
+{% endmacro %}
+
+<div id="roundtable-innovation-content" class="w-full text-cinder" x-data="{ open: null, preload(url) { if (url) { const i = new Image(); i.src = url } } }">
+    <div class="w-full px-6 pt-8 md:pt-20 pb-6 md:pb-11">
+        <div class="w-full mx-auto max-w-[1240px]">
+            <div class="max-w-[640px] mx-auto text-center">
+                <p class="text-xs font-bold uppercase tracking-wider text-navy-blue mb-2.5">{{ module.eyebrow }}</p>
+                <h2 class="text-3xl font-normal leading-tight text-cinder mb-3">{{ module.heading }}</h2>
+                <p class="text-base leading-relaxed text-cosmos m-0">{{ module.description }}</p>
+            </div>
+        </div>
+    </div>
+
+    {% for group in module.groups %}
+    {% set gi = loop.index %}
+    <section class="w-full px-6 py-4 md:py-8 {% if gi is odd %}bg-silver/10{% endif %}">
+        <div class="w-full mx-auto max-w-[1240px]">
+            <div class="flex flex-col gap-4 md:gap-[22px] py-4 md:py-8">
+
+                {% if group.logo.src %}
+                <img class="h-8 md:h-12 w-auto max-w-full self-start object-contain object-left" src="{{ group.logo.src }}" alt="{{ group.logo.alt }}">
+                {% endif %}
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                    {% for card in group.cards %}
+                    <button type="button"
+                        @click="open = 'g{{ gi }}c{{ loop.index }}'"
+                        aria-haspopup="dialog"
+                        data-preload="{{ card.modal_image.src }}"
+                        @mouseenter.once="preload($el.dataset.preload)"
+                        @focus.once="preload($el.dataset.preload)"
+                        @touchstart.once.passive="preload($el.dataset.preload)"
+                        class="group flex flex-col gap-3 md:gap-4 items-start text-left p-4 rounded-lg {% if gi is odd %}bg-white{% else %}bg-sky/5{% endif %}  cursor-pointer overflow-clip shadow-[0px_1px_1px_0px_rgba(0,0,0,0.05),0px_0px_1px_0px_rgba(0,0,0,0.25)] hover:shadow-lg transition-shadow duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-blue">
+                        <span class="flex flex-col gap-0 w-full">
+                            <span class="text-xs md:text-sm uppercase tracking-[0.84px] {% if card.status == 'In development' %}text-cosmos/50{% else %}text-cosmos{% endif %}">{{ card.status }}</span>
+                            <span class="text-2xl md:text-[32px] leading-normal font-bold text-navy-blue">{{ card.title }}</span>
+                        </span>
+                        <span class="text-base md:text-lg text-cinder">{{ card.text }}</span>
+                        <span class="mt-auto inline-flex items-center gap-1 text-sm md:text-base text-navy-blue">
+                            {{ card.button_label|default('Learn More') }}
+                            <svg class="size-4 md:size-5 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+                        </span>
+                    </button>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+
+    {# One modal per card. x-if mounts it only while open. #}
+    {% for group in module.groups %}
+    {% set gi = loop.index %}
+    {% for card in group.cards %}
+    {% set key = 'g' ~ gi ~ 'c' ~ loop.index %}
+    <template x-if="open === '{{ key }}'">
+        <div class="fixed inset-0 z-[9999] flex items-center justify-center md:py-6 md:px-4"
+            role="dialog" aria-modal="true" aria-labelledby="rt-modal-{{ key }}"
+            @keydown.escape.window="open = null"
+            x-trap.noscroll="true"
+            x-data="{ ready: false, settled: false }"
+            x-init="requestAnimationFrame(() => requestAnimationFrame(() => { ready = true; setTimeout(() => settled = true, 200) }))">
+            {# Fade the backdrop and panel separately: opacity on an ancestor of a backdrop-filter element makes it flicker/pop. #}
+            <div class="absolute inset-0 bg-cinder/70 backdrop-blur-sm opacity-0 transition-opacity duration-200 motion-reduce:transition-none" :class="ready ? 'opacity-100!' : ''" @click="open = null"></div>
+
+            <div class="relative w-full h-full md:h-auto {% if card.fullscreen_image %}md:max-w-[1200px]{% else %}md:max-w-[664px]{% endif %} max-h-full flex bg-white rounded-none md:rounded-lg shadow-2xl py-4 px-2 opacity-0 transition-opacity duration-200 motion-reduce:transition-none" :class="ready ? 'opacity-100!' : ''">
+                <button type="button" @click="open = null" aria-label="Close"
+                    class="absolute top-3 right-3 md:-top-4 md:-right-4 z-10 size-9 inline-flex items-center justify-center rounded-full bg-white text-cinder shadow-md hover:bg-sky transition-colors cursor-pointer">
+                    <svg class="size-5" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg>
+                </button>
+
+                <div class="w-full overflow-y-auto pl-4 pr-2 pt-14 pb-2 md:pt-2 flex flex-col gap-6 text-left [scrollbar-width:thin] [scrollbar-color:var(--color-silver)_transparent]">
+
+                    {% if not card.fullscreen_image %}{{ modal_image(card, group) }}{% endif %}
+
+                    
+                    <div class="flex flex-col gap-0">
+                        <p class="text-sm uppercase tracking-[0.84px] {% if card.status == 'In development' %}text-cosmos/50{% else %}text-cosmos{% endif %}">{{ card.status }}</p>
+                        <h3 id="rt-modal-{{ key }}" class="text-2xl md:text-[32px] leading-tight font-bold text-navy-blue">{{ card.title }}</h3>
+                    </div>
+                    
+                    {% if not card.fullscreen_image %}<span class="text-lg text-cinder">{{ card.text }}</span>{% endif %}
+                    {% if card.modal_text %}
+                    {# Strip inline styles pasted in from Word/Docs so only the classes below control styling #}
+                    {% set modal_body = card.modal_text|regex_replace(' +style="[^"]*"', '') %}
+                    <div class="text-cinder [&_p]:mb-4 [&_p:last-child]:mb-0 [&_p:empty]:hidden [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ul:last-child]:mb-0 [&_li]:mb-2 [&_li:last-child]:mb-0 [&_a]:text-navy-blue [&_a]:underline [&_strong]:font-bold [&_em]:italic">{{ modal_body|safe }}</div>
+                    {% endif %}
+
+                    {% if card.fullscreen_image %}{{ modal_image(card, group) }}{% endif %}
+                </div>
+            </div>
+        </div>
+    </template>
+    {% endfor %}
+    {% endfor %}
+</div>

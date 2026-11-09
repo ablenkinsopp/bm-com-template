@@ -4,8 +4,8 @@
   "label" : "Blog",
   "required" : false,
   "locked" : false,
-  "display_width" : null,
   "type" : "blog",
+  "display_width" : null,
   "default" : 201043800338
 }, {
   "id" : "c898b47d-a664-615c-39aa-7355a1801ec8",
@@ -14,8 +14,8 @@
   "required" : false,
   "locked" : false,
   "display" : "toggle",
-  "display_width" : null,
   "type" : "boolean",
+  "display_width" : null,
   "default" : true
 }, {
   "id" : "fc7b42b7-866f-bed8-9a88-9f51c57faf79",
@@ -32,8 +32,8 @@
     "access" : null
   },
   "allow_new_line" : false,
-  "display_width" : null,
   "type" : "text",
+  "display_width" : null,
   "default" : "All News & Insights"
 }, {
   "id" : "5ad84653-852f-30a0-af3f-3ea134ce12a6",
@@ -51,8 +51,8 @@
   },
   "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
   "show_advanced_rel_options" : false,
-  "display_width" : null,
   "type" : "link",
+  "display_width" : null,
   "default" : {
     "url" : {
       "content_id" : 201043800338,

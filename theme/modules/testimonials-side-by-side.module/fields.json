@@ -17,8 +17,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled book."
   }, {
     "id" : "edf48a77-00c4-38af-4c9c-d69949814f60",
@@ -29,8 +29,8 @@
     "responsive" : true,
     "resizable" : true,
     "show_loading" : false,
-    "display_width" : null,
     "type" : "image",
+    "display_width" : null,
     "default" : {
       "size_type" : "auto_custom_max",
       "src" : "https://143910617.fs1.hubspotusercontent-eu1.net/hubfs/143910617/logoipsum-297.svg",
@@ -48,9 +48,9 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
-    "default" : "Company Name"
+    "display_width" : null,
+    "default" : ""
   }, {
     "id" : "6391bb3e-c8aa-9373-3e21-eed950979482",
     "name" : "author_name",
@@ -58,8 +58,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : ""
   }, {
     "id" : "9f262078-6877-b0a6-04a1-8cbdee0798a1",
@@ -68,15 +68,15 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
-    "default" : "Officer"
+    "display_width" : null,
+    "default" : ""
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "display_width" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : [ {
     "blockquote" : "BlueMatrix has proven, year-in and year-out, its strategic value. It is far more than a publishing system and we regard them as an extension of our own organization.",
     "company_logo" : {
@@ -87,9 +87,9 @@
       "height" : 30,
       "max_width" : 30
     },
-    "company_name" : "B. Riley Securities",
+    "company_name" : "",
     "author_name" : "",
-    "author_job_title" : "Officer"
+    "author_job_title" : ""
   }, {
     "blockquote" : "BlueMatrix has proven, year-in and year-out, its strategic value. It is far more than a publishing system and we regard them as an extension of our own organization.",
     "company_logo" : {
@@ -100,8 +100,8 @@
       "height" : 30,
       "max_width" : 30
     },
-    "company_name" : "B. Riley Securities",
+    "company_name" : "",
     "author_name" : "",
-    "author_job_title" : "Officer"
+    "author_job_title" : ""
   } ]
 } ]

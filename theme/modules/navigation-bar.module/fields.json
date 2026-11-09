@@ -7,8 +7,8 @@
   "responsive" : true,
   "resizable" : true,
   "show_loading" : false,
-  "display_width" : null,
   "type" : "image",
+  "display_width" : null,
   "default" : {
     "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/bm-logo-white.svg",
     "alt" : "BlueMatrix Logo",
@@ -18,6 +18,27 @@
     "max_width" : 300,
     "max_height" : 54,
     "loading" : "lazy"
+  }
+}, {
+  "id" : "5f072655-bd35-b093-fddf-1a08b65b9060",
+  "name" : "logo_small",
+  "label" : "Logo Small",
+  "required" : true,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "https://50649146.fs1.hubspotusercontent-na1.net/hubfs/50649146/App%20Logos/bm-cube-white.svg",
+    "alt" : "bm-cube-white",
+    "size_type" : "auto",
+    "width" : 61,
+    "height" : 70,
+    "loading" : "lazy",
+    "max_width" : 61,
+    "max_height" : 70
   }
 }, {
   "id" : "727aa266-87fa-d65e-8acb-1303e355b251",
@@ -31,8 +52,8 @@
   "multiple" : false,
   "reordering_enabled" : true,
   "preset" : null,
-  "display_width" : null,
   "type" : "choice",
+  "display_width" : null,
   "default" : "modern"
 }, {
   "id" : "127da6c1-4810-3052-eb74-b5b9acdcf8c0",
@@ -49,8 +70,8 @@
     "access" : null
   },
   "display" : "toggle",
-  "display_width" : null,
   "type" : "boolean",
+  "display_width" : null,
   "default" : true
 }, {
   "id" : "a7d48009-6333-b463-ad86-30d661ae273e",
@@ -66,8 +87,8 @@
     "operator" : "NOT_EQUAL",
     "access" : null
   },
-  "display_width" : null,
   "type" : "menu",
+  "display_width" : null,
   "default" : 207281794910
 }, {
   "id" : "eec64ec4-dcc1-ac8a-4b0e-0b4b8aac9dbe",
@@ -92,8 +113,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "display_width" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "filled"
   }, {
     "id" : "bb670a24-25b9-9d8f-ba99-81a8f6287034",
@@ -102,8 +123,8 @@
     "required" : false,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Link Name"
   }, {
     "id" : "a5e5d6c5-2c96-d974-c197-26ddb8e25b9b",
@@ -113,8 +134,8 @@
     "locked" : false,
     "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER" ],
     "show_advanced_rel_options" : false,
-    "display_width" : null,
     "type" : "link",
+    "display_width" : null,
     "default" : {
       "url" : {
         "content_id" : null,
@@ -128,8 +149,8 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "display_width" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : [ {
     "style" : "outline",
     "title" : "Request Demo",
@@ -161,8 +182,8 @@
   "label" : "Client Login Menu",
   "required" : false,
   "locked" : false,
-  "display_width" : null,
   "type" : "menu",
+  "display_width" : null,
   "default" : 207275017879
 }, {
   "id" : "fb9fa4c4-f80f-f911-085b-3d182afa3f86",
@@ -183,8 +204,8 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Creator"
   }, {
     "id" : "6dff0bed-a829-0d6d-8a6e-e0b519b5fc47",
@@ -193,20 +214,92 @@
     "required" : true,
     "locked" : false,
     "allow_new_line" : false,
-    "display_width" : null,
     "type" : "text",
+    "display_width" : null,
     "default" : "Aliquam viverra lobortis erat sed sollicitudin. Vivamus arcu est, auctor ut dui pretium. Tincidunt porttitor velit. Nam fermentum at ipsum nec ornare."
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
-  "display_width" : null,
   "type" : "group",
-  "default" : [ {
-    "product_name" : "Creator",
-    "product_description" : "Aliquam viverra lobortis erat sed sollicitudin. Vivamus arcu est, auctor ut dui pretium. Tincidunt porttitor velit. Nam fermentum at ipsum nec ornare."
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "a744a730-9eda-2ed0-e166-37683271332f",
+  "name" : "use_cases",
+  "label" : "Use Cases",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "a843157c-43ca-5343-7935-973574c80514",
+    "name" : "uc_name",
+    "label" : "Name",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Creation"
   }, {
-    "product_name" : "BlueMatrix Live",
-    "product_description" : "Aliquam viverra lobortis erat sed sollicitudin. Vivamus arcu est, auctor ut dui pretium. Tincidunt porttitor velit. Nam fermentum at ipsum nec ornare."
-  } ]
+    "id" : "8e15b36a-044f-e112-1eaa-9cfefe3636d0",
+    "name" : "description",
+    "label" : "Description",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Aliquam viverra lobortis erat sed sollicitudin. Vivamus arcu est, auctor ut dui pretium. Tincidunt porttitor velit. Nam fermentum at ipsum nec ornare."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "40beb8f3-66a4-6a5a-8160-3c2df8571eae",
+  "name" : "personas",
+  "label" : "Personas",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "84e2e713-1ff6-eb75-b92d-a79e08134a38",
+    "name" : "persona_name",
+    "label" : "Name",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Creation"
+  }, {
+    "id" : "877c6996-922e-34d9-3ca5-1de7209ca8b5",
+    "name" : "description",
+    "label" : "Description",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Aliquam viverra lobortis erat sed sollicitudin. Vivamus arcu est, auctor ut dui pretium. Tincidunt porttitor velit. Nam fermentum at ipsum nec ornare."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
 } ]

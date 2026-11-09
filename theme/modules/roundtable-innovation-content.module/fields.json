@@ -1,0 +1,340 @@
+[
+  {
+    "id": "1a8c380e-4a50-4935-8cb6-ccf00169f381",
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "the future of BlueMatrix"
+  },
+  {
+    "id": "9fcf70b9-d7d6-4298-b44c-e0e5a9f66a54",
+    "name": "heading",
+    "label": "Heading",
+    "required": true,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Lorem Ipsum Dolor"
+  },
+  {
+    "id": "12ba86db-a44f-4864-8c3d-bde1d73e31fd",
+    "name": "description",
+    "label": "Description",
+    "required": false,
+    "locked": false,
+    "allow_new_line": true,
+    "type": "text",
+    "display_width": null,
+    "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": "e5223caa-27ab-4fc4-b62d-793313f64612",
+    "name": "groups",
+    "label": "Product Groups",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": 1,
+      "max": null,
+      "sorting_label_field": null,
+      "default": 2
+    },
+    "children": [
+      {
+        "id": "a780086a-73a6-4fe3-b7d0-d8c89b130434",
+        "name": "logo",
+        "label": "Product Logo",
+        "required": false,
+        "locked": false,
+        "responsive": false,
+        "resizable": false,
+        "show_loading": false,
+        "type": "image",
+        "display_width": null,
+        "default": {
+          "size_type": "auto",
+          "src": "https://placehold.co/163x48",
+          "alt": "Product logo",
+          "loading": "lazy",
+          "width": 163,
+          "height": 48,
+          "max_width": 163,
+          "max_height": 48
+        }
+      },
+      {
+        "id": "80b6dff5-9db2-4590-8466-bc287cfacfde",
+        "name": "cards",
+        "label": "Cards",
+        "required": false,
+        "locked": false,
+        "occurrence": {
+          "min": 1,
+          "max": null,
+          "sorting_label_field": "cards.title",
+          "default": 1
+        },
+        "children": [
+          {
+            "id": "7d905528-397e-47a4-8efe-48517d121411",
+            "name": "title",
+            "label": "Title",
+            "required": true,
+            "locked": false,
+            "allow_new_line": false,
+            "type": "text",
+            "display_width": null,
+            "default": "Feature title"
+          },
+          {
+            "id": "d55a3159-c510-41d8-b60e-0f427c54c30c",
+            "name": "status",
+            "label": "Status",
+            "required": true,
+            "locked": false,
+            "choices": [
+              [
+                "Now available",
+                "Now available"
+              ],
+              [
+                "In development",
+                "In development"
+              ]
+            ],
+            "display": "select",
+            "multiple": false,
+            "reordering_enabled": false,
+            "type": "choice",
+            "display_width": null,
+            "default": "Now available"
+          },
+          {
+            "id": "e21e7316-c404-4f39-8f8a-41f1833bfdb2",
+            "name": "text",
+            "label": "Card Text",
+            "required": true,
+            "locked": false,
+            "allow_new_line": true,
+            "type": "text",
+            "display_width": null,
+            "default": "Feature description goes here."
+          },
+          {
+            "id": "614ce23c-cd25-45d1-9f24-63b3f8f6e403",
+            "name": "button_label",
+            "label": "Button Label",
+            "required": false,
+            "locked": false,
+            "allow_new_line": false,
+            "type": "text",
+            "display_width": null,
+            "default": "Learn More"
+          },
+          {
+            "id": "d691a811-3dca-4f4f-ab6f-0768568c44e0",
+            "name": "modal_image",
+            "label": "Modal Image",
+            "required": false,
+            "locked": false,
+            "responsive": true,
+            "resizable": true,
+            "show_loading": false,
+            "type": "image",
+            "display_width": null,
+            "default": {
+              "size_type": "auto",
+              "src": "https://placehold.co/600x363",
+              "alt": "",
+              "loading": "lazy",
+              "width": 600,
+              "height": 363,
+              "max_width": 600,
+              "max_height": 363
+            }
+          },
+          {
+            "id": "43696469-4756-4742-85ea-d396582b742f",
+            "name": "fullscreen_image",
+            "label": "Fullscreen Image",
+            "required": false,
+            "locked": false,
+            "display": "toggle",
+            "type": "boolean",
+            "display_width": null,
+            "default": false
+          },
+          {
+            "id": "552e0970-e640-4083-8d76-bbf47773e6a7",
+            "name": "modal_text",
+            "label": "Modal Text",
+            "required": false,
+            "locked": false,
+            "type": "richtext",
+            "display_width": null,
+            "default": "<p>Analysts spend a significant portion of their time on maintenance research, earnings updates, rating changes, and periodic company notes where the structure is known and the thesis is familiar. That time compounds across every analyst, every quarter.</p><p>The Signal and Drafting Agent receives a trigger event, drafts a structured research note in the analyst's unique voice, and delivers it directly into Creator ready for review and publication. The thinking takes minutes. The publishing no longer takes hours.</p><ul><li>Auto-drafts structured notes based on trigger events</li><li>Maintains the analyst's unique voice and coverage style</li><li>Note lands in Creator ready for review, compliance, and distribution</li><li>Analyst validates, refines, and publishes. Nothing downstream changes.</li></ul>",
+            "enabled_features": [
+              "lists",
+              "standard_emphasis",
+              "link"
+            ]
+          }
+        ],
+        "tab": "CONTENT",
+        "expanded": false,
+        "group_occurrence_meta": null,
+        "type": "group",
+        "display_width": null,
+        "default": []
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": [
+      {
+        "cards": [
+          {
+            "status": "Now available",
+            "title": "Signal and Drafting Agent",
+            "text": "Auto-drafts a research note in the analyst's unique voice based on a trigger event. The analyst validates, refines, and publishes then Creator handles the rest.",
+            "button_label": "Learn More",
+            "modal_image": {
+              "size_type": "auto",
+              "src": "https://placehold.co/600x363",
+              "alt": "Signal and Drafting Agent",
+              "loading": "lazy",
+              "width": 600,
+              "height": 363,
+              "max_width": 600,
+              "max_height": 363
+            },
+            "modal_text": "<p>Analysts spend a significant portion of their time on maintenance research, earnings updates, rating changes, and periodic company notes where the structure is known and the thesis is familiar. That time compounds across every analyst, every quarter.</p><p>The Signal and Drafting Agent receives a trigger event, drafts a structured research note in the analyst's unique voice, and delivers it directly into Creator ready for review and publication. The thinking takes minutes. The publishing no longer takes hours.</p><ul><li>Auto-drafts structured notes based on trigger events</li><li>Maintains the analyst's unique voice and coverage style</li><li>Note lands in Creator ready for review, compliance, and distribution</li><li>Analyst validates, refines, and publishes. Nothing downstream changes.</li></ul>",
+            "fullscreen_image": false
+          },
+          {
+            "status": "Now available",
+            "title": "Authoring MCP",
+            "text": "Connects an analyst's AI environment directly to Creator so draft content lands in the right document structure without a context switch. Creator is where the document is finished and published. The MCP gets the thinking there faster.",
+            "button_label": "Learn More",
+            "modal_image": {
+              "size_type": "auto",
+              "src": "https://placehold.co/600x363",
+              "alt": "Authoring MCP",
+              "loading": "lazy",
+              "width": 600,
+              "height": 363,
+              "max_width": 600,
+              "max_height": 363
+            },
+            "modal_text": "<p>More detail about Authoring MCP goes here.</p>",
+            "fullscreen_image": false
+          },
+          {
+            "status": "In development",
+            "title": "Doc Review Agent",
+            "text": "An AI agent built directly into Creator that checks documents for errors and inconsistencies before they enter the formal approval workflow. Rules are configurable per workflow stage so issues surface when they are easiest to fix.",
+            "button_label": "Learn More",
+            "modal_image": {
+              "size_type": "auto",
+              "src": "https://placehold.co/600x363",
+              "alt": "Doc Review Agent",
+              "loading": "lazy",
+              "width": 600,
+              "height": 363,
+              "max_width": 600,
+              "max_height": 363
+            },
+            "modal_text": "<p>More detail about Doc Review Agent goes here.</p>",
+            "fullscreen_image": false
+          },
+          {
+            "status": "In development",
+            "title": "ElevenLabs",
+            "text": "ElevenLabs integration automatically generates a voice version of published research in a consistent, configurable voice, so clients can listen to content on the go or consume it in the way that works best for them.",
+            "button_label": "Learn More",
+            "modal_image": {
+              "size_type": "auto",
+              "src": "https://placehold.co/600x363",
+              "alt": "ElevenLabs",
+              "loading": "lazy",
+              "width": 600,
+              "height": 363,
+              "max_width": 600,
+              "max_height": 363
+            },
+            "modal_text": "<p>More detail about ElevenLabs goes here.</p>",
+            "fullscreen_image": false
+          }
+        ],
+        "logo": {
+          "size_type": "auto",
+          "src": "https://placehold.co/163x48",
+          "alt": "Creator",
+          "loading": "lazy",
+          "width": 163,
+          "height": 48,
+          "max_width": 163,
+          "max_height": 48
+        }
+      },
+      {
+        "cards": [
+          {
+            "status": "Now available",
+            "title": "Portal MCP",
+            "text": "Gives internal sell-side teams governed access to the firm's full research corpus inside the AI platforms they already use. No portal login required.",
+            "button_label": "Learn More",
+            "modal_image": {
+              "size_type": "auto",
+              "src": "https://placehold.co/600x363",
+              "alt": "Portal MCP",
+              "loading": "lazy",
+              "width": 600,
+              "height": 363,
+              "max_width": 600,
+              "max_height": 363
+            },
+            "modal_text": "<p>More detail about Portal MCP goes here.</p>",
+            "fullscreen_image": false
+          },
+          {
+            "status": "Now available",
+            "title": "Portal Search and Chat",
+            "text": "AI-powered search and contextual chat built directly into the Portal experience. Every query, citation, and concept a client explores comes back to the sell-side as a signal.",
+            "button_label": "Learn More",
+            "modal_image": {
+              "size_type": "auto",
+              "src": "https://placehold.co/600x363",
+              "alt": "Portal Search and Chat",
+              "loading": "lazy",
+              "width": 600,
+              "height": 363,
+              "max_width": 600,
+              "max_height": 363
+            },
+            "modal_text": "<p>More detail about Portal Search and Chat goes here.</p>",
+            "fullscreen_image": false
+          }
+        ],
+        "logo": {
+          "size_type": "auto",
+          "src": "https://placehold.co/135x48",
+          "alt": "Portal",
+          "loading": "lazy",
+          "width": 135,
+          "height": 48,
+          "max_width": 135,
+          "max_height": 48
+        }
+      }
+    ]
+  }
+]
